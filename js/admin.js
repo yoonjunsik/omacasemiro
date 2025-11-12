@@ -59,14 +59,18 @@ async function saveDataToFirebase() {
     try {
         console.log('🔵 Firebase에 데이터 저장 중...');
 
+        // Firebase 데이터 우선 사용, 없으면 전역 변수 사용
+        const dataToSave = window.uniformData || uniformData;
+        const bfToSave = window.blackFridaySites || blackFridaySites;
+
         // uniformData 저장
         const uniformRef = window.firebaseDBRef(window.firebaseDB, 'uniformData');
-        await window.firebaseDBSet(uniformRef, uniformData);
+        await window.firebaseDBSet(uniformRef, dataToSave);
         console.log('✅ uniformData 저장 완료');
 
         // blackFridaySites 저장
         const bfRef = window.firebaseDBRef(window.firebaseDB, 'blackFridaySites');
-        await window.firebaseDBSet(bfRef, blackFridaySites);
+        await window.firebaseDBSet(bfRef, bfToSave);
         console.log('✅ blackFridaySites 저장 완료');
 
         return true;
@@ -419,8 +423,16 @@ async function initializePage() {
     // 환율 정보 가져오기
     fetchExchangeRates();
 
+    // Firebase에서 불러온 데이터 사용
+    const currentUniformData = window.uniformData || uniformData;
+    const currentBlackFridaySites = window.blackFridaySites || blackFridaySites;
+
+    // 전역 변수 업데이트
+    if (!window.uniformData) window.uniformData = uniformData;
+    if (!window.blackFridaySites) window.blackFridaySites = blackFridaySites;
+
     // 팀 목록 채우기
-    const teams = [...new Set(uniformData.map(p => p.team))].sort();
+    const teams = [...new Set(currentUniformData.map(p => p.team))].sort();
     const teamFilter = document.getElementById('adminTeamFilter');
     teams.forEach(team => {
         const option = document.createElement('option');
@@ -430,7 +442,7 @@ async function initializePage() {
     });
 
     // 시즌 목록 채우기
-    const seasons = [...new Set(uniformData.map(p => p.season))].sort().reverse();
+    const seasons = [...new Set(currentUniformData.map(p => p.season))].sort().reverse();
     const seasonFilter = document.getElementById('adminSeasonFilter');
     seasons.forEach(season => {
         const option = document.createElement('option');
@@ -730,7 +742,9 @@ function renderBlackFridaySitesList() {
 
     container.innerHTML = '';
 
-    blackFridaySites.forEach((site, index) => {
+    // Firebase 데이터 우선 사용
+    const sites = window.blackFridaySites || blackFridaySites;
+    sites.forEach((site, index) => {
         const card = document.createElement('div');
         card.className = 'border-2 border-gray-200 rounded-lg p-6 hover:border-green-500 transition';
 
@@ -820,7 +834,9 @@ function renderBlackFridaySitesList() {
 
 // 블프 사이트 업데이트
 async function updateBlackFridaySite(index) {
-    const site = blackFridaySites[index];
+    // Firebase 데이터 우선 사용
+    const sites = window.blackFridaySites || blackFridaySites;
+    const site = sites[index];
 
     site.name = document.getElementById(`bf-name-${index}`).value;
     site.description = document.getElementById(`bf-desc-${index}`).value;
@@ -832,6 +848,11 @@ async function updateBlackFridaySite(index) {
     site.startDate = document.getElementById(`bf-startdate-${index}`).value;
     site.endDate = document.getElementById(`bf-enddate-${index}`).value;
 
+    // window.blackFridaySites 업데이트
+    if (window.blackFridaySites) {
+        window.blackFridaySites[index] = site;
+    }
+
     // Firebase에 저장
     const saved = await saveDataToFirebase();
     if (saved) {
@@ -842,13 +863,20 @@ async function updateBlackFridaySite(index) {
 
 // 블프 사이트 노출/숨김 토글
 async function toggleBFSiteVisibility(index) {
-    blackFridaySites[index].visible = !blackFridaySites[index].visible;
+    // Firebase 데이터 우선 사용
+    const sites = window.blackFridaySites || blackFridaySites;
+    sites[index].visible = !sites[index].visible;
+
+    // window.blackFridaySites 업데이트
+    if (window.blackFridaySites) {
+        window.blackFridaySites = sites;
+    }
 
     // Firebase에 저장
     const saved = await saveDataToFirebase();
     if (saved) {
         renderBlackFridaySitesList();
-        alert(`"${blackFridaySites[index].name}" 사이트가 ${blackFridaySites[index].visible ? '노출' : '숨김'} 상태로 변경되었습니다. 🎉`);
+        alert(`"${sites[index].name}" 사이트가 ${sites[index].visible ? '노출' : '숨김'} 상태로 변경되었습니다. 🎉`);
     }
 }
 

@@ -456,9 +456,9 @@
 
     <!-- Firebase SDK -->
     <script type="module">
-        // Firebase imports
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-        import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        // Firebase imports - Updated to latest version
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js';
+        import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged, setPersistence, browserLocalPersistence } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js';
 
         // Firebase configuration
         const firebaseConfig = {
@@ -471,9 +471,20 @@
         };
 
         // Initialize Firebase
+        console.log('🔵 Firebase 초기화 시작...');
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+
+        // Set persistence to LOCAL (survives browser restarts and redirects)
+        console.log('🔵 Firebase persistence 설정 중...');
+        setPersistence(auth, browserLocalPersistence).then(() => {
+            console.log('✅ Firebase persistence 설정 완료');
+        }).catch((error) => {
+            console.error('🔴 Firebase persistence 설정 실패:', error);
+        });
+
         const provider = new GoogleAuthProvider();
+        console.log('✅ Firebase 초기화 완료');
 
         // 허용된 관리자 이메일 목록 (여기에 본인 Gmail 추가)
         const ALLOWED_ADMINS = [
@@ -573,9 +584,25 @@
                 console.log('🔵 현재 URL:', window.location.href);
                 console.log('🔵 현재 경로:', window.location.pathname);
                 console.log('🔵 쿼리 스트링:', window.location.search);
+                console.log('🔵 localStorage 사용 가능:', typeof localStorage !== 'undefined');
+                console.log('🔵 sessionStorage 사용 가능:', typeof sessionStorage !== 'undefined');
+
+                // Check if there's pending auth data
+                const pendingKeys = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key && key.includes('firebase')) {
+                        pendingKeys.push(key);
+                    }
+                }
+                console.log('🔵 Firebase localStorage 키:', pendingKeys.length > 0 ? pendingKeys : '없음');
 
                 const result = await getRedirectResult(auth);
                 console.log('🔵 getRedirectResult 완료, result:', result ? '있음' : '없음');
+
+                if (result === null) {
+                    console.log('🟡 result가 명시적으로 null입니다');
+                }
 
                 if (result) {
                     console.log('✅ 리디렉트 결과 있음!');

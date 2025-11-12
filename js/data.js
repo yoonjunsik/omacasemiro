@@ -18,13 +18,6 @@ const uniformData = [
                 "sale_price_krw": 115880,
                 "discount_rate": 29,
                 "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-home-shirt-2025-2026-adults-377822"
-            },
-            {
-                "site_name": "아디다스 코리아",
-                "regular_price": 130000,
-                "sale_price": 91000,
-                "discount_rate": 30,
-                "affiliate_link": "https://www.adidas.co.kr/"
             }
         ],
         "visible": true
@@ -70,20 +63,6 @@ const uniformData = [
         "model_code": "LFC-2526",
         "image": "https://www.sportsdirect.com/images/products/37872508_h.jpg",
         "site_offers": [
-            {
-                "site_name": "스포츠다이렉트",
-                "regular_price": 140000,
-                "sale_price": 91000,
-                "discount_rate": 35,
-                "affiliate_link": "https://www.sportsdirect.com/"
-            },
-            {
-                "site_name": "아디다스 코리아",
-                "regular_price": 140000,
-                "sale_price": 98000,
-                "discount_rate": 30,
-                "affiliate_link": "https://www.adidas.co.kr/"
-            },
             {
                 "site_name": "스포츠다이렉트 UK",
                 "currency": "GBP",
@@ -239,10 +218,13 @@ const uniformData = [
             },
             {
                 "site_name": "유니스포츠",
-                "regular_price": 180600,
-                "sale_price": 126420,
+                "currency": "EUR",
+                "regular_price": 159.95,
+                "sale_price": 111.96,
+                "regular_price_krw": 271978,
+                "sale_price_krw": 190385,
                 "discount_rate": 30,
-                "affiliate_link": "https://www.unisportstore.com/"
+                "affiliate_link": "https://www.unisportstore.com/football-shirts/real-h-jsy-white/359343/"
             }
         ],
         "version": "어센틱",
@@ -379,10 +361,13 @@ const uniformData = [
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
-                "regular_price": 119000,
-                "sale_price": 65450,
-                "discount_rate": 45,
-                "affiliate_link": "https://www.sportsdirect.com/"
+                "currency": "GBP",
+                "regular_price": 84.99,
+                "sale_price": 42.5,
+                "regular_price_krw": 164115,
+                "sale_price_krw": 82058,
+                "discount_rate": 50,
+                "affiliate_link": "https://www.sportsdirect.com/nike-chelsea-away-shirt-2024-2025-adults-367445"
             },
             {
                 "site_name": "유니스포츠",
@@ -616,10 +601,13 @@ const uniformData = [
             },
             {
                 "site_name": "유니스포츠",
-                "regular_price": 95000,
-                "sale_price": 57000,
+                "currency": "EUR",
+                "regular_price": 99.95,
+                "sale_price": 59.97,
+                "regular_price_krw": 169984,
+                "sale_price_krw": 101990,
                 "discount_rate": 40,
-                "affiliate_link": "https://www.unisportstore.com/"
+                "affiliate_link": "https://www.unisportstore.com/football-shirts/benfica-3rd-shirt-202425/359611/"
             }
         ],
         "version": "레플리카",

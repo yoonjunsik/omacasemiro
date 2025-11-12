@@ -745,9 +745,15 @@ function renderBlackFridaySitesList() {
                     <h3 class="font-bold text-lg mb-2">${site.name}</h3>
                     <div class="space-y-3">
                         <div>
-                            <label class="text-sm font-semibold text-gray-700">설명</label>
-                            <input type="text" id="bf-desc-${index}" value="${site.description}"
+                            <label class="text-sm font-semibold text-gray-700">사이트 이름</label>
+                            <input type="text" id="bf-name-${index}" value="${site.name}"
                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                        </div>
+                        <div>
+                            <label class="text-sm font-semibold text-gray-700">설명</label>
+                            <textarea id="bf-desc-${index}" rows="2"
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">${site.description}</textarea>
+                            <p class="text-xs text-gray-500 mt-1">💡 Enter 키로 줄바꿈 가능</p>
                         </div>
                         <div class="grid grid-cols-2 gap-3">
                             <div>
@@ -816,6 +822,7 @@ function renderBlackFridaySitesList() {
 async function updateBlackFridaySite(index) {
     const site = blackFridaySites[index];
 
+    site.name = document.getElementById(`bf-name-${index}`).value;
     site.description = document.getElementById(`bf-desc-${index}`).value;
     site.discount = document.getElementById(`bf-discount-${index}`).value;
     site.location = document.getElementById(`bf-location-${index}`).value;

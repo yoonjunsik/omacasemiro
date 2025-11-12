@@ -352,6 +352,10 @@ function initializePage() {
     // 탭 전환 이벤트
     document.getElementById('tab-products').addEventListener('click', () => switchTab('products'));
     document.getElementById('tab-offers').addEventListener('click', () => switchTab('offers'));
+    document.getElementById('tab-blackfriday').addEventListener('click', () => {
+        switchTab('blackfriday');
+        renderBlackFridaySitesList();
+    });
     document.getElementById('tab-account').addEventListener('click', () => switchTab('account'));
 
     // 제품 관리 탭 이벤트
@@ -366,6 +370,9 @@ function initializePage() {
     // 버튼 이벤트 (판매처 관리 탭)
     document.getElementById('addOfferBtn').addEventListener('click', addOffer);
     document.getElementById('saveChangesBtn').addEventListener('click', saveChanges);
+
+    // 버튼 이벤트 (블프 사이트 관리 탭)
+    document.getElementById('saveBFChangesBtn').addEventListener('click', saveBlackFridayChanges);
 }
 
 // 제품 목록 업데이트
@@ -581,6 +588,124 @@ function saveChanges() {
     const fileContent = `// 유니폼 데이터\nconst uniformData = ${dataString};\n`;
 
     // Blob 생성 및 다운로드
+    const blob = new Blob([fileContent], { type: 'text/javascript' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'data.js';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    alert('data.js 파일이 다운로드되었습니다.\n다운로드된 파일을 js/data.js로 교체해주세요.');
+}
+
+// 블프 사이트 목록 렌더링
+function renderBlackFridaySitesList() {
+    const container = document.getElementById('blackFridaySitesList');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    blackFridaySites.forEach((site, index) => {
+        const card = document.createElement('div');
+        card.className = 'border-2 border-gray-200 rounded-lg p-6 hover:border-green-500 transition';
+
+        const colorOptions = ['orange', 'blue', 'gray', 'green', 'purple', 'indigo'];
+        const colorSelect = colorOptions.map(c =>
+            `<option value="${c}" ${c === site.color ? 'selected' : ''}>${c}</option>`
+        ).join('');
+
+        card.innerHTML = `
+            <div class="flex items-start justify-between mb-4">
+                <div class="flex-1">
+                    <h3 class="font-bold text-lg mb-2">${site.name}</h3>
+                    <div class="space-y-3">
+                        <div>
+                            <label class="text-sm font-semibold text-gray-700">설명</label>
+                            <input type="text" id="bf-desc-${index}" value="${site.description}"
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="text-sm font-semibold text-gray-700">할인율</label>
+                                <input type="text" id="bf-discount-${index}" value="${site.discount}"
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                            </div>
+                            <div>
+                                <label class="text-sm font-semibold text-gray-700">위치</label>
+                                <select id="bf-location-${index}" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                                    <option value="국내" ${site.location === '국내' ? 'selected' : ''}>국내</option>
+                                    <option value="해외" ${site.location === '해외' ? 'selected' : ''}>해외</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="text-sm font-semibold text-gray-700">유형</label>
+                                <input type="text" id="bf-type-${index}" value="${site.type}"
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                            </div>
+                            <div>
+                                <label class="text-sm font-semibold text-gray-700">색상</label>
+                                <select id="bf-color-${index}" class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                                    ${colorSelect}
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-sm font-semibold text-gray-700">URL</label>
+                            <input type="url" id="bf-url-${index}" value="${site.url}"
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                        </div>
+                    </div>
+                </div>
+                <div class="ml-4 flex flex-col gap-2">
+                    <button onclick="updateBlackFridaySite(${index})"
+                            class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition text-sm">
+                        저장
+                    </button>
+                    <button onclick="toggleBFSiteVisibility(${index})"
+                            class="px-4 py-2 rounded-lg transition text-sm ${site.visible !== false ? 'bg-yellow-500 hover:bg-yellow-600 text-white' : 'bg-gray-300 hover:bg-gray-400 text-gray-700'}">
+                        ${site.visible !== false ? '숨김' : '노출'}
+                    </button>
+                </div>
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+// 블프 사이트 업데이트
+function updateBlackFridaySite(index) {
+    const site = blackFridaySites[index];
+
+    site.description = document.getElementById(`bf-desc-${index}`).value;
+    site.discount = document.getElementById(`bf-discount-${index}`).value;
+    site.location = document.getElementById(`bf-location-${index}`).value;
+    site.type = document.getElementById(`bf-type-${index}`).value;
+    site.color = document.getElementById(`bf-color-${index}`).value;
+    site.url = document.getElementById(`bf-url-${index}`).value;
+
+    alert('블프 사이트 정보가 업데이트되었습니다!');
+    renderBlackFridaySitesList();
+}
+
+// 블프 사이트 노출/숨김 토글
+function toggleBFSiteVisibility(index) {
+    blackFridaySites[index].visible = !blackFridaySites[index].visible;
+    renderBlackFridaySitesList();
+    alert(`"${blackFridaySites[index].name}" 사이트가 ${blackFridaySites[index].visible ? '노출' : '숨김'} 상태로 변경되었습니다.`);
+}
+
+// 블프 사이트 변경사항 저장
+function saveBlackFridayChanges() {
+    const bfDataString = JSON.stringify(blackFridaySites, null, 4);
+    const uniformDataString = JSON.stringify(uniformData, null, 4);
+    const fileContent = `// 유니폼 데이터\nconst uniformData = ${uniformDataString};\n\n// 블프 세일 사이트 데이터\nconst blackFridaySites = ${bfDataString};\n`;
+
     const blob = new Blob([fileContent], { type: 'text/javascript' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');

@@ -109,6 +109,9 @@
                 <button id="tab-offers" class="tab-btn flex-1 px-6 py-4 font-bold text-lg hover:bg-gray-50 transition border-b-4 border-transparent">
                     🏪 판매처 관리
                 </button>
+                <button id="tab-blackfriday" class="tab-btn flex-1 px-6 py-4 font-bold text-lg hover:bg-gray-50 transition border-b-4 border-transparent">
+                    🔥 블프 사이트
+                </button>
                 <button id="tab-account" class="tab-btn flex-1 px-6 py-4 font-bold text-lg hover:bg-gray-50 transition border-b-4 border-transparent">
                     👤 계정 관리
                 </button>
@@ -385,6 +388,32 @@
                         <p class="text-sm text-gray-600">변경된 내용을 data.js 파일에 저장합니다</p>
                     </div>
                     <button id="saveChangesBtn"
+                            class="bg-blue-600 text-white font-bold px-8 py-3 rounded-lg hover:bg-blue-700 transition disabled:bg-gray-400">
+                        💾 저장하기
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Tab Content: 블프 사이트 관리 -->
+        <div id="content-blackfriday" class="tab-content hidden">
+            <!-- Black Friday Sites List -->
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">🔥 블프 세일 사이트 목록</h2>
+
+                <div id="blackFridaySitesList" class="space-y-4">
+                    <!-- 블프 사이트 카드가 여기에 렌더링됩니다 -->
+                </div>
+            </section>
+
+            <!-- Save Changes -->
+            <section class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900">변경사항 저장</h3>
+                        <p class="text-sm text-gray-600">변경된 내용을 data.js 파일에 저장합니다</p>
+                    </div>
+                    <button id="saveBFChangesBtn"
                             class="bg-blue-600 text-white font-bold px-8 py-3 rounded-lg hover:bg-blue-700 transition disabled:bg-gray-400">
                         💾 저장하기
                     </button>

@@ -352,6 +352,7 @@ function initializePage() {
     // 탭 전환 이벤트
     document.getElementById('tab-products').addEventListener('click', () => switchTab('products'));
     document.getElementById('tab-offers').addEventListener('click', () => switchTab('offers'));
+    document.getElementById('tab-account').addEventListener('click', () => switchTab('account'));
 
     // 제품 관리 탭 이벤트
     document.getElementById('addProductBtn').addEventListener('click', addNewProduct);

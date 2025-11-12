@@ -39,37 +39,35 @@
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Password Protection Modal -->
+    <!-- Firebase Authentication Modal -->
     <div id="authOverlay" class="admin-overlay hidden">
         <div class="bg-white rounded-lg shadow-2xl p-8 max-w-md w-full mx-4">
             <div class="text-center mb-6">
                 <h2 class="text-2xl font-black text-gray-800 mb-2">🔒 관리자 인증</h2>
-                <p class="text-sm text-gray-600">관리자 페이지에 접근하려면 로그인하세요</p>
+                <p class="text-sm text-gray-600">구글 계정으로 로그인하세요</p>
             </div>
 
-            <div class="mb-4">
-                <label class="block text-sm font-semibold text-gray-700 mb-2">아이디</label>
-                <input type="text" id="adminUsername"
-                       class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                       placeholder="아이디를 입력하세요"
-                       onkeypress="if(event.key === 'Enter') document.getElementById('adminPassword').focus()">
+            <div id="loginSection">
+                <button id="googleLoginBtn"
+                        class="w-full bg-white border-2 border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-lg hover:bg-gray-50 transition flex items-center justify-center gap-3">
+                    <svg width="20" height="20" viewBox="0 0 20 20">
+                        <path fill="#4285F4" d="M19.6 10.23c0-.82-.1-1.42-.25-2.05H10v3.72h5.5c-.15.96-.74 2.31-2.04 3.22v2.45h3.16c1.89-1.73 2.98-4.3 2.98-7.34z"/>
+                        <path fill="#34A853" d="M13.46 15.13c-.83.59-1.96 1-3.46 1-2.64 0-4.88-1.74-5.68-4.15H1.07v2.52C2.72 17.75 6.09 20 10 20c2.7 0 4.96-.89 6.62-2.42l-3.16-2.45z"/>
+                        <path fill="#FBBC05" d="M3.99 10c0-.69.12-1.35.32-1.97V5.51H1.07A9.973 9.973 0 000 10c0 1.61.39 3.14 1.07 4.49l3.24-2.52c-.2-.62-.32-1.28-.32-1.97z"/>
+                        <path fill="#EA4335" d="M10 3.88c1.88 0 3.13.81 3.85 1.48l2.84-2.76C14.96.99 12.7 0 10 0 6.09 0 2.72 2.25 1.07 5.51l3.24 2.52C5.12 5.62 7.36 3.88 10 3.88z"/>
+                    </svg>
+                    Google로 로그인
+                </button>
+
+                <p id="authError" class="text-red-600 text-sm mt-4 hidden text-center"></p>
             </div>
 
-            <div class="mb-6">
-                <label class="block text-sm font-semibold text-gray-700 mb-2">비밀번호</label>
-                <input type="password" id="adminPassword"
-                       class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
-                       placeholder="비밀번호를 입력하세요"
-                       onkeypress="if(event.key === 'Enter') checkPassword()">
-                <p id="authError" class="text-red-600 text-sm mt-2 hidden">아이디 또는 비밀번호가 올바르지 않습니다</p>
+            <div id="loadingSection" class="hidden text-center py-4">
+                <div class="inline-block animate-spin rounded-full h-8 w-8 border-4 border-green-500 border-t-transparent"></div>
+                <p class="mt-2 text-gray-600 text-sm">로그인 중...</p>
             </div>
 
-            <button onclick="checkPassword()"
-                    class="w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition">
-                로그인
-            </button>
-
-            <a href="/" class="block text-center text-sm text-gray-500 hover:text-gray-700 mt-4">
+            <a href="/" class="block text-center text-sm text-gray-500 hover:text-gray-700 mt-6">
                 ← 메인 페이지로 돌아가기
             </a>
         </div>
@@ -83,7 +81,11 @@
                 <a href="/" class="flex items-center hover:opacity-80 transition">
                     <span class="text-2xl md:text-3xl font-black">⚽ 오마카세미루 - 관리자</span>
                 </a>
-                <div class="flex gap-4">
+                <div class="flex gap-4 items-center">
+                    <span id="userEmail" class="text-sm hidden"></span>
+                    <button id="logoutBtn" class="bg-red-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-red-600 transition hidden">
+                        로그아웃
+                    </button>
                     <a href="/" class="bg-white text-green-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
                         ← 메인으로
                     </a>
@@ -394,10 +396,10 @@
                 <div class="bg-gray-50 rounded-lg p-6">
                     <div class="grid md:grid-cols-2 gap-4">
                         <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2">아이디</label>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">로그인 이메일</label>
                             <input type="text" id="currentUsername" readonly
                                    class="w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-lg text-gray-700"
-                                   value="jooni1230">
+                                   value="Firebase 계정">
                         </div>
                         <div>
                             <label class="block text-sm font-semibold text-gray-700 mb-2">마지막 로그인</label>
@@ -409,59 +411,33 @@
                 </div>
             </section>
 
-            <!-- Change Password -->
-            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
-                <h2 class="text-2xl font-bold mb-6 text-gray-800">🔑 비밀번호 변경</h2>
-
-                <div class="bg-yellow-50 border-2 border-yellow-200 rounded-lg p-4 mb-6">
-                    <p class="text-sm text-yellow-800">⚠️ 비밀번호는 브라우저의 localStorage에 저장됩니다. 다른 브라우저나 시크릿 모드에서는 초기 비밀번호로 로그인하세요.</p>
-                </div>
-
-                <div class="grid md:grid-cols-1 gap-4">
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">현재 비밀번호 *</label>
-                        <input type="password" id="currentPassword"
-                               class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                               placeholder="현재 비밀번호를 입력하세요">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">새 비밀번호 *</label>
-                        <input type="password" id="newPassword"
-                               class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                               placeholder="새 비밀번호를 입력하세요">
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2">새 비밀번호 확인 *</label>
-                        <input type="password" id="confirmPassword"
-                               class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                               placeholder="새 비밀번호를 다시 입력하세요">
-                    </div>
-                </div>
-
-                <div id="passwordChangeMessage" class="mt-4 p-4 rounded-lg hidden">
-                    <p class="text-sm font-semibold"></p>
-                </div>
-
-                <button onclick="changePassword()"
-                        class="mt-6 w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition">
-                    비밀번호 변경
-                </button>
-            </section>
-
-            <!-- Reset to Default -->
+            <!-- Firebase Info -->
             <section class="bg-white rounded-lg shadow-md p-6">
-                <h2 class="text-2xl font-bold mb-6 text-gray-800">🔄 초기화</h2>
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">🔐 보안 인증</h2>
 
-                <div class="bg-red-50 border-2 border-red-200 rounded-lg p-4 mb-6">
-                    <p class="text-sm text-red-800">⚠️ 초기화하면 비밀번호가 기본값(casemiro7)으로 되돌아갑니다.</p>
+                <div class="bg-green-50 border-2 border-green-200 rounded-lg p-6 mb-6">
+                    <h3 class="font-bold text-green-900 mb-2">✅ Firebase Authentication 적용됨</h3>
+                    <p class="text-sm text-green-800 mb-3">
+                        이 사이트는 Google Firebase를 통해 보안 인증을 사용합니다.
+                    </p>
+                    <ul class="text-sm text-green-800 space-y-2">
+                        <li>✓ 비밀번호가 소스코드에 노출되지 않습니다</li>
+                        <li>✓ 구글 계정으로 안전하게 로그인합니다</li>
+                        <li>✓ 허용된 관리자만 접근할 수 있습니다</li>
+                        <li>✓ 모든 브라우저와 기기에서 동일하게 작동합니다</li>
+                    </ul>
                 </div>
 
-                <button onclick="resetCredentials()"
-                        class="w-full bg-red-600 text-white font-bold py-3 rounded-lg hover:bg-red-700 transition">
-                    비밀번호 초기화
-                </button>
+                <div class="bg-blue-50 border-2 border-blue-200 rounded-lg p-4">
+                    <h3 class="font-bold text-blue-900 mb-2">📝 계정 관리</h3>
+                    <p class="text-sm text-blue-800 mb-3">
+                        비밀번호 변경이나 계정 관리는 Google 계정 설정에서 할 수 있습니다.
+                    </p>
+                    <a href="https://myaccount.google.com/security" target="_blank"
+                       class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition text-sm">
+                        Google 계정 설정 열기 →
+                    </a>
+                </div>
             </section>
         </div>
     </main>
@@ -474,150 +450,139 @@
     </footer>
     </div> <!-- End of mainContent -->
 
-    <!-- Authentication Script -->
-    <script>
-        // 기본 관리자 계정 정보
-        const DEFAULT_USERNAME = 'jooni1230';
-        const DEFAULT_PASSWORD = 'casemiro7';
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Firebase imports
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
 
-        // 현재 계정 정보 가져오기 (localStorage에서 또는 기본값)
-        function getCredentials() {
-            const savedUsername = localStorage.getItem('adminUsername');
-            const savedPassword = localStorage.getItem('adminPassword');
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBu7tXrbeWjp3h0Xt_mCTp4oswsuGMSGkw",
+            authDomain: "omacasemiro-8fd4c.firebaseapp.com",
+            projectId: "omacasemiro-8fd4c",
+            storageBucket: "omacasemiro-8fd4c.firebasestorage.app",
+            messagingSenderId: "322343249421",
+            appId: "1:322343249421:web:de70a69176f468d5d05744"
+        };
 
-            return {
-                username: savedUsername || DEFAULT_USERNAME,
-                password: savedPassword || DEFAULT_PASSWORD
-            };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+
+        // 허용된 관리자 이메일 목록 (여기에 본인 Gmail 추가)
+        const ALLOWED_ADMINS = [
+            'junsikyoon@gmail.com',  // 여기에 본인 Gmail 추가
+            // 추가 관리자가 필요하면 여기에 이메일 추가
+        ];
+
+        // 사용자가 허용된 관리자인지 확인
+        function isAllowedAdmin(email) {
+            return ALLOWED_ADMINS.includes(email);
         }
 
-        // 로그인 확인
-        function checkPassword() {
-            const inputUsername = document.getElementById('adminUsername').value;
-            const inputPassword = document.getElementById('adminPassword').value;
+        // 로그인 성공 처리
+        function handleLoginSuccess(user) {
+            document.getElementById('authOverlay').classList.add('hidden');
+            document.getElementById('mainContent').classList.remove('admin-content');
+            document.getElementById('userEmail').textContent = user.email;
+            document.getElementById('userEmail').classList.remove('hidden');
+            document.getElementById('logoutBtn').classList.remove('hidden');
+
+            // 마지막 로그인 시간 저장
+            localStorage.setItem('lastLogin', new Date().toLocaleString('ko-KR'));
+            updateLoginTime();
+        }
+
+        // 로그인 실패 처리
+        function handleLoginError(message) {
+            const errorMsg = document.getElementById('authError');
+            const loginSection = document.getElementById('loginSection');
+            const loadingSection = document.getElementById('loadingSection');
+
+            loadingSection.classList.add('hidden');
+            loginSection.classList.remove('hidden');
+            errorMsg.textContent = message;
+            errorMsg.classList.remove('hidden');
+        }
+
+        // 구글 로그인
+        document.getElementById('googleLoginBtn').addEventListener('click', async () => {
+            const loginSection = document.getElementById('loginSection');
+            const loadingSection = document.getElementById('loadingSection');
             const errorMsg = document.getElementById('authError');
 
-            const credentials = getCredentials();
+            loginSection.classList.add('hidden');
+            loadingSection.classList.remove('hidden');
+            errorMsg.classList.add('hidden');
 
-            if (inputUsername === credentials.username && inputPassword === credentials.password) {
-                // 인증 성공
-                sessionStorage.setItem('adminAuth', 'true');
-                localStorage.setItem('lastLogin', new Date().toLocaleString('ko-KR'));
-                document.getElementById('authOverlay').classList.add('hidden');
-                document.getElementById('mainContent').classList.remove('admin-content');
-                errorMsg.classList.add('hidden');
+            try {
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
 
-                // 마지막 로그인 시간 업데이트
-                updateLoginTime();
-            } else {
-                // 인증 실패
-                errorMsg.classList.remove('hidden');
-                document.getElementById('adminUsername').value = '';
-                document.getElementById('adminPassword').value = '';
-                document.getElementById('adminUsername').focus();
+                // 허용된 관리자인지 확인
+                if (isAllowedAdmin(user.email)) {
+                    handleLoginSuccess(user);
+                } else {
+                    // 허용되지 않은 사용자 - 로그아웃
+                    await signOut(auth);
+                    handleLoginError(`접근 권한이 없습니다.\n관리자에게 문의하세요.\n(${user.email})`);
+                }
+            } catch (error) {
+                console.error('로그인 에러:', error);
+                handleLoginError('로그인에 실패했습니다. 다시 시도해주세요.');
             }
-        }
+        });
+
+        // 로그아웃
+        document.getElementById('logoutBtn').addEventListener('click', async () => {
+            if (confirm('로그아웃 하시겠습니까?')) {
+                try {
+                    await signOut(auth);
+                    location.reload();
+                } catch (error) {
+                    console.error('로그아웃 에러:', error);
+                    alert('로그아웃에 실패했습니다.');
+                }
+            }
+        });
+
+        // 인증 상태 변화 감지
+        onAuthStateChanged(auth, (user) => {
+            if (user && isAllowedAdmin(user.email)) {
+                // 로그인 상태이고 허용된 사용자
+                handleLoginSuccess(user);
+            } else {
+                // 로그아웃 상태 또는 허용되지 않은 사용자
+                document.getElementById('authOverlay').classList.remove('hidden');
+                document.getElementById('mainContent').classList.add('admin-content');
+                document.getElementById('userEmail').classList.add('hidden');
+                document.getElementById('logoutBtn').classList.add('hidden');
+            }
+        });
 
         // 마지막 로그인 시간 업데이트
         function updateLoginTime() {
             const lastLogin = localStorage.getItem('lastLogin');
-            if (lastLogin) {
-                document.getElementById('lastLogin').value = lastLogin;
+            const lastLoginEl = document.getElementById('lastLogin');
+            if (lastLogin && lastLoginEl) {
+                lastLoginEl.value = lastLogin;
             }
         }
 
-        // 비밀번호 변경
+        // 계정 관리 탭 관련 함수들 (Firebase 인증에서는 사용 안 함)
         function changePassword() {
-            const currentPassword = document.getElementById('currentPassword').value;
-            const newPassword = document.getElementById('newPassword').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            const messageDiv = document.getElementById('passwordChangeMessage');
-            const messageText = messageDiv.querySelector('p');
-
-            // 입력 확인
-            if (!currentPassword || !newPassword || !confirmPassword) {
-                showMessage(messageDiv, messageText, '모든 필드를 입력해주세요.', 'error');
-                return;
-            }
-
-            // 현재 비밀번호 확인
-            const credentials = getCredentials();
-            if (currentPassword !== credentials.password) {
-                showMessage(messageDiv, messageText, '현재 비밀번호가 올바르지 않습니다.', 'error');
-                return;
-            }
-
-            // 새 비밀번호 확인
-            if (newPassword !== confirmPassword) {
-                showMessage(messageDiv, messageText, '새 비밀번호가 일치하지 않습니다.', 'error');
-                return;
-            }
-
-            // 비밀번호 길이 확인
-            if (newPassword.length < 6) {
-                showMessage(messageDiv, messageText, '비밀번호는 최소 6자 이상이어야 합니다.', 'error');
-                return;
-            }
-
-            // 비밀번호 저장
-            localStorage.setItem('adminPassword', newPassword);
-            showMessage(messageDiv, messageText, '✅ 비밀번호가 성공적으로 변경되었습니다!', 'success');
-
-            // 입력 필드 초기화
-            document.getElementById('currentPassword').value = '';
-            document.getElementById('newPassword').value = '';
-            document.getElementById('confirmPassword').value = '';
+            alert('Firebase 인증을 사용 중입니다.\n비밀번호는 Google 계정 설정에서 변경하세요.');
         }
 
-        // 초기화
         function resetCredentials() {
-            if (confirm('정말 비밀번호를 초기화하시겠습니까?\n초기 비밀번호: casemiro7')) {
-                localStorage.removeItem('adminPassword');
-                localStorage.removeItem('adminUsername');
-                alert('비밀번호가 초기화되었습니다.\n다시 로그인해주세요.');
-
-                // 로그아웃
-                sessionStorage.removeItem('adminAuth');
-                location.reload();
-            }
+            alert('Firebase 인증을 사용 중입니다.\n계정 관리는 Google 계정 설정에서 가능합니다.');
         }
 
-        // 메시지 표시
-        function showMessage(div, text, message, type) {
-            div.classList.remove('hidden');
-            text.textContent = message;
-
-            if (type === 'success') {
-                div.className = 'mt-4 p-4 rounded-lg bg-green-50 border-2 border-green-200';
-                text.className = 'text-sm font-semibold text-green-800';
-            } else {
-                div.className = 'mt-4 p-4 rounded-lg bg-red-50 border-2 border-red-200';
-                text.className = 'text-sm font-semibold text-red-800';
-            }
-
-            // 3초 후 메시지 숨김
-            setTimeout(() => {
-                div.classList.add('hidden');
-            }, 3000);
-        }
-
-        // 페이지 로드 시 인증 확인
-        window.addEventListener('DOMContentLoaded', function() {
-            const isAuthenticated = sessionStorage.getItem('adminAuth') === 'true';
-
-            if (isAuthenticated) {
-                // 이미 인증됨
-                document.getElementById('authOverlay').classList.add('hidden');
-                document.getElementById('mainContent').classList.remove('admin-content');
-                updateLoginTime();
-            } else {
-                // 인증 필요
-                document.getElementById('authOverlay').classList.remove('hidden');
-                setTimeout(() => {
-                    document.getElementById('adminUsername').focus();
-                }, 100);
-            }
-        });
+        // 전역으로 함수 노출 (다른 스크립트에서 사용)
+        window.changePassword = changePassword;
+        window.resetCredentials = resetCredentials;
     </script>
 
     <script src="js/data.js"></script>

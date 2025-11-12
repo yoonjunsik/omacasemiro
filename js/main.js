@@ -138,6 +138,62 @@ function filterProducts() {
     });
 }
 
+// 인기 구단 순위 정의 (숫자가 낮을수록 우선순위 높음)
+const teamPriority = {
+    // 프리미어리그 (1-10)
+    '맨체스터 유나이티드': 1,
+    '리버풀': 2,
+    '맨체스터 시티': 3,
+    '첼시': 4,
+    '아스널': 5,
+    '토트넘': 6,
+    '뉴캐슬 유나이티드': 7,
+    '레스터 시티': 8,
+    '에버턴': 9,
+    '아스톤 빌라': 10,
+
+    // 라리가 (11-20)
+    '레알 마드리드': 11,
+    '바르셀로나': 12,
+    '아틀레티코 마드리드': 13,
+    '세비야': 14,
+    '발렌시아': 15,
+
+    // 분데스리가 (21-30)
+    '바이에른 뮌헨': 21,
+    '도르트문트': 22,
+    '라이프치히': 23,
+    '레버쿠젠': 24,
+
+    // 세리에 A (31-40)
+    '유벤투스': 31,
+    '인터 밀란': 32,
+    'AC 밀란': 33,
+    '나폴리': 34,
+    '로마': 35,
+
+    // 리그 1 (41-50)
+    'PSG': 41,
+    '마르세유': 42,
+    '리옹': 43,
+
+    // 기타 리그 (51+)
+    '벤피카': 51,
+    '포르투': 52,
+    '아약스': 53,
+    '알 나스르': 54
+};
+
+// 재고 여부 확인 (site_offers가 있으면 재고 있음)
+function hasStock(product) {
+    return product.site_offers && product.site_offers.length > 0;
+}
+
+// 팀 우선순위 가져오기 (등록되지 않은 팀은 999)
+function getTeamPriority(teamName) {
+    return teamPriority[teamName] || 999;
+}
+
 // 제품 정렬
 function sortProducts(products) {
     const sorted = [...products]; // 원본 배열 복사
@@ -190,12 +246,27 @@ function sortProducts(products) {
 
         case 'default':
         default:
-            // 기본순 - 시즌 최신순, 팀명순
+            // 기본순
+            // 1순위: 재고 있는 제품 우선
+            // 2순위: 인기 구단 순위
+            // 3순위: 시즌 최신순
             sorted.sort((a, b) => {
-                if (a.season !== b.season) {
-                    return b.season.localeCompare(a.season);
+                const stockA = hasStock(a);
+                const stockB = hasStock(b);
+
+                // 1순위: 재고 비교
+                if (stockA && !stockB) return -1;
+                if (!stockA && stockB) return 1;
+
+                // 2순위: 인기 구단 순위 비교
+                const priorityA = getTeamPriority(a.team);
+                const priorityB = getTeamPriority(b.team);
+                if (priorityA !== priorityB) {
+                    return priorityA - priorityB;
                 }
-                return a.team.localeCompare(b.team);
+
+                // 3순위: 시즌 최신순
+                return b.season.localeCompare(a.season);
             });
             break;
     }

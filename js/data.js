@@ -802,3 +802,73 @@ const uniformData = [
         "visible": true
     }
 ];
+
+// 블프 세일 사이트 데이터
+const blackFridaySites = [
+    {
+        "id": "nike-korea",
+        "name": "나이키 코리아",
+        "description": "공식 홈페이지 • 국내 • 최대 50% 할인",
+        "url": "https://www.nike.com/kr/",
+        "discount": "최대 50%",
+        "location": "국내",
+        "type": "공식 홈페이지",
+        "color": "orange",
+        "visible": true
+    },
+    {
+        "id": "adidas-korea",
+        "name": "아디다스 코리아",
+        "description": "공식 홈페이지 • 국내 • 최대 40% 할인",
+        "url": "https://www.adidas.co.kr/",
+        "discount": "최대 40%",
+        "location": "국내",
+        "type": "공식 홈페이지",
+        "color": "blue",
+        "visible": true
+    },
+    {
+        "id": "puma-korea",
+        "name": "푸마 코리아",
+        "description": "공식 홈페이지 • 국내 • 최대 30% 할인",
+        "url": "https://kr.puma.com/",
+        "discount": "최대 30%",
+        "location": "국내",
+        "type": "공식 홈페이지",
+        "color": "gray",
+        "visible": true
+    },
+    {
+        "id": "sportsdirect",
+        "name": "스포츠다이렉트",
+        "description": "공식 편집샵 • 해외 • 최대 70% 할인",
+        "url": "https://www.sportsdirect.com/",
+        "discount": "최대 70%",
+        "location": "해외",
+        "type": "공식 편집샵",
+        "color": "green",
+        "visible": true
+    },
+    {
+        "id": "kitbag",
+        "name": "Kitbag",
+        "description": "공식 편집샵 • 해외 • 최대 60% 할인",
+        "url": "https://www.kitbag.com/",
+        "discount": "최대 60%",
+        "location": "해외",
+        "type": "공식 편집샵",
+        "color": "purple",
+        "visible": true
+    },
+    {
+        "id": "unisport",
+        "name": "유니스포츠",
+        "description": "공식 편집샵 • 해외 • 최대 50% 할인",
+        "url": "https://www.unisportstore.com/",
+        "discount": "최대 50%",
+        "location": "해외",
+        "type": "공식 편집샵",
+        "color": "indigo",
+        "visible": true
+    }
+];

@@ -11,6 +11,7 @@ let filters = {
 document.addEventListener('DOMContentLoaded', function() {
     initializeFilters();
     renderProducts();
+    renderBlackFridaySites(); // 블프 세일 사이트 렌더링
 });
 
 // 필터 초기화
@@ -272,5 +273,55 @@ function renderProducts() {
     sortedProducts.forEach(product => {
         const card = createProductCard(product);
         productGrid.appendChild(card);
+    });
+}
+
+// 블프 세일 사이트 렌더링
+function renderBlackFridaySites() {
+    const container = document.getElementById('blackFridaySitesContainer');
+    if (!container) return;
+
+    // visible이 true인 사이트만 필터링
+    const visibleSites = blackFridaySites.filter(site => site.visible !== false);
+
+    container.innerHTML = '';
+
+    visibleSites.forEach(site => {
+        const colorMap = {
+            'orange': { bg: 'from-orange-50 to-orange-100', border: 'border-orange-200', text: 'text-orange-600', badge: 'bg-orange-500' },
+            'blue': { bg: 'from-blue-50 to-blue-100', border: 'border-blue-200', text: 'text-blue-600', badge: 'bg-blue-500' },
+            'gray': { bg: 'from-gray-50 to-gray-100', border: 'border-gray-200', text: 'text-gray-600', badge: 'bg-gray-500' },
+            'green': { bg: 'from-green-50 to-green-100', border: 'border-green-200', text: 'text-green-600', badge: 'bg-green-500' },
+            'purple': { bg: 'from-purple-50 to-purple-100', border: 'border-purple-200', text: 'text-purple-600', badge: 'bg-purple-500' },
+            'indigo': { bg: 'from-indigo-50 to-indigo-100', border: 'border-indigo-200', text: 'text-indigo-600', badge: 'bg-indigo-500' }
+        };
+
+        const colors = colorMap[site.color] || colorMap['gray'];
+
+        const card = document.createElement('a');
+        card.href = site.url;
+        card.target = '_blank';
+        card.rel = 'noopener noreferrer';
+        card.className = `block relative overflow-hidden p-6 bg-gradient-to-br ${colors.bg} rounded-lg border-2 ${colors.border} hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer`;
+        card.style.aspectRatio = '1'; // 정사각형
+
+        card.innerHTML = `
+            <div class="absolute top-2 right-2">
+                <span class="${colors.badge} text-white text-xs font-bold px-2 py-1 rounded-full">
+                    ${site.discount}
+                </span>
+            </div>
+            <div class="flex flex-col h-full justify-between">
+                <div>
+                    <h3 class="font-bold text-lg text-gray-800 mb-2">${site.name}</h3>
+                    <p class="text-xs ${colors.text} font-semibold mb-1">${site.type}</p>
+                </div>
+                <div class="mt-auto">
+                    <p class="text-xs text-gray-600 leading-relaxed">${site.description}</p>
+                </div>
+            </div>
+        `;
+
+        container.appendChild(card);
     });
 }

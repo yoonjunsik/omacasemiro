@@ -124,7 +124,8 @@ function initializeFilters() {
 
 // 제품 필터링
 function filterProducts() {
-    return uniformData.filter(product => {
+    const data = window.uniformData || uniformData || [];
+    return data.filter(product => {
         // visible이 false인 제품은 제외
         const visibleMatch = product.visible !== false;
 
@@ -361,8 +362,11 @@ function renderBlackFridaySites() {
     const container = document.getElementById('blackFridaySitesContainer');
     if (!container) return;
 
+    // Firebase 데이터 우선, 없으면 data.js 사용
+    const sites = window.blackFridaySites || blackFridaySites || [];
+
     // visible이 true인 사이트만 필터링
-    const visibleSites = blackFridaySites.filter(site => site.visible !== false);
+    const visibleSites = sites.filter(site => site.visible !== false);
 
     container.innerHTML = '';
 

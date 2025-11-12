@@ -1,0 +1,34 @@
+# Node modules
+node_modules/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.log
+
+# Backup files
+*.bak
+*~
+
+# Environment files
+.env
+.env.local
+
+# Image files and screenshots
+*.avif
+screenshot.png

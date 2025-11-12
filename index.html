@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오마카세미루 - 블랙 프라이데이 축구 유니폼 세일 총정리</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Banner -->
+    <header class="bg-gradient-to-r from-green-600 to-emerald-700 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-8">
+            <div class="flex items-center justify-center mb-2">
+                <h1 class="text-4xl md:text-5xl font-black">⚽ 오마카세미루</h1>
+            </div>
+            <p class="text-center text-lg md:text-xl font-medium">블랙 프라이데이 축구 유니폼 세일 총정리</p>
+            <p class="text-center text-sm md:text-base mt-2 opacity-90">국내외 쇼핑몰의 최저가를 한눈에 비교하세요</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Filter Section -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">🔍 필터</h2>
+
+            <!-- Team Filter -->
+            <div class="mb-6">
+                <label class="block text-sm font-semibold text-gray-700 mb-3">팀 선택</label>
+                <div class="flex flex-wrap gap-2" id="teamFilter">
+                    <button class="filter-btn active" data-team="all">전체</button>
+                    <!-- 프리미어리그 (인기순) -->
+                    <button class="filter-btn" data-team="맨체스터 유나이티드">맨유</button>
+                    <button class="filter-btn" data-team="리버풀">리버풀</button>
+                    <button class="filter-btn" data-team="맨체스터 시티">맨시티</button>
+                    <button class="filter-btn" data-team="첼시">첼시</button>
+                    <button class="filter-btn" data-team="아스널">아스널</button>
+                    <button class="filter-btn" data-team="토트넘">토트넘</button>
+                    <button class="filter-btn" data-team="뉴캐슬 유나이티드">뉴캐슬</button>
+                    <!-- 라리가 (인기순) -->
+                    <button class="filter-btn" data-team="레알 마드리드">레알</button>
+                    <button class="filter-btn" data-team="바르셀로나">바르샤</button>
+                    <!-- 세리에 A (인기순) -->
+                    <button class="filter-btn" data-team="유벤투스">유벤투스</button>
+                    <button class="filter-btn" data-team="인터 밀란">인터</button>
+                    <button class="filter-btn" data-team="AC 밀란">AC밀란</button>
+                    <!-- 분데스리가 -->
+                    <button class="filter-btn" data-team="바이에른 뮌헨">바이에른</button>
+                    <!-- 리그 1 -->
+                    <button class="filter-btn" data-team="PSG">PSG</button>
+                    <!-- 기타 리그 -->
+                    <button class="filter-btn" data-team="벤피카">벤피카</button>
+                    <button class="filter-btn" data-team="알 나스르">알 나스르</button>
+                </div>
+            </div>
+
+            <!-- Kit Type Filter -->
+            <div class="mb-6">
+                <label class="block text-sm font-semibold text-gray-700 mb-3">키트 유형</label>
+                <div class="flex flex-wrap gap-2" id="kitFilter">
+                    <button class="filter-btn active" data-kit="all">전체</button>
+                    <button class="filter-btn" data-kit="홈킷">홈킷</button>
+                    <button class="filter-btn" data-kit="어웨이킷">어웨이킷</button>
+                    <button class="filter-btn" data-kit="써드킷">써드킷</button>
+                    <button class="filter-btn" data-kit="트레이닝">트레이닝</button>
+                </div>
+            </div>
+
+            <!-- Season Filter -->
+            <div class="mb-6">
+                <label class="block text-sm font-semibold text-gray-700 mb-3">시즌</label>
+                <select id="seasonFilter" class="w-full md:w-64 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                    <option value="all">전체 시즌</option>
+                    <option value="25/26">25/26 시즌 (최신)</option>
+                    <option value="24/25">24/25 시즌</option>
+                    <option value="23/24">23/24 시즌</option>
+                    <option value="22/23">22/23 시즌</option>
+                </select>
+            </div>
+
+            <!-- Version Filter -->
+            <div class="mb-4">
+                <label class="block text-sm font-semibold text-gray-700 mb-3">제품 버전</label>
+                <div class="flex flex-wrap gap-2" id="versionFilter">
+                    <button class="filter-btn active" data-version="all">전체</button>
+                    <button class="filter-btn" data-version="레플리카">레플리카 (팬 버전)</button>
+                    <button class="filter-btn" data-version="어센틱">어센틱 (선수 버전)</button>
+                </div>
+                <p class="text-xs text-gray-500 mt-2">💡 레플리카는 편안한 착용감의 팬 버전, 어센틱은 선수들이 착용하는 프로 버전입니다</p>
+            </div>
+        </section>
+
+        <!-- Sort and Results -->
+        <div class="mb-4 flex items-center justify-between flex-wrap gap-4">
+            <p class="text-gray-600 font-medium">총 <span id="resultCount" class="text-green-600 font-bold">0</span>개의 유니폼</p>
+            <div class="flex items-center gap-2">
+                <label class="text-sm text-gray-600 font-medium">정렬:</label>
+                <select id="sortFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm">
+                    <option value="default">기본순</option>
+                    <option value="latest">최신순 (시즌)</option>
+                    <option value="price-low">가격 낮은순</option>
+                    <option value="price-high">가격 높은순</option>
+                    <option value="discount">할인율 높은순</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <section id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+            <!-- Products will be dynamically inserted here -->
+        </section>
+
+        <!-- Shopping Mall Summary -->
+        <section class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">🛍️ 제휴 쇼핑몰</h2>
+            <p class="text-sm text-gray-600 mb-4">공식 브랜드 홈페이지 및 공식 편집샵만 제공합니다</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="text-center p-4 bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg border border-orange-200">
+                    <p class="font-semibold text-gray-800">나이키 코리아</p>
+                    <p class="text-xs text-orange-600 font-bold mt-1">공식 홈페이지</p>
+                </div>
+                <div class="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg border border-blue-200">
+                    <p class="font-semibold text-gray-800">아디다스 코리아</p>
+                    <p class="text-xs text-blue-600 font-bold mt-1">공식 홈페이지</p>
+                </div>
+                <div class="text-center p-4 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border border-gray-200">
+                    <p class="font-semibold text-gray-800">푸마 코리아</p>
+                    <p class="text-xs text-gray-600 font-bold mt-1">공식 홈페이지</p>
+                </div>
+                <div class="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-lg border border-green-200">
+                    <p class="font-semibold text-gray-800">스포츠다이렉트</p>
+                    <p class="text-xs text-green-600 font-bold mt-1">공식 편집샵</p>
+                </div>
+                <div class="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg border border-purple-200">
+                    <p class="font-semibold text-gray-800">Kitbag</p>
+                    <p class="text-xs text-purple-600 font-bold mt-1">공식 편집샵</p>
+                </div>
+                <div class="text-center p-4 bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-lg border border-indigo-200">
+                    <p class="font-semibold text-gray-800">유니스포츠</p>
+                    <p class="text-xs text-indigo-600 font-bold mt-1">공식 편집샵</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">© 2024 오마카세미루. 결제, 배송, 관세 등의 모든 조건은 해당 쇼핑몰의 정책을 따릅니다.</p>
+            <p class="text-xs mt-2 text-gray-400">본 사이트는 정보 제공 목적으로 운영되며, 실제 거래는 각 쇼핑몰에서 이루어집니다.</p>
+        </div>
+    </footer>
+
+    <style>
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: 2px solid #e5e7eb;
+            background-color: white;
+            color: #374151;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            border-color: #10b981;
+            color: #10b981;
+        }
+
+        .filter-btn.active {
+            background-color: #10b981;
+            border-color: #10b981;
+            color: white;
+        }
+    </style>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

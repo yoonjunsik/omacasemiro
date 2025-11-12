@@ -111,6 +111,67 @@ async function uploadInitialDataToFirebase() {
     }
 }
 
+// 강제 업데이트: 캐시를 무시하고 최신 data.js를 Firebase에 업로드
+async function forceUpdateFirebaseData() {
+    if (!confirm('⚡ 강제 업데이트를 실행하시겠습니까?\n\n브라우저 캐시를 무시하고 최신 data.js 파일을 Firebase에 업로드합니다.\n\n⚠️ 주의: 기존 Firebase 데이터가 덮어씌워집니다!')) {
+        return;
+    }
+
+    try {
+        console.log('🔵 강제 업데이트 시작 - 캐시 무시하고 data.js 로드 중...');
+
+        // 캐시를 무시하고 최신 data.js 파일 fetch
+        const timestamp = Date.now();
+        const response = await fetch(`js/data.js?v=${timestamp}`, {
+            cache: 'no-store',
+            headers: {
+                'Cache-Control': 'no-cache, no-store, must-revalidate',
+                'Pragma': 'no-cache'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('data.js 파일을 불러올 수 없습니다.');
+        }
+
+        const dataJsContent = await response.text();
+        console.log('📦 data.js 파일 로드 완료');
+
+        // uniformData 추출
+        const uniformMatch = dataJsContent.match(/const uniformData = (\[[\s\S]*?\]);/);
+        if (!uniformMatch) {
+            throw new Error('uniformData를 찾을 수 없습니다.');
+        }
+        const freshUniformData = eval(uniformMatch[1]);
+        console.log('✅ uniformData 추출 완료:', freshUniformData.length, '개');
+
+        // blackFridaySites 추출
+        const bfMatch = dataJsContent.match(/const blackFridaySites = (\[[\s\S]*?\]);/);
+        if (!bfMatch) {
+            throw new Error('blackFridaySites를 찾을 수 없습니다.');
+        }
+        const freshBlackFridaySites = eval(bfMatch[1]);
+        console.log('✅ blackFridaySites 추출 완료:', freshBlackFridaySites.length, '개');
+
+        // Firebase에 업로드
+        console.log('🔵 Firebase에 업로드 중...');
+        const uniformRef = window.firebaseDBRef(window.firebaseDB, 'uniformData');
+        await window.firebaseDBSet(uniformRef, freshUniformData);
+
+        const bfRef = window.firebaseDBRef(window.firebaseDB, 'blackFridaySites');
+        await window.firebaseDBSet(bfRef, freshBlackFridaySites);
+
+        console.log('✅ Firebase 업로드 완료!');
+        alert('⚡ 강제 업데이트 완료! 최신 데이터가 Firebase에 반영되었습니다. 🎉\n\n페이지를 새로고침합니다.');
+
+        // 페이지 새로고침
+        window.location.reload();
+    } catch (error) {
+        console.error('❌ 강제 업데이트 실패:', error);
+        alert('강제 업데이트에 실패했습니다: ' + error.message);
+    }
+}
+
 // ==================== 기존 코드 ====================
 
 // 환율 정보 가져오기 (네이버 증권 실시간 환율 기준)

@@ -433,9 +433,14 @@
                     </p>
                 </div>
                 <button onclick="uploadInitialDataToFirebase()"
-                        class="bg-orange-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-orange-700 transition">
+                        class="bg-orange-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-orange-700 transition mr-4">
                     🚀 초기 데이터 업로드
                 </button>
+                <button onclick="forceUpdateFirebaseData()"
+                        class="bg-red-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-red-700 transition">
+                    ⚡ 강제 업데이트 (캐시 무시)
+                </button>
+                <p class="text-xs text-gray-500 mt-3">💡 "강제 업데이트"는 브라우저 캐시를 무시하고 최신 data.js 파일을 Firebase에 반영합니다.</p>
             </section>
 
             <!-- Current Account Info -->

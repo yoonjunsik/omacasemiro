@@ -17,31 +17,31 @@
 <body class="bg-gray-50">
     <!-- Header Banner -->
     <header class="bg-gradient-to-r from-green-600 to-emerald-700 text-white shadow-lg">
-        <div class="container mx-auto px-4 py-8">
+        <div class="container mx-auto px-4 py-4 md:py-8">
             <div class="flex items-center justify-center">
-                <h1 class="text-4xl md:text-5xl font-black">⚽ 오마카세미루</h1>
+                <h1 class="text-2xl md:text-4xl lg:text-5xl font-black">⚽ 오마카세미루</h1>
             </div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
+    <main class="container mx-auto px-3 md:px-4 py-4 md:py-8">
         <!-- Black Friday Sale Sites -->
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
-            <h2 class="text-2xl font-bold mb-6 text-gray-800">🔥 블프 세일 사이트</h2>
-            <p class="text-sm text-gray-600 mb-4">공식 브랜드 홈페이지 및 공식 편집샵 블랙프라이데이 세일</p>
+        <section class="bg-white rounded-lg shadow-md p-3 md:p-6 mb-4 md:mb-8">
+            <h2 class="text-xl md:text-2xl font-bold mb-3 md:mb-6 text-gray-800">🔥 블프 세일 사이트</h2>
+            <p class="text-xs md:text-sm text-gray-600 mb-3 md:mb-4">공식 브랜드 홈페이지 및 공식 편집샵 블랙프라이데이 세일</p>
             <div id="blackFridaySitesContainer" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <!-- 블프 세일 사이트 카드가 여기에 렌더링됩니다 -->
             </div>
         </section>
 
         <!-- Filter Section -->
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
-            <h2 class="text-2xl font-bold mb-6 text-gray-800">🔍 필터</h2>
+        <section class="bg-white rounded-lg shadow-md p-3 md:p-6 mb-4 md:mb-8">
+            <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-800">🔍 필터</h2>
 
             <!-- Team Filter -->
-            <div class="mb-6">
-                <label class="block text-sm font-semibold text-gray-700 mb-3">팀 선택</label>
+            <div class="mb-4 md:mb-6">
+                <label class="block text-xs md:text-sm font-semibold text-gray-700 mb-2 md:mb-3">팀 선택</label>
                 <div class="flex flex-wrap gap-2" id="teamFilter">
                     <button class="filter-btn active" data-team="all">전체</button>
                     <!-- 프리미어리그 (인기순) -->
@@ -70,8 +70,8 @@
             </div>
 
             <!-- Kit Type Filter -->
-            <div class="mb-6">
-                <label class="block text-sm font-semibold text-gray-700 mb-3">키트 유형</label>
+            <div class="mb-4 md:mb-6">
+                <label class="block text-xs md:text-sm font-semibold text-gray-700 mb-2 md:mb-3">키트 유형</label>
                 <div class="flex flex-wrap gap-2" id="kitFilter">
                     <button class="filter-btn active" data-kit="all">전체</button>
                     <button class="filter-btn" data-kit="홈킷">홈킷</button>
@@ -82,9 +82,9 @@
             </div>
 
             <!-- Season Filter -->
-            <div class="mb-6">
-                <label class="block text-sm font-semibold text-gray-700 mb-3">시즌</label>
-                <select id="seasonFilter" class="w-full md:w-64 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+            <div class="mb-4 md:mb-6">
+                <label class="block text-xs md:text-sm font-semibold text-gray-700 mb-2 md:mb-3">시즌</label>
+                <select id="seasonFilter" class="w-full md:w-64 px-3 md:px-4 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
                     <option value="all">전체 시즌</option>
                     <option value="25/26">25/26 시즌 (최신)</option>
                     <option value="24/25">24/25 시즌</option>
@@ -94,8 +94,8 @@
             </div>
 
             <!-- Version Filter -->
-            <div class="mb-4">
-                <label class="block text-sm font-semibold text-gray-700 mb-3">제품 버전</label>
+            <div class="mb-3 md:mb-4">
+                <label class="block text-xs md:text-sm font-semibold text-gray-700 mb-2 md:mb-3">제품 버전</label>
                 <div class="flex flex-wrap gap-2" id="versionFilter">
                     <button class="filter-btn active" data-version="all">전체</button>
                     <button class="filter-btn" data-version="레플리카">레플리카 (팬 버전)</button>
@@ -121,7 +121,7 @@
         </div>
 
         <!-- Product Grid -->
-        <section id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
+        <section id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-3 md:gap-6 mb-12">
             <!-- Products will be dynamically inserted here -->
         </section>
     </main>
@@ -136,14 +136,22 @@
 
     <style>
         .filter-btn {
-            padding: 0.5rem 1rem;
+            padding: 0.375rem 0.75rem;
             border-radius: 0.5rem;
             border: 2px solid #e5e7eb;
             background-color: white;
             color: #374151;
             font-weight: 500;
+            font-size: 0.875rem;
             cursor: pointer;
             transition: all 0.2s;
+        }
+
+        @media (min-width: 768px) {
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+            }
         }
 
         .filter-btn:hover {

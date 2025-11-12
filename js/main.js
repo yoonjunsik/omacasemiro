@@ -269,15 +269,15 @@ function createProductCard(product) {
         <div class="flex items-center justify-between">
             <div>
                 <div class="text-xs text-gray-500 mb-1">최저가</div>
-                <div class="text-xl font-black text-green-600">${formatPrice(lowestPrice)}</div>
+                <div class="text-base md:text-xl font-black text-green-600">${formatPrice(lowestPrice)}</div>
             </div>
-            <div class="bg-red-500 text-white px-3 py-1 rounded-full font-bold text-sm">
+            <div class="bg-red-500 text-white px-2 md:px-3 py-1 rounded-full font-bold text-xs md:text-sm">
                 ${maxDiscount}% ↓
             </div>
         </div>
     ` : `
         <div class="text-center py-2">
-            <div class="text-sm text-gray-500 mb-1">판매처 준비중</div>
+            <div class="text-xs md:text-sm text-gray-500 mb-1">판매처 준비중</div>
             <div class="text-xs text-gray-400">곧 업데이트 예정입니다</div>
         </div>
     `;
@@ -286,14 +286,16 @@ function createProductCard(product) {
         <div class="aspect-square bg-gray-100 overflow-hidden">
             <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
         </div>
-        <div class="p-4">
-            <div class="flex items-center mb-2 flex-wrap gap-1">
-                <span class="text-xs font-semibold text-green-600 bg-green-50 px-2 py-1 rounded">${product.team}</span>
+        <div class="p-2 md:p-4">
+            <div class="flex items-center mb-1 md:mb-2 flex-wrap gap-1">
+                <span class="text-xs font-semibold text-green-600 bg-green-50 px-1.5 md:px-2 py-0.5 md:py-1 rounded">${product.team}</span>
                 <span class="text-xs text-gray-500">${product.season}</span>
-                <span class="text-xs font-semibold ${versionBadgeClass} px-2 py-1 rounded">${versionText}</span>
             </div>
-            <h3 class="font-bold text-gray-800 mb-1 line-clamp-2">${product.name}</h3>
-            <p class="text-sm text-gray-600 mb-3">${product.kit_type}</p>
+            <div class="mb-1 md:mb-2">
+                <span class="text-xs font-semibold ${versionBadgeClass} px-1.5 md:px-2 py-0.5 md:py-1 rounded inline-block">${versionText}</span>
+            </div>
+            <h3 class="font-bold text-xs md:text-base text-gray-800 mb-1 line-clamp-2 leading-tight">${product.name}</h3>
+            <p class="text-xs md:text-sm text-gray-600 mb-2 md:mb-3">${product.kit_type}</p>
             ${priceHTML}
         </div>
     `;
@@ -387,20 +389,20 @@ function renderBlackFridaySites() {
         card.href = site.url;
         card.target = '_blank';
         card.rel = 'noopener noreferrer';
-        card.className = `block relative overflow-hidden p-6 bg-gradient-to-br ${colors.bg} rounded-lg border-2 ${colors.border} hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer`;
+        card.className = `block relative overflow-hidden p-3 md:p-6 bg-gradient-to-br ${colors.bg} rounded-lg border-2 ${colors.border} hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer`;
         card.style.aspectRatio = '1'; // 정사각형
 
         card.innerHTML = `
-            <div class="absolute top-2 right-2">
-                <span class="${colors.badge} text-white text-xs font-bold px-2 py-1 rounded-full">
+            <div class="absolute top-1.5 md:top-2 right-1.5 md:right-2">
+                <span class="${colors.badge} text-white text-xs font-bold px-1.5 md:px-2 py-0.5 md:py-1 rounded-full">
                     ${site.discount}
                 </span>
             </div>
             <div class="flex flex-col h-full justify-between">
                 <div>
-                    <h3 class="font-bold text-lg text-gray-800 mb-2">${site.name}</h3>
-                    <p class="text-xs ${colors.text} font-semibold mb-1">${site.type}</p>
-                    ${dateText ? `<p class="text-xs text-gray-500 font-medium mt-1">📅 ${dateText}</p>` : ''}
+                    <h3 class="font-bold text-sm md:text-lg text-gray-800 mb-1 md:mb-2 leading-tight">${site.name}</h3>
+                    <p class="text-xs ${colors.text} font-semibold mb-0.5 md:mb-1">${site.type}</p>
+                    ${dateText ? `<p class="text-xs text-gray-500 font-medium mt-0.5 md:mt-1">📅 ${dateText}</p>` : ''}
                 </div>
                 <div class="mt-auto">
                     <p class="text-xs text-gray-600 leading-relaxed">${site.description}</p>

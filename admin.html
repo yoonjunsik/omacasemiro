@@ -528,12 +528,13 @@
 
             try {
                 console.log('🔵 signInWithRedirect 실행 시작...');
-                // 세션 스토리지 초기화 (새 로그인 시도)
-                sessionStorage.removeItem('redirectHandled');
+                console.log('🔵 Provider 설정:', provider);
                 await signInWithRedirect(auth, provider);
                 console.log('🔵 signInWithRedirect 완료 (이 메시지는 보이지 않아야 함)');
             } catch (error) {
                 console.error('🔴 로그인 에러:', error);
+                console.error('🔴 에러 코드:', error.code);
+                console.error('🔴 에러 메시지:', error.message);
                 loginSection.classList.remove('hidden');
                 loadingSection.classList.add('hidden');
                 handleLoginError('로그인에 실패했습니다. 다시 시도해주세요.');
@@ -567,20 +568,19 @@
 
         // 페이지 로드 시 리디렉트 결과 확인
         async function checkRedirectResult() {
-            // 이미 처리된 경우 건너뛰기
-            const redirectHandled = sessionStorage.getItem('redirectHandled');
-            if (redirectHandled === 'true') {
-                console.log('🟢 리디렉트 이미 처리됨, 건너뜀');
-                return;
-            }
-
             try {
                 console.log('🔵 리디렉트 결과 확인 시작...');
                 console.log('🔵 현재 URL:', window.location.href);
+                console.log('🔵 현재 경로:', window.location.pathname);
+                console.log('🔵 쿼리 스트링:', window.location.search);
+
                 const result = await getRedirectResult(auth);
+                console.log('🔵 getRedirectResult 완료, result:', result ? '있음' : '없음');
 
                 if (result) {
-                    console.log('🔵 리디렉트 결과 있음:', result.user.email);
+                    console.log('✅ 리디렉트 결과 있음!');
+                    console.log('✅ 사용자 이메일:', result.user.email);
+                    console.log('✅ 사용자 UID:', result.user.uid);
                     const user = result.user;
 
                     // 허용된 관리자인지 확인
@@ -588,23 +588,18 @@
                         console.log('🔴 허용되지 않은 사용자:', user.email);
                         // 허용되지 않은 사용자 - 로그아웃
                         await signOut(auth);
-                        sessionStorage.setItem('redirectHandled', 'true');
                         handleLoginError(`접근 권한이 없습니다.\n관리자에게 문의하세요.\n(${user.email})`);
                     } else {
-                        console.log('🟢 허용된 사용자:', user.email);
-                        // 리디렉트 처리 완료 표시
-                        sessionStorage.setItem('redirectHandled', 'true');
+                        console.log('🟢 허용된 사용자! 로그인 성공');
                     }
                 } else {
                     console.log('🟡 리디렉트 결과 없음 (일반 페이지 로드)');
-                    // 리디렉트 결과가 없는 경우에도 표시 (일반 페이지 로드)
-                    sessionStorage.setItem('redirectHandled', 'true');
                 }
             } catch (error) {
                 console.error('🔴 리디렉트 결과 확인 에러:', error);
                 console.error('🔴 에러 코드:', error.code);
                 console.error('🔴 에러 메시지:', error.message);
-                sessionStorage.setItem('redirectHandled', 'true');
+                console.error('🔴 전체 에러 객체:', error);
 
                 if (error.code === 'auth/unauthorized-domain') {
                     handleLoginError(`도메인 권한 오류\n\nFirebase Console에서 다음 도메인을 승인된 도메인에 추가해주세요:\n${window.location.hostname}\n\n자세한 방법은 콘솔을 확인하세요.`);
@@ -640,12 +635,12 @@
                 logoutBtn.addEventListener('click', async () => {
                     if (confirm('로그아웃 하시겠습니까?')) {
                         try {
+                            console.log('🔵 로그아웃 시작...');
                             await signOut(auth);
-                            // 세션 스토리지 초기화
-                            sessionStorage.removeItem('redirectHandled');
+                            console.log('✅ 로그아웃 성공');
                             location.reload();
                         } catch (error) {
-                            console.error('로그아웃 에러:', error);
+                            console.error('🔴 로그아웃 에러:', error);
                             alert('로그아웃에 실패했습니다.');
                         }
                     }

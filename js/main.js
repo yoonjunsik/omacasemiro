@@ -7,8 +7,95 @@ let filters = {
     sort: 'default'
 };
 
+// Firebase에서 데이터 불러오기
+async function loadDataFromFirebase() {
+    try {
+        console.log('🔵 Firebase에서 데이터 불러오는 중...');
+
+        // uniformData 불러오기
+        const uniformRef = window.firebaseDBRef(window.firebaseDB, 'uniformData');
+        const uniformSnapshot = await new Promise((resolve, reject) => {
+            window.firebaseDBOnValue(uniformRef, (snapshot) => {
+                resolve(snapshot);
+            }, { onlyOnce: true });
+        });
+
+        // blackFridaySites 불러오기
+        const bfRef = window.firebaseDBRef(window.firebaseDB, 'blackFridaySites');
+        const bfSnapshot = await new Promise((resolve, reject) => {
+            window.firebaseDBOnValue(bfRef, (snapshot) => {
+                resolve(snapshot);
+            }, { onlyOnce: true });
+        });
+
+        if (uniformSnapshot.exists()) {
+            window.uniformData = uniformSnapshot.val();
+            console.log('✅ uniformData 로드 완료:', window.uniformData.length, '개');
+        } else {
+            console.log('⚠️ Firebase에 uniformData가 없습니다. data.js 사용');
+            // data.js에서 가져온 데이터 사용
+            if (typeof uniformData !== 'undefined') {
+                window.uniformData = uniformData;
+            }
+        }
+
+        if (bfSnapshot.exists()) {
+            window.blackFridaySites = bfSnapshot.val();
+            console.log('✅ blackFridaySites 로드 완료:', window.blackFridaySites.length, '개');
+        } else {
+            console.log('⚠️ Firebase에 blackFridaySites가 없습니다. data.js 사용');
+            // data.js에서 가져온 데이터 사용
+            if (typeof blackFridaySites !== 'undefined') {
+                window.blackFridaySites = blackFridaySites;
+            }
+        }
+
+        return true;
+    } catch (error) {
+        console.error('❌ Firebase 데이터 로드 실패:', error);
+        // 에러 발생 시 data.js 사용
+        if (typeof uniformData !== 'undefined') {
+            window.uniformData = uniformData;
+        }
+        if (typeof blackFridaySites !== 'undefined') {
+            window.blackFridaySites = blackFridaySites;
+        }
+        return false;
+    }
+}
+
+// 실시간 데이터 업데이트 리스너 설정
+function setupRealtimeListeners() {
+    // uniformData 실시간 리스너
+    const uniformRef = window.firebaseDBRef(window.firebaseDB, 'uniformData');
+    window.firebaseDBOnValue(uniformRef, (snapshot) => {
+        if (snapshot.exists()) {
+            window.uniformData = snapshot.val();
+            console.log('🔄 uniformData 실시간 업데이트됨');
+            renderProducts();
+        }
+    });
+
+    // blackFridaySites 실시간 리스너
+    const bfRef = window.firebaseDBRef(window.firebaseDB, 'blackFridaySites');
+    window.firebaseDBOnValue(bfRef, (snapshot) => {
+        if (snapshot.exists()) {
+            window.blackFridaySites = snapshot.val();
+            console.log('🔄 blackFridaySites 실시간 업데이트됨');
+            renderBlackFridaySites();
+        }
+    });
+}
+
 // DOM이 로드되면 초기화
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    // Firebase에서 데이터 불러오기
+    await loadDataFromFirebase();
+
+    // 실시간 리스너 설정
+    setupRealtimeListeners();
+
+    // 필터 및 렌더링 초기화
     initializeFilters();
     renderProducts();
     renderBlackFridaySites(); // 블프 세일 사이트 렌더링

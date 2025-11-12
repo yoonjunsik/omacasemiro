@@ -9,6 +9,106 @@ let exchangeRates = {
     JPY: 950.27     // 일본 100엔
 };
 
+// ==================== Firebase 데이터 관리 ====================
+
+// Firebase에서 데이터 불러오기
+async function loadDataFromFirebase() {
+    try {
+        console.log('🔵 Firebase에서 데이터 불러오는 중...');
+
+        // uniformData 불러오기
+        const uniformRef = window.firebaseDBRef(window.firebaseDB, 'uniformData');
+        const uniformSnapshot = await window.firebaseDBGet(uniformRef);
+
+        // blackFridaySites 불러오기
+        const bfRef = window.firebaseDBRef(window.firebaseDB, 'blackFridaySites');
+        const bfSnapshot = await window.firebaseDBGet(bfRef);
+
+        if (uniformSnapshot.exists()) {
+            window.uniformData = uniformSnapshot.val();
+            console.log('✅ uniformData 로드 완료:', window.uniformData.length, '개');
+        } else {
+            console.log('⚠️ Firebase에 uniformData가 없습니다. 초기 데이터를 업로드해주세요.');
+            // data.js에서 가져온 데이터 사용
+            if (typeof uniformData !== 'undefined') {
+                window.uniformData = uniformData;
+            }
+        }
+
+        if (bfSnapshot.exists()) {
+            window.blackFridaySites = bfSnapshot.val();
+            console.log('✅ blackFridaySites 로드 완료:', window.blackFridaySites.length, '개');
+        } else {
+            console.log('⚠️ Firebase에 blackFridaySites가 없습니다. 초기 데이터를 업로드해주세요.');
+            // data.js에서 가져온 데이터 사용
+            if (typeof blackFridaySites !== 'undefined') {
+                window.blackFridaySites = blackFridaySites;
+            }
+        }
+
+        return true;
+    } catch (error) {
+        console.error('❌ Firebase 데이터 로드 실패:', error);
+        alert('데이터를 불러오는데 실패했습니다: ' + error.message);
+        return false;
+    }
+}
+
+// Firebase에 데이터 저장하기
+async function saveDataToFirebase() {
+    try {
+        console.log('🔵 Firebase에 데이터 저장 중...');
+
+        // uniformData 저장
+        const uniformRef = window.firebaseDBRef(window.firebaseDB, 'uniformData');
+        await window.firebaseDBSet(uniformRef, uniformData);
+        console.log('✅ uniformData 저장 완료');
+
+        // blackFridaySites 저장
+        const bfRef = window.firebaseDBRef(window.firebaseDB, 'blackFridaySites');
+        await window.firebaseDBSet(bfRef, blackFridaySites);
+        console.log('✅ blackFridaySites 저장 완료');
+
+        return true;
+    } catch (error) {
+        console.error('❌ Firebase 데이터 저장 실패:', error);
+        alert('데이터 저장에 실패했습니다: ' + error.message);
+        return false;
+    }
+}
+
+// 초기 데이터를 Firebase에 업로드 (최초 1회만)
+async function uploadInitialDataToFirebase() {
+    if (!confirm('data.js의 초기 데이터를 Firebase에 업로드하시겠습니까?\n\n⚠️ 주의: 기존 Firebase 데이터가 있다면 덮어씌워집니다!')) {
+        return;
+    }
+
+    try {
+        console.log('🔵 초기 데이터 업로드 중...');
+
+        // data.js의 데이터 사용
+        const uniformRef = window.firebaseDBRef(window.firebaseDB, 'uniformData');
+        await window.firebaseDBSet(uniformRef, uniformData);
+
+        const bfRef = window.firebaseDBRef(window.firebaseDB, 'blackFridaySites');
+        await window.firebaseDBSet(bfRef, blackFridaySites);
+
+        console.log('✅ 초기 데이터 업로드 완료!');
+        alert('초기 데이터가 성공적으로 Firebase에 업로드되었습니다! 🎉');
+
+        // 데이터 다시 로드
+        await loadDataFromFirebase();
+
+        // 페이지 새로고침하여 최신 데이터 반영
+        window.location.reload();
+    } catch (error) {
+        console.error('❌ 초기 데이터 업로드 실패:', error);
+        alert('초기 데이터 업로드에 실패했습니다: ' + error.message);
+    }
+}
+
+// ==================== 기존 코드 ====================
+
 // 환율 정보 가져오기 (네이버 증권 실시간 환율 기준)
 async function fetchExchangeRates() {
     try {
@@ -170,7 +270,7 @@ function editProduct(modelCode) {
 }
 
 // 제품 삭제
-function deleteProduct(modelCode) {
+async function deleteProduct(modelCode) {
     const index = uniformData.findIndex(p => p.model_code === modelCode);
     if (index === -1) return;
 
@@ -178,24 +278,33 @@ function deleteProduct(modelCode) {
 
     if (confirm(`"${product.name}"을(를) 삭제하시겠습니까?`)) {
         uniformData.splice(index, 1);
-        renderProductList();
-        updateProductFilters();
-        alert('제품이 삭제되었습니다');
+
+        // Firebase에 저장
+        const saved = await saveDataToFirebase();
+        if (saved) {
+            renderProductList();
+            updateProductFilters();
+            alert('제품이 삭제되었습니다! 🎉');
+        }
     }
 }
 
 // 제품 노출 토글
-function toggleVisibility(modelCode) {
+async function toggleVisibility(modelCode) {
     const product = uniformData.find(p => p.model_code === modelCode);
     if (!product) return;
 
     // visible 필드 토글 (기본값은 true)
     product.visible = product.visible === false ? true : false;
 
-    renderProductList();
+    // Firebase에 저장
+    const saved = await saveDataToFirebase();
+    if (saved) {
+        renderProductList();
 
-    const status = product.visible ? '노출됨' : '숨김';
-    alert(`"${product.name}" 제품이 ${status} 상태로 변경되었습니다.`);
+        const status = product.visible ? '노출됨' : '숨김';
+        alert(`"${product.name}" 제품이 ${status} 상태로 변경되었습니다. 🎉`);
+    }
 }
 
 // 제품 목록 렌더링
@@ -303,7 +412,10 @@ function updateProductFilters() {
 }
 
 // 페이지 초기화
-function initializePage() {
+async function initializePage() {
+    // Firebase에서 데이터 불러오기
+    await loadDataFromFirebase();
+
     // 환율 정보 가져오기
     fetchExchangeRates();
 
@@ -495,7 +607,7 @@ function renderOffersList() {
 }
 
 // 판매처 추가
-function addOffer() {
+async function addOffer() {
     if (!currentProduct) {
         alert('제품을 먼저 선택해주세요');
         return;
@@ -558,27 +670,37 @@ function addOffer() {
 
     currentProduct.site_offers.push(newOffer);
 
-    // 폼 초기화
-    document.getElementById('newSiteName').value = '';
-    document.getElementById('newCurrency').value = 'KRW';
-    document.getElementById('newRegularPrice').value = '';
-    document.getElementById('newSalePrice').value = '';
-    document.getElementById('newAffiliateLink').value = '';
-    updatePriceConversion();
+    // Firebase에 저장
+    const saved = await saveDataToFirebase();
+    if (saved) {
+        // 폼 초기화
+        document.getElementById('newSiteName').value = '';
+        document.getElementById('newCurrency').value = 'KRW';
+        document.getElementById('newRegularPrice').value = '';
+        document.getElementById('newSalePrice').value = '';
+        document.getElementById('newAffiliateLink').value = '';
+        updatePriceConversion();
 
-    // 목록 다시 렌더링
-    renderOffersList();
+        // 목록 다시 렌더링
+        renderOffersList();
 
-    alert('판매처가 추가되었습니다!');
+        alert('판매처가 추가되었습니다! 🎉');
+    }
 }
 
 // 판매처 삭제
-function deleteOffer(index) {
+async function deleteOffer(index) {
     if (!currentProduct) return;
 
     if (confirm('이 판매처를 삭제하시겠습니까?')) {
         currentProduct.site_offers.splice(index, 1);
-        renderOffersList();
+
+        // Firebase에 저장
+        const saved = await saveDataToFirebase();
+        if (saved) {
+            renderOffersList();
+            alert('판매처가 삭제되었습니다! 🎉');
+        }
     }
 }
 
@@ -691,7 +813,7 @@ function renderBlackFridaySitesList() {
 }
 
 // 블프 사이트 업데이트
-function updateBlackFridaySite(index) {
+async function updateBlackFridaySite(index) {
     const site = blackFridaySites[index];
 
     site.description = document.getElementById(`bf-desc-${index}`).value;
@@ -703,15 +825,24 @@ function updateBlackFridaySite(index) {
     site.startDate = document.getElementById(`bf-startdate-${index}`).value;
     site.endDate = document.getElementById(`bf-enddate-${index}`).value;
 
-    alert('블프 사이트 정보가 업데이트되었습니다!');
-    renderBlackFridaySitesList();
+    // Firebase에 저장
+    const saved = await saveDataToFirebase();
+    if (saved) {
+        alert('블프 사이트 정보가 업데이트되었습니다! 🎉\n메인 페이지에 즉시 반영됩니다.');
+        renderBlackFridaySitesList();
+    }
 }
 
 // 블프 사이트 노출/숨김 토글
-function toggleBFSiteVisibility(index) {
+async function toggleBFSiteVisibility(index) {
     blackFridaySites[index].visible = !blackFridaySites[index].visible;
-    renderBlackFridaySitesList();
-    alert(`"${blackFridaySites[index].name}" 사이트가 ${blackFridaySites[index].visible ? '노출' : '숨김'} 상태로 변경되었습니다.`);
+
+    // Firebase에 저장
+    const saved = await saveDataToFirebase();
+    if (saved) {
+        renderBlackFridaySitesList();
+        alert(`"${blackFridaySites[index].name}" 사이트가 ${blackFridaySites[index].visible ? '노출' : '숨김'} 상태로 변경되었습니다. 🎉`);
+    }
 }
 
 // 블프 사이트 변경사항 저장

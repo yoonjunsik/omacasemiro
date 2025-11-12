@@ -519,6 +519,13 @@
             }
         });
 
+        // URL 경로 수정 (Firebase 리디렉트 처리)
+        // Firebase가 /admin으로 리디렉트하므로 /admin.html로 수정
+        if (window.location.pathname === '/admin' || window.location.pathname === '/admin/') {
+            const newUrl = window.location.origin + '/admin.html' + window.location.search + window.location.hash;
+            window.history.replaceState({}, '', newUrl);
+        }
+
         // 페이지 로드 시 리디렉트 결과 확인
         async function checkRedirectResult() {
             try {

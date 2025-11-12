@@ -465,19 +465,19 @@ function renderBlackFridaySites() {
         card.style.aspectRatio = window.innerWidth < 768 ? '4 / 3' : '1';
 
         card.innerHTML = `
-            <div class="absolute top-1.5 md:top-2 right-1.5 md:right-2">
+            <div class="absolute top-1.5 md:top-2 right-1.5 md:right-2 z-10">
                 <span class="${colors.badge} text-white text-xs font-bold px-1.5 md:px-2 py-0.5 md:py-1 rounded-full whitespace-nowrap">
                     ${site.discount}
                 </span>
             </div>
-            <div class="flex flex-col h-full justify-between gap-1">
+            <div class="flex flex-col h-full gap-1 md:gap-2">
                 <div class="flex-shrink-0">
-                    <h3 class="font-bold text-sm md:text-lg text-gray-800 mb-1 md:mb-2 leading-tight break-words">${site.name}</h3>
+                    <h3 class="font-bold text-sm md:text-lg text-gray-800 mb-0.5 md:mb-1 leading-tight break-words pr-12">${site.name}</h3>
                     <p class="text-xs ${colors.text} font-semibold mb-0.5 md:mb-1">${site.type}</p>
-                    ${dateText ? `<p class="text-xs text-gray-500 font-medium mt-0.5 md:mt-1">📅 ${dateText}</p>` : ''}
+                    ${dateText ? `<p class="text-xs text-gray-500 font-medium mb-0.5 md:mb-1">📅 ${dateText}</p>` : ''}
                 </div>
-                <div class="mt-auto flex-shrink-0">
-                    <p class="text-xs text-gray-600 leading-snug line-clamp-2 md:line-clamp-3 break-words whitespace-pre-wrap">${site.description}</p>
+                <div class="flex-shrink-0">
+                    <p class="text-xs text-gray-600 leading-snug break-words whitespace-pre-wrap overflow-hidden">${site.description}</p>
                 </div>
             </div>
         `;

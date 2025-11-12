@@ -511,26 +511,53 @@
             errorMsg.classList.remove('hidden');
         }
 
-        // 구글 로그인 (리디렉트 방식)
-        const googleLoginBtn = document.getElementById('googleLoginBtn');
-        if (googleLoginBtn) {
-            googleLoginBtn.addEventListener('click', async (event) => {
-                event.preventDefault();
-                event.stopPropagation();
-                console.log('🔵 Google 로그인 버튼 클릭됨');
-                try {
-                    console.log('🔵 signInWithRedirect 실행 시작...');
-                    await signInWithRedirect(auth, provider);
-                    console.log('🔵 signInWithRedirect 완료 (이 메시지는 보이지 않아야 함)');
-                } catch (error) {
-                    console.error('🔴 로그인 에러:', error);
-                    handleLoginError('로그인에 실패했습니다. 다시 시도해주세요.');
-                }
-            });
-            console.log('✅ Google 로그인 버튼 이벤트 리스너 등록 완료');
-        } else {
-            console.error('❌ googleLoginBtn 요소를 찾을 수 없습니다!');
+        // 구글 로그인 함수
+        async function handleGoogleLogin(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            event.stopImmediatePropagation();
+
+            console.log('🔵 Google 로그인 버튼 클릭됨');
+
+            // 로딩 상태 표시
+            const loginSection = document.getElementById('loginSection');
+            const loadingSection = document.getElementById('loadingSection');
+
+            loginSection.classList.add('hidden');
+            loadingSection.classList.remove('hidden');
+
+            try {
+                console.log('🔵 signInWithRedirect 실행 시작...');
+                console.log('🔵 Provider 설정:', provider);
+                await signInWithRedirect(auth, provider);
+                console.log('🔵 signInWithRedirect 완료 (이 메시지는 보이지 않아야 함)');
+            } catch (error) {
+                console.error('🔴 로그인 에러:', error);
+                console.error('🔴 에러 코드:', error.code);
+                console.error('🔴 에러 메시지:', error.message);
+                loginSection.classList.remove('hidden');
+                loadingSection.classList.add('hidden');
+                handleLoginError('로그인에 실패했습니다. 다시 시도해주세요.');
+            }
+
+            return false;
         }
+
+        // 구글 로그인 버튼 이벤트 등록
+        document.addEventListener('DOMContentLoaded', () => {
+            const googleLoginBtn = document.getElementById('googleLoginBtn');
+            if (googleLoginBtn) {
+                // 기존 이벤트 제거
+                googleLoginBtn.replaceWith(googleLoginBtn.cloneNode(true));
+                const newBtn = document.getElementById('googleLoginBtn');
+
+                // 새 이벤트 등록
+                newBtn.addEventListener('click', handleGoogleLogin, { capture: true });
+                console.log('✅ Google 로그인 버튼 이벤트 리스너 등록 완료');
+            } else {
+                console.error('❌ googleLoginBtn 요소를 찾을 수 없습니다!');
+            }
+        });
 
         // URL 경로 수정 (Firebase 리디렉트 처리)
         // Firebase가 /admin으로 리디렉트하므로 /admin.html로 수정
@@ -542,55 +569,110 @@
         // 페이지 로드 시 리디렉트 결과 확인
         async function checkRedirectResult() {
             try {
+                console.log('🔵 리디렉트 결과 확인 시작...');
+                console.log('🔵 현재 URL:', window.location.href);
+                console.log('🔵 현재 경로:', window.location.pathname);
+                console.log('🔵 쿼리 스트링:', window.location.search);
+
                 const result = await getRedirectResult(auth);
+                console.log('🔵 getRedirectResult 완료, result:', result ? '있음' : '없음');
+
                 if (result) {
+                    console.log('✅ 리디렉트 결과 있음!');
+                    console.log('✅ 사용자 이메일:', result.user.email);
+                    console.log('✅ 사용자 UID:', result.user.uid);
                     const user = result.user;
 
                     // 허용된 관리자인지 확인
                     if (!isAllowedAdmin(user.email)) {
+                        console.log('🔴 허용되지 않은 사용자:', user.email);
                         // 허용되지 않은 사용자 - 로그아웃
                         await signOut(auth);
                         handleLoginError(`접근 권한이 없습니다.\n관리자에게 문의하세요.\n(${user.email})`);
+                    } else {
+                        console.log('🟢 허용된 사용자! 로그인 성공');
                     }
-                    // 허용된 사용자는 onAuthStateChanged에서 처리됨
+                } else {
+                    console.log('🟡 리디렉트 결과 없음 (일반 페이지 로드)');
                 }
             } catch (error) {
-                console.error('리디렉트 결과 확인 에러:', error);
-                if (error.code !== 'auth/operation-not-allowed') {
-                    handleLoginError('로그인 처리 중 오류가 발생했습니다.');
+                console.error('🔴 리디렉트 결과 확인 에러:', error);
+                console.error('🔴 에러 코드:', error.code);
+                console.error('🔴 에러 메시지:', error.message);
+                console.error('🔴 전체 에러 객체:', error);
+
+                if (error.code === 'auth/unauthorized-domain') {
+                    handleLoginError(`도메인 권한 오류\n\nFirebase Console에서 다음 도메인을 승인된 도메인에 추가해주세요:\n${window.location.hostname}\n\n자세한 방법은 콘솔을 확인하세요.`);
+                    console.error('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+                    console.error('🔴 Firebase 도메인 설정 필요!');
+                    console.error('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+                    console.error('1. Firebase Console 접속: https://console.firebase.google.com/');
+                    console.error('2. 프로젝트 선택: omacasemiro-8fd4c');
+                    console.error('3. Authentication > Settings > Authorized domains');
+                    console.error(`4. 다음 도메인 추가: ${window.location.hostname}`);
+                    console.error('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+                } else if (error.code !== 'auth/operation-not-allowed') {
+                    handleLoginError('로그인 처리 중 오류가 발생했습니다.\n콘솔을 확인하세요.');
                 }
             }
         }
 
-        // 페이지 로드 시 리디렉트 결과 확인
-        checkRedirectResult();
+        // 페이지 로드 시 리디렉트 결과 확인 - 즉시 실행
+        console.log('🟣 checkRedirectResult 함수 호출 준비');
+        checkRedirectResult().then(() => {
+            console.log('🟣 checkRedirectResult 함수 완료');
+        }).catch(err => {
+            console.error('🔴 checkRedirectResult 실행 중 에러:', err);
+        });
 
-        // 로그아웃
-        document.getElementById('logoutBtn').addEventListener('click', async () => {
-            if (confirm('로그아웃 하시겠습니까?')) {
-                try {
-                    await signOut(auth);
-                    location.reload();
-                } catch (error) {
-                    console.error('로그아웃 에러:', error);
-                    alert('로그아웃에 실패했습니다.');
+        // DOM 로드 후 초기화
+        function initializeAuth() {
+            console.log('🟣 initializeAuth 시작');
+
+            // 로그아웃 버튼 이벤트
+            const logoutBtn = document.getElementById('logoutBtn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', async () => {
+                    if (confirm('로그아웃 하시겠습니까?')) {
+                        try {
+                            console.log('🔵 로그아웃 시작...');
+                            await signOut(auth);
+                            console.log('✅ 로그아웃 성공');
+                            location.reload();
+                        } catch (error) {
+                            console.error('🔴 로그아웃 에러:', error);
+                            alert('로그아웃에 실패했습니다.');
+                        }
+                    }
+                });
+                console.log('✅ 로그아웃 버튼 이벤트 등록 완료');
+            }
+
+            // 인증 상태 변화 감지
+            onAuthStateChanged(auth, (user) => {
+                console.log('🟣 onAuthStateChanged 호출됨, user:', user?.email || 'null');
+                if (user && isAllowedAdmin(user.email)) {
+                    // 로그인 상태이고 허용된 사용자
+                    handleLoginSuccess(user);
+                } else {
+                    // 로그아웃 상태 또는 허용되지 않은 사용자
+                    document.getElementById('authOverlay').classList.remove('hidden');
+                    document.getElementById('mainContent').classList.add('admin-content');
+                    document.getElementById('userEmail').classList.add('hidden');
+                    document.getElementById('logoutBtn').classList.add('hidden');
                 }
-            }
-        });
+            });
 
-        // 인증 상태 변화 감지
-        onAuthStateChanged(auth, (user) => {
-            if (user && isAllowedAdmin(user.email)) {
-                // 로그인 상태이고 허용된 사용자
-                handleLoginSuccess(user);
-            } else {
-                // 로그아웃 상태 또는 허용되지 않은 사용자
-                document.getElementById('authOverlay').classList.remove('hidden');
-                document.getElementById('mainContent').classList.add('admin-content');
-                document.getElementById('userEmail').classList.add('hidden');
-                document.getElementById('logoutBtn').classList.add('hidden');
-            }
-        });
+            console.log('✅ initializeAuth 완료');
+        }
+
+        // DOMContentLoaded 이벤트로 초기화
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeAuth);
+        } else {
+            // 이미 로드된 경우 즉시 실행
+            initializeAuth();
+        }
 
         // 마지막 로그인 시간 업데이트
         function updateLoginTime() {

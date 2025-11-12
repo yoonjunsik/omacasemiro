@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리디렉트 중...</title>
+    <script>
+        // Firebase 인증 리디렉트 처리
+        // /admin 으로 접근 시 /admin.html 로 리디렉트
+        const path = window.location.pathname;
+        
+        if (path === '/admin' || path === '/admin/') {
+            // admin.html로 리디렉트 (쿼리 파라미터 유지)
+            window.location.replace('/admin.html' + window.location.search + window.location.hash);
+        } else {
+            // 일반 404 - 메인 페이지로 리디렉트
+            window.location.replace('/');
+        }
+    </script>
+</head>
+<body>
+    <p>리디렉트 중...</p>
+</body>
+</html>

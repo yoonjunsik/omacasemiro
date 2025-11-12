@@ -44,7 +44,15 @@
         <div class="bg-white rounded-lg shadow-2xl p-8 max-w-md w-full mx-4">
             <div class="text-center mb-6">
                 <h2 class="text-2xl font-black text-gray-800 mb-2">🔒 관리자 인증</h2>
-                <p class="text-sm text-gray-600">관리자 페이지에 접근하려면 비밀번호를 입력하세요</p>
+                <p class="text-sm text-gray-600">관리자 페이지에 접근하려면 로그인하세요</p>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-sm font-semibold text-gray-700 mb-2">아이디</label>
+                <input type="text" id="adminUsername"
+                       class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                       placeholder="아이디를 입력하세요"
+                       onkeypress="if(event.key === 'Enter') document.getElementById('adminPassword').focus()">
             </div>
 
             <div class="mb-6">
@@ -53,7 +61,7 @@
                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
                        placeholder="비밀번호를 입력하세요"
                        onkeypress="if(event.key === 'Enter') checkPassword()">
-                <p id="authError" class="text-red-600 text-sm mt-2 hidden">비밀번호가 올바르지 않습니다</p>
+                <p id="authError" class="text-red-600 text-sm mt-2 hidden">아이디 또는 비밀번호가 올바르지 않습니다</p>
             </div>
 
             <button onclick="checkPassword()"
@@ -94,6 +102,9 @@
                 </button>
                 <button id="tab-offers" class="tab-btn flex-1 px-6 py-4 font-bold text-lg hover:bg-gray-50 transition border-b-4 border-transparent">
                     🏪 판매처 관리
+                </button>
+                <button id="tab-account" class="tab-btn flex-1 px-6 py-4 font-bold text-lg hover:bg-gray-50 transition border-b-4 border-transparent">
+                    👤 계정 관리
                 </button>
             </div>
         </section>
@@ -374,6 +385,85 @@
                 </div>
             </section>
         </div>
+
+        <!-- Tab Content: 계정 관리 -->
+        <div id="content-account" class="tab-content hidden">
+            <!-- Current Account Info -->
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">👤 현재 계정 정보</h2>
+                <div class="bg-gray-50 rounded-lg p-6">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">아이디</label>
+                            <input type="text" id="currentUsername" readonly
+                                   class="w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-lg text-gray-700"
+                                   value="jooni1230">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">마지막 로그인</label>
+                            <input type="text" id="lastLogin" readonly
+                                   class="w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-lg text-gray-700"
+                                   value="-">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Change Password -->
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">🔑 비밀번호 변경</h2>
+
+                <div class="bg-yellow-50 border-2 border-yellow-200 rounded-lg p-4 mb-6">
+                    <p class="text-sm text-yellow-800">⚠️ 비밀번호는 브라우저의 localStorage에 저장됩니다. 다른 브라우저나 시크릿 모드에서는 초기 비밀번호로 로그인하세요.</p>
+                </div>
+
+                <div class="grid md:grid-cols-1 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">현재 비밀번호 *</label>
+                        <input type="password" id="currentPassword"
+                               class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                               placeholder="현재 비밀번호를 입력하세요">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">새 비밀번호 *</label>
+                        <input type="password" id="newPassword"
+                               class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                               placeholder="새 비밀번호를 입력하세요">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">새 비밀번호 확인 *</label>
+                        <input type="password" id="confirmPassword"
+                               class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                               placeholder="새 비밀번호를 다시 입력하세요">
+                    </div>
+                </div>
+
+                <div id="passwordChangeMessage" class="mt-4 p-4 rounded-lg hidden">
+                    <p class="text-sm font-semibold"></p>
+                </div>
+
+                <button onclick="changePassword()"
+                        class="mt-6 w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition">
+                    비밀번호 변경
+                </button>
+            </section>
+
+            <!-- Reset to Default -->
+            <section class="bg-white rounded-lg shadow-md p-6">
+                <h2 class="text-2xl font-bold mb-6 text-gray-800">🔄 초기화</h2>
+
+                <div class="bg-red-50 border-2 border-red-200 rounded-lg p-4 mb-6">
+                    <p class="text-sm text-red-800">⚠️ 초기화하면 비밀번호가 기본값(casemiro7)으로 되돌아갑니다.</p>
+                </div>
+
+                <button onclick="resetCredentials()"
+                        class="w-full bg-red-600 text-white font-bold py-3 rounded-lg hover:bg-red-700 transition">
+                    비밀번호 초기화
+                </button>
+            </section>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -386,25 +476,129 @@
 
     <!-- Authentication Script -->
     <script>
-        // 관리자 비밀번호 (실제 배포 시 변경하세요)
-        const ADMIN_PASSWORD = 'casemiro7';
+        // 기본 관리자 계정 정보
+        const DEFAULT_USERNAME = 'jooni1230';
+        const DEFAULT_PASSWORD = 'casemiro7';
 
+        // 현재 계정 정보 가져오기 (localStorage에서 또는 기본값)
+        function getCredentials() {
+            const savedUsername = localStorage.getItem('adminUsername');
+            const savedPassword = localStorage.getItem('adminPassword');
+
+            return {
+                username: savedUsername || DEFAULT_USERNAME,
+                password: savedPassword || DEFAULT_PASSWORD
+            };
+        }
+
+        // 로그인 확인
         function checkPassword() {
-            const input = document.getElementById('adminPassword').value;
+            const inputUsername = document.getElementById('adminUsername').value;
+            const inputPassword = document.getElementById('adminPassword').value;
             const errorMsg = document.getElementById('authError');
 
-            if (input === ADMIN_PASSWORD) {
+            const credentials = getCredentials();
+
+            if (inputUsername === credentials.username && inputPassword === credentials.password) {
                 // 인증 성공
                 sessionStorage.setItem('adminAuth', 'true');
+                localStorage.setItem('lastLogin', new Date().toLocaleString('ko-KR'));
                 document.getElementById('authOverlay').classList.add('hidden');
                 document.getElementById('mainContent').classList.remove('admin-content');
                 errorMsg.classList.add('hidden');
+
+                // 마지막 로그인 시간 업데이트
+                updateLoginTime();
             } else {
                 // 인증 실패
                 errorMsg.classList.remove('hidden');
+                document.getElementById('adminUsername').value = '';
                 document.getElementById('adminPassword').value = '';
-                document.getElementById('adminPassword').focus();
+                document.getElementById('adminUsername').focus();
             }
+        }
+
+        // 마지막 로그인 시간 업데이트
+        function updateLoginTime() {
+            const lastLogin = localStorage.getItem('lastLogin');
+            if (lastLogin) {
+                document.getElementById('lastLogin').value = lastLogin;
+            }
+        }
+
+        // 비밀번호 변경
+        function changePassword() {
+            const currentPassword = document.getElementById('currentPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const messageDiv = document.getElementById('passwordChangeMessage');
+            const messageText = messageDiv.querySelector('p');
+
+            // 입력 확인
+            if (!currentPassword || !newPassword || !confirmPassword) {
+                showMessage(messageDiv, messageText, '모든 필드를 입력해주세요.', 'error');
+                return;
+            }
+
+            // 현재 비밀번호 확인
+            const credentials = getCredentials();
+            if (currentPassword !== credentials.password) {
+                showMessage(messageDiv, messageText, '현재 비밀번호가 올바르지 않습니다.', 'error');
+                return;
+            }
+
+            // 새 비밀번호 확인
+            if (newPassword !== confirmPassword) {
+                showMessage(messageDiv, messageText, '새 비밀번호가 일치하지 않습니다.', 'error');
+                return;
+            }
+
+            // 비밀번호 길이 확인
+            if (newPassword.length < 6) {
+                showMessage(messageDiv, messageText, '비밀번호는 최소 6자 이상이어야 합니다.', 'error');
+                return;
+            }
+
+            // 비밀번호 저장
+            localStorage.setItem('adminPassword', newPassword);
+            showMessage(messageDiv, messageText, '✅ 비밀번호가 성공적으로 변경되었습니다!', 'success');
+
+            // 입력 필드 초기화
+            document.getElementById('currentPassword').value = '';
+            document.getElementById('newPassword').value = '';
+            document.getElementById('confirmPassword').value = '';
+        }
+
+        // 초기화
+        function resetCredentials() {
+            if (confirm('정말 비밀번호를 초기화하시겠습니까?\n초기 비밀번호: casemiro7')) {
+                localStorage.removeItem('adminPassword');
+                localStorage.removeItem('adminUsername');
+                alert('비밀번호가 초기화되었습니다.\n다시 로그인해주세요.');
+
+                // 로그아웃
+                sessionStorage.removeItem('adminAuth');
+                location.reload();
+            }
+        }
+
+        // 메시지 표시
+        function showMessage(div, text, message, type) {
+            div.classList.remove('hidden');
+            text.textContent = message;
+
+            if (type === 'success') {
+                div.className = 'mt-4 p-4 rounded-lg bg-green-50 border-2 border-green-200';
+                text.className = 'text-sm font-semibold text-green-800';
+            } else {
+                div.className = 'mt-4 p-4 rounded-lg bg-red-50 border-2 border-red-200';
+                text.className = 'text-sm font-semibold text-red-800';
+            }
+
+            // 3초 후 메시지 숨김
+            setTimeout(() => {
+                div.classList.add('hidden');
+            }, 3000);
         }
 
         // 페이지 로드 시 인증 확인
@@ -415,11 +609,12 @@
                 // 이미 인증됨
                 document.getElementById('authOverlay').classList.add('hidden');
                 document.getElementById('mainContent').classList.remove('admin-content');
+                updateLoginTime();
             } else {
                 // 인증 필요
                 document.getElementById('authOverlay').classList.remove('hidden');
                 setTimeout(() => {
-                    document.getElementById('adminPassword').focus();
+                    document.getElementById('adminUsername').focus();
                 }, 100);
             }
         });

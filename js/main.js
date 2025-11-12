@@ -276,6 +276,31 @@ function renderProducts() {
     });
 }
 
+// 날짜 포맷팅 함수
+function formatDate(dateString) {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    return `${month}/${day}`;
+}
+
+// 날짜 표시 텍스트 생성
+function getDateRangeText(startDate, endDate) {
+    const hasStart = startDate && startDate.trim() !== '';
+    const hasEnd = endDate && endDate.trim() !== '';
+
+    if (!hasStart && !hasEnd) return '';
+
+    if (hasStart && hasEnd) {
+        return `${formatDate(startDate)} ~ ${formatDate(endDate)}`;
+    } else if (hasStart) {
+        return `${formatDate(startDate)} ~`;
+    } else {
+        return `~ ${formatDate(endDate)}`;
+    }
+}
+
 // 블프 세일 사이트 렌더링
 function renderBlackFridaySites() {
     const container = document.getElementById('blackFridaySitesContainer');
@@ -297,6 +322,7 @@ function renderBlackFridaySites() {
         };
 
         const colors = colorMap[site.color] || colorMap['gray'];
+        const dateText = getDateRangeText(site.startDate, site.endDate);
 
         const card = document.createElement('a');
         card.href = site.url;
@@ -315,6 +341,7 @@ function renderBlackFridaySites() {
                 <div>
                     <h3 class="font-bold text-lg text-gray-800 mb-2">${site.name}</h3>
                     <p class="text-xs ${colors.text} font-semibold mb-1">${site.type}</p>
+                    ${dateText ? `<p class="text-xs text-gray-500 font-medium mt-1">📅 ${dateText}</p>` : ''}
                 </div>
                 <div class="mt-auto">
                     <p class="text-xs text-gray-600 leading-relaxed">${site.description}</p>

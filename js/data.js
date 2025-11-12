@@ -814,6 +814,8 @@ const blackFridaySites = [
         "location": "국내",
         "type": "공식 홈페이지",
         "color": "orange",
+        "startDate": "",
+        "endDate": "",
         "visible": true
     },
     {
@@ -825,6 +827,8 @@ const blackFridaySites = [
         "location": "국내",
         "type": "공식 홈페이지",
         "color": "blue",
+        "startDate": "",
+        "endDate": "",
         "visible": true
     },
     {
@@ -836,6 +840,8 @@ const blackFridaySites = [
         "location": "국내",
         "type": "공식 홈페이지",
         "color": "gray",
+        "startDate": "",
+        "endDate": "",
         "visible": true
     },
     {
@@ -847,6 +853,8 @@ const blackFridaySites = [
         "location": "해외",
         "type": "공식 편집샵",
         "color": "green",
+        "startDate": "",
+        "endDate": "",
         "visible": true
     },
     {
@@ -858,6 +866,8 @@ const blackFridaySites = [
         "location": "해외",
         "type": "공식 편집샵",
         "color": "purple",
+        "startDate": "",
+        "endDate": "",
         "visible": true
     },
     {
@@ -869,6 +879,8 @@ const blackFridaySites = [
         "location": "해외",
         "type": "공식 편집샵",
         "color": "indigo",
+        "startDate": "",
+        "endDate": "",
         "visible": true
     }
 ];

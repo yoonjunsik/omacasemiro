@@ -659,6 +659,18 @@ function renderBlackFridaySitesList() {
                             <input type="url" id="bf-url-${index}" value="${site.url}"
                                    class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
                         </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <div>
+                                <label class="text-sm font-semibold text-gray-700">시작일 (선택)</label>
+                                <input type="date" id="bf-startdate-${index}" value="${site.startDate || ''}"
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                            </div>
+                            <div>
+                                <label class="text-sm font-semibold text-gray-700">종료일 (선택)</label>
+                                <input type="date" id="bf-enddate-${index}" value="${site.endDate || ''}"
+                                       class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="ml-4 flex flex-col gap-2">
@@ -688,6 +700,8 @@ function updateBlackFridaySite(index) {
     site.type = document.getElementById(`bf-type-${index}`).value;
     site.color = document.getElementById(`bf-color-${index}`).value;
     site.url = document.getElementById(`bf-url-${index}`).value;
+    site.startDate = document.getElementById(`bf-startdate-${index}`).value;
+    site.endDate = document.getElementById(`bf-enddate-${index}`).value;
 
     alert('블프 사이트 정보가 업데이트되었습니다!');
     renderBlackFridaySitesList();

@@ -423,6 +423,21 @@
 
         <!-- Tab Content: 계정 관리 -->
         <div id="content-account" class="tab-content hidden">
+            <!-- Firebase 초기 데이터 업로드 -->
+            <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h2 class="text-2xl font-bold mb-4 text-gray-800">🔥 Firebase 초기 설정</h2>
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-4">
+                    <p class="text-sm text-yellow-800">
+                        ⚠️ <strong>최초 1회만 실행:</strong> data.js의 모든 데이터를 Firebase에 업로드합니다.<br>
+                        기존 Firebase 데이터가 있다면 덮어씌워지니 주의하세요!
+                    </p>
+                </div>
+                <button onclick="uploadInitialDataToFirebase()"
+                        class="bg-orange-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-orange-700 transition">
+                    🚀 초기 데이터 업로드
+                </button>
+            </section>
+
             <!-- Current Account Info -->
             <section class="bg-white rounded-lg shadow-md p-6 mb-8">
                 <h2 class="text-2xl font-bold mb-6 text-gray-800">👤 현재 계정 정보</h2>
@@ -488,11 +503,13 @@
         // Firebase imports - Updated to latest version
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js';
         import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js';
+        import { getDatabase, ref, set, get, onValue } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js';
 
         // Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyBu7tXrbeWjp3h0Xt_mCTp4oswsuGMSGkw",
             authDomain: "omacasemiro-8fd4c.firebaseapp.com",
+            databaseURL: "https://omacasemiro-8fd4c-default-rtdb.firebaseio.com",
             projectId: "omacasemiro-8fd4c",
             storageBucket: "omacasemiro-8fd4c.firebasestorage.app",
             messagingSenderId: "322343249421",
@@ -503,8 +520,16 @@
         console.log('🔵 Firebase 초기화 시작...');
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+        const database = getDatabase(app);
         const provider = new GoogleAuthProvider();
         console.log('✅ Firebase 초기화 완료');
+
+        // Make database available globally for admin.js
+        window.firebaseDB = database;
+        window.firebaseDBRef = ref;
+        window.firebaseDBSet = set;
+        window.firebaseDBGet = get;
+        window.firebaseDBOnValue = onValue;
 
         // 허용된 관리자 이메일 목록
         const ALLOWED_ADMINS = [

@@ -454,7 +454,7 @@
     <script type="module">
         // Firebase imports
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-        import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
 
         // Firebase configuration
         const firebaseConfig = {
@@ -507,33 +507,43 @@
             errorMsg.classList.remove('hidden');
         }
 
-        // 구글 로그인
+        // 구글 로그인 (리디렉트 방식)
         document.getElementById('googleLoginBtn').addEventListener('click', async () => {
-            const loginSection = document.getElementById('loginSection');
-            const loadingSection = document.getElementById('loadingSection');
-            const errorMsg = document.getElementById('authError');
-
-            loginSection.classList.add('hidden');
-            loadingSection.classList.remove('hidden');
-            errorMsg.classList.add('hidden');
-
             try {
-                const result = await signInWithPopup(auth, provider);
-                const user = result.user;
-
-                // 허용된 관리자인지 확인
-                if (isAllowedAdmin(user.email)) {
-                    handleLoginSuccess(user);
-                } else {
-                    // 허용되지 않은 사용자 - 로그아웃
-                    await signOut(auth);
-                    handleLoginError(`접근 권한이 없습니다.\n관리자에게 문의하세요.\n(${user.email})`);
-                }
+                // 리디렉트 방식으로 로그인 시작
+                await signInWithRedirect(auth, provider);
+                // 이 코드 다음은 실행되지 않음 (페이지가 리디렉트됨)
             } catch (error) {
                 console.error('로그인 에러:', error);
                 handleLoginError('로그인에 실패했습니다. 다시 시도해주세요.');
             }
         });
+
+        // 페이지 로드 시 리디렉트 결과 확인
+        async function checkRedirectResult() {
+            try {
+                const result = await getRedirectResult(auth);
+                if (result) {
+                    const user = result.user;
+
+                    // 허용된 관리자인지 확인
+                    if (!isAllowedAdmin(user.email)) {
+                        // 허용되지 않은 사용자 - 로그아웃
+                        await signOut(auth);
+                        handleLoginError(`접근 권한이 없습니다.\n관리자에게 문의하세요.\n(${user.email})`);
+                    }
+                    // 허용된 사용자는 onAuthStateChanged에서 처리됨
+                }
+            } catch (error) {
+                console.error('리디렉트 결과 확인 에러:', error);
+                if (error.code !== 'auth/operation-not-allowed') {
+                    handleLoginError('로그인 처리 중 오류가 발생했습니다.');
+                }
+            }
+        }
+
+        // 페이지 로드 시 리디렉트 결과 확인
+        checkRedirectResult();
 
         // 로그아웃
         document.getElementById('logoutBtn').addEventListener('click', async () => {

@@ -508,16 +508,23 @@
         }
 
         // 구글 로그인 (리디렉트 방식)
-        document.getElementById('googleLoginBtn').addEventListener('click', async () => {
-            try {
-                // 리디렉트 방식으로 로그인 시작
-                await signInWithRedirect(auth, provider);
-                // 이 코드 다음은 실행되지 않음 (페이지가 리디렉트됨)
-            } catch (error) {
-                console.error('로그인 에러:', error);
-                handleLoginError('로그인에 실패했습니다. 다시 시도해주세요.');
-            }
-        });
+        const googleLoginBtn = document.getElementById('googleLoginBtn');
+        if (googleLoginBtn) {
+            googleLoginBtn.addEventListener('click', async () => {
+                console.log('🔵 Google 로그인 버튼 클릭됨');
+                try {
+                    console.log('🔵 signInWithRedirect 실행 시작...');
+                    await signInWithRedirect(auth, provider);
+                    console.log('🔵 signInWithRedirect 완료 (이 메시지는 보이지 않아야 함)');
+                } catch (error) {
+                    console.error('🔴 로그인 에러:', error);
+                    handleLoginError('로그인에 실패했습니다. 다시 시도해주세요.');
+                }
+            });
+            console.log('✅ Google 로그인 버튼 이벤트 리스너 등록 완료');
+        } else {
+            console.error('❌ googleLoginBtn 요소를 찾을 수 없습니다!');
+        }
 
         // URL 경로 수정 (Firebase 리디렉트 처리)
         // Firebase가 /admin으로 리디렉트하므로 /admin.html로 수정

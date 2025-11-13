@@ -973,22 +973,19 @@ async function addBlackFridaySite() {
         return;
     }
 
-    if (!startDate || !endDate) {
-        alert('세일 기간을 입력해주세요');
-        return;
-    }
-
     if (!discount) {
         alert('할인율을 입력해주세요');
         return;
     }
 
-    // 날짜 검증
-    const start = new Date(startDate);
-    const end = new Date(endDate);
-    if (end < start) {
-        alert('종료일은 시작일보다 이후여야 합니다');
-        return;
+    // 날짜 검증 (둘 다 입력된 경우에만)
+    if (startDate && endDate) {
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+        if (end < start) {
+            alert('종료일은 시작일보다 이후여야 합니다');
+            return;
+        }
     }
 
     // 새 사이트 객체 생성

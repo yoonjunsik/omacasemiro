@@ -41,7 +41,18 @@ const uniformData = [
         "name": "맨체스터 유나이티드 2025 2026 어웨이 유니폼 (레플리카)",
         "model_code": "JI7423",
         "image": "https://www.sportsdirect.com/images/products/37781801_h.jpg",
-        "site_offers": [],
+        "site_offers": [
+            {
+                "site_name": "스포츠다이렉트",
+                "currency": "GBP",
+                "regular_price": 84.99,
+                "sale_price": 60,
+                "regular_price_krw": 141933,
+                "sale_price_krw": 100200,
+                "discount_rate": 29,
+                "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-away-shirt-2025-2026-adults-377818"
+            }
+        ],
         "visible": true
     },
     {
@@ -52,7 +63,18 @@ const uniformData = [
         "name": "맨체스터 유나이티드 2025 2026 어웨이 유니폼 (어센틱)",
         "model_code": "JI7423-AUTH",
         "image": "https://www.sportsdirect.com/images/products/37781901_h.jpg",
-        "site_offers": [],
+        "site_offers": [
+            {
+                "site_name": "스포츠다이렉트",
+                "currency": "GBP",
+                "regular_price": 129.99,
+                "sale_price": 92,
+                "regular_price_krw": 217083,
+                "sale_price_krw": 153640,
+                "discount_rate": 29,
+                "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-third-shirt-2025-2026-adults-377819"
+            }
+        ],
         "visible": false
     },
     {
@@ -84,7 +106,18 @@ const uniformData = [
         "name": "리버풀 FC 2025 2026 홈 유니폼 (아디다스) (어센틱)",
         "model_code": "JV6444",
         "image": "https://www.sportsdirect.com/images/products/37872208_h.jpg",
-        "site_offers": [],
+        "site_offers": [
+            {
+                "site_name": "스포츠다이렉트",
+                "currency": "GBP",
+                "regular_price": 119.99,
+                "sale_price": 100,
+                "regular_price_krw": 200383,
+                "sale_price_krw": 167000,
+                "discount_rate": 17,
+                "affiliate_link": "https://www.sportsdirect.com/adidas-liverpool-away-shirt-2025-2026-adults-378722"
+            }
+        ],
         "version": "어센틱",
         "visible": false
     },
@@ -194,7 +227,18 @@ const uniformData = [
         "name": "레알 마드리드 2024 2025 홈 유니폼 (레플리카)",
         "model_code": "IU5011",
         "image": "https://www.sportsdirect.com/images/products/36738701_h.jpg",
-        "site_offers": [],
+        "site_offers": [
+            {
+                "site_name": "스포츠다이렉트",
+                "currency": "GBP",
+                "regular_price": 79.99,
+                "sale_price": 58,
+                "regular_price_krw": 133583,
+                "sale_price_krw": 96860,
+                "discount_rate": 27,
+                "affiliate_link": "https://www.sportsdirect.com/nike-tottenham-hotspur-home-shirt-2024-2025-adults-367387"
+            }
+        ],
         "version": "레플리카",
         "visible": true
     },
@@ -787,6 +831,182 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/31154501_h.jpg",
         "site_offers": [],
         "version": "레플리카",
+        "visible": true
+    },
+    {
+        "team": "첼시",
+        "kit_type": "홈킷",
+        "season": "25/26",
+        "version": "레플리카",
+        "name": "첼시 25/26 홈킷 (레플리카)",
+        "model_code": "NIKE-2025",
+        "image": "https://www.sportsdirect.com/images/products/37732318_l.jpg",
+        "site_offers": [
+            {
+                "site_name": "스포츠다이렉트",
+                "currency": "GBP",
+                "regular_price": 84.99,
+                "sale_price": 73,
+                "regular_price_krw": 141933,
+                "sale_price_krw": 121910,
+                "discount_rate": 14,
+                "affiliate_link": "https://www.sportsdirect.com/nike-chelsea-home-shirt-2025-2026-adults-377323"
+            }
+        ],
+        "visible": true
+    },
+    {
+        "team": "첼시",
+        "kit_type": "어웨이킷",
+        "season": "25/26",
+        "version": "레플리카",
+        "name": "첼시 25/26 어웨이킷 (레플리카)",
+        "model_code": "NIKE-2025",
+        "image": "https://www.sportsdirect.com/images/products/37735603_l.jpg",
+        "site_offers": [
+            {
+                "site_name": "스포츠다이렉트",
+                "currency": "GBP",
+                "regular_price": 84.99,
+                "sale_price": 54.5,
+                "regular_price_krw": 141933,
+                "sale_price_krw": 91015,
+                "discount_rate": 36,
+                "affiliate_link": "https://www.sportsdirect.com/nike-chelsea-away-shirt-2025-2026-adults-377356"
+            }
+        ],
+        "visible": true
+    },
+    {
+        "team": "첼시",
+        "kit_type": "써드킷",
+        "season": "25/26",
+        "version": "레플리카",
+        "name": "첼시 25/26 써드킷 (레플리카)",
+        "model_code": "NIKE-2025",
+        "image": "https://www.sportsdirect.com/images/products/37701303_l.jpg",
+        "site_offers": [
+            {
+                "site_name": "스포츠다이렉트",
+                "currency": "GBP",
+                "regular_price": 84.99,
+                "sale_price": 73,
+                "regular_price_krw": 141933,
+                "sale_price_krw": 121910,
+                "discount_rate": 14,
+                "affiliate_link": "https://www.sportsdirect.com/nike-chelsea-third-shirt-2025-2026-adults-377013"
+            }
+        ],
+        "visible": true
+    },
+    {
+        "team": "리버풀",
+        "kit_type": "써드킷",
+        "season": "25/26",
+        "version": "레플리카",
+        "name": "리버풀 25/26 써드킷 (레플리카)",
+        "model_code": "ADIDAS-2025",
+        "image": "https://www.sportsdirect.com/images/products/37875915_l.jpg",
+        "site_offers": [
+            {
+                "site_name": "스포츠다이렉트",
+                "currency": "GBP",
+                "regular_price": 59.99,
+                "sale_price": 48,
+                "regular_price_krw": 100183,
+                "sale_price_krw": 80160,
+                "discount_rate": 20,
+                "affiliate_link": "https://www.sportsdirect.com/adidas-liverpool-third-shirt-2025-2026-adults-378759"
+            }
+        ],
+        "visible": true
+    },
+    {
+        "team": "벤피카",
+        "kit_type": "홈킷",
+        "season": "25/26",
+        "version": "레플리카",
+        "name": "벤피카 25/26 홈킷 (레플리카)",
+        "model_code": "ADIDAS-2024",
+        "image": "https://www.sportsdirect.com/images/products/37781108_l.jpg",
+        "site_offers": [
+            {
+                "site_name": "스포츠다이렉트",
+                "currency": "GBP",
+                "regular_price": 84.99,
+                "sale_price": 70,
+                "regular_price_krw": 141933,
+                "sale_price_krw": 116900,
+                "discount_rate": 18,
+                "affiliate_link": "https://www.sportsdirect.com/puma-manchester-city-away-shirt-2024-2025-adults-377811"
+            }
+        ],
+        "visible": true
+    },
+    {
+        "team": "아약스",
+        "kit_type": "써드킷",
+        "season": "25/26",
+        "version": "레플리카",
+        "name": "아약스 25/26 써드킷 (레플리카)",
+        "model_code": "ADIDAS-2024",
+        "image": "https://www.sportsdirect.com/images/products/37780569_l.jpg",
+        "site_offers": [
+            {
+                "site_name": "스포츠다이렉트",
+                "currency": "GBP",
+                "regular_price": 84.99,
+                "sale_price": 73,
+                "regular_price_krw": 141933,
+                "sale_price_krw": 121910,
+                "discount_rate": 14,
+                "affiliate_link": "https://www.sportsdirect.com/puma-manchester-city-third-shirt-2024-2025-adults-377805"
+            }
+        ],
+        "visible": true
+    },
+    {
+        "team": "알 나스르",
+        "kit_type": "홈킷",
+        "season": "25/26",
+        "version": "레플리카",
+        "name": "알 나스르 25/26 홈킷 (레플리카)",
+        "model_code": "ADIDAS-2025",
+        "image": "https://www.sportsdirect.com/images/products/37782713_l.jpg",
+        "site_offers": [
+            {
+                "site_name": "스포츠다이렉트",
+                "currency": "GBP",
+                "regular_price": 84.99,
+                "sale_price": 70,
+                "regular_price_krw": 141933,
+                "sale_price_krw": 116900,
+                "discount_rate": 18,
+                "affiliate_link": "https://www.sportsdirect.com/adidas-arsenal-home-shirt-2025-2026-adults-377827"
+            }
+        ],
+        "visible": true
+    },
+    {
+        "team": "아스널",
+        "kit_type": "써드킷",
+        "season": "25/26",
+        "version": "레플리카",
+        "name": "아스널 25/26 써드킷 (레플리카)",
+        "model_code": "ADIDAS-2025",
+        "image": "https://www.sportsdirect.com/images/products/37782801_l.jpg",
+        "site_offers": [
+            {
+                "site_name": "스포츠다이렉트",
+                "currency": "GBP",
+                "regular_price": 84.99,
+                "sale_price": 70,
+                "regular_price_krw": 141933,
+                "sale_price_krw": 116900,
+                "discount_rate": 18,
+                "affiliate_link": "https://www.sportsdirect.com/adidas-arsenal-third-shirt-2025-2026-adults-377828"
+            }
+        ],
         "visible": true
     }
 ];

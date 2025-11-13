@@ -12,62 +12,62 @@ const christmasClubs = [
         products: [
             {
                 name: 'Arsenal Highbury Wonderland Christmas Jumper',
-                image: 'https://i1.adis.ws/i/ArsenalDirect/U06904_f',
+                image: 'https://i1.adis.ws/i/ArsenalDirect/u06904_f?$plpImages$',
                 url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Knitwear/Arsenal-Highbury-Wonderland-Christmas-Jumper/p/U06904'
             },
             {
                 name: 'Arsenal Crest Christmas Jumper',
-                image: 'https://i1.adis.ws/i/ArsenalDirect/U06903_f',
+                image: 'https://i1.adis.ws/i/ArsenalDirect/u06903_f?$plpImages$',
                 url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Knitwear/Arsenal-Crest-Christmas-Jumper/p/U06903'
             },
             {
                 name: 'Arsenal 6pk Bauble Set',
-                image: 'https://i1.adis.ws/i/ArsenalDirect/G06870_f',
+                image: 'https://i1.adis.ws/i/ArsenalDirect/g06870_f?$plpImages$',
                 url: 'https://arsenaldirect.arsenal.com/Christmas-Shop/Arsenal-6pk-Bauble-Set/p/G06870'
             },
             {
                 name: 'Arsenal 9pk Bauble Set',
-                image: 'https://i1.adis.ws/i/ArsenalDirect/G06869_f',
+                image: 'https://i1.adis.ws/i/ArsenalDirect/g06869_f?$plpImages$',
                 url: 'https://arsenaldirect.arsenal.com/Christmas-Shop/Arsenal-9pk-Bauble-Set/p/G06869'
             },
             {
                 name: 'Arsenal 2pk Bauble Set',
-                image: 'https://i1.adis.ws/i/ArsenalDirect/G06871_f',
+                image: 'https://i1.adis.ws/i/ArsenalDirect/g06871_f?$plpImages$',
                 url: 'https://arsenaldirect.arsenal.com/Christmas-Shop/Arsenal-2pk-Bauble-Set/p/G06871'
             },
             {
                 name: 'Arsenal Large Glitter Bauble',
-                image: 'https://i1.adis.ws/i/ArsenalDirect/G06868_f',
+                image: 'https://i1.adis.ws/i/ArsenalDirect/g06868_f?$plpImages$',
                 url: 'https://arsenaldirect.arsenal.com/Christmas-Shop/Arsenal-Large-Glitter-Bauble/p/G06868'
             },
             {
                 name: 'Arsenal Christmas Bear',
-                image: 'https://i1.adis.ws/i/ArsenalDirect/G06842_f',
+                image: 'https://i1.adis.ws/i/ArsenalDirect/g06842_f?$plpImages$',
                 url: 'https://arsenaldirect.arsenal.com/Gifts/Toys/Arsenal-Christmas-Bear/p/G06842'
             },
             {
                 name: 'Arsenal Christmas Elf',
-                image: 'https://i1.adis.ws/i/ArsenalDirect/G06841_f',
+                image: 'https://i1.adis.ws/i/ArsenalDirect/g06841_f?$plpImages$',
                 url: 'https://arsenaldirect.arsenal.com/Gifts/Toys/Arsenal-Christmas-Elf/p/G06841'
             },
             {
                 name: 'Arsenal Christmas Stocking',
-                image: 'https://i1.adis.ws/i/ArsenalDirect/G06838_f',
+                image: 'https://i1.adis.ws/i/ArsenalDirect/g06838_f?$plpImages$',
                 url: 'https://arsenaldirect.arsenal.com/Clothing/Accessories/Arsenal-Christmas-Stocking/p/G06838'
             },
             {
                 name: 'Arsenal Christmas Sack',
-                image: 'https://i1.adis.ws/i/ArsenalDirect/G06839_f',
+                image: 'https://i1.adis.ws/i/ArsenalDirect/g06839_f?$plpImages$',
                 url: 'https://arsenaldirect.arsenal.com/Clothing/Accessories/Bags-%26-Wallets/Arsenal-Christmas-Sack/p/G06839'
             },
             {
                 name: 'Arsenal Kids Highbury Wonderland Christmas Jumper',
-                image: 'https://i1.adis.ws/i/ArsenalDirect/K06703_f',
+                image: 'https://i1.adis.ws/i/ArsenalDirect/k06703_f?$plpImages$',
                 url: 'https://arsenaldirect.arsenal.com/Clothing/Kids-Clothing/Kids-Sweatshirts-%26-Hoodies/Arsenal-Kids-Highbury-Wonderland-Christmas-Jumper/p/K06703'
             },
             {
                 name: 'Arsenal Kids Crest Christmas Jumper',
-                image: 'https://i1.adis.ws/i/ArsenalDirect/K06702_f',
+                image: 'https://i1.adis.ws/i/ArsenalDirect/k06702_f?$plpImages$',
                 url: 'https://arsenaldirect.arsenal.com/Clothing/Kids-Clothing/Kids-Sweatshirts-%26-Hoodies/Arsenal-Kids-Crest-Christmas-Jumper/p/K06702'
             }
         ]

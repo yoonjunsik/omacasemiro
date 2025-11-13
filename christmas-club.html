@@ -109,31 +109,44 @@
         // 제품 카드 생성 함수
         function createProductCard(product) {
             const card = document.createElement('div');
-            card.className = 'group cursor-pointer overflow-hidden aspect-square bg-gray-100 hover:opacity-80 transition-opacity duration-300';
+            card.className = 'group cursor-pointer overflow-hidden';
 
-            // SVG를 직접 DOM에 삽입
-            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-            svg.setAttribute('width', '100%');
-            svg.setAttribute('height', '100%');
-            svg.setAttribute('viewBox', '0 0 400 400');
+            // 실제 이미지 URL인지 data URI인지 확인
+            if (product.image && product.image.startsWith('http')) {
+                // 실제 이미지가 있는 경우 (아스널)
+                card.className += ' aspect-square bg-gray-50';
+                const img = document.createElement('img');
+                img.src = product.image;
+                img.alt = product.name;
+                img.className = 'w-full h-full object-contain group-hover:scale-105 transition-transform duration-300';
+                card.appendChild(img);
+            } else {
+                // SVG 박스 표시 (다른 구단들)
+                card.className += ' aspect-square bg-gray-100 hover:opacity-80 transition-opacity duration-300';
 
-            const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-            rect.setAttribute('width', '400');
-            rect.setAttribute('height', '400');
-            rect.setAttribute('fill', getClubColor(product.name));
+                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                svg.setAttribute('width', '100%');
+                svg.setAttribute('height', '100%');
+                svg.setAttribute('viewBox', '0 0 400 400');
 
-            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-            text.setAttribute('x', '50%');
-            text.setAttribute('y', '50%');
-            text.setAttribute('text-anchor', 'middle');
-            text.setAttribute('dy', '.3em');
-            text.setAttribute('font-size', '24');
-            text.setAttribute('fill', getTextColor(product.name));
-            text.textContent = getClubShortName(product.name);
+                const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                rect.setAttribute('width', '400');
+                rect.setAttribute('height', '400');
+                rect.setAttribute('fill', getClubColor(product.name));
 
-            svg.appendChild(rect);
-            svg.appendChild(text);
-            card.appendChild(svg);
+                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                text.setAttribute('x', '50%');
+                text.setAttribute('y', '50%');
+                text.setAttribute('text-anchor', 'middle');
+                text.setAttribute('dy', '.3em');
+                text.setAttribute('font-size', '24');
+                text.setAttribute('fill', getTextColor(product.name));
+                text.textContent = getClubShortName(product.name);
+
+                svg.appendChild(rect);
+                svg.appendChild(text);
+                card.appendChild(svg);
+            }
 
             card.onclick = () => {
                 window.open(product.url, '_blank');

@@ -11,11 +11,10 @@ let currentFilters = {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('🎄 크리스마스 페이지 초기화 시작...');
 
-    // 크리스마스 에디션만 필터링 (임시로 모든 제품 표시)
+    // 크리스마스 에디션만 필터링
     filteredProducts = uniformData.filter(product => {
-        // 크리스마스 에디션 제품 필터링 로직
-        // 나중에 product.is_christmas 같은 필드로 구분 가능
-        return product.visible !== false;
+        // is_christmas가 true인 제품만 표시
+        return product.visible !== false && product.is_christmas === true;
     });
 
     // 이벤트 리스너 등록

@@ -145,24 +145,29 @@ async function forceUpdateFirebaseData() {
         const freshUniformData = eval(uniformMatch[1]);
         console.log('✅ uniformData 추출 완료:', freshUniformData.length, '개');
 
-        // blackFridaySites 추출
-        const bfMatch = dataJsContent.match(/const blackFridaySites = (\[[\s\S]*?\]);/);
-        if (!bfMatch) {
-            throw new Error('blackFridaySites를 찾을 수 없습니다.');
-        }
-        const freshBlackFridaySites = eval(bfMatch[1]);
-        console.log('✅ blackFridaySites 추출 완료:', freshBlackFridaySites.length, '개');
-
-        // Firebase에 업로드
+        // Firebase에 업로드 (uniformData만 업데이트)
         console.log('🔵 Firebase에 업로드 중...');
         const uniformRef = window.firebaseDBRef(window.firebaseDB, 'uniformData');
         await window.firebaseDBSet(uniformRef, freshUniformData);
 
+        // blackFridaySites는 Firebase에 기존 값이 있으면 유지, 없으면 data.js 값 사용
         const bfRef = window.firebaseDBRef(window.firebaseDB, 'blackFridaySites');
-        await window.firebaseDBSet(bfRef, freshBlackFridaySites);
+        const bfSnapshot = await window.firebaseDBGet(bfRef);
+
+        if (bfSnapshot.exists()) {
+            console.log('✅ blackFridaySites는 Firebase의 기존 값을 유지합니다.');
+        } else {
+            // Firebase에 blackFridaySites가 없으면 data.js에서 추출하여 업로드
+            const bfMatch = dataJsContent.match(/const blackFridaySites = (\[[\s\S]*?\]);/);
+            if (bfMatch) {
+                const freshBlackFridaySites = eval(bfMatch[1]);
+                await window.firebaseDBSet(bfRef, freshBlackFridaySites);
+                console.log('✅ blackFridaySites 초기 데이터 업로드 완료:', freshBlackFridaySites.length, '개');
+            }
+        }
 
         console.log('✅ Firebase 업로드 완료!');
-        alert('⚡ 강제 업데이트 완료! 최신 데이터가 Firebase에 반영되었습니다. 🎉\n\n페이지를 새로고침합니다.');
+        alert('⚡ 강제 업데이트 완료!\n\n✅ uniformData: 최신 data.js로 업데이트됨\n✅ blackFridaySites: 기존 설정 유지됨\n\n페이지를 새로고침합니다.');
 
         // 페이지 새로고침
         window.location.reload();

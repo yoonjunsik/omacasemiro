@@ -67,8 +67,16 @@
             </div>
         </div>
 
+        <!-- Products Grid -->
+        <div id="productsSection" class="hidden">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">🎁 크리스마스 상품</h2>
+            <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 제품 카드가 여기에 렌더링됩니다 -->
+            </div>
+        </div>
+
         <!-- Info Notice -->
-        <div id="notice" class="hidden bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 rounded">
+        <div id="notice" class="hidden bg-blue-50 border-l-4 border-blue-500 p-4 mt-8 rounded">
             <div class="flex items-start">
                 <div class="flex-shrink-0">
                     <svg class="h-5 w-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
@@ -77,7 +85,7 @@
                 </div>
                 <div class="ml-3">
                     <p class="text-sm text-blue-700">
-                        <strong class="font-bold">안내:</strong> 아래 버튼을 클릭하면 구단 공식 스토어의 크리스마스 샵으로 이동합니다.
+                        <strong class="font-bold">안내:</strong> 제품을 클릭하면 구단 공식 스토어의 상품 페이지로 이동합니다.
                         모든 상품 정보와 가격은 공식 스토어를 참고해주세요.
                     </p>
                 </div>
@@ -98,6 +106,38 @@
         const urlParams = new URLSearchParams(window.location.search);
         const clubParam = urlParams.get('club');
 
+        // 제품 카드 생성 함수
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.className = 'group bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden cursor-pointer border-2 border-transparent hover:border-red-500';
+
+            card.innerHTML = `
+                <div class="relative h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                    <img src="${product.image}" alt="${product.name}"
+                         class="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-300"
+                         onerror="this.src='https://via.placeholder.com/300x300?text=Product+Image'">
+                    <div class="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold">
+                        🎄 NEW
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">${product.name}</h3>
+                    <div class="flex items-center justify-between mt-4">
+                        <span class="text-sm text-gray-600">공식 스토어에서 확인</span>
+                        <svg class="w-5 h-5 text-gray-400 group-hover:text-red-600 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </div>
+                </div>
+            `;
+
+            card.onclick = () => {
+                window.open(product.url, '_blank');
+            };
+
+            return card;
+        }
+
         // 페이지 로드 시 초기화
         document.addEventListener('DOMContentLoaded', () => {
             const club = window.christmasClubs?.find(c => c.nameEn.toLowerCase() === clubParam);
@@ -114,6 +154,19 @@
                 document.getElementById('clubLogo').alt = club.name;
                 document.getElementById('clubName').textContent = club.name + ' 크리스마스 샵';
                 document.getElementById('visitStore').href = club.url;
+
+                // 제품 그리드 표시
+                if (club.products && club.products.length > 0) {
+                    const productsSection = document.getElementById('productsSection');
+                    const productsGrid = document.getElementById('productsGrid');
+
+                    productsSection.classList.remove('hidden');
+
+                    club.products.forEach(product => {
+                        const card = createProductCard(product);
+                        productsGrid.appendChild(card);
+                    });
+                }
 
                 // 안내 메시지 표시
                 document.getElementById('notice').classList.remove('hidden');

@@ -70,7 +70,7 @@
         <!-- Products Grid -->
         <div id="productsSection" class="hidden">
             <h2 class="text-2xl font-bold text-gray-800 mb-6">🎁 크리스마스 상품</h2>
-            <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div id="productsGrid" class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4">
                 <!-- 제품 카드가 여기에 렌더링됩니다 -->
             </div>
         </div>
@@ -109,25 +109,19 @@
         // 제품 카드 생성 함수
         function createProductCard(product) {
             const card = document.createElement('div');
-            card.className = 'group bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden cursor-pointer border-2 border-transparent hover:border-red-500';
+            card.className = 'group bg-white rounded-lg shadow hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer border border-gray-200 hover:border-red-500';
 
             card.innerHTML = `
-                <div class="relative h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                <div class="relative aspect-square bg-gray-50 flex items-center justify-center overflow-hidden">
                     <img src="${product.image}" alt="${product.name}"
-                         class="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-300"
-                         onerror="this.src='https://via.placeholder.com/300x300?text=Product+Image'">
-                    <div class="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold">
-                        🎄 NEW
+                         class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+                         onerror="this.src='https://via.placeholder.com/200x200?text=Product'">
+                    <div class="absolute top-1 right-1 bg-red-600 text-white px-1.5 py-0.5 rounded-full text-xs">
+                        🎄
                     </div>
                 </div>
-                <div class="p-4">
-                    <h3 class="text-lg font-bold text-gray-800 mb-2 line-clamp-2">${product.name}</h3>
-                    <div class="flex items-center justify-between mt-4">
-                        <span class="text-sm text-gray-600">공식 스토어에서 확인</span>
-                        <svg class="w-5 h-5 text-gray-400 group-hover:text-red-600 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                        </svg>
-                    </div>
+                <div class="p-2">
+                    <h3 class="text-xs font-semibold text-gray-800 line-clamp-2 leading-tight">${product.name}</h3>
                 </div>
             `;
 

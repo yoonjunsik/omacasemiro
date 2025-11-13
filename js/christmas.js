@@ -17,6 +17,22 @@ const christmasClubs = [
         url: 'https://store.chelseafc.com/en/c-7104',
         color: 'from-blue-600 to-blue-800',
         league: '프리미어리그'
+    },
+    {
+        name: '토트넘',
+        nameEn: 'Tottenham',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg',
+        url: 'https://shop.tottenhamhotspur.com/spurs-christmas',
+        color: 'from-white to-gray-200',
+        league: '프리미어리그'
+    },
+    {
+        name: '바르셀로나',
+        nameEn: 'Barcelona',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg',
+        url: 'https://store.fcbarcelona.com/ko-kr/search?q=christmas&options%5Bprefix%5D=last',
+        color: 'from-blue-900 to-red-700',
+        league: '라리가'
     }
 ];
 

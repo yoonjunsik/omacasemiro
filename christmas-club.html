@@ -128,9 +128,15 @@
 
         // 페이지 로드 시 초기화
         document.addEventListener('DOMContentLoaded', () => {
+            console.log('🎄 Christmas club page loaded');
+            console.log('Club parameter:', clubParam);
+            console.log('Available clubs:', window.christmasClubs);
+
             const club = window.christmasClubs?.find(c => c.nameEn.toLowerCase() === clubParam);
+            console.log('Found club:', club);
 
             if (club) {
+                console.log('Club products:', club.products?.length || 0);
                 // 로딩 상태 숨기기
                 document.getElementById('loading').classList.add('hidden');
 

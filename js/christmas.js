@@ -27,12 +27,44 @@ const christmasClubs = [
         league: '프리미어리그'
     },
     {
+        name: '맨체스터 유나이티드',
+        nameEn: 'Manchester United',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg',
+        url: 'https://store.manutd.com/en/c/christmas',
+        color: 'from-red-700 to-red-900',
+        league: '프리미어리그'
+    },
+    {
+        name: '맨체스터 시티',
+        nameEn: 'Manchester City',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg',
+        url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/',
+        color: 'from-sky-400 to-sky-600',
+        league: '프리미어리그'
+    },
+    {
         name: '바르셀로나',
         nameEn: 'Barcelona',
         logo: 'https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg',
         url: 'https://store.fcbarcelona.com/ko-kr/search?q=christmas&options%5Bprefix%5D=last',
         color: 'from-blue-900 to-red-700',
         league: '라리가'
+    },
+    {
+        name: '바이에른 뮌헨',
+        nameEn: 'Bayern Munich',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg',
+        url: 'https://fcbayern.com/store/en-zz/c/specials/x-mas-world',
+        color: 'from-red-600 to-blue-800',
+        league: '분데스리가'
+    },
+    {
+        name: '도르트문트',
+        nameEn: 'Borussia Dortmund',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg',
+        url: 'https://shop.bvb.de/en-de/christmas',
+        color: 'from-yellow-400 to-black',
+        league: '분데스리가'
     }
 ];
 

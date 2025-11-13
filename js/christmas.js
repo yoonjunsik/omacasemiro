@@ -1,173 +1,78 @@
 // 크리스마스 에디션 페이지 JavaScript
 
-// 전역 변수
-let filteredProducts = [];
-let currentFilters = {
-    team: 'all',
-    sort: 'discount'
-};
+// 크리스마스 샵 구단 데이터
+const christmasClubs = [
+    {
+        name: '아스널',
+        nameEn: 'Arsenal',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg',
+        url: 'https://arsenaldirect.arsenal.com/Christmas-Shop/c/christmas',
+        color: 'from-red-600 to-red-800',
+        league: '프리미어리그'
+    },
+    {
+        name: '첼시',
+        nameEn: 'Chelsea',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg',
+        url: 'https://store.chelseafc.com/en/c-7104',
+        color: 'from-blue-600 to-blue-800',
+        league: '프리미어리그'
+    }
+];
 
 // 페이지 로드 시 초기화
 document.addEventListener('DOMContentLoaded', () => {
     console.log('🎄 크리스마스 페이지 초기화 시작...');
-
-    // 크리스마스 에디션만 필터링
-    filteredProducts = uniformData.filter(product => {
-        // is_christmas가 true인 제품만 표시
-        return product.visible !== false && product.is_christmas === true;
-    });
-
-    // 이벤트 리스너 등록
-    setupEventListeners();
-
-    // 초기 렌더링
-    applyFilters();
-
+    renderClubs();
     console.log('✅ 크리스마스 페이지 초기화 완료');
 });
 
-// 이벤트 리스너 설정
-function setupEventListeners() {
-    // 팀 필터 버튼
-    document.querySelectorAll('#teamFilter .filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('#teamFilter .filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            currentFilters.team = btn.dataset.team;
-            applyFilters();
-        });
-    });
-
-    // 정렬 선택
-    document.getElementById('sortSelect').addEventListener('change', (e) => {
-        currentFilters.sort = e.target.value;
-        applyFilters();
-    });
-}
-
-// 필터 적용
-function applyFilters() {
-    let products = [...filteredProducts];
-
-    // 팀 필터
-    if (currentFilters.team !== 'all') {
-        products = products.filter(p => p.team === currentFilters.team);
-    }
-
-    // 정렬
-    switch (currentFilters.sort) {
-        case 'discount':
-            products.sort((a, b) => {
-                const aDiscount = getMaxDiscount(a);
-                const bDiscount = getMaxDiscount(b);
-                return bDiscount - aDiscount;
-            });
-            break;
-        case 'price-low':
-            products.sort((a, b) => getMinPrice(a) - getMinPrice(b));
-            break;
-        case 'price-high':
-            products.sort((a, b) => getMinPrice(b) - getMinPrice(a));
-            break;
-        case 'name':
-            products.sort((a, b) => a.name.localeCompare(b.name, 'ko'));
-            break;
-    }
-
-    renderProducts(products);
-}
-
-// 최대 할인율 가져오기
-function getMaxDiscount(product) {
-    if (!product.site_offers || product.site_offers.length === 0) return 0;
-    return Math.max(...product.site_offers.map(offer => offer.discount_rate || 0));
-}
-
-// 최저가 가져오기
-function getMinPrice(product) {
-    if (!product.site_offers || product.site_offers.length === 0) return Infinity;
-    return Math.min(...product.site_offers.map(offer => offer.sale_price_krw || offer.sale_price || Infinity));
-}
-
-// 제품 렌더링
-function renderProducts(products) {
-    const grid = document.getElementById('productsGrid');
-    const emptyState = document.getElementById('emptyState');
-    const countElement = document.getElementById('productCount');
-
-    countElement.textContent = products.length;
-
-    if (products.length === 0) {
-        grid.classList.add('hidden');
-        emptyState.classList.remove('hidden');
-        return;
-    }
-
-    grid.classList.remove('hidden');
-    emptyState.classList.add('hidden');
+// 구단 카드 렌더링
+function renderClubs() {
+    const grid = document.getElementById('clubsGrid');
     grid.innerHTML = '';
 
-    products.forEach(product => {
-        const card = createProductCard(product);
+    christmasClubs.forEach(club => {
+        const card = createClubCard(club);
         grid.appendChild(card);
     });
 }
 
-// 제품 카드 생성
-function createProductCard(product) {
+// 구단 카드 생성
+function createClubCard(club) {
     const card = document.createElement('div');
-    card.className = 'bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer border-2 border-transparent hover:border-red-500';
-
-    // 최저가 및 최대 할인율 계산
-    const minPrice = getMinPrice(product);
-    const maxDiscount = getMaxDiscount(product);
-
-    // 크리스마스 배지
-    const christmasBadge = `
-        <div class="absolute top-2 left-2 bg-red-600 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1">
-            🎄 XMAS
-        </div>
-    `;
-
-    // 할인율 배지
-    const discountBadge = maxDiscount > 0 ? `
-        <div class="absolute top-2 right-2 bg-green-600 text-white px-2 py-1 rounded-full text-xs font-bold shadow-lg">
-            ${maxDiscount}% 할인
-        </div>
-    ` : '';
+    card.className = 'group bg-white rounded-lg shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden cursor-pointer border-2 border-transparent hover:border-red-500';
 
     card.innerHTML = `
-        <div class="relative">
-            <img src="${product.image}"
-                 alt="${product.name}"
-                 class="w-full h-48 md:h-64 object-cover"
-                 onerror="this.src='https://via.placeholder.com/400x500?text=No+Image'">
-            ${christmasBadge}
-            ${discountBadge}
-        </div>
-        <div class="p-3 md:p-4">
-            <h3 class="font-bold text-sm md:text-base mb-2 text-gray-800 line-clamp-2">${product.name}</h3>
-            <div class="flex items-center justify-between mb-2">
-                <span class="text-xs md:text-sm text-gray-600">${product.team}</span>
-                <span class="text-xs md:text-sm font-semibold text-red-600">${product.season}</span>
+        <div class="relative h-48 bg-gradient-to-br ${club.color} flex items-center justify-center p-6">
+            <div class="absolute top-2 left-2 bg-white px-2 py-1 rounded text-xs font-bold text-gray-700">
+                ${club.league}
             </div>
-            ${minPrice !== Infinity ? `
-                <div class="mt-3 pt-3 border-t border-gray-200">
-                    <p class="text-xs text-gray-500">최저가</p>
-                    <p class="text-lg md:text-xl font-black text-red-600">₩${minPrice.toLocaleString('ko-KR')}</p>
-                </div>
-            ` : ''}
-            <div class="mt-3">
-                <span class="inline-block bg-red-100 text-red-700 text-xs px-2 py-1 rounded">
-                    ${product.site_offers?.length || 0}개 판매처
+            <div class="absolute top-2 right-2 text-2xl">
+                🎄
+            </div>
+            <img src="${club.logo}" alt="${club.name}" class="w-24 h-24 md:w-32 md:h-32 object-contain filter drop-shadow-2xl group-hover:scale-110 transition-transform">
+        </div>
+        <div class="p-4">
+            <h3 class="text-xl font-black text-gray-800 mb-2">${club.name}</h3>
+            <p class="text-sm text-gray-600 mb-3">${club.nameEn}</p>
+            <div class="flex items-center justify-between">
+                <span class="text-xs bg-red-100 text-red-700 px-3 py-1 rounded-full font-bold">
+                    🎁 크리스마스 샵
                 </span>
+                <svg class="w-5 h-5 text-gray-400 group-hover:text-red-600 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
             </div>
         </div>
     `;
 
     card.onclick = () => {
-        window.location.href = `product.html?id=${product.model_code}`;
+        window.location.href = `christmas-club.html?club=${encodeURIComponent(club.nameEn.toLowerCase())}`;
     };
 
     return card;
 }
+
+// 전역으로 내보내기
+window.christmasClubs = christmasClubs;

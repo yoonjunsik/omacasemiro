@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>크리스마스 샵 - 오마카세미루</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLKV2307KE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-LLKV2307KE');
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-red-600 via-green-600 to-red-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <a href="/christmas.html" class="flex items-center hover:opacity-80 transition">
+                    <span class="text-2xl md:text-3xl font-black">🎄 오마카세미루</span>
+                </a>
+                <div class="flex gap-2 md:gap-4">
+                    <a href="/" class="bg-white text-green-600 px-3 md:px-4 py-2 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-100 transition">
+                        🔥 블프 세일
+                    </a>
+                    <a href="/christmas.html" class="bg-white text-red-600 px-3 md:px-4 py-2 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-100 transition">
+                        ← 구단 목록
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Loading State -->
+        <div id="loading" class="text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-red-500 border-t-transparent"></div>
+            <p class="mt-4 text-gray-600">🎄 크리스마스 상품을 불러오는 중...</p>
+        </div>
+
+        <!-- Club Header -->
+        <div id="clubHeader" class="hidden bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="flex items-center gap-6">
+                <img id="clubLogo" src="" alt="" class="w-24 h-24 object-contain">
+                <div class="flex-1">
+                    <h1 id="clubName" class="text-3xl font-black text-gray-800 mb-2"></h1>
+                    <p class="text-gray-600 mb-4">🎄 크리스마스 스페셜 상품</p>
+                    <a id="visitStore" href="" target="_blank" class="inline-block bg-red-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition">
+                        공식 스토어 방문하기 →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Notice -->
+        <div id="notice" class="hidden bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 rounded">
+            <div class="flex items-start">
+                <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-blue-700">
+                        <strong class="font-bold">안내:</strong> 아래 버튼을 클릭하면 구단 공식 스토어의 크리스마스 샵으로 이동합니다.
+                        모든 상품 정보와 가격은 공식 스토어를 참고해주세요.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">© 2024 오마카세미루 - 크리스마스 에디션</p>
+        </div>
+    </footer>
+
+    <script src="js/christmas.js"></script>
+    <script>
+        // URL에서 club 파라미터 가져오기
+        const urlParams = new URLSearchParams(window.location.search);
+        const clubParam = urlParams.get('club');
+
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', () => {
+            const club = window.christmasClubs?.find(c => c.nameEn.toLowerCase() === clubParam);
+
+            if (club) {
+                // 로딩 상태 숨기기
+                document.getElementById('loading').classList.add('hidden');
+
+                // 클럽 헤더 표시
+                const header = document.getElementById('clubHeader');
+                header.classList.remove('hidden');
+
+                document.getElementById('clubLogo').src = club.logo;
+                document.getElementById('clubLogo').alt = club.name;
+                document.getElementById('clubName').textContent = club.name + ' 크리스마스 샵';
+                document.getElementById('visitStore').href = club.url;
+
+                // 안내 메시지 표시
+                document.getElementById('notice').classList.remove('hidden');
+            } else {
+                // 클럽을 찾을 수 없는 경우
+                document.getElementById('loading').innerHTML = `
+                    <p class="text-gray-600 text-lg">구단을 찾을 수 없습니다.</p>
+                    <a href="/christmas.html" class="inline-block mt-4 bg-red-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition">
+                        ← 구단 목록으로 돌아가기
+                    </a>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

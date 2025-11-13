@@ -7,7 +7,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "맨체스터 유나이티드 2025 2026 홈 유니폼 (레플리카)",
         "model_code": "JI7428",
-        "image": "https://www.sportsdirect.com/images/products/37782208_h.jpg",
+        "image": "https://thumblr.uniid.it/product/396415/a20a2e44917f.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -29,7 +29,7 @@ const uniformData = [
         "version": "어센틱",
         "name": "맨체스터 유나이티드 2025 2026 홈 유니폼 (어센틱)",
         "model_code": "JI7428-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/37782308_h.jpg",
+        "image": "https://thumblr.uniid.it/product/396415/a20a2e44917f.jpg",
         "site_offers": [],
         "visible": false
     },
@@ -40,7 +40,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "맨체스터 유나이티드 2025 2026 어웨이 유니폼 (레플리카)",
         "model_code": "JI7423",
-        "image": "https://www.sportsdirect.com/images/products/37781801_h.jpg",
+        "image": "https://thumblr.uniid.it/product/396414/5238d844a7d9.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -62,7 +62,7 @@ const uniformData = [
         "version": "어센틱",
         "name": "맨체스터 유나이티드 2025 2026 어웨이 유니폼 (어센틱)",
         "model_code": "JI7423-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/37781901_h.jpg",
+        "image": "https://thumblr.uniid.it/product/396414/5238d844a7d9.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -83,7 +83,7 @@ const uniformData = [
         "season": "25/26",
         "name": "리버풀 FC 2025 2026 홈 유니폼 (아디다스) (레플리카)",
         "model_code": "LFC-2526",
-        "image": "https://www.sportsdirect.com/images/products/37872508_h.jpg",
+        "image": "https://thumblr.uniid.it/product/397044/d1eda93d45bb.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트 UK",
@@ -105,7 +105,7 @@ const uniformData = [
         "season": "25/26",
         "name": "리버풀 FC 2025 2026 홈 유니폼 (아디다스) (어센틱)",
         "model_code": "JV6444",
-        "image": "https://www.sportsdirect.com/images/products/37872208_h.jpg",
+        "image": "https://thumblr.uniid.it/product/397044/d1eda93d45bb.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -127,7 +127,7 @@ const uniformData = [
         "season": "25/26",
         "name": "뉴캐슬 유나이티드 FC 2025 2026 홈 저지 (레플리카)",
         "model_code": "JI7382",
-        "image": "https://www.sportsdirect.com/images/products/37706403_h.jpg",
+        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNwRL3Xzeqg45xNc4mQo5Ghh0n1eZxdj6UCoZBGriIczeyLOdv-y2CsE7LRgTPTl7qdjH9r_4iyZ4ceGZees7Eas28bdADaCnJira93eHPkxCuKRNt5tqN4mndwEnWQq431RzSwsQmzz_GjGqjkX5YzcU26pjSIHN1C0ar-YyC_bJ5QQdqRDvunWzmZRs/s1600/newcastle-24-25-home-kit%20%284%29.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -138,7 +138,7 @@ const uniformData = [
         "season": "25/26",
         "name": "뉴캐슬 유나이티드 FC 2025 2026 홈 저지 (어센틱)",
         "model_code": "JI7382-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/37706403_h.jpg",
+        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNwRL3Xzeqg45xNc4mQo5Ghh0n1eZxdj6UCoZBGriIczeyLOdv-y2CsE7LRgTPTl7qdjH9r_4iyZ4ceGZees7Eas28bdADaCnJira93eHPkxCuKRNt5tqN4mndwEnWQq431RzSwsQmzz_GjGqjkX5YzcU26pjSIHN1C0ar-YyC_bJ5QQdqRDvunWzmZRs/s1600/newcastle-24-25-home-kit%20%284%29.jpg",
         "site_offers": [],
         "version": "어센틱",
         "visible": false
@@ -149,7 +149,7 @@ const uniformData = [
         "season": "25/26",
         "name": "파리 생제르맹 2025 2026 홈 유니폼 (레플리카)",
         "model_code": "HJ4593-411",
-        "image": "https://www.sportsdirect.com/images/products/37740608_h.jpg",
+        "image": "https://thumblr.uniid.it/product/392883/9d76dbafcc03.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -160,7 +160,7 @@ const uniformData = [
         "season": "25/26",
         "name": "파리 생제르맹 2025 2026 홈 유니폼 (어센틱)",
         "model_code": "HJ4593-411-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/37740608_h.jpg",
+        "image": "https://thumblr.uniid.it/product/392883/9d76dbafcc03.jpg",
         "site_offers": [],
         "version": "어센틱",
         "visible": false
@@ -171,7 +171,7 @@ const uniformData = [
         "season": "25/26",
         "name": "인터 밀란 2025 2026 홈 유니폼 (레플리카)",
         "model_code": "HJ4591-439",
-        "image": "https://www.sportsdirect.com/images/products/37736418_l.jpg",
+        "image": "https://thumblr.uniid.it/product/392851/cbef7dd0dcc0.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -182,7 +182,7 @@ const uniformData = [
         "season": "25/26",
         "name": "인터 밀란 2025 2026 홈 유니폼 (어센틱)",
         "model_code": "HJ4591-439-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/37736418_l.jpg",
+        "image": "https://thumblr.uniid.it/product/392851/cbef7dd0dcc0.jpg",
         "site_offers": [],
         "version": "어센틱",
         "visible": false
@@ -193,7 +193,7 @@ const uniformData = [
         "season": "24/25",
         "name": "맨체스터 시티 2024 2025 홈 유니폼 (레플리카)",
         "model_code": "775075-01",
-        "image": "https://www.sportsdirect.com/images/products/37779018_h.jpg",
+        "image": "https://thumblr.uniid.it/product/356113/d673621e3163.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -215,7 +215,7 @@ const uniformData = [
         "season": "24/25",
         "name": "맨체스터 시티 2024 2025 어웨이 유니폼 (레플리카)",
         "model_code": "775086-02",
-        "image": "https://www.sportsdirect.com/images/products/37743403_h.jpg",
+        "image": "https://thumblr.uniid.it/product/356281/72559c6635db.jpg",
         "site_offers": [
             {
                 "site_name": "유니스포츠",
@@ -237,7 +237,7 @@ const uniformData = [
         "season": "24/25",
         "name": "레알 마드리드 2024 2025 홈 유니폼 (레플리카)",
         "model_code": "IU5011",
-        "image": "https://www.sportsdirect.com/images/products/36738701_h.jpg",
+        "image": "https://thumblr.uniid.it/product/359343/464a472c365c.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -269,7 +269,7 @@ const uniformData = [
         "season": "24/25",
         "name": "레알 마드리드 2024 2025 홈 유니폼 (어센틱)",
         "model_code": "IU5011-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/36738701_h.jpg",
+        "image": "https://thumblr.uniid.it/product/359343/464a472c365c.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -301,7 +301,7 @@ const uniformData = [
         "season": "24/25",
         "name": "레알 마드리드 2024 2025 어웨이 유니폼 (레플리카)",
         "model_code": "IU5013",
-        "image": "https://www.sportsdirect.com/images/products/36738812_h.jpg",
+        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhC0UCK5plo81tSrS_Fcdrp6N_UZpduIw0k_Qx3HV-gUHGDzQHtSv74bvku9EHq9WLuFj3WB7vzpXn5x49nXHlMT35cEGbm4w63iy_DRygWVT85PzWV-9AFFT3wu6ajOA4qCBdcPDnzYKs6YX6sGAoKXIPg1ZgYNG04yOGXdiXQHicB78ADhD1JpRuguPc/s1600/real-madrid-24-25-away-kit%20%2827%29.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -312,7 +312,7 @@ const uniformData = [
         "season": "24/25",
         "name": "레알 마드리드 2024 2025 어웨이 유니폼 (어센틱)",
         "model_code": "IU5013-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/36738812_h.jpg",
+        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhC0UCK5plo81tSrS_Fcdrp6N_UZpduIw0k_Qx3HV-gUHGDzQHtSv74bvku9EHq9WLuFj3WB7vzpXn5x49nXHlMT35cEGbm4w63iy_DRygWVT85PzWV-9AFFT3wu6ajOA4qCBdcPDnzYKs6YX6sGAoKXIPg1ZgYNG04yOGXdiXQHicB78ADhD1JpRuguPc/s1600/real-madrid-24-25-away-kit%20%2827%29.jpg",
         "site_offers": [
             {
                 "site_name": "유니스포츠",
@@ -334,7 +334,7 @@ const uniformData = [
         "season": "24/25",
         "name": "FC 바르셀로나 2024 2025 홈 유니폼 (레플리카)",
         "model_code": "FN8797-456",
-        "image": "https://www.sportsdirect.com/images/products/36609703_h.jpg",
+        "image": "https://thumblr.uniid.it/product/369612/7929b1566035.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -345,7 +345,7 @@ const uniformData = [
         "season": "24/25",
         "name": "FC 바르셀로나 2024 2025 홈 유니폼 (어센틱)",
         "model_code": "FN8797-456-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/36609703_h.jpg",
+        "image": "https://thumblr.uniid.it/product/369612/7929b1566035.jpg",
         "site_offers": [],
         "version": "어센틱",
         "visible": false
@@ -356,7 +356,7 @@ const uniformData = [
         "season": "24/25",
         "name": "FC 바르셀로나 2024 2025 어웨이 유니폼 (레플리카)",
         "model_code": "FN8792-010",
-        "image": "https://www.sportsdirect.com/images/products/36623603_h.jpg",
+        "image": "https://thumblr.uniid.it/product/373195/71b819728447.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -400,7 +400,7 @@ const uniformData = [
         "season": "24/25",
         "name": "리버풀 FC 2024 2025 홈 유니폼 (어센틱)",
         "model_code": "FN8776-688-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/36530303_h.jpg",
+        "image": "https://thumblr.uniid.it/product/352866/c8f3ffc37c12.jpg",
         "site_offers": [],
         "version": "어센틱",
         "visible": false
@@ -411,7 +411,7 @@ const uniformData = [
         "season": "24/25",
         "name": "리버풀 FC 2024 2025 어웨이 유니폼 (레플리카)",
         "model_code": "FQ2031-309",
-        "image": "https://www.sportsdirect.com/images/products/36743715_h.jpg",
+        "image": "https://thumblr.uniid.it/product/369621/9e8eb4fa0afa.jpg",
         "site_offers": [
             {
                 "site_name": "유니스포츠",
@@ -433,7 +433,7 @@ const uniformData = [
         "season": "24/25",
         "name": "첼시 FC 2024 2025 홈 유니폼 (레플리카)",
         "model_code": "FN8779-496",
-        "image": "https://www.sportsdirect.com/images/products/36744318_h.jpg",
+        "image": "https://thumblr.uniid.it/product/369614/62610e444cf5.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -444,7 +444,7 @@ const uniformData = [
         "season": "24/25",
         "name": "첼시 FC 2024 2025 홈 유니폼 (어센틱)",
         "model_code": "FN8779-496-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/36744318_h.jpg",
+        "image": "https://thumblr.uniid.it/product/369614/62610e444cf5.jpg",
         "site_offers": [
             {
                 "site_name": "유니스포츠",
@@ -466,7 +466,7 @@ const uniformData = [
         "season": "24/25",
         "name": "첼시 FC 2024 2025 어웨이 유니폼 (레플리카)",
         "model_code": "FN8786-839",
-        "image": "https://www.sportsdirect.com/images/products/36744502_h.jpg",
+        "image": "https://thumblr.uniid.it/product/369623/e8e3cf0bf8dc.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -498,7 +498,7 @@ const uniformData = [
         "season": "24/25",
         "name": "첼시 FC 2024 2025 어웨이 유니폼 (어센틱)",
         "model_code": "FN8786-839-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/36744502_h.jpg",
+        "image": "https://thumblr.uniid.it/product/369623/e8e3cf0bf8dc.jpg",
         "site_offers": [],
         "version": "어센틱",
         "visible": false
@@ -509,7 +509,7 @@ const uniformData = [
         "season": "24/25",
         "name": "토트넘 홋스퍼 2024 2025 홈 유니폼 (레플리카)",
         "model_code": "FN8794-101",
-        "image": "https://www.sportsdirect.com/images/products/36555103_h.jpg",
+        "image": "https://thumblr.uniid.it/product/355878/b6377507deb8.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -520,7 +520,7 @@ const uniformData = [
         "season": "24/25",
         "name": "토트넘 홋스퍼 2024 2025 홈 유니폼 (어센틱)",
         "model_code": "FN8794-101-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/36555103_h.jpg",
+        "image": "https://thumblr.uniid.it/product/355878/b6377507deb8.jpg",
         "site_offers": [],
         "version": "어센틱",
         "visible": false
@@ -531,7 +531,7 @@ const uniformData = [
         "season": "24/25",
         "name": "토트넘 홋스퍼 2024 2025 어웨이 유니폼 (레플리카)",
         "model_code": "FN8788-480",
-        "image": "https://www.sportsdirect.com/images/products/36811218_h.jpg",
+        "image": "https://thumblr.uniid.it/product/369657/d43d02e75d48.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -542,7 +542,7 @@ const uniformData = [
         "season": "24/25",
         "name": "아스널 FC 2024 2025 홈 유니폼 (레플리카)",
         "model_code": "IT6141",
-        "image": "https://www.sportsdirect.com/images/products/36741108_h.jpg",
+        "image": "https://thumblr.uniid.it/product/359308/9ee611db6ab9.jpg",
         "site_offers": [
             {
                 "site_name": "유니스포츠",
@@ -564,7 +564,7 @@ const uniformData = [
         "season": "24/25",
         "name": "아스널 FC 2024 2025 어웨이 유니폼 (레플리카)",
         "model_code": "IT6148",
-        "image": "https://www.sportsdirect.com/images/products/36741303_h.jpg",
+        "image": "https://thumblr.uniid.it/product/359310/507843ada0ab.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -575,7 +575,7 @@ const uniformData = [
         "season": "24/25",
         "name": "아스널 FC 2024 2025 어웨이 유니폼 (어센틱)",
         "model_code": "IT6148-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/36741303_h.jpg",
+        "image": "https://thumblr.uniid.it/product/359310/507843ada0ab.jpg",
         "site_offers": [],
         "version": "어센틱",
         "visible": false
@@ -586,7 +586,7 @@ const uniformData = [
         "season": "24/25",
         "name": "뉴캐슬 유나이티드 2024 2025 홈 유니폼 (레플리카)",
         "model_code": "IX3165",
-        "image": "https://www.sportsdirect.com/images/products/36575203_h.jpg",
+        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNwRL3Xzeqg45xNc4mQo5Ghh0n1eZxdj6UCoZBGriIczeyLOdv-y2CsE7LRgTPTl7qdjH9r_4iyZ4ceGZees7Eas28bdADaCnJira93eHPkxCuKRNt5tqN4mndwEnWQq431RzSwsQmzz_GjGqjkX5YzcU26pjSIHN1C0ar-YyC_bJ5QQdqRDvunWzmZRs/s1600/newcastle-24-25-home-kit%20%284%29.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -597,7 +597,7 @@ const uniformData = [
         "season": "24/25",
         "name": "파리 생제르맹 2024 2025 홈 유니폼 (레플리카)",
         "model_code": "FN8795-411",
-        "image": "https://www.sportsdirect.com/images/products/36537903_h.jpg",
+        "image": "https://thumblr.uniid.it/product/352890/95d639cef834.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -608,7 +608,7 @@ const uniformData = [
         "season": "24/25",
         "name": "파리 생제르맹 2024 2025 홈 유니폼 (어센틱)",
         "model_code": "FN8795-411-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/36537903_h.jpg",
+        "image": "https://thumblr.uniid.it/product/352890/95d639cef834.jpg",
         "site_offers": [],
         "version": "어센틱",
         "visible": false
@@ -619,7 +619,7 @@ const uniformData = [
         "season": "24/25",
         "name": "파리 생제르맹 2024 2025 어웨이 유니폼 (레플리카)",
         "model_code": "FN8781-101",
-        "image": "https://www.sportsdirect.com/images/products/36548003_h.jpg",
+        "image": "https://thumblr.uniid.it/product/369617/bd64aa3be109.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -630,7 +630,7 @@ const uniformData = [
         "season": "24/25",
         "name": "파리 생제르맹 2024 2025 어웨이 유니폼 (어센틱)",
         "model_code": "FN8781-101-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/36548003_h.jpg",
+        "image": "https://thumblr.uniid.it/product/369617/bd64aa3be109.jpg",
         "site_offers": [],
         "version": "어센틱",
         "visible": false
@@ -641,7 +641,7 @@ const uniformData = [
         "season": "24/25",
         "name": "유벤투스 FC 2024 2025 홈 유니폼 (레플리카)",
         "model_code": "IS8002",
-        "image": "https://www.sportsdirect.com/images/products/36738401_h.jpg",
+        "image": "https://thumblr.uniid.it/product/359305/a75b429e403b.jpg",
         "site_offers": [
             {
                 "site_name": "유니스포츠",
@@ -663,7 +663,7 @@ const uniformData = [
         "season": "24/25",
         "name": "바이에른 뮌헨 2024 2025 홈 유니폼 (레플리카)",
         "model_code": "IT8511",
-        "image": "https://www.sportsdirect.com/images/products/37784308_h.jpg",
+        "image": "https://thumblr.uniid.it/product/359210/8a2725df992a.jpg",
         "site_offers": [
             {
                 "site_name": "유니스포츠",
@@ -685,7 +685,7 @@ const uniformData = [
         "season": "24/25",
         "name": "바이에른 뮌헨 2024 2025 홈 유니폼 (어센틱)",
         "model_code": "IT8511-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/37784308_h.jpg",
+        "image": "https://thumblr.uniid.it/product/359210/8a2725df992a.jpg",
         "site_offers": [],
         "version": "어센틱",
         "visible": false
@@ -696,7 +696,7 @@ const uniformData = [
         "season": "24/25",
         "name": "인터 밀란 2024 2025 홈 유니폼 (레플리카)",
         "model_code": "FN8787-440",
-        "image": "https://www.sportsdirect.com/images/products/37707818_h.jpg",
+        "image": "https://thumblr.uniid.it/product/369622/81e1f3d35c96.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -707,7 +707,7 @@ const uniformData = [
         "season": "24/25",
         "name": "AC 밀란 2024 2025 홈 유니폼 (레플리카)",
         "model_code": "774979-01",
-        "image": "https://www.sportsdirect.com/images/products/36621803_h.jpg",
+        "image": "https://thumblr.uniid.it/product/368888/3c6be79c1d07.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -718,7 +718,7 @@ const uniformData = [
         "season": "24/25",
         "name": "AC 밀란 2024 2025 어웨이 유니폼 (레플리카)",
         "model_code": "775015-02",
-        "image": "https://www.sportsdirect.com/images/products/37765001_h.jpg",
+        "image": "https://thumblr.uniid.it/product/368909/6a1f26c57b48.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -729,7 +729,7 @@ const uniformData = [
         "season": "24/25",
         "name": "벤피카 2024 2025 써드 유니폼 (레플리카)",
         "model_code": "JJ5114",
-        "image": "https://www.sportsdirect.com/images/products/36736302_h.jpg",
+        "image": "https://thumblr.uniid.it/product/359611/d15a5b34f102.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -761,7 +761,7 @@ const uniformData = [
         "season": "24/25",
         "name": "벤피카 2024 2025 써드 유니폼 (어센틱)",
         "model_code": "JJ5114-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/36736302_h.jpg",
+        "image": "https://thumblr.uniid.it/product/359611/d15a5b34f102.jpg",
         "site_offers": [],
         "version": "어센틱",
         "visible": false
@@ -772,7 +772,7 @@ const uniformData = [
         "season": "23/24",
         "name": "맨체스터 유나이티드 2023 2024 홈 유니폼 (레플리카)",
         "model_code": "IP1726",
-        "image": "https://www.sportsdirect.com/images/products/32998501_h.jpg",
+        "image": "https://thumblr.uniid.it/product/274623/b4f6b1e62ba8.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -783,7 +783,7 @@ const uniformData = [
         "season": "23/24",
         "name": "레알 마드리드 2023 2024 홈 유니폼 (레플리카)",
         "model_code": "HZ5310",
-        "image": "https://www.sportsdirect.com/images/products/37894601_h.jpg",
+        "image": "https://thumblr.uniid.it/product/287518/09e8285a621e.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -794,7 +794,7 @@ const uniformData = [
         "season": "23/24",
         "name": "FC 바르셀로나 2023 2024 홈 유니폼 (레플리카)",
         "model_code": "DX2687-456",
-        "image": "https://www.sportsdirect.com/images/products/32853901_h.jpg",
+        "image": "https://thumblr.uniid.it/product/287575/f9bf1fc6aa51.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -805,7 +805,7 @@ const uniformData = [
         "season": "23/24",
         "name": "FC 바르셀로나 2023 2024 홈 유니폼 (어센틱)",
         "model_code": "DX2687-456-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/32853901_h.jpg",
+        "image": "https://thumblr.uniid.it/product/287575/f9bf1fc6aa51.jpg",
         "site_offers": [],
         "version": "어센틱",
         "visible": false
@@ -816,7 +816,7 @@ const uniformData = [
         "season": "23/24",
         "name": "FC 바르셀로나 2023 2024 어웨이 유니폼 (레플리카)",
         "model_code": "DX2688-838",
-        "image": "https://www.sportsdirect.com/images/products/33152101_h.jpg",
+        "image": "https://thumblr.uniid.it/product/300649/96c53c318f81.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -827,7 +827,7 @@ const uniformData = [
         "season": "23/24",
         "name": "맨체스터 시티 2023 2024 홈 유니폼 (레플리카)",
         "model_code": "757058-01",
-        "image": "https://www.sportsdirect.com/images/products/32841101_h.jpg",
+        "image": "https://thumblr.uniid.it/product/271956/b9edb31af7ff.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -838,7 +838,7 @@ const uniformData = [
         "season": "23/24",
         "name": "아스널 FC 2023 2024 홈 유니폼 (레플리카)",
         "model_code": "IP3376",
-        "image": "https://www.sportsdirect.com/images/products/32862401_h.jpg",
+        "image": "https://thumblr.uniid.it/product/274668/fc2c05f1bdb8.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -849,7 +849,7 @@ const uniformData = [
         "season": "23/24",
         "name": "리버풀 FC 2023 2024 홈 유니폼 (레플리카)",
         "model_code": "DX2689-688",
-        "image": "https://www.sportsdirect.com/images/products/32835401_h.jpg",
+        "image": "https://thumblr.uniid.it/product/274617/9c5de67f78a2.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -860,7 +860,7 @@ const uniformData = [
         "season": "22/23",
         "name": "맨체스터 유나이티드 2022 2023 홈 유니폼 (레플리카)",
         "model_code": "GM4545",
-        "image": "https://www.sportsdirect.com/images/products/37731108_h.jpg",
+        "image": "https://thumblr.uniid.it/product/221887/20d45ad57802.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -882,7 +882,7 @@ const uniformData = [
         "season": "22/23",
         "name": "레알 마드리드 2022 2023 홈 유니폼 (레플리카)",
         "model_code": "GU9728",
-        "image": "https://www.sportsdirect.com/images/products/31156101_h.jpg",
+        "image": "https://thumblr.uniid.it/product/214925/cc02cb5f087f.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -893,7 +893,7 @@ const uniformData = [
         "season": "22/23",
         "name": "FC 바르셀로나 2022 2023 홈 유니폼 (레플리카)",
         "model_code": "CV8933-456",
-        "image": "https://www.sportsdirect.com/images/products/31174601_h.jpg",
+        "image": "https://thumblr.uniid.it/product/215169/da748f1e0eb9.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -904,7 +904,7 @@ const uniformData = [
         "season": "22/23",
         "name": "FC 바르셀로나 2022 2023 홈 유니폼 (어센틱)",
         "model_code": "CV8933-456-AUTH",
-        "image": "https://www.sportsdirect.com/images/products/31174601_h.jpg",
+        "image": "https://thumblr.uniid.it/product/215169/da748f1e0eb9.jpg",
         "site_offers": [],
         "version": "어센틱",
         "visible": false
@@ -915,7 +915,7 @@ const uniformData = [
         "season": "22/23",
         "name": "맨체스터 시티 2022 2023 홈 유니폼 (레플리카)",
         "model_code": "759242-01",
-        "image": "https://www.sportsdirect.com/images/products/31160001_h.jpg",
+        "image": "https://thumblr.uniid.it/product/215120/f6bfe4a7c6f2.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -926,7 +926,7 @@ const uniformData = [
         "season": "22/23",
         "name": "리버풀 FC 2022 2023 홈 유니폼 (레플리카)",
         "model_code": "DD9422-688",
-        "image": "https://www.sportsdirect.com/images/products/31154501_h.jpg",
+        "image": "https://thumblr.uniid.it/product/215115/0a0daaddc4d4.jpg",
         "site_offers": [],
         "version": "레플리카",
         "visible": true
@@ -938,7 +938,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "첼시 25/26 홈킷 (레플리카)",
         "model_code": "HJ4589-496",
-        "image": "https://www.sportsdirect.com/images/products/37732318_l.jpg",
+        "image": "https://thumblr.uniid.it/product/396422/d6b33d6eae7d.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -960,7 +960,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "첼시 25/26 어웨이킷 (레플리카)",
         "model_code": "HJ4553-031",
-        "image": "https://www.sportsdirect.com/images/products/37735603_l.jpg",
+        "image": "https://thumblr.uniid.it/product/400969/50a4e93c6097.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -982,7 +982,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "첼시 25/26 써드킷 (레플리카)",
         "model_code": "HM3202-011",
-        "image": "https://www.sportsdirect.com/images/products/37701303_l.jpg",
+        "image": "https://thumblr.uniid.it/product/411890/9d5f0ddb6a40.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1004,7 +1004,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "리버풀 25/26 써드킷 (레플리카)",
         "model_code": "JV6428",
-        "image": "https://www.sportsdirect.com/images/products/37875915_l.jpg",
+        "image": "https://thumblr.uniid.it/product/416933/33ab7e7e0e13.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1026,7 +1026,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "벤피카 25/26 홈킷 (레플리카)",
         "model_code": "ADIDAS-2024",
-        "image": "https://www.sportsdirect.com/images/products/37781108_l.jpg",
+        "image": "https://thumblr.uniid.it/product/393976/5d26e79e6c7e.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1048,7 +1048,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "아약스 25/26 써드킷 (레플리카)",
         "model_code": "ADIDAS-2024",
-        "image": "https://www.sportsdirect.com/images/products/37780569_l.jpg",
+        "image": "https://thumblr.uniid.it/product/413255/4c5b6353e6d5.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1070,7 +1070,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "알 나스르 25/26 홈킷 (레플리카)",
         "model_code": "ADIDAS-2526",
-        "image": "https://www.sportsdirect.com/images/products/37782713_l.jpg",
+        "image": "https://thumblr.uniid.it/product/421371/35c47c6b59e1.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1092,7 +1092,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "아스널 25/26 써드킷 (레플리카)",
         "model_code": "JI9556",
-        "image": "https://www.sportsdirect.com/images/products/37782801_l.jpg",
+        "image": "https://thumblr.uniid.it/product/403692/4e3ac9fd51e0.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1114,7 +1114,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "아약스 24/25 홈킷 (레플리카)",
         "model_code": "SD-367394",
-        "image": "https://www.sportsdirect.com/images/products/36739401_l.jpg",
+        "image": "https://thumblr.uniid.it/product/362963/b97a8dabc63b.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1136,7 +1136,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "아스널 25/26 어웨이킷 (레플리카)",
         "model_code": "MJI9511",
-        "image": "https://www.sportsdirect.com/images/products/37783118_l.jpg",
+        "image": "https://thumblr.uniid.it/product/397876/0b7e54db7d05.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1158,7 +1158,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "아스널 25/26 홈킷 (레플리카)",
         "model_code": "MJI9517",
-        "image": "https://www.sportsdirect.com/images/products/37783808_l.jpg",
+        "image": "https://thumblr.uniid.it/product/392036/ae53a42cdce5.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1190,7 +1190,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "아스널 24/25 써드킷 (레플리카)",
         "model_code": "SD-367415",
-        "image": "https://www.sportsdirect.com/images/products/36741518_l.jpg",
+        "image": "https://thumblr.uniid.it/product/372639/b8a3b68ad09b.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1212,7 +1212,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "유벤투스 25/26 써드킷 (레플리카)",
         "model_code": "SD-377848",
-        "image": "https://www.sportsdirect.com/images/products/37784803_l.jpg",
+        "image": "https://thumblr.uniid.it/product/409395/39d5af70084d.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1234,7 +1234,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "맨체스터 유나이티드 24/25 홈킷 (레플리카)",
         "model_code": "SD-367399",
-        "image": "https://www.sportsdirect.com/images/products/36739908_l.jpg",
+        "image": "https://thumblr.uniid.it/product/359339/8f2c9f16fbb7.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1256,7 +1256,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "맨체스터 유나이티드 25/26 써드킷 (레플리카)",
         "model_code": "SD-377880",
-        "image": "https://www.sportsdirect.com/images/products/37788003_l.jpg",
+        "image": "https://thumblr.uniid.it/product/411836/1ab4cc59a15f.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1278,7 +1278,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "인테르 밀란 23/24 홈킷 (레플리카)",
         "model_code": "SD-371006",
-        "image": "https://www.sportsdirect.com/images/products/37100618_l.jpg",
+        "image": "https://thumblr.uniid.it/product/289169/e9ab574ada1c.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1300,7 +1300,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "PSG 25/26 써드킷 (레플리카)",
         "model_code": "SD-377088",
-        "image": "https://www.sportsdirect.com/images/products/37708808_l.jpg",
+        "image": "https://thumblr.uniid.it/product/415063/5cb08ace85a1.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1322,7 +1322,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "알 나스르 24/25 홈킷 (레플리카)",
         "model_code": "JP0459",
-        "image": "https://www.sportsdirect.com/images/products/36757313_l.jpg",
+        "image": "https://thumblr.uniid.it/product/368393/e3ddc70f5a3b.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1344,7 +1344,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "바이에른 뮌헨 25/26 써드킷 (레플리카)",
         "model_code": "SD-377841",
-        "image": "https://www.sportsdirect.com/images/products/37784103_l.jpg",
+        "image": "https://thumblr.uniid.it/product/405970/e73926d80e88.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1366,7 +1366,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "인테르 마이애미 25/26 홈킷 (레플리카)",
         "model_code": "SD-377236",
-        "image": "https://www.sportsdirect.com/images/products/37723606_l.jpg",
+        "image": "https://thumblr.uniid.it/product/384798/3e1efcc0d3f2.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1388,7 +1388,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "리버풀 25/26 어웨이킷 (레플리카)",
         "model_code": "SD-378746",
-        "image": "https://www.sportsdirect.com/images/products/37874601_l.jpg",
+        "image": "https://thumblr.uniid.it/product/397878/efb16e7bc1a9.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1410,7 +1410,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "맨체스터 유나이티드 23/24 어웨이킷 (레플리카)",
         "model_code": "SD-377734",
-        "image": "https://www.sportsdirect.com/images/products/37773415_l.jpg",
+        "image": "https://thumblr.uniid.it/product/285738/e46dcff8aaa8.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1432,7 +1432,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "에버튼 25/26 홈킷 (레플리카)",
         "model_code": "SD-377098",
-        "image": "https://www.sportsdirect.com/images/products/37709818_l.jpg",
+        "image": "https://thumblr.uniid.it/product/394958/dede66a44caf.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1454,7 +1454,7 @@ const uniformData = [
         "version": "어센틱",
         "name": "첼시 25/26 홈킷 (어센틱)",
         "model_code": "SD-377310",
-        "image": "https://www.sportsdirect.com/images/products/37731018_l.jpg",
+        "image": "https://thumblr.uniid.it/product/396422/d6b33d6eae7d.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1476,7 +1476,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "토트넘 25/26 홈킷 (레플리카)",
         "model_code": "SD-377422",
-        "image": "https://www.sportsdirect.com/images/products/37742201_l.jpg",
+        "image": "https://thumblr.uniid.it/product/390802/f8ea7f86a5a9.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1508,7 +1508,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "AC 밀란 25/26 홈킷 (레플리카)",
         "model_code": "SD-377642",
-        "image": "https://www.sportsdirect.com/images/products/37764208_l.jpg",
+        "image": "https://thumblr.uniid.it/product/384779/13c4b3a8c8bb.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",
@@ -1530,7 +1530,7 @@ const uniformData = [
         "version": "레플리카",
         "name": "맨체스터 시티 25/26 홈킷 (레플리카)",
         "model_code": "SD-377428",
-        "image": "https://www.sportsdirect.com/images/products/37742818_l.jpg",
+        "image": "https://thumblr.uniid.it/product/392010/4f97ae5b4a79.jpg",
         "site_offers": [
             {
                 "site_name": "스포츠다이렉트",

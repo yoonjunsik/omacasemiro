@@ -562,6 +562,7 @@ async function initializePage() {
     document.getElementById('saveChangesBtn').addEventListener('click', saveChanges);
 
     // 버튼 이벤트 (블프 사이트 관리 탭)
+    document.getElementById('addBFSiteBtn').addEventListener('click', addBlackFridaySite);
     document.getElementById('saveBFChangesBtn').addEventListener('click', saveBlackFridayChanges);
 }
 
@@ -943,6 +944,89 @@ async function toggleBFSiteVisibility(index) {
     if (saved) {
         renderBlackFridaySitesList();
         alert(`"${sites[index].name}" 사이트가 ${sites[index].visible ? '노출' : '숨김'} 상태로 변경되었습니다. 🎉`);
+    }
+}
+
+// 블프 사이트 추가
+async function addBlackFridaySite() {
+    const siteName = document.getElementById('newBFSiteName').value.trim();
+    const siteUrl = document.getElementById('newBFSiteUrl').value.trim();
+    const startDate = document.getElementById('newBFStartDate').value;
+    const endDate = document.getElementById('newBFEndDate').value;
+    const discount = document.getElementById('newBFDiscount').value.trim();
+    const badgeColor = document.getElementById('newBFBadgeColor').value;
+    const description = document.getElementById('newBFDescription').value.trim();
+
+    // 유효성 검사
+    if (!siteName) {
+        alert('사이트 이름을 입력해주세요');
+        return;
+    }
+
+    if (!siteUrl || !siteUrl.startsWith('http')) {
+        alert('유효한 URL을 입력해주세요');
+        return;
+    }
+
+    if (!startDate || !endDate) {
+        alert('세일 기간을 입력해주세요');
+        return;
+    }
+
+    if (!discount) {
+        alert('할인율을 입력해주세요');
+        return;
+    }
+
+    // 날짜 검증
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    if (end < start) {
+        alert('종료일은 시작일보다 이후여야 합니다');
+        return;
+    }
+
+    // 새 사이트 객체 생성
+    const newSite = {
+        name: siteName,
+        description: description || `${discount} 할인 진행중`,
+        discount: discount,
+        url: siteUrl,
+        location: '국내', // 기본값
+        type: '공식', // 기본값
+        color: badgeColor,
+        startDate: startDate,
+        endDate: endDate,
+        visible: true
+    };
+
+    // Firebase 데이터 우선 사용
+    const sites = window.blackFridaySites || blackFridaySites;
+    sites.push(newSite);
+
+    // window.blackFridaySites 업데이트
+    if (window.blackFridaySites) {
+        window.blackFridaySites = sites;
+    } else {
+        blackFridaySites.push(newSite);
+    }
+
+    // Firebase에 저장
+    const saved = await saveDataToFirebase();
+    if (saved) {
+        alert('블프 세일 사이트가 추가되었습니다! 🎉\n메인 페이지에 즉시 반영됩니다.');
+
+        // 입력 폼 초기화
+        document.getElementById('newBFSiteName').value = '';
+        document.getElementById('newBFSiteUrl').value = '';
+        document.getElementById('newBFStartDate').value = '';
+        document.getElementById('newBFEndDate').value = '';
+        document.getElementById('newBFDiscount').value = '';
+        document.getElementById('newBFDescription').value = '';
+        document.getElementById('newBFBadgeColor').value = 'red';
+
+        // 리스트 다시 렌더링
+        renderBlackFridaySitesList();
     }
 }
 

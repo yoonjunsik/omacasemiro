@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오마카세미루 - 크리스마스 에디션 축구 유니폼</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLKV2307KE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-LLKV2307KE');
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .christmas-snow {
+            background-image:
+                radial-gradient(2px 2px at 20% 30%, white, transparent),
+                radial-gradient(2px 2px at 60% 70%, white, transparent),
+                radial-gradient(1px 1px at 50% 50%, white, transparent),
+                radial-gradient(1px 1px at 80% 10%, white, transparent);
+            background-size: 200px 200px, 300px 300px, 250px 250px, 280px 280px;
+            background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+            animation: snowfall 20s linear infinite;
+        }
+        @keyframes snowfall {
+            0% { background-position: 0 0, 40px 60px, 130px 270px, 70px 100px; }
+            100% { background-position: 0 200px, 40px 260px, 130px 470px, 70px 300px; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Banner -->
+    <header class="bg-gradient-to-r from-red-600 via-green-600 to-red-600 text-white shadow-lg christmas-snow relative overflow-hidden">
+        <div class="container mx-auto px-4 py-4 md:py-8">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl md:text-4xl lg:text-5xl font-black">🎄 오마카세미루</h1>
+                <div class="flex gap-2 md:gap-4">
+                    <a href="/" class="bg-white text-green-600 px-3 md:px-6 py-2 md:py-3 rounded-lg font-bold text-sm md:text-base hover:bg-green-50 transition shadow-md">
+                        🔥 블프 세일
+                    </a>
+                    <a href="/christmas.html" class="bg-red-700 text-white px-3 md:px-6 py-2 md:py-3 rounded-lg font-bold text-sm md:text-base hover:bg-red-800 transition shadow-md border-2 border-white">
+                        🎄 크리스마스
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-3 md:px-4 py-4 md:py-8">
+        <!-- Christmas Welcome Banner -->
+        <section class="bg-gradient-to-r from-red-50 to-green-50 rounded-lg shadow-md p-6 md:p-8 mb-4 md:mb-8 border-2 border-red-200">
+            <div class="text-center">
+                <h2 class="text-2xl md:text-4xl font-black text-red-600 mb-3">🎅 메리 크리스마스! ⛄</h2>
+                <p class="text-base md:text-lg text-gray-700 mb-2">
+                    구단별 크리스마스 스페셜 에디션 유니폼을 만나보세요!
+                </p>
+                <p class="text-sm md:text-base text-gray-600">
+                    한정판 크리스마스 디자인으로 특별한 홀리데이를 즐기세요 🎁
+                </p>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="bg-white rounded-lg shadow-md p-3 md:p-6 mb-4 md:mb-8">
+            <h2 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gray-800">🔍 필터</h2>
+
+            <!-- Team Filter -->
+            <div class="mb-4 md:mb-6">
+                <label class="block text-xs md:text-sm font-semibold text-gray-700 mb-2 md:mb-3">팀 선택</label>
+                <div class="flex flex-wrap gap-2" id="teamFilter">
+                    <button class="filter-btn active" data-team="all">전체</button>
+                    <!-- 프리미어리그 (인기순) -->
+                    <button class="filter-btn" data-team="맨체스터 유나이티드">맨유</button>
+                    <button class="filter-btn" data-team="리버풀">리버풀</button>
+                    <button class="filter-btn" data-team="맨체스터 시티">맨시티</button>
+                    <button class="filter-btn" data-team="첼시">첼시</button>
+                    <button class="filter-btn" data-team="아스널">아스널</button>
+                    <button class="filter-btn" data-team="토트넘">토트넘</button>
+                    <button class="filter-btn" data-team="뉴캐슬 유나이티드">뉴캐슬</button>
+                    <!-- 라리가 (인기순) -->
+                    <button class="filter-btn" data-team="레알 마드리드">레알</button>
+                    <button class="filter-btn" data-team="바르셀로나">바르샤</button>
+                    <!-- 세리에 A (인기순) -->
+                    <button class="filter-btn" data-team="유벤투스">유벤투스</button>
+                    <button class="filter-btn" data-team="인터 밀란">인터</button>
+                    <button class="filter-btn" data-team="AC 밀란">AC밀란</button>
+                    <!-- 분데스리가 -->
+                    <button class="filter-btn" data-team="바이에른 뮌헨">바이에른</button>
+                    <!-- 리그 1 -->
+                    <button class="filter-btn" data-team="PSG">PSG</button>
+                </div>
+            </div>
+
+            <!-- Sort -->
+            <div>
+                <label class="block text-xs md:text-sm font-semibold text-gray-700 mb-2 md:mb-3">정렬</label>
+                <select id="sortSelect" class="w-full md:w-64 px-3 md:px-4 py-2 text-sm md:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <option value="discount">할인율 높은 순</option>
+                    <option value="price-low">가격 낮은 순</option>
+                    <option value="price-high">가격 높은 순</option>
+                    <option value="name">이름순</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Christmas Products Grid -->
+        <section class="bg-white rounded-lg shadow-md p-3 md:p-6">
+            <div class="flex items-center justify-between mb-4 md:mb-6">
+                <h2 class="text-xl md:text-2xl font-bold text-gray-800">🎁 크리스마스 에디션 유니폼</h2>
+                <p class="text-sm md:text-base text-gray-600">총 <span id="productCount" class="font-bold text-red-600">0</span>개</p>
+            </div>
+
+            <div id="productsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
+                <!-- 제품 카드가 여기에 렌더링됩니다 -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="hidden text-center py-12">
+                <p class="text-gray-500 text-base md:text-lg">🎄 곧 크리스마스 에디션 유니폼이 추가될 예정입니다!</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 md:py-8 mt-8 md:mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm md:text-base mb-2">© 2024 오마카세미루 - 크리스마스 에디션</p>
+            <p class="text-xs md:text-sm text-gray-400">
+                모든 제품의 가격 및 할인 정보는 실시간으로 변동될 수 있습니다.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/data.js?v=3"></script>
+    <script src="js/christmas.js"></script>
+</body>
+</html>

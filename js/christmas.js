@@ -79,7 +79,16 @@ const christmasClubs = [
         url: 'https://store.chelseafc.com/en/c-7104',
         color: 'from-blue-600 to-blue-800',
         league: '프리미어리그',
-        products: []
+        products: [
+            { name: 'Chelsea Christmas Product 1', image: 'https://via.placeholder.com/400x400/034694/ffffff?text=Chelsea+Christmas+1', url: 'https://store.chelseafc.com/en/c-7104' },
+            { name: 'Chelsea Christmas Product 2', image: 'https://via.placeholder.com/400x400/034694/ffffff?text=Chelsea+Christmas+2', url: 'https://store.chelseafc.com/en/c-7104' },
+            { name: 'Chelsea Christmas Product 3', image: 'https://via.placeholder.com/400x400/034694/ffffff?text=Chelsea+Christmas+3', url: 'https://store.chelseafc.com/en/c-7104' },
+            { name: 'Chelsea Christmas Product 4', image: 'https://via.placeholder.com/400x400/034694/ffffff?text=Chelsea+Christmas+4', url: 'https://store.chelseafc.com/en/c-7104' },
+            { name: 'Chelsea Christmas Product 5', image: 'https://via.placeholder.com/400x400/034694/ffffff?text=Chelsea+Christmas+5', url: 'https://store.chelseafc.com/en/c-7104' },
+            { name: 'Chelsea Christmas Product 6', image: 'https://via.placeholder.com/400x400/034694/ffffff?text=Chelsea+Christmas+6', url: 'https://store.chelseafc.com/en/c-7104' },
+            { name: 'Chelsea Christmas Product 7', image: 'https://via.placeholder.com/400x400/034694/ffffff?text=Chelsea+Christmas+7', url: 'https://store.chelseafc.com/en/c-7104' },
+            { name: 'Chelsea Christmas Product 8', image: 'https://via.placeholder.com/400x400/034694/ffffff?text=Chelsea+Christmas+8', url: 'https://store.chelseafc.com/en/c-7104' }
+        ]
     },
     {
         name: '토트넘',
@@ -88,7 +97,16 @@ const christmasClubs = [
         url: 'https://shop.tottenhamhotspur.com/spurs-christmas',
         color: 'from-white to-gray-200',
         league: '프리미어리그',
-        products: []
+        products: [
+            { name: 'Spurs Christmas Product 1', image: 'https://via.placeholder.com/400x400/132257/ffffff?text=Spurs+Christmas+1', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' },
+            { name: 'Spurs Christmas Product 2', image: 'https://via.placeholder.com/400x400/132257/ffffff?text=Spurs+Christmas+2', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' },
+            { name: 'Spurs Christmas Product 3', image: 'https://via.placeholder.com/400x400/132257/ffffff?text=Spurs+Christmas+3', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' },
+            { name: 'Spurs Christmas Product 4', image: 'https://via.placeholder.com/400x400/132257/ffffff?text=Spurs+Christmas+4', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' },
+            { name: 'Spurs Christmas Product 5', image: 'https://via.placeholder.com/400x400/132257/ffffff?text=Spurs+Christmas+5', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' },
+            { name: 'Spurs Christmas Product 6', image: 'https://via.placeholder.com/400x400/132257/ffffff?text=Spurs+Christmas+6', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' },
+            { name: 'Spurs Christmas Product 7', image: 'https://via.placeholder.com/400x400/132257/ffffff?text=Spurs+Christmas+7', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' },
+            { name: 'Spurs Christmas Product 8', image: 'https://via.placeholder.com/400x400/132257/ffffff?text=Spurs+Christmas+8', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' }
+        ]
     },
     {
         name: '맨체스터 유나이티드',
@@ -97,7 +115,16 @@ const christmasClubs = [
         url: 'https://store.manutd.com/en/c/christmas',
         color: 'from-red-700 to-red-900',
         league: '프리미어리그',
-        products: []
+        products: [
+            { name: 'Man Utd Christmas Product 1', image: 'https://via.placeholder.com/400x400/DA291C/ffffff?text=Man+Utd+Christmas+1', url: 'https://store.manutd.com/en/c/christmas' },
+            { name: 'Man Utd Christmas Product 2', image: 'https://via.placeholder.com/400x400/DA291C/ffffff?text=Man+Utd+Christmas+2', url: 'https://store.manutd.com/en/c/christmas' },
+            { name: 'Man Utd Christmas Product 3', image: 'https://via.placeholder.com/400x400/DA291C/ffffff?text=Man+Utd+Christmas+3', url: 'https://store.manutd.com/en/c/christmas' },
+            { name: 'Man Utd Christmas Product 4', image: 'https://via.placeholder.com/400x400/DA291C/ffffff?text=Man+Utd+Christmas+4', url: 'https://store.manutd.com/en/c/christmas' },
+            { name: 'Man Utd Christmas Product 5', image: 'https://via.placeholder.com/400x400/DA291C/ffffff?text=Man+Utd+Christmas+5', url: 'https://store.manutd.com/en/c/christmas' },
+            { name: 'Man Utd Christmas Product 6', image: 'https://via.placeholder.com/400x400/DA291C/ffffff?text=Man+Utd+Christmas+6', url: 'https://store.manutd.com/en/c/christmas' },
+            { name: 'Man Utd Christmas Product 7', image: 'https://via.placeholder.com/400x400/DA291C/ffffff?text=Man+Utd+Christmas+7', url: 'https://store.manutd.com/en/c/christmas' },
+            { name: 'Man Utd Christmas Product 8', image: 'https://via.placeholder.com/400x400/DA291C/ffffff?text=Man+Utd+Christmas+8', url: 'https://store.manutd.com/en/c/christmas' }
+        ]
     },
     {
         name: '맨체스터 시티',
@@ -106,7 +133,16 @@ const christmasClubs = [
         url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/',
         color: 'from-sky-400 to-sky-600',
         league: '프리미어리그',
-        products: []
+        products: [
+            { name: 'Man City Christmas Product 1', image: 'https://via.placeholder.com/400x400/6CABDD/ffffff?text=Man+City+Christmas+1', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' },
+            { name: 'Man City Christmas Product 2', image: 'https://via.placeholder.com/400x400/6CABDD/ffffff?text=Man+City+Christmas+2', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' },
+            { name: 'Man City Christmas Product 3', image: 'https://via.placeholder.com/400x400/6CABDD/ffffff?text=Man+City+Christmas+3', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' },
+            { name: 'Man City Christmas Product 4', image: 'https://via.placeholder.com/400x400/6CABDD/ffffff?text=Man+City+Christmas+4', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' },
+            { name: 'Man City Christmas Product 5', image: 'https://via.placeholder.com/400x400/6CABDD/ffffff?text=Man+City+Christmas+5', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' },
+            { name: 'Man City Christmas Product 6', image: 'https://via.placeholder.com/400x400/6CABDD/ffffff?text=Man+City+Christmas+6', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' },
+            { name: 'Man City Christmas Product 7', image: 'https://via.placeholder.com/400x400/6CABDD/ffffff?text=Man+City+Christmas+7', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' },
+            { name: 'Man City Christmas Product 8', image: 'https://via.placeholder.com/400x400/6CABDD/ffffff?text=Man+City+Christmas+8', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' }
+        ]
     },
     {
         name: '바르셀로나',
@@ -115,7 +151,16 @@ const christmasClubs = [
         url: 'https://store.fcbarcelona.com/ko-kr/search?q=christmas&options%5Bprefix%5D=last',
         color: 'from-blue-900 to-red-700',
         league: '라리가',
-        products: []
+        products: [
+            { name: 'Barcelona Christmas Product 1', image: 'https://via.placeholder.com/400x400/004D98/ffffff?text=Barca+Christmas+1', url: 'https://store.fcbarcelona.com/ko-kr/search?q=christmas&options%5Bprefix%5D=last' },
+            { name: 'Barcelona Christmas Product 2', image: 'https://via.placeholder.com/400x400/004D98/ffffff?text=Barca+Christmas+2', url: 'https://store.fcbarcelona.com/ko-kr/search?q=christmas&options%5Bprefix%5D=last' },
+            { name: 'Barcelona Christmas Product 3', image: 'https://via.placeholder.com/400x400/004D98/ffffff?text=Barca+Christmas+3', url: 'https://store.fcbarcelona.com/ko-kr/search?q=christmas&options%5Bprefix%5D=last' },
+            { name: 'Barcelona Christmas Product 4', image: 'https://via.placeholder.com/400x400/004D98/ffffff?text=Barca+Christmas+4', url: 'https://store.fcbarcelona.com/ko-kr/search?q=christmas&options%5Bprefix%5D=last' },
+            { name: 'Barcelona Christmas Product 5', image: 'https://via.placeholder.com/400x400/004D98/ffffff?text=Barca+Christmas+5', url: 'https://store.fcbarcelona.com/ko-kr/search?q=christmas&options%5Bprefix%5D=last' },
+            { name: 'Barcelona Christmas Product 6', image: 'https://via.placeholder.com/400x400/004D98/ffffff?text=Barca+Christmas+6', url: 'https://store.fcbarcelona.com/ko-kr/search?q=christmas&options%5Bprefix%5D=last' },
+            { name: 'Barcelona Christmas Product 7', image: 'https://via.placeholder.com/400x400/004D98/ffffff?text=Barca+Christmas+7', url: 'https://store.fcbarcelona.com/ko-kr/search?q=christmas&options%5Bprefix%5D=last' },
+            { name: 'Barcelona Christmas Product 8', image: 'https://via.placeholder.com/400x400/004D98/ffffff?text=Barca+Christmas+8', url: 'https://store.fcbarcelona.com/ko-kr/search?q=christmas&options%5Bprefix%5D=last' }
+        ]
     },
     {
         name: '바이에른 뮌헨',
@@ -124,7 +169,16 @@ const christmasClubs = [
         url: 'https://fcbayern.com/store/en-zz/c/specials/x-mas-world',
         color: 'from-red-600 to-blue-800',
         league: '분데스리가',
-        products: []
+        products: [
+            { name: 'Bayern Christmas Product 1', image: 'https://via.placeholder.com/400x400/DC052D/ffffff?text=Bayern+Christmas+1', url: 'https://fcbayern.com/store/en-zz/c/specials/x-mas-world' },
+            { name: 'Bayern Christmas Product 2', image: 'https://via.placeholder.com/400x400/DC052D/ffffff?text=Bayern+Christmas+2', url: 'https://fcbayern.com/store/en-zz/c/specials/x-mas-world' },
+            { name: 'Bayern Christmas Product 3', image: 'https://via.placeholder.com/400x400/DC052D/ffffff?text=Bayern+Christmas+3', url: 'https://fcbayern.com/store/en-zz/c/specials/x-mas-world' },
+            { name: 'Bayern Christmas Product 4', image: 'https://via.placeholder.com/400x400/DC052D/ffffff?text=Bayern+Christmas+4', url: 'https://fcbayern.com/store/en-zz/c/specials/x-mas-world' },
+            { name: 'Bayern Christmas Product 5', image: 'https://via.placeholder.com/400x400/DC052D/ffffff?text=Bayern+Christmas+5', url: 'https://fcbayern.com/store/en-zz/c/specials/x-mas-world' },
+            { name: 'Bayern Christmas Product 6', image: 'https://via.placeholder.com/400x400/DC052D/ffffff?text=Bayern+Christmas+6', url: 'https://fcbayern.com/store/en-zz/c/specials/x-mas-world' },
+            { name: 'Bayern Christmas Product 7', image: 'https://via.placeholder.com/400x400/DC052D/ffffff?text=Bayern+Christmas+7', url: 'https://fcbayern.com/store/en-zz/c/specials/x-mas-world' },
+            { name: 'Bayern Christmas Product 8', image: 'https://via.placeholder.com/400x400/DC052D/ffffff?text=Bayern+Christmas+8', url: 'https://fcbayern.com/store/en-zz/c/specials/x-mas-world' }
+        ]
     },
     {
         name: '도르트문트',
@@ -133,7 +187,16 @@ const christmasClubs = [
         url: 'https://shop.bvb.de/en-de/christmas',
         color: 'from-yellow-400 to-black',
         league: '분데스리가',
-        products: []
+        products: [
+            { name: 'BVB Christmas Product 1', image: 'https://via.placeholder.com/400x400/FDE100/000000?text=BVB+Christmas+1', url: 'https://shop.bvb.de/en-de/christmas' },
+            { name: 'BVB Christmas Product 2', image: 'https://via.placeholder.com/400x400/FDE100/000000?text=BVB+Christmas+2', url: 'https://shop.bvb.de/en-de/christmas' },
+            { name: 'BVB Christmas Product 3', image: 'https://via.placeholder.com/400x400/FDE100/000000?text=BVB+Christmas+3', url: 'https://shop.bvb.de/en-de/christmas' },
+            { name: 'BVB Christmas Product 4', image: 'https://via.placeholder.com/400x400/FDE100/000000?text=BVB+Christmas+4', url: 'https://shop.bvb.de/en-de/christmas' },
+            { name: 'BVB Christmas Product 5', image: 'https://via.placeholder.com/400x400/FDE100/000000?text=BVB+Christmas+5', url: 'https://shop.bvb.de/en-de/christmas' },
+            { name: 'BVB Christmas Product 6', image: 'https://via.placeholder.com/400x400/FDE100/000000?text=BVB+Christmas+6', url: 'https://shop.bvb.de/en-de/christmas' },
+            { name: 'BVB Christmas Product 7', image: 'https://via.placeholder.com/400x400/FDE100/000000?text=BVB+Christmas+7', url: 'https://shop.bvb.de/en-de/christmas' },
+            { name: 'BVB Christmas Product 8', image: 'https://via.placeholder.com/400x400/FDE100/000000?text=BVB+Christmas+8', url: 'https://shop.bvb.de/en-de/christmas' }
+        ]
     }
 ];
 

@@ -377,6 +377,24 @@ async function toggleVisibility(modelCode) {
     }
 }
 
+// 크리스마스 에디션 토글
+async function toggleChristmas(modelCode) {
+    const product = uniformData.find(p => p.model_code === modelCode);
+    if (!product) return;
+
+    // is_christmas 필드 토글
+    product.is_christmas = product.is_christmas ? false : true;
+
+    // Firebase에 저장
+    const saved = await saveDataToFirebase();
+    if (saved) {
+        renderProductList();
+
+        const status = product.is_christmas ? '크리스마스 에디션으로 등록' : '일반 제품으로 변경';
+        alert(`"${product.name}" 제품이 ${status}되었습니다. 🎄`);
+    }
+}
+
 // 제품 목록 렌더링
 function renderProductList() {
     const tbody = document.getElementById('productListBody');
@@ -442,6 +460,12 @@ function renderProductList() {
                 <span class="text-sm font-bold ${product.site_offers?.length > 0 ? 'text-green-600' : 'text-gray-400'}">
                     ${product.site_offers?.length || 0}개
                 </span>
+            </td>
+            <td class="px-4 py-3 text-center">
+                <button onclick="toggleChristmas('${product.model_code}')"
+                        class="text-2xl ${product.is_christmas ? '' : 'opacity-20 grayscale'} hover:opacity-100 transition">
+                    🎄
+                </button>
             </td>
             <td class="px-4 py-3 text-center">
                 <button onclick="toggleVisibility('${product.model_code}')"

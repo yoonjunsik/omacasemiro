@@ -109,20 +109,67 @@
         // 제품 카드 생성 함수
         function createProductCard(product) {
             const card = document.createElement('div');
-            card.className = 'group cursor-pointer overflow-hidden';
+            card.className = 'group cursor-pointer overflow-hidden aspect-square bg-gray-100 hover:opacity-80 transition-opacity duration-300';
 
-            card.innerHTML = `
-                <div class="relative aspect-square bg-gray-50 flex items-center justify-center overflow-hidden">
-                    <img src="${product.image}" alt="${product.name}"
-                         class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-            `;
+            // SVG를 직접 DOM에 삽입
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('width', '100%');
+            svg.setAttribute('height', '100%');
+            svg.setAttribute('viewBox', '0 0 400 400');
+
+            const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+            rect.setAttribute('width', '400');
+            rect.setAttribute('height', '400');
+            rect.setAttribute('fill', getClubColor(product.name));
+
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', '50%');
+            text.setAttribute('y', '50%');
+            text.setAttribute('text-anchor', 'middle');
+            text.setAttribute('dy', '.3em');
+            text.setAttribute('font-size', '24');
+            text.setAttribute('fill', getTextColor(product.name));
+            text.textContent = getClubShortName(product.name);
+
+            svg.appendChild(rect);
+            svg.appendChild(text);
+            card.appendChild(svg);
 
             card.onclick = () => {
                 window.open(product.url, '_blank');
             };
 
             return card;
+        }
+
+        // 구단 색상 반환
+        function getClubColor(productName) {
+            if (productName.includes('Chelsea')) return '#034694';
+            if (productName.includes('Spurs')) return '#132257';
+            if (productName.includes('Man Utd')) return '#DA291C';
+            if (productName.includes('Man City')) return '#6CABDD';
+            if (productName.includes('Barcelona')) return '#004D98';
+            if (productName.includes('Bayern')) return '#DC052D';
+            if (productName.includes('BVB')) return '#FDE100';
+            return '#cccccc';
+        }
+
+        // 텍스트 색상 반환
+        function getTextColor(productName) {
+            if (productName.includes('BVB')) return 'black';
+            return 'white';
+        }
+
+        // 구단 짧은 이름 반환
+        function getClubShortName(productName) {
+            if (productName.includes('Chelsea')) return 'Chelsea';
+            if (productName.includes('Spurs')) return 'Spurs';
+            if (productName.includes('Man Utd')) return 'Man Utd';
+            if (productName.includes('Man City')) return 'Man City';
+            if (productName.includes('Barcelona')) return 'Barça';
+            if (productName.includes('Bayern')) return 'Bayern';
+            if (productName.includes('BVB')) return 'BVB';
+            return 'Product';
         }
 
         // 페이지 로드 시 초기화

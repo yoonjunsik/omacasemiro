@@ -31,7 +31,7 @@ const uniformData = [
         "model_code": "JI7428-AUTH",
         "image": "https://www.sportsdirect.com/images/products/37782308_h.jpg",
         "site_offers": [],
-        "visible": true
+        "visible": false
     },
     {
         "team": "맨체스터 유나이티드",
@@ -53,7 +53,7 @@ const uniformData = [
         "model_code": "JI7423-AUTH",
         "image": "https://www.sportsdirect.com/images/products/37781901_h.jpg",
         "site_offers": [],
-        "visible": true
+        "visible": false
     },
     {
         "team": "리버풀",
@@ -86,7 +86,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/37872208_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "뉴캐슬 유나이티드",
@@ -108,7 +108,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/37706403_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "PSG",
@@ -130,7 +130,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/37740608_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "인터 밀란",
@@ -152,7 +152,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/37736418_l.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "맨체스터 시티",
@@ -228,7 +228,7 @@ const uniformData = [
             }
         ],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "레알 마드리드",
@@ -250,7 +250,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/36738812_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "바르셀로나",
@@ -272,7 +272,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/36609703_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "바르셀로나",
@@ -294,7 +294,7 @@ const uniformData = [
         "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e0a8f0e1-7c8a-4b5f-8f6e-7e9a8f0e1c7d/fc-barcelona-2024-25-match-away-dri-fit-adv-football-authentic-shirt-GT9CmM.png",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "리버풀",
@@ -316,7 +316,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/36530303_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "리버풀",
@@ -349,7 +349,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/36744318_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "첼시",
@@ -392,7 +392,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/36744502_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "토트넘",
@@ -414,7 +414,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/36555103_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "토트넘",
@@ -458,7 +458,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/36741303_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "뉴캐슬 유나이티드",
@@ -491,7 +491,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/36537903_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "PSG",
@@ -513,7 +513,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/36548003_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "유벤투스",
@@ -546,7 +546,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/37784308_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "인터 밀란",
@@ -622,7 +622,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/36736302_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "맨체스터 유나이티드",
@@ -666,7 +666,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/32853901_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "바르셀로나",
@@ -765,7 +765,7 @@ const uniformData = [
         "image": "https://www.sportsdirect.com/images/products/31174601_h.jpg",
         "site_offers": [],
         "version": "어센틱",
-        "visible": true
+        "visible": false
     },
     {
         "team": "맨체스터 시티",

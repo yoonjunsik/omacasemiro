@@ -562,7 +562,12 @@ async function initializePage() {
     document.getElementById('saveChangesBtn').addEventListener('click', saveChanges);
 
     // 버튼 이벤트 (블프 사이트 관리 탭)
-    document.getElementById('addBFSiteBtn').addEventListener('click', addBlackFridaySite);
+    const addBFSiteBtn = document.getElementById('addBFSiteBtn');
+    if (addBFSiteBtn) {
+        addBFSiteBtn.addEventListener('click', addBlackFridaySite);
+    } else {
+        console.error('❌ addBFSiteBtn 버튼을 찾을 수 없습니다');
+    }
     document.getElementById('saveBFChangesBtn').addEventListener('click', saveBlackFridayChanges);
 }
 

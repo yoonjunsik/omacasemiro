@@ -1,0 +1,16 @@
+{
+  "name": "omacasemiro-crawler",
+  "version": "1.0.0",
+  "description": "Football kit price crawler for Omacasemiro",
+  "main": "crawler/sportsdirect.js",
+  "scripts": {
+    "crawl": "node crawler/sportsdirect.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "puppeteer": "^21.11.0"
+  },
+  "author": "Omacasemiro Team",
+  "license": "MIT"
+}

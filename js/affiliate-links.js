@@ -119,8 +119,19 @@ function convertToAffiliateLink(storeName, originalUrl) {
  * 제품 데이터의 모든 링크를 어필리에이트 링크로 변환
  */
 function processAffiliateLinks(uniformData) {
+    if (!uniformData || !Array.isArray(uniformData)) {
+        console.warn('⚠️ uniformData is not valid array');
+        return [];
+    }
+
     return uniformData.map(product => {
         const processedProduct = { ...product };
+
+        // site_offers가 없거나 배열이 아닌 경우 빈 배열로 처리
+        if (!product.site_offers || !Array.isArray(product.site_offers)) {
+            processedProduct.site_offers = [];
+            return processedProduct;
+        }
 
         processedProduct.site_offers = product.site_offers.map(offer => {
             const processedOffer = { ...offer };

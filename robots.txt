@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://omacasemiro.shop/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow crawling of admin or private directories (if any in future)
+# Disallow: /admin/

@@ -28,6 +28,36 @@ const uniformData = [
                 "sale_price_krw": 119000,
                 "discount_rate": 0,
                 "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030461"
+            },
+            {
+                "site_name": "무신사",
+                "currency": "KRW",
+                "regular_price": 119000,
+                "sale_price": 119000,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 119000,
+                "discount_rate": 0,
+                "affiliate_link": "https://www.musinsa.com/products/5180206"
+            },
+            {
+                "site_name": "지그재그",
+                "currency": "KRW",
+                "regular_price": 119000,
+                "sale_price": 97000,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 97000,
+                "discount_rate": 18,
+                "affiliate_link": "https://zigzag.kr/catalog/products/163384852"
+            },
+            {
+                "site_name": "GS SHOP",
+                "currency": "KRW",
+                "regular_price": 106000,
+                "sale_price": 98580,
+                "regular_price_krw": 106000,
+                "sale_price_krw": 98580,
+                "discount_rate": 7,
+                "affiliate_link": "https://m.gsshop.com/search/searchSect.gs?tq=맨유유니폼&mseq=406355"
             }
         ],
         "visible": true

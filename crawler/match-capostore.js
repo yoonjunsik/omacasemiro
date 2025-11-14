@@ -43,6 +43,8 @@ uniformData.forEach(uniform => {
 
         if (existingCapo) {
             // 가격 업데이트
+            existingCapo.regular_price = capoProduct.originalPrice;
+            existingCapo.sale_price = capoProduct.salePrice;
             existingCapo.regular_price_krw = capoProduct.originalPrice;
             existingCapo.sale_price_krw = capoProduct.salePrice;
             existingCapo.discount_rate = capoProduct.discountRate;
@@ -54,8 +56,8 @@ uniformData.forEach(uniform => {
             uniform.site_offers.push({
                 site_name: '카포스토어',
                 currency: 'KRW',
-                regular_price: Math.round(capoProduct.originalPrice * KRW_TO_USD),
-                sale_price: Math.round(capoProduct.salePrice * KRW_TO_USD),
+                regular_price: capoProduct.originalPrice,
+                sale_price: capoProduct.salePrice,
                 regular_price_krw: capoProduct.originalPrice,
                 sale_price_krw: capoProduct.salePrice,
                 discount_rate: capoProduct.discountRate,

@@ -48,16 +48,6 @@ const uniformData = [
                 "sale_price_krw": 97000,
                 "discount_rate": 18,
                 "affiliate_link": "https://zigzag.kr/catalog/products/163384852"
-            },
-            {
-                "site_name": "GS SHOP",
-                "currency": "KRW",
-                "regular_price": 106000,
-                "sale_price": 98580,
-                "regular_price_krw": 106000,
-                "sale_price_krw": 98580,
-                "discount_rate": 7,
-                "affiliate_link": "https://m.gsshop.com/search/searchSect.gs?tq=맨유유니폼&mseq=406355"
             }
         ],
         "visible": true

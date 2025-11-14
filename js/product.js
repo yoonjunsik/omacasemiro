@@ -1,7 +1,28 @@
+// 구 모델 코드 → 새 모델 코드 매핑
+const modelCodeRedirects = {
+    'SD-367399': 'IU1397',      // 맨유 24/25 홈킷
+    'SD-377880': 'KD4225',      // 맨유 25/26 써드킷
+    'SD-377428': '78033801',    // 맨시티 25/26 홈킷
+    'SD-377422': 'HJ4598101',   // 토트넘 25/26 홈킷
+    'SD-378746': 'JV6487',      // 리버풀 25/26 어웨이킷
+    'SD-377841': 'KE6801',      // 바이에른 25/26 써드킷
+    'SD-377848': 'KC3486'       // 유벤투스 25/26 써드킷
+};
+
 // URL 파라미터에서 상품 ID 가져오기
 function getProductIdFromUrl() {
     const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('id');
+    let modelCode = urlParams.get('id');
+
+    // 구 모델 코드인 경우 새 모델 코드로 리다이렉트
+    if (modelCode && modelCodeRedirects[modelCode]) {
+        const newModelCode = modelCodeRedirects[modelCode];
+        console.log(`Redirecting from old model code ${modelCode} to ${newModelCode}`);
+        window.location.href = `product.html?id=${newModelCode}`;
+        return null; // 리다이렉트 중이므로 null 반환
+    }
+
+    return modelCode;
 }
 
 // 상품 데이터 찾기

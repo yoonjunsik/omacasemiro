@@ -321,6 +321,76 @@ const christmasClubs = [
                 url: 'https://store.juventus.com/kr/juventus-snowglobe'
             }
         ]
+    },
+    {
+        name: 'AC 밀란',
+        nameEn: 'AC Milan',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg',
+        url: 'https://store.acmilan.com/en-me/collections/christmas',
+        color: 'from-red-600 to-black',
+        league: '세리에 A',
+        products: [
+            {
+                name: 'AC Milan White Christmas Jumper',
+                image: 'https://store.acmilan.com/cdn/shop/files/XMASJMPA25-A01_01_867dabe7-18f0-4392-a1c8-01bbafaf04f0.jpg',
+                url: 'https://store.acmilan.com/en-me/products/gnome-wrap-adult'
+            },
+            {
+                name: 'AC Milan Kids White Christmas Jumper',
+                image: 'https://store.acmilan.com/cdn/shop/files/XMASJMPK25-A01_01.jpg',
+                url: 'https://store.acmilan.com/en-me/products/gnome-wrap-kids'
+            },
+            {
+                name: 'AC Milan Tartan Christmas Jumper',
+                image: 'https://store.acmilan.com/cdn/shop/files/AJMPTN-A02_01_6dcffc2a-845d-486f-b046-38f69643762a.png',
+                url: 'https://store.acmilan.com/en-me/products/adult-jumper-tartan'
+            },
+            {
+                name: 'AC Milan Christmas Jumper',
+                image: 'https://store.acmilan.com/cdn/shop/files/AJMPTB-A02_01_6cf456f5-8a99-47c0-ae30-17cd5eb6cb62.jpg',
+                url: 'https://store.acmilan.com/en-me/products/adult-jumper-tremblant'
+            },
+            {
+                name: 'AC Milan Kids Christmas Jumper',
+                image: 'https://store.acmilan.com/cdn/shop/files/KJMPTB-A02_01_24a0f698-57af-453c-bb6a-48151332e61e.jpg',
+                url: 'https://store.acmilan.com/en-me/products/kids-jumper-tremblant'
+            },
+            {
+                name: 'AC Milan Big Christmas Gnome',
+                image: 'https://store.acmilan.com/cdn/shop/files/TCGNOMEBIG-A00_01.jpg',
+                url: 'https://store.acmilan.com/en-me/products/felt-gnome-size-40cm'
+            },
+            {
+                name: 'AC Milan Set of 4 Christmas Ornaments',
+                image: 'https://store.acmilan.com/cdn/shop/files/TCXMBALLST-A41_01.jpg',
+                url: 'https://store.acmilan.com/en-me/products/x-mas-baubles-set-of-4-tcxmballst-a41'
+            },
+            {
+                name: 'AC Milan Christmas Socks Set',
+                image: 'https://store.acmilan.com/cdn/shop/files/WBOOSOCKAD-A13_01_9c26c103-e482-49f6-95de-51bc6f955308.jpg',
+                url: 'https://store.acmilan.com/en-me/products/xmas-socks-adults-39-42'
+            },
+            {
+                name: 'AC Milan Christmas Mug',
+                image: 'https://store.acmilan.com/cdn/shop/files/TCMUGXMBLK-A00_01_75958e67-f987-427b-87a8-25e091009a62.png',
+                url: 'https://store.acmilan.com/en-me/products/mug'
+            },
+            {
+                name: 'AC Milan Snow Globe - Devil',
+                image: 'https://store.acmilan.com/cdn/shop/files/DVLSNOWGLB-A48_01.jpg',
+                url: 'https://store.acmilan.com/en-me/products/milan-snow-globe-devil'
+            },
+            {
+                name: 'AC Milan Snow Globe - Crest',
+                image: 'https://store.acmilan.com/cdn/shop/files/ACMSNOWGLB-A48_01.jpg',
+                url: 'https://store.acmilan.com/en-me/products/milan-snow-globe-acm-crest'
+            },
+            {
+                name: 'AC Milan Christmas Tree Top',
+                image: 'https://store.acmilan.com/cdn/shop/files/XMSTREETP-A48_01.jpg',
+                url: 'https://store.acmilan.com/en-me/products/christmas-tree-top'
+            }
+        ]
     }
 ];
 

@@ -217,12 +217,12 @@ const christmasClubs = [
             },
             {
                 name: 'Mens Christmas Sweater Crest Ice White',
-                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFMS0337-1.jpg',
+                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFMS0337-1.jpg?contextRequest=%7B%22forceCatalogForFetch%22:false,%22forceFilterByCatalogIncludeInheritance%22:false,%22forceFilterByCatalogExcludeInheritance%22:false,%22applicationId%22:%2201H4RD9NXMKQBQ1WVKM1181VD8%22,%22tenantId%22:%22REAL_MADRID%22%7D',
                 url: 'https://shop.realmadrid.com/en-es/product/rmcfms0337-mens-christmas-jumper-crest-ice-white-real-madrid'
             },
             {
                 name: 'Kids Christmas Sweater Crest Ice White',
-                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFYS0093-1.jpg',
+                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFYS0093-1.jpg?contextRequest=%7B%22forceCatalogForFetch%22:false,%22forceFilterByCatalogIncludeInheritance%22:false,%22forceFilterByCatalogExcludeInheritance%22:false,%22applicationId%22:%2201H4RD9NXMKQBQ1WVKM1181VD8%22,%22tenantId%22:%22REAL_MADRID%22%7D',
                 url: 'https://shop.realmadrid.com/en-es/product/rmcfys0093-youth-christmas-jumper-crest-ice-white-real-madrid'
             },
             {
@@ -232,17 +232,17 @@ const christmasClubs = [
             },
             {
                 name: 'Mens Christmas Sweater Cable Knit',
-                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFMS0335-1.jpg',
+                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFMS0335-1.jpg?contextRequest=%7B%22forceCatalogForFetch%22:false,%22forceFilterByCatalogIncludeInheritance%22:false,%22forceFilterByCatalogExcludeInheritance%22:false,%22applicationId%22:%2201H4RD9NXMKQBQ1WVKM1181VD8%22,%22tenantId%22:%22REAL_MADRID%22%7D',
                 url: 'https://shop.realmadrid.com/en-es/product/rmcfms0335-mens-christmas-jumper-cable-knit-real-madrid'
             },
             {
                 name: 'Mens Christmas Sweater Teddy Bear',
-                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFMS0334-1.jpg',
+                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFMS0334-1.jpg?contextRequest=%7B%22forceCatalogForFetch%22:false,%22forceFilterByCatalogIncludeInheritance%22:false,%22forceFilterByCatalogExcludeInheritance%22:false,%22applicationId%22:%2201H4RD9NXMKQBQ1WVKM1181VD8%22,%22tenantId%22:%22REAL_MADRID%22%7D',
                 url: 'https://shop.realmadrid.com/en-es/product/rmcfms0334-mens-christmas-jumper-teddy-bear-real-madrid'
             },
             {
                 name: 'Kids Christmas Sweater Teddy Bear',
-                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFYS0089-1-1.jpg',
+                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFYS0089-1-1.jpg?contextRequest=%7B%22forceCatalogForFetch%22:false,%22forceFilterByCatalogIncludeInheritance%22:false,%22forceFilterByCatalogExcludeInheritance%22:false,%22applicationId%22:%2201H4RD9NXMKQBQ1WVKM1181VD8%22,%22tenantId%22:%22REAL_MADRID%22%7D',
                 url: 'https://shop.realmadrid.com/en-es/product/rmcfys0089-youth-christmas-jumper-teddy-bear-real-madrid'
             },
             {

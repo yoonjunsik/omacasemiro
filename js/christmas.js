@@ -271,6 +271,56 @@ const christmasClubs = [
                 url: 'https://shop.realmadrid.com/en-es/product/rmcfls0047-ladies-xmas-jumper-pastel-blue'
             }
         ]
+    },
+    {
+        name: '유벤투스',
+        nameEn: 'Juventus',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a8/Juventus_FC_-_pictogram_black_%26_white.svg',
+        url: 'https://store.juventus.com/kr/holiday-gifts',
+        color: 'from-black to-gray-800',
+        league: '세리에 A',
+        products: [
+            {
+                name: 'Juventus Christmas Jumper 2025',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU25Q51.webp',
+                url: 'https://store.juventus.com/kr/juventus-christmas-jumper-2025'
+            },
+            {
+                name: 'Juventus Christmas Jumper 2025 - Kids',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU25Q52.webp',
+                url: 'https://store.juventus.com/kr/juventus-christmas-jumper-2025-kids'
+            },
+            {
+                name: 'Juventus Christmas Beanie 2025',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU25Q54.webp',
+                url: 'https://store.juventus.com/kr/juventus-christmas-beanie-2025'
+            },
+            {
+                name: 'Juventus Christmas Socks 2025',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU25Q53.webp',
+                url: 'https://store.juventus.com/kr/juventus-christmas-socks-2025'
+            },
+            {
+                name: 'Juventus Christmas Mug 2025',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU95007.webp',
+                url: 'https://store.juventus.com/kr/juventus-christmas-mug-2025'
+            },
+            {
+                name: 'Juventus Christmas Teddy',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU25J08.webp',
+                url: 'https://store.juventus.com/kr/juventus-christmas-teddy'
+            },
+            {
+                name: 'Juventus 6 Christmas Ball Set',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU25Q56.webp',
+                url: 'https://store.juventus.com/kr/juventus-6-christmas-ball-set'
+            },
+            {
+                name: 'Juventus Snowglobe',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU25Q57.webp',
+                url: 'https://store.juventus.com/kr/juventus-snowglobe'
+            }
+        ]
     }
 ];
 

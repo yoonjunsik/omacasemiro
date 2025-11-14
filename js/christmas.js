@@ -472,9 +472,6 @@ function createClubCard(club) {
             <div class="absolute top-2 left-2 bg-white px-2 py-1 rounded text-xs font-bold text-gray-700">
                 ${club.league}
             </div>
-            <div class="absolute top-2 right-2 text-2xl">
-                🎄
-            </div>
             <img src="${club.logo}" alt="${club.name}" class="w-24 h-24 md:w-32 md:h-32 object-contain filter drop-shadow-2xl group-hover:scale-110 transition-transform">
         </div>
         <div class="p-4">

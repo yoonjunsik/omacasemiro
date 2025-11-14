@@ -46,10 +46,10 @@ function convertToKRW(amount, currency) {
     if (!rate) return amount;
 
     if (currency === 'JPY') {
-        return (amount / 100) * rate;
+        return Math.round((amount / 100) * rate);
     }
 
-    return amount * rate;
+    return Math.round(amount * rate);
 }
 
 // 가격 포맷팅 (통화 지원)

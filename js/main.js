@@ -304,10 +304,10 @@ function convertToKRW(amount, currency) {
     if (!rate) return amount;
 
     if (currency === 'JPY') {
-        return (amount / 100) * rate;
+        return Math.round((amount / 100) * rate);
     }
 
-    return amount * rate;
+    return Math.round(amount * rate);
 }
 
 // 최저가 계산 (원화 기준)

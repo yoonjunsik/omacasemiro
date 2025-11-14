@@ -390,6 +390,12 @@ function createProductCard(product) {
 
 // 제품 렌더링
 function renderProducts() {
+    // uniformData가 로드되지 않았으면 렌더링하지 않음
+    if (!window.uniformData || window.uniformData.length === 0) {
+        console.log('⏳ uniformData 로딩 중...');
+        return;
+    }
+
     const filteredProducts = filterProducts();
     const sortedProducts = sortProducts(filteredProducts);
     const productGrid = document.getElementById('productGrid');

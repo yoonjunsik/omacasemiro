@@ -1356,7 +1356,7 @@ const uniformData = [
         "season": "25/26",
         "version": "레플리카",
         "name": "유벤투스 25/26 써드킷 (레플리카)",
-        "model_code": "SD-377848",
+        "model_code": "KC3486",
         "image": "https://thumblr.uniid.it/product/409395/39d5af70084d.jpg",
         "site_offers": [
             {
@@ -1368,6 +1368,16 @@ const uniformData = [
                 "sale_price_krw": 121910,
                 "discount_rate": 14,
                 "affiliate_link": "https://www.sportsdirect.com/adidas-juventus-third-shirt-2025-2026-adults-377848"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 119000,
+                "sale_price": 119000,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 119000,
+                "discount_rate": 0,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000031350"
             }
         ],
         "visible": true
@@ -1378,7 +1388,7 @@ const uniformData = [
         "season": "24/25",
         "version": "레플리카",
         "name": "맨체스터 유나이티드 24/25 홈킷 (레플리카)",
-        "model_code": "SD-367399",
+        "model_code": "IU1397",
         "image": "https://thumblr.uniid.it/product/359339/8f2c9f16fbb7.jpg",
         "site_offers": [
             {
@@ -1390,6 +1400,16 @@ const uniformData = [
                 "sale_price_krw": 66800,
                 "discount_rate": 50,
                 "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-home-shirt-2024-2025-adults-367399"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 119000,
+                "sale_price": 59500,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 59500,
+                "discount_rate": 50,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000028203"
             }
         ],
         "visible": true
@@ -1400,7 +1420,7 @@ const uniformData = [
         "season": "25/26",
         "version": "레플리카",
         "name": "맨체스터 유나이티드 25/26 써드킷 (레플리카)",
-        "model_code": "SD-377880",
+        "model_code": "KD4225",
         "image": "https://thumblr.uniid.it/product/411836/1ab4cc59a15f.jpg",
         "site_offers": [
             {
@@ -1412,6 +1432,16 @@ const uniformData = [
                 "sale_price_krw": 116900,
                 "discount_rate": 18,
                 "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-third-shirt-2025-2026-adults-377880"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 119000,
+                "sale_price": 119000,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 119000,
+                "discount_rate": 0,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000031103"
             }
         ],
         "visible": true
@@ -1488,7 +1518,7 @@ const uniformData = [
         "season": "25/26",
         "version": "레플리카",
         "name": "바이에른 뮌헨 25/26 써드킷 (레플리카)",
-        "model_code": "SD-377841",
+        "model_code": "KE6801",
         "image": "https://thumblr.uniid.it/product/405970/e73926d80e88.jpg",
         "site_offers": [
             {
@@ -1500,6 +1530,16 @@ const uniformData = [
                 "sale_price_krw": 121910,
                 "discount_rate": 14,
                 "affiliate_link": "https://www.sportsdirect.com/adidas-bayern-munich-third-shirt-2025-2026-adults-377841"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 119000,
+                "sale_price": 119000,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 119000,
+                "discount_rate": 0,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030844"
             }
         ],
         "visible": true
@@ -1532,7 +1572,7 @@ const uniformData = [
         "season": "25/26",
         "version": "레플리카",
         "name": "리버풀 25/26 어웨이킷 (레플리카)",
-        "model_code": "SD-378746",
+        "model_code": "JV6487",
         "image": "https://thumblr.uniid.it/product/397878/efb16e7bc1a9.jpg",
         "site_offers": [
             {
@@ -1544,6 +1584,16 @@ const uniformData = [
                 "sale_price_krw": 116900,
                 "discount_rate": 18,
                 "affiliate_link": "https://www.sportsdirect.com/adidas-liverpool-away-shirt-2025-2026-adults-378746"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 119000,
+                "sale_price": 107100,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 107100,
+                "discount_rate": 10,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000031147"
             }
         ],
         "visible": true
@@ -1620,7 +1670,7 @@ const uniformData = [
         "season": "25/26",
         "version": "레플리카",
         "name": "토트넘 25/26 홈킷 (레플리카)",
-        "model_code": "SD-377422",
+        "model_code": "HJ4598101",
         "image": "https://thumblr.uniid.it/product/390802/f8ea7f86a5a9.jpg",
         "site_offers": [
             {
@@ -1642,6 +1692,16 @@ const uniformData = [
                 "sale_price_krw": 118915,
                 "discount_rate": 30,
                 "affiliate_link": "https://www.unisportstore.com/football-shirts/tottenham-home-shirt-202526/392868/"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 135000,
+                "sale_price": 121500,
+                "regular_price_krw": 135000,
+                "sale_price_krw": 121500,
+                "discount_rate": 10,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030348"
             }
         ],
         "visible": true
@@ -1674,7 +1734,7 @@ const uniformData = [
         "season": "25/26",
         "version": "레플리카",
         "name": "맨체스터 시티 25/26 홈킷 (레플리카)",
-        "model_code": "SD-377428",
+        "model_code": "78033801",
         "image": "https://thumblr.uniid.it/product/392010/4f97ae5b4a79.jpg",
         "site_offers": [
             {
@@ -1696,6 +1756,16 @@ const uniformData = [
                 "sale_price_krw": 127415,
                 "discount_rate": 25,
                 "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-city-home-shirt-202526/400408/"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 129000,
+                "sale_price": 116100,
+                "regular_price_krw": 129000,
+                "sale_price_krw": 116100,
+                "discount_rate": 10,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030231"
             }
         ],
         "visible": true

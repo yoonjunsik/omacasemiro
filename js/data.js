@@ -18,6 +18,16 @@ const uniformData = [
                 "sale_price_krw": 115880,
                 "discount_rate": 29,
                 "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-home-shirt-2025-2026-adults-377822"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 92,
+                "sale_price": 92,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 119000,
+                "discount_rate": 0,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030461"
             }
         ],
         "visible": true
@@ -51,6 +61,16 @@ const uniformData = [
                 "sale_price_krw": 100200,
                 "discount_rate": 29,
                 "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-away-shirt-2025-2026-adults-377818"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 92,
+                "sale_price": 92,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 119000,
+                "discount_rate": 0,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030813"
             }
         ],
         "visible": true
@@ -150,7 +170,18 @@ const uniformData = [
         "name": "파리 생제르맹 2025 2026 홈 유니폼 (레플리카)",
         "model_code": "HJ4593-411",
         "image": "https://thumblr.uniid.it/product/392883/9d76dbafcc03.jpg",
-        "site_offers": [],
+        "site_offers": [
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 104,
+                "sale_price": 104,
+                "regular_price_krw": 135000,
+                "sale_price_krw": 135000,
+                "discount_rate": 0,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030385"
+            }
+        ],
         "version": "레플리카",
         "visible": true
     },
@@ -172,7 +203,18 @@ const uniformData = [
         "name": "인터 밀란 2025 2026 홈 유니폼 (레플리카)",
         "model_code": "HJ4591-439",
         "image": "https://thumblr.uniid.it/product/392851/cbef7dd0dcc0.jpg",
-        "site_offers": [],
+        "site_offers": [
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 104,
+                "sale_price": 104,
+                "regular_price_krw": 135000,
+                "sale_price_krw": 135000,
+                "discount_rate": 0,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030190"
+            }
+        ],
         "version": "레플리카",
         "visible": true
     },
@@ -204,6 +246,16 @@ const uniformData = [
                 "sale_price_krw": 48283,
                 "discount_rate": 69,
                 "affiliate_link": "https://www.sportsdirect.com/puma-manchester-city-home-shirt-2024-2025-adults-377790"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 99,
+                "sale_price": 35,
+                "regular_price_krw": 129000,
+                "sale_price_krw": 45100,
+                "discount_rate": 65,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000027719"
             }
         ],
         "version": "레플리카",
@@ -226,6 +278,16 @@ const uniformData = [
                 "sale_price_krw": 73015,
                 "discount_rate": 55,
                 "affiliate_link": "https://www.unisportstore.com/football-shirts/mcfc-away-jersey-replica-new-navy-yellow-glow/356281/"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 99,
+                "sale_price": 35,
+                "regular_price_krw": 129000,
+                "sale_price_krw": 45100,
+                "discount_rate": 65,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000028376"
             }
         ],
         "version": "레플리카",
@@ -532,7 +594,18 @@ const uniformData = [
         "name": "토트넘 홋스퍼 2024 2025 어웨이 유니폼 (레플리카)",
         "model_code": "FN8788-480",
         "image": "https://thumblr.uniid.it/product/369657/d43d02e75d48.jpg",
-        "site_offers": [],
+        "site_offers": [
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 99,
+                "sale_price": 50,
+                "regular_price_krw": 129000,
+                "sale_price_krw": 64500,
+                "discount_rate": 50,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000027977"
+            }
+        ],
         "version": "레플리카",
         "visible": true
     },
@@ -553,6 +626,16 @@ const uniformData = [
                 "sale_price_krw": 76415,
                 "discount_rate": 55,
                 "affiliate_link": "https://www.unisportstore.com/football-shirts/arsenal-home-shirt-202425/359308/"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 92,
+                "sale_price": 46,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 59500,
+                "discount_rate": 50,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000027867"
             }
         ],
         "version": "레플리카",
@@ -598,7 +681,18 @@ const uniformData = [
         "name": "파리 생제르맹 2024 2025 홈 유니폼 (레플리카)",
         "model_code": "FN8795-411",
         "image": "https://thumblr.uniid.it/product/352890/95d639cef834.jpg",
-        "site_offers": [],
+        "site_offers": [
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 99,
+                "sale_price": 50,
+                "regular_price_krw": 129000,
+                "sale_price_krw": 64500,
+                "discount_rate": 50,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000027740"
+            }
+        ],
         "version": "레플리카",
         "visible": true
     },
@@ -620,7 +714,18 @@ const uniformData = [
         "name": "파리 생제르맹 2024 2025 어웨이 유니폼 (레플리카)",
         "model_code": "FN8781-101",
         "image": "https://thumblr.uniid.it/product/369617/bd64aa3be109.jpg",
-        "site_offers": [],
+        "site_offers": [
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 104,
+                "sale_price": 83,
+                "regular_price_krw": 135000,
+                "sale_price_krw": 108000,
+                "discount_rate": 20,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000028032"
+            }
+        ],
         "version": "레플리카",
         "visible": true
     },
@@ -652,6 +757,16 @@ const uniformData = [
                 "sale_price_krw": 84915,
                 "discount_rate": 50,
                 "affiliate_link": "https://www.unisportstore.com/football-shirts/juventus-home-shirt-202425/359122/"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 92,
+                "sale_price": 46,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 59500,
+                "discount_rate": 50,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000028338"
             }
         ],
         "version": "레플리카",
@@ -674,6 +789,16 @@ const uniformData = [
                 "sale_price_krw": 76415,
                 "discount_rate": 55,
                 "affiliate_link": "https://www.unisportstore.com/football-shirts/bayern-muenchen-home-shirt-202425/359319/"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 92,
+                "sale_price": 46,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 59500,
+                "discount_rate": 50,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000027833"
             }
         ],
         "version": "레플리카",
@@ -949,6 +1074,16 @@ const uniformData = [
                 "sale_price_krw": 121910,
                 "discount_rate": 14,
                 "affiliate_link": "https://www.sportsdirect.com/nike-chelsea-home-shirt-2025-2026-adults-377323"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 104,
+                "sale_price": 104,
+                "regular_price_krw": 135000,
+                "sale_price_krw": 135000,
+                "discount_rate": 0,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030274"
             }
         ],
         "visible": true
@@ -1015,6 +1150,16 @@ const uniformData = [
                 "sale_price_krw": 80160,
                 "discount_rate": 20,
                 "affiliate_link": "https://www.sportsdirect.com/adidas-liverpool-third-shirt-2025-2026-adults-378759"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 92,
+                "sale_price": 92,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 119000,
+                "discount_rate": 0,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000031347"
             }
         ],
         "visible": true
@@ -1573,6 +1718,16 @@ const uniformData = [
                 "sale_price_krw": 127415,
                 "discount_rate": 25,
                 "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-home-shirt-202526/396488/"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 92,
+                "sale_price": 82,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 107100,
+                "discount_rate": 10,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030442"
             }
         ],
         "visible": true
@@ -1595,6 +1750,16 @@ const uniformData = [
                 "sale_price_krw": 178415,
                 "discount_rate": 30,
                 "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-third-shirt-202526-authentic/397033/"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 145,
+                "sale_price": 145,
+                "regular_price_krw": 189000,
+                "sale_price_krw": 189000,
+                "discount_rate": 0,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000031080"
             }
         ],
         "visible": true
@@ -1617,6 +1782,16 @@ const uniformData = [
                 "sale_price_krw": 118915,
                 "discount_rate": 30,
                 "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-away-shirt-202526/396498/"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 92,
+                "sale_price": 92,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 119000,
+                "discount_rate": 0,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030450"
             }
         ],
         "visible": true
@@ -1771,6 +1946,16 @@ const uniformData = [
                 "sale_price_krw": 76415,
                 "discount_rate": 55,
                 "affiliate_link": "https://www.unisportstore.com/football-shirts/juventus-away-shirt-202425/359580/"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 92,
+                "sale_price": 46,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 59500,
+                "discount_rate": 50,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000029821"
             }
         ],
         "visible": true
@@ -1859,6 +2044,16 @@ const uniformData = [
                 "sale_price_krw": 127415,
                 "discount_rate": 25,
                 "affiliate_link": "https://www.unisportstore.com/football-shirts/tottenham-3rd-shirt-202526/408245/"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 104,
+                "sale_price": 104,
+                "regular_price_krw": 135000,
+                "sale_price_krw": 135000,
+                "discount_rate": 0,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000031211"
             }
         ],
         "visible": true
@@ -1969,6 +2164,16 @@ const uniformData = [
                 "sale_price_krw": 127415,
                 "discount_rate": 25,
                 "affiliate_link": "https://www.unisportstore.com/football-shirts/bayern-muenchen-home-shirt-202526/396490/"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 92,
+                "sale_price": 73,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 95200,
+                "discount_rate": 20,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030465"
             }
         ],
         "visible": true
@@ -2167,6 +2372,16 @@ const uniformData = [
                 "sale_price_krw": 115515,
                 "discount_rate": 55,
                 "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-3rd-shirt-202425-authentic/359484/"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 145,
+                "sale_price": 73,
+                "regular_price_krw": 189000,
+                "sale_price_krw": 94500,
+                "discount_rate": 50,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000028428"
             }
         ],
         "visible": true
@@ -2343,6 +2558,16 @@ const uniformData = [
                 "sale_price_krw": 76415,
                 "discount_rate": 55,
                 "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-united-3rd-shirt-202425/359516/"
+            },
+            {
+                "site_name": "카포스토어",
+                "currency": "KRW",
+                "regular_price": 92,
+                "sale_price": 46,
+                "regular_price_krw": 119000,
+                "sale_price_krw": 59500,
+                "discount_rate": 50,
+                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000028430"
             }
         ],
         "visible": true
@@ -2543,88 +2768,6 @@ const uniformData = [
                 "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-city-goalkeeper-shirt-202526/399607/"
             }
         ],
-        "visible": true
-    }
-];
-
-// 블프 세일 사이트 데이터
-const blackFridaySites = [
-    {
-        "id": "nike-korea",
-        "name": "나이키 코리아",
-        "description": "공식 홈페이지 • 국내 • 최대 50% 할인",
-        "url": "https://www.nike.com/kr/",
-        "discount": "최대 50%",
-        "location": "국내",
-        "type": "공식 홈페이지",
-        "color": "orange",
-        "startDate": "",
-        "endDate": "",
-        "visible": true
-    },
-    {
-        "id": "adidas-korea",
-        "name": "아디다스 코리아",
-        "description": "공식 홈페이지 • 국내 • 최대 40% 할인",
-        "url": "https://www.adidas.co.kr/",
-        "discount": "최대 40%",
-        "location": "국내",
-        "type": "공식 홈페이지",
-        "color": "blue",
-        "startDate": "",
-        "endDate": "",
-        "visible": true
-    },
-    {
-        "id": "puma-korea",
-        "name": "푸마 코리아",
-        "description": "공식 홈페이지 • 국내 • 최대 30% 할인",
-        "url": "https://kr.puma.com/",
-        "discount": "최대 30%",
-        "location": "국내",
-        "type": "공식 홈페이지",
-        "color": "gray",
-        "startDate": "",
-        "endDate": "",
-        "visible": true
-    },
-    {
-        "id": "sportsdirect",
-        "name": "스포츠다이렉트",
-        "description": "공식 편집샵 • 해외 • 최대 70% 할인",
-        "url": "https://www.sportsdirect.com/",
-        "discount": "최대 70%",
-        "location": "해외",
-        "type": "공식 편집샵",
-        "color": "green",
-        "startDate": "",
-        "endDate": "",
-        "visible": true
-    },
-    {
-        "id": "kitbag",
-        "name": "Kitbag",
-        "description": "공식 편집샵 • 해외 • 최대 60% 할인",
-        "url": "https://www.kitbag.com/",
-        "discount": "최대 60%",
-        "location": "해외",
-        "type": "공식 편집샵",
-        "color": "purple",
-        "startDate": "",
-        "endDate": "",
-        "visible": true
-    },
-    {
-        "id": "unisport",
-        "name": "유니스포츠",
-        "description": "공식 편집샵 • 해외 • 최대 50% 할인",
-        "url": "https://www.unisportstore.com/",
-        "discount": "최대 50%",
-        "location": "해외",
-        "type": "공식 편집샵",
-        "color": "indigo",
-        "startDate": "",
-        "endDate": "",
         "visible": true
     }
 ];

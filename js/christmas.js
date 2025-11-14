@@ -277,7 +277,7 @@ const christmasClubs = [
         nameEn: 'Juventus',
         logo: 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/111.png',
         url: 'https://store.juventus.com/kr/holiday-gifts',
-        color: 'from-black to-gray-800',
+        color: 'from-gray-100 to-gray-300',
         league: '세리에 A',
         products: [
             {

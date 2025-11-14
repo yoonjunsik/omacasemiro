@@ -135,8 +135,22 @@ function renderPriceTable(siteOffers) {
     const tableBody = document.getElementById('priceTableBody');
     tableBody.innerHTML = '';
 
+    // 어필리에이트 링크 적용
+    let processedOffers = siteOffers;
+    if (typeof convertToAffiliateLink === 'function') {
+        processedOffers = siteOffers.map(offer => {
+            const processedOffer = { ...offer };
+            processedOffer.affiliate_link = convertToAffiliateLink(
+                offer.site_name,
+                offer.affiliate_link
+            );
+            return processedOffer;
+        });
+        console.log('🔗 Affiliate links applied to product page');
+    }
+
     // 가격순으로 정렬 (원화 기준)
-    const sortedOffers = [...siteOffers].sort((a, b) => {
+    const sortedOffers = [...processedOffers].sort((a, b) => {
         const priceA = a.sale_price_krw || convertToKRW(a.sale_price, a.currency);
         const priceB = b.sale_price_krw || convertToKRW(b.sale_price, b.currency);
         return priceA - priceB;

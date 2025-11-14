@@ -1,0 +1,814 @@
+[
+  {
+    "dataProduct": {
+      "team": "맨체스터 유나이티드",
+      "kit_type": "홈킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "맨체스터 유나이티드 2025 2026 홈 유니폼 (레플리카)",
+      "model_code": "JI7428"
+    },
+    "unisportProduct": {
+      "name": "Manchester United Home Shirt 2025/26 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/manchester-united-home-shirt-202526-kids/396740/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 유나이티드",
+      "kit_type": "홈킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "맨체스터 유나이티드 2025 2026 홈 유니폼 (레플리카)",
+      "model_code": "JI7428"
+    },
+    "unisportProduct": {
+      "name": "Manchester United Home Shirt 2025/26 Kids Long Sleeves",
+      "url": "https://www.unisportstore.com/football-shirts/manchester-united-home-shirt-202526-kids-long-sleeves/396741/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 유나이티드",
+      "kit_type": "어웨이킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "맨체스터 유나이티드 2025 2026 어웨이 유니폼 (레플리카)",
+      "model_code": "JI7423"
+    },
+    "unisportProduct": {
+      "name": "Manchester United Away Shirt 2025/26 Kids Long Sleeves",
+      "url": "https://www.unisportstore.com/football-shirts/manchester-united-away-shirt-202526-kids-long-sleeves/396747/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 시티",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "맨체스터 시티 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "775075-01"
+    },
+    "unisportProduct": {
+      "name": "Manchester City Home Shirt 2024/25 Women",
+      "url": "https://www.unisportstore.com/football-shirts/mcfc-home-jersey-replica-w-team-light-blue-marine-blue/356979/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 시티",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "맨체스터 시티 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "775075-01"
+    },
+    "unisportProduct": {
+      "name": "Manchester City Home Shirt 2024/25 Long Sleeves",
+      "url": "https://www.unisportstore.com/football-shirts/mcfc-home-jersey-replica-ls-team-light-blue-marine-blue/356438/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 시티",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "맨체스터 시티 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "775075-01"
+    },
+    "unisportProduct": {
+      "name": "Manchester City Home Shirt 2024/25 Kids Long Sleeves",
+      "url": "https://www.unisportstore.com/football-shirts/mcfc-home-jersey-replica-ls-jr-team-light-blue-marine-blue/355976/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 시티",
+      "kit_type": "어웨이킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "맨체스터 시티 2024 2025 어웨이 유니폼 (레플리카)",
+      "model_code": "775086-02"
+    },
+    "unisportProduct": {
+      "name": "Manchester City Away Shirt 2024/25",
+      "url": "https://www.unisportstore.com/football-shirts/mcfc-away-jersey-replica-new-navy-yellow-glow/356281/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 시티",
+      "kit_type": "어웨이킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "맨체스터 시티 2024 2025 어웨이 유니폼 (레플리카)",
+      "model_code": "775086-02"
+    },
+    "unisportProduct": {
+      "name": "Manchester City Away Shirt 2024/25 Long Sleeves",
+      "url": "https://www.unisportstore.com/football-shirts/mcfc-away-jersey-replica-ls-new-navy-yellow-glow/356302/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 시티",
+      "kit_type": "어웨이킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "맨체스터 시티 2024 2025 어웨이 유니폼 (레플리카)",
+      "model_code": "775086-02"
+    },
+    "unisportProduct": {
+      "name": "Manchester City Away Shirt 2024/25 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/mcfc-away-jersey-replica-jr-new-navy-yellow-glow/357136/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 시티",
+      "kit_type": "어웨이킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "맨체스터 시티 2024 2025 어웨이 유니폼 (레플리카)",
+      "model_code": "775086-02"
+    },
+    "unisportProduct": {
+      "name": "Manchester City Away Shirt 2024/25 Kids Long Sleeves",
+      "url": "https://www.unisportstore.com/football-shirts/mcfc-away-jersey-replica-ls-jr-new-navy-yellow-glow/357711/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "레알 마드리드",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "레알 마드리드 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "IU5011"
+    },
+    "unisportProduct": {
+      "name": "Real Madrid Home Shirt 2024/25 Mini-Kit Kids",
+      "url": "https://www.unisportstore.com/football-shirts/real-h-mini-white/359286/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "레알 마드리드",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "레알 마드리드 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "IU5011"
+    },
+    "unisportProduct": {
+      "name": "Real Madrid Home Shirt 2024/25",
+      "url": "https://www.unisportstore.com/football-shirts/real-h-jsy-white/359343/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "레알 마드리드",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "레알 마드리드 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "IU5011"
+    },
+    "unisportProduct": {
+      "name": "Real Madrid Home Shirt 2024/25 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/real-h-jsy-y-white/359292/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "레알 마드리드",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "레알 마드리드 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "IU5011"
+    },
+    "unisportProduct": {
+      "name": "Real Madrid Home Shirt 2024/25 Long Sleeves",
+      "url": "https://www.unisportstore.com/football-shirts/real-h-jsy-l-white/359222/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "레알 마드리드",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "레알 마드리드 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "IU5011"
+    },
+    "unisportProduct": {
+      "name": "Real Madrid Home Shirt 2024/25 Kids Long Sleeves",
+      "url": "https://www.unisportstore.com/football-shirts/real-h-jsy-yl-white/359291/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "리버풀",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "리버풀 FC 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "FN8776-688"
+    },
+    "unisportProduct": {
+      "name": "Liverpool Home Shirt 2024/25 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/liverpool-home-shirt-202425-kids/355875/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "리버풀",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "리버풀 FC 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "FN8776-688"
+    },
+    "unisportProduct": {
+      "name": "Liverpool Home Shirt 2024/25 Mini-Kit Kids",
+      "url": "https://www.unisportstore.com/football-shirts/liverpool-home-shirt-202425-mini-kit-kids/353124/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "리버풀",
+      "kit_type": "어웨이킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "리버풀 FC 2024 2025 어웨이 유니폼 (레플리카)",
+      "model_code": "FQ2031-309"
+    },
+    "unisportProduct": {
+      "name": "Liverpool Away Shirt 2024/25",
+      "url": "https://www.unisportstore.com/football-shirts/liverpool-away-shirt-202425/369621/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "리버풀",
+      "kit_type": "어웨이킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "리버풀 FC 2024 2025 어웨이 유니폼 (레플리카)",
+      "model_code": "FQ2031-309"
+    },
+    "unisportProduct": {
+      "name": "Liverpool Away Shirt 2024/25 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/liverpool-away-shirt-202425-kids/369622/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "토트넘",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "토트넘 홋스퍼 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "FN8794-101"
+    },
+    "unisportProduct": {
+      "name": "Tottenham Home Shirt 2024/25 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/thfc-y-nk-df-jsy-ss-stad-hm-whitebinary-bluebinary-blue/355879/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "토트넘",
+      "kit_type": "어웨이킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "토트넘 홋스퍼 2024 2025 어웨이 유니폼 (레플리카)",
+      "model_code": "FN8788-480"
+    },
+    "unisportProduct": {
+      "name": "Tottenham Away Shirt 2024/25 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/tottenham-away-shirt-202425-kids/369630/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "아스널",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "아스널 FC 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "IT6141"
+    },
+    "unisportProduct": {
+      "name": "Arsenal Home Shirt 2024/25",
+      "url": "https://www.unisportstore.com/football-shirts/arsenal-home-shirt-202425/359308/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "PSG",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "파리 생제르맹 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "FN8795-411"
+    },
+    "unisportProduct": {
+      "name": "Paris Saint Germain Home Shirt 2024/25 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/psg-y-nk-df-jsy-ss-stad-hm-midnight-navymidnight-navywhite/355877/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "PSG",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "파리 생제르맹 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "FN8795-411"
+    },
+    "unisportProduct": {
+      "name": "Paris Saint Germain Home Shirt 2024/25 Baby-Kit Kids",
+      "url": "https://www.unisportstore.com/football-shirts/paris-saint-germain-home-shirt-202425-baby-kit-kids/352894/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "PSG",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "파리 생제르맹 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "FN8795-411"
+    },
+    "unisportProduct": {
+      "name": "Paris Saint Germain Home Shirt 2024/25 Women",
+      "url": "https://www.unisportstore.com/football-shirts/paris-saint-germain-home-shirt-202425-women/353134/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "유벤투스",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "유벤투스 FC 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "IS8002"
+    },
+    "unisportProduct": {
+      "name": "Juventus Home Shirt 2024/25",
+      "url": "https://www.unisportstore.com/football-shirts/juventus-home-shirt-202425/359122/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "유벤투스",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "유벤투스 FC 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "IS8002"
+    },
+    "unisportProduct": {
+      "name": "Juventus Home Shirt 2024/25 Women",
+      "url": "https://www.unisportstore.com/football-shirts/juventus-home-shirt-202425-kids/359232/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "바이에른 뮌헨",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "바이에른 뮌헨 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "IT8511"
+    },
+    "unisportProduct": {
+      "name": "Bayern München Home Shirt 2024/25 Mini-Kit Kids",
+      "url": "https://www.unisportstore.com/football-shirts/bayern-muenchen-home-shirt-202425-mini-kit-kids/359210/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "바이에른 뮌헨",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "바이에른 뮌헨 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "IT8511"
+    },
+    "unisportProduct": {
+      "name": "Bayern München Home Shirt 2024/25 Baby-Kit Kids",
+      "url": "https://www.unisportstore.com/football-shirts/bayern-muenchen-home-shirt-202425-baby-kit-kids/359211/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "바이에른 뮌헨",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "바이에른 뮌헨 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "IT8511"
+    },
+    "unisportProduct": {
+      "name": "Bayern München Home Shirt 2024/25",
+      "url": "https://www.unisportstore.com/football-shirts/bayern-muenchen-home-shirt-202425/359319/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "바이에른 뮌헨",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "바이에른 뮌헨 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "IT8511"
+    },
+    "unisportProduct": {
+      "name": "Bayern München Home Shirt 2024/25 Women",
+      "url": "https://www.unisportstore.com/football-shirts/bayern-muenchen-home-shirt-202425-women/359208/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "AC 밀란",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "AC 밀란 2024 2025 홈 유니폼 (레플리카)",
+      "model_code": "774979-01"
+    },
+    "unisportProduct": {
+      "name": "Milan Home Shirt 2024/25 Women",
+      "url": "https://www.unisportstore.com/football-shirts/acm-home-jersey-replica-w-for-all-time-red-puma-black/357388/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "AC 밀란",
+      "kit_type": "어웨이킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "AC 밀란 2024 2025 어웨이 유니폼 (레플리카)",
+      "model_code": "775015-02"
+    },
+    "unisportProduct": {
+      "name": "Milan Away Shirt 2024/25 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/acm-away-jersey-replica-jr-puma-white/357621/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "첼시",
+      "kit_type": "써드킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "첼시 25/26 써드킷 (레플리카)",
+      "model_code": "HM3202-011"
+    },
+    "unisportProduct": {
+      "name": "Chelsea 3rd Shirt 2025/26 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/chelsea-3rd-shirt-202526-kids/408225/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "벤피카",
+      "kit_type": "홈킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "벤피카 25/26 홈킷 (레플리카)",
+      "model_code": "ADIDAS-2024"
+    },
+    "unisportProduct": {
+      "name": "Benfica Home Shirt 2025/26",
+      "url": "https://www.unisportstore.com/football-shirts/benfica-home-shirt-202526/396173/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "아스널",
+      "kit_type": "써드킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "아스널 25/26 써드킷 (레플리카)",
+      "model_code": "JI9556"
+    },
+    "unisportProduct": {
+      "name": "Arsenal 3rd Shirt 2025/26 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/arsenal-third-shirt-202526-kids/396448/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "아스널",
+      "kit_type": "어웨이킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "아스널 25/26 어웨이킷 (레플리카)",
+      "model_code": "MJI9511"
+    },
+    "unisportProduct": {
+      "name": "Arsenal Away Shirt 2025/26 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/arsenal-away-shirt-202526-kids/396450/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "아스널",
+      "kit_type": "홈킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "아스널 25/26 홈킷 (레플리카)",
+      "model_code": "MJI9517"
+    },
+    "unisportProduct": {
+      "name": "Arsenal Home Shirt 2025/26",
+      "url": "https://www.unisportstore.com/football-shirts/arsenal-home-shirt-202526/396434/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "아스널",
+      "kit_type": "홈킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "아스널 25/26 홈킷 (레플리카)",
+      "model_code": "MJI9517"
+    },
+    "unisportProduct": {
+      "name": "Arsenal Home Shirt 2025/26 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/arsenal-home-shirt-202526-kids/396442/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "아스널",
+      "kit_type": "홈킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "아스널 25/26 홈킷 (레플리카)",
+      "model_code": "MJI9517"
+    },
+    "unisportProduct": {
+      "name": "Arsenal Home Shirt 2025/26 Kids Long Sleeves",
+      "url": "https://www.unisportstore.com/football-shirts/arsenal-home-shirt-202526-kids-long-sleeves/396435/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "유벤투스",
+      "kit_type": "써드킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "유벤투스 25/26 써드킷 (레플리카)",
+      "model_code": "SD-377848"
+    },
+    "unisportProduct": {
+      "name": "Juventus 3rd Shirt 2025/26 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/juventus-3rd-shirt-202526-kids/397299/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 유나이티드",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "맨체스터 유나이티드 24/25 홈킷 (레플리카)",
+      "model_code": "SD-367399"
+    },
+    "unisportProduct": {
+      "name": "Manchester United Home Shirt 2024/25 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/manchester-united-home-shirt-202425-kids/359177/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 유나이티드",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "맨체스터 유나이티드 24/25 홈킷 (레플리카)",
+      "model_code": "SD-367399"
+    },
+    "unisportProduct": {
+      "name": "Manchester United Home Shirt 2024/25 Long Sleeves",
+      "url": "https://www.unisportstore.com/football-shirts/manchester-united-home-shirt-202425-long-sleeves/359176/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 유나이티드",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "맨체스터 유나이티드 24/25 홈킷 (레플리카)",
+      "model_code": "SD-367399"
+    },
+    "unisportProduct": {
+      "name": "Manchester United Home Shirt 2024/25 Kids Long Sleeves",
+      "url": "https://www.unisportstore.com/football-shirts/manchester-united-home-shirt-202425-kids-long-sleeves/359179/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 유나이티드",
+      "kit_type": "써드킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "맨체스터 유나이티드 25/26 써드킷 (레플리카)",
+      "model_code": "SD-377880"
+    },
+    "unisportProduct": {
+      "name": "Manchester United 3rd Shirt 2025/26 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/manchester-united-third-shirt-202526-kids/397307/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 유나이티드",
+      "kit_type": "써드킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "맨체스터 유나이티드 25/26 써드킷 (레플리카)",
+      "model_code": "SD-377880"
+    },
+    "unisportProduct": {
+      "name": "Manchester United Goalkeeper Shirt 3rd 2025/26 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/manchester-united-goalkeeper-shirt-3rd-202526-kids/396752/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "PSG",
+      "kit_type": "써드킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "PSG 25/26 써드킷 (레플리카)",
+      "model_code": "SD-377088"
+    },
+    "unisportProduct": {
+      "name": "Paris Saint Germain 3rd Goalkeeper Shirt 2025/26 Long Sleeves",
+      "url": "https://www.unisportstore.com/football-shirts/paris-saint-germain-3rd-goalkeeper-shirt-202526-long-sleeves/408707/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "알 나스르",
+      "kit_type": "홈킷",
+      "season": "24/25",
+      "version": "레플리카",
+      "name": "알 나스르 24/25 홈킷 (레플리카)",
+      "model_code": "JP0459"
+    },
+    "unisportProduct": {
+      "name": "Al Nassr Home Shirt 2024/25 Kids RONALDO 7",
+      "url": "https://www.unisportstore.com/football-shirts/anfc-h-jsy-y-nn-impyelroyblu/359625/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "리버풀",
+      "kit_type": "어웨이킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "리버풀 25/26 어웨이킷 (레플리카)",
+      "model_code": "SD-378746"
+    },
+    "unisportProduct": {
+      "name": "Liverpool Away Shirt 2025/26 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/liverpool-away-shirt-202526-kids/397057/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "토트넘",
+      "kit_type": "홈킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "토트넘 25/26 홈킷 (레플리카)",
+      "model_code": "SD-377422"
+    },
+    "unisportProduct": {
+      "name": "Tottenham Home Shirt 2025/26",
+      "url": "https://www.unisportstore.com/football-shirts/tottenham-home-shirt-202526/392868/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "토트넘",
+      "kit_type": "홈킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "토트넘 25/26 홈킷 (레플리카)",
+      "model_code": "SD-377422"
+    },
+    "unisportProduct": {
+      "name": "Tottenham Home Shirt 2025/26 Kids",
+      "url": "https://www.unisportstore.com/football-shirts/tottenham-home-shirt-202526-kids/392870/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "AC 밀란",
+      "kit_type": "홈킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "AC 밀란 25/26 홈킷 (레플리카)",
+      "model_code": "SD-377642"
+    },
+    "unisportProduct": {
+      "name": "Milan Home Shirt 2025/26 Long Sleeves",
+      "url": "https://www.unisportstore.com/football-shirts/acm-home-jersey-replica-ls-for-all-time-red-puma-black/399144/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "AC 밀란",
+      "kit_type": "홈킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "AC 밀란 25/26 홈킷 (레플리카)",
+      "model_code": "SD-377642"
+    },
+    "unisportProduct": {
+      "name": "Milan Home Shirt 2025/26 Baby-Kit Kids",
+      "url": "https://www.unisportstore.com/football-shirts/milan-home-shirt-202526-baby-kit-kids/399975/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 시티",
+      "kit_type": "홈킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "맨체스터 시티 25/26 홈킷 (레플리카)",
+      "model_code": "SD-377428"
+    },
+    "unisportProduct": {
+      "name": "Manchester City Home Shirt 2025/26 Baby-Kit Kids",
+      "url": "https://www.unisportstore.com/football-shirts/manchester-city-home-shirt-202526-baby-kit-kids/400226/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 시티",
+      "kit_type": "홈킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "맨체스터 시티 25/26 홈킷 (레플리카)",
+      "model_code": "SD-377428"
+    },
+    "unisportProduct": {
+      "name": "Manchester City Home Shirt 2025/26 Women",
+      "url": "https://www.unisportstore.com/football-shirts/manchester-city-home-shirt-202526-women/399802/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 시티",
+      "kit_type": "홈킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "맨체스터 시티 25/26 홈킷 (레플리카)",
+      "model_code": "SD-377428"
+    },
+    "unisportProduct": {
+      "name": "Manchester City Home Shirt 2025/26 Long Sleeves",
+      "url": "https://www.unisportstore.com/football-shirts/manchester-city-home-shirt-202526-long-sleeves/400178/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 시티",
+      "kit_type": "홈킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "맨체스터 시티 25/26 홈킷 (레플리카)",
+      "model_code": "SD-377428"
+    },
+    "unisportProduct": {
+      "name": "Manchester City Home Shirt 2025/26",
+      "url": "https://www.unisportstore.com/football-shirts/manchester-city-home-shirt-202526/400408/"
+    }
+  },
+  {
+    "dataProduct": {
+      "team": "맨체스터 시티",
+      "kit_type": "홈킷",
+      "season": "25/26",
+      "version": "레플리카",
+      "name": "맨체스터 시티 25/26 홈킷 (레플리카)",
+      "model_code": "SD-377428"
+    },
+    "unisportProduct": {
+      "name": "Manchester City Home Shirt 2025/26 Kids Long Sleeves",
+      "url": "https://www.unisportstore.com/football-shirts/manchester-city-home-shirt-202526-kids-long-sleeves/399859/"
+    }
+  }
+]

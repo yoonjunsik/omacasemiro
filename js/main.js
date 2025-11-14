@@ -18,11 +18,25 @@ function setupRealtimeListeners() {
             if (snapshot.exists()) {
                 window.uniformData = snapshot.val();
                 console.log('🔄 uniformData 업데이트됨:', window.uniformData.length, '개');
+
+                // 어필리에이트 링크 적용
+                if (typeof processAffiliateLinks === 'function') {
+                    window.uniformData = processAffiliateLinks(window.uniformData);
+                    console.log('🔗 Affiliate links applied');
+                }
+
                 renderProducts();
             } else {
                 console.log('⚠️ Firebase에 uniformData가 없습니다. data.js 사용');
                 if (typeof uniformData !== 'undefined') {
                     window.uniformData = uniformData;
+
+                    // 어필리에이트 링크 적용
+                    if (typeof processAffiliateLinks === 'function') {
+                        window.uniformData = processAffiliateLinks(window.uniformData);
+                        console.log('🔗 Affiliate links applied');
+                    }
+
                     renderProducts();
                 }
             }

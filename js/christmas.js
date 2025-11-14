@@ -201,6 +201,76 @@ const christmasClubs = [
             { name: 'BVB Christmas Product 7', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23FDE100" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="black" text-anchor="middle" dy=".3em"%3EBVB%3C/text%3E%3C/svg%3E', url: 'https://shop.bvb.de/en-de/christmas' },
             { name: 'BVB Christmas Product 8', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23FDE100" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="black" text-anchor="middle" dy=".3em"%3EBVB%3C/text%3E%3C/svg%3E', url: 'https://shop.bvb.de/en-de/christmas' }
         ]
+    },
+    {
+        name: '레알 마드리드',
+        nameEn: 'Real Madrid',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg',
+        url: 'https://shop.realmadrid.com/en-es/gifts/christmas/jumpers',
+        color: 'from-white to-purple-100',
+        league: '라리가',
+        products: [
+            {
+                name: 'Rudolph Christmas Sweater',
+                image: 'https://cdn.shopify.com/s/files/1/0405/9807/7603/products/RMCFMS0161-01_de3f7920-7e40-4190-bc15-dadf4d6750af.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfms0161-real-madrid-rudolph-xmas-jumper'
+            },
+            {
+                name: 'Mens Christmas Sweater Crest Ice White',
+                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFMS0337-1.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfms0337-mens-christmas-jumper-crest-ice-white-real-madrid'
+            },
+            {
+                name: 'Kids Christmas Sweater Crest Ice White',
+                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFYS0093-1.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfys0093-youth-christmas-jumper-crest-ice-white-real-madrid'
+            },
+            {
+                name: 'Crest Christmas Sweater Navy/Grey',
+                image: 'https://cdn.shopify.com/s/files/1/0405/9807/7603/products/RMCFMS0160-01_1_076937d3-42a8-4f85-bb5c-e1f5ef1834be.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfms0160-real-madrid-crest-xmas-jumper-navy-grey'
+            },
+            {
+                name: 'Mens Christmas Sweater Cable Knit',
+                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFMS0335-1.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfms0335-mens-christmas-jumper-cable-knit-real-madrid'
+            },
+            {
+                name: 'Mens Christmas Sweater Teddy Bear',
+                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFMS0334-1.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfms0334-mens-christmas-jumper-teddy-bear-real-madrid'
+            },
+            {
+                name: 'Kids Christmas Sweater Teddy Bear',
+                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFYS0089-1-1.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfys0089-youth-christmas-jumper-teddy-bear-real-madrid'
+            },
+            {
+                name: 'Kids Christmas Sweater Ski Penguin',
+                image: 'https://cdn.shopify.com/s/files/1/0405/9807/7603/products/RMCFYS0060_01.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfys0060-youth-xmas-jumper-ski-penguin'
+            },
+            {
+                name: 'Mens Christmas Sweater Ski Penguin',
+                image: 'https://cdn.shopify.com/s/files/1/0405/9807/7603/products/RMCFMS0245-01.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfms0245-mens-xmas-jumper-ski-penguin'
+            },
+            {
+                name: 'Mens Christmas Sweater Crest Green/Multicolor',
+                image: 'https://cdn.shopify.com/s/files/1/0405/9807/7603/products/RMCFMS0244-01.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfms0244-mens-xmas-jumper-xmas-colors'
+            },
+            {
+                name: 'Kids Rudolph Christmas Sweater',
+                image: 'https://cdn.shopify.com/s/files/1/0405/9807/7603/products/RMCFYS0042-01_1_557100a3-7f82-4ff6-a790-2ba7a4911256.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfys0042-real-madrid-youth-rudolph-xmas-jumper'
+            },
+            {
+                name: 'Ladies Christmas Sweater Pastel Blue',
+                image: 'https://cdn.shopify.com/s/files/1/0405/9807/7603/products/RMCFLS0047-01.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfls0047-ladies-xmas-jumper-pastel-blue'
+            }
+        ]
     }
 ];
 

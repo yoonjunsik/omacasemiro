@@ -391,6 +391,56 @@ const christmasClubs = [
                 url: 'https://store.acmilan.com/en-me/products/christmas-tree-top'
             }
         ]
+    },
+    {
+        name: '인터 밀란',
+        nameEn: 'Inter Milan',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg',
+        url: 'https://store.inter.it/kr/xmas-collection',
+        color: 'from-blue-600 to-black',
+        league: '세리에 A',
+        products: [
+            {
+                name: 'Inter Winter Holiday Jumper',
+                image: 'https://store.inter.it/images/inter/products/large/IN25Q71.webp',
+                url: 'https://store.inter.it/kr/inter-winter-holiday-jumper'
+            },
+            {
+                name: 'Inter Winter Holiday Beanie',
+                image: 'https://store.inter.it/images/inter/products/large/IN25Q72.webp',
+                url: 'https://store.inter.it/kr/inter-winter-holiday-beanie'
+            },
+            {
+                name: 'Inter Winter Holiday Pajamas',
+                image: 'https://store.inter.it/images/inter/products/large/IN25Q73.webp',
+                url: 'https://store.inter.it/kr/inter-winter-holiday-pajamas'
+            },
+            {
+                name: 'Inter Winter Holiday Non Slip Socks',
+                image: 'https://store.inter.it/images/inter/products/large/IN25Q76.webp',
+                url: 'https://store.inter.it/kr/inter-winter-holiday-non-slip-socks'
+            },
+            {
+                name: 'Inter Winter Holiday Glass Mug',
+                image: 'https://store.inter.it/images/inter/products/large/IN25Q80.webp',
+                url: 'https://store.inter.it/kr/inter-winter-holiday-glass-mug'
+            },
+            {
+                name: 'Inter 34cm Reindeer',
+                image: 'https://store.inter.it/images/inter/products/large/IN23J08.webp',
+                url: 'https://store.inter.it/kr/inter-34-cm-reindeer'
+            },
+            {
+                name: 'Inter Christmas Snowglobe',
+                image: 'https://store.inter.it/images/inter/products/large/IN23Q53.webp',
+                url: 'https://store.inter.it/kr/inter-christmas-snowglobe'
+            },
+            {
+                name: 'Inter Christmas Ball Set',
+                image: 'https://store.inter.it/images/inter/products/large/IN22Q52.webp',
+                url: 'https://store.inter.it/kr/inter-christmas-ball-set'
+            }
+        ]
     }
 ];
 

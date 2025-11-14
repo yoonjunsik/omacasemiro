@@ -215,6 +215,31 @@ function initializePage() {
         return;
     }
 
+    // Firebase에서 데이터 가져오기
+    if (window.firebaseDB && window.firebaseDBRef && window.firebaseDBOnValue) {
+        console.log('🔵 Firebase에서 제품 데이터 로드 중...');
+        const uniformRef = window.firebaseDBRef(window.firebaseDB, 'uniformData');
+        window.firebaseDBOnValue(uniformRef, (snapshot) => {
+            if (snapshot.exists()) {
+                window.uniformData = snapshot.val();
+                console.log('✅ Firebase 데이터 로드 완료:', window.uniformData.length, '개');
+                displayProduct(productId, loading, error, productDetail);
+            } else {
+                console.log('⚠️ Firebase에 데이터 없음, data.js 사용');
+                displayProduct(productId, loading, error, productDetail);
+            }
+        }, {
+            onlyOnce: true  // 한 번만 읽기
+        });
+    } else {
+        // Firebase 없으면 data.js 사용
+        console.log('⚠️ Firebase 초기화 안됨, data.js 사용');
+        displayProduct(productId, loading, error, productDetail);
+    }
+}
+
+// 제품 표시 함수
+function displayProduct(productId, loading, error, productDetail) {
     // 제품 찾기
     const product = findProduct(productId);
 
@@ -222,6 +247,7 @@ function initializePage() {
         // 제품을 찾지 못하면 에러 표시
         loading.classList.add('hidden');
         error.classList.remove('hidden');
+        console.error('❌ 제품을 찾을 수 없음:', productId);
         return;
     }
 
@@ -235,6 +261,8 @@ function initializePage() {
     // 로딩 숨기고 상세 정보 표시
     loading.classList.add('hidden');
     productDetail.classList.remove('hidden');
+
+    console.log('✅ 제품 표시 완료:', product.name);
 }
 
 // DOM 로드 시 초기화

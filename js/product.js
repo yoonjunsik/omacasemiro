@@ -254,13 +254,19 @@ function initializePage() {
                 console.log('✅ Firebase 데이터 로드 완료:', window.uniformData.length, '개');
 
                 // Affiliate links 처리
-                if (typeof processAffiliateLinks === 'function') {
-                    window.uniformData = processAffiliateLinks(window.uniformData);
-                    console.log('🔗 Affiliate links applied to uniformData');
+                try {
+                    if (typeof processAffiliateLinks === 'function') {
+                        window.uniformData = processAffiliateLinks(window.uniformData);
+                        console.log('🔗 Affiliate links applied to uniformData');
+                    } else {
+                        console.warn('⚠️ processAffiliateLinks 함수를 찾을 수 없음 (affiliate-links.js 로드 확인 필요)');
+                    }
+                } catch (e) {
+                    console.error('❌ Affiliate links 처리 중 오류:', e);
                 }
 
                 console.log('🔍 검색할 제품 ID:', productId);
-                console.log('📦 전체 제품 모델 코드:', window.uniformData.map(p => p.model_code).join(', '));
+                console.log('📦 전체 제품 모델 코드 (처음 10개):', window.uniformData.slice(0, 10).map(p => p.model_code).join(', '));
 
                 displayProduct(productId, loading, error, productDetail);
             } else {

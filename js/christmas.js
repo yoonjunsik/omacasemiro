@@ -3,6 +3,15 @@
 // 크리스마스 샵 구단 데이터
 const christmasClubs = [
     {
+        name: '뉴캐슬',
+        nameEn: 'Newcastle',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg',
+        url: 'https://shop.newcastleunited.com/collections/christmas-2025',
+        color: 'from-black to-gray-800',
+        league: '프리미어리그',
+        products: []  // 실제 제품 이미지 없음 - 크롤링 필요
+    },
+    {
         name: '아스널',
         nameEn: 'Arsenal',
         logo: 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg',

@@ -27,7 +27,36 @@ function getProductIdFromUrl() {
 
 // 상품 데이터 찾기
 function findProduct(modelCode) {
-    return uniformData.find(product => product.model_code === modelCode);
+    console.log('🔍 findProduct 호출됨');
+    console.log('   찾으려는 모델 코드:', modelCode, '(타입:', typeof modelCode, ')');
+    console.log('   uniformData 존재:', !!window.uniformData);
+    console.log('   uniformData 타입:', typeof window.uniformData);
+    console.log('   uniformData.length:', window.uniformData?.length);
+
+    if (!window.uniformData) {
+        console.error('   ❌ uniformData가 없음!');
+        return null;
+    }
+
+    // 처음 5개 제품의 model_code 출력
+    console.log('   처음 5개 제품 샘플:');
+    window.uniformData.slice(0, 5).forEach((p, i) => {
+        console.log(`     [${i}] model_code:`, p?.model_code, '(타입:', typeof p?.model_code, ')');
+    });
+
+    // 바르셀로나 제품만 필터링
+    const barcelonaProducts = window.uniformData.filter(p =>
+        p && p.team && p.team.includes('바르셀로나')
+    );
+    console.log('   바르셀로나 제품 수:', barcelonaProducts.length);
+    barcelonaProducts.forEach(p => {
+        console.log(`     - ${p.model_code} (일치: ${p.model_code === modelCode})`);
+    });
+
+    const found = window.uniformData.find(product => product.model_code === modelCode);
+    console.log('   검색 결과:', found ? '✅ 찾음' : '❌ 못 찾음');
+
+    return found;
 }
 
 // 환율 정보 (네이버 증권 실시간 환율 기준)

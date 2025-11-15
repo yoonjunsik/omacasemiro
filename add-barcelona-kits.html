@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바르셀로나 유니폼 추가</title>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .status {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .status.loading {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+        }
+        button {
+            background: #059669;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #047857;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔴🔵 바르셀로나 25/26 유니폼 추가</h1>
+        <div id="status" class="status loading">준비 중...</div>
+        <div id="details"></div>
+        <button id="addButton" onclick="addProducts()" disabled>Firebase에 추가하기</button>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js';
+        import { getDatabase, ref, get, set } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js';
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBu7tXrbeWjp3h0Xt_mCTp4oswsuGMSGkw",
+            authDomain: "omacasemiro-8fd4c.firebaseapp.com",
+            databaseURL: "https://omacasemiro-8fd4c-default-rtdb.firebaseio.com",
+            projectId: "omacasemiro-8fd4c",
+            storageBucket: "omacasemiro-8fd4c.firebasestorage.app",
+            messagingSenderId: "322343249421",
+            appId: "1:322343249421:web:de70a69176f468d5d05744"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // 추가할 제품 데이터
+        const newProducts = [
+            {
+                model_code: "HJ4590",
+                name: "FC Barcelona 2025/26 Stadium Home Jersey",
+                team: "바르셀로나",
+                kit_type: "홈킷",
+                season: "25/26",
+                version: "레플리카",
+                image: "https://thumblr.uniid.it/product/393279/0aa8d4376cb4.jpg",
+                visible: true,
+                site_offers: [
+                    {
+                        site_name: "Unisport",
+                        regular_price: 99.95,
+                        sale_price: 99.95,
+                        discount_rate: 0,
+                        currency: "EUR",
+                        affiliate_link: "https://www.unisportstore.com/football-shirts/barcelona-home-shirt-202526/393279/"
+                    },
+                    {
+                        site_name: "신세계백화점",
+                        regular_price: 138000,
+                        sale_price: 126960,
+                        discount_rate: 8,
+                        currency: "KRW",
+                        sale_price_krw: 126960,
+                        affiliate_link: "https://department.ssg.com/search.ssg?query=%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98%EC%9C%A0%EB%8B%88%ED%8F%BC"
+                    }
+                ]
+            },
+            {
+                model_code: "HJ4554",
+                name: "FC Barcelona 2025/26 Kobe Away Jersey",
+                team: "바르셀로나",
+                kit_type: "어웨이킷",
+                season: "25/26",
+                version: "레플리카",
+                image: "https://thumblr.uniid.it/product/423995/c2ea5021834c.jpg",
+                visible: true,
+                site_offers: [
+                    {
+                        site_name: "Unisport",
+                        regular_price: 99.95,
+                        sale_price: 99.95,
+                        discount_rate: 0,
+                        currency: "EUR",
+                        affiliate_link: "https://www.unisportstore.com/football-shirts/barcelona-away-shirt-202526-vapor/423995/"
+                    }
+                ]
+            },
+            {
+                model_code: "HM3193",
+                name: "FC Barcelona 2025/26 Third Jersey T90",
+                team: "바르셀로나",
+                kit_type: "써드킷",
+                season: "25/26",
+                version: "레플리카",
+                image: "https://thumblr.uniid.it/product/408201/4c1e9beb56df.jpg",
+                visible: true,
+                site_offers: [
+                    {
+                        site_name: "Unisport",
+                        regular_price: 99.95,
+                        sale_price: 99.95,
+                        discount_rate: 0,
+                        currency: "EUR",
+                        affiliate_link: "https://www.unisportstore.com/football-shirts/barcelona-3rd-shirt-202526-vapor/408200/"
+                    }
+                ]
+            }
+        ];
+
+        // 전역으로 함수 노출
+        window.addProducts = async function() {
+            const statusDiv = document.getElementById('status');
+            const detailsDiv = document.getElementById('details');
+            const button = document.getElementById('addButton');
+
+            button.disabled = true;
+            statusDiv.className = 'status loading';
+            statusDiv.textContent = '🔄 Firebase에서 데이터 가져오는 중...';
+
+            try {
+                // 현재 데이터 가져오기
+                const uniformRef = ref(database, 'uniformData');
+                const snapshot = await get(uniformRef);
+                const currentData = snapshot.val() || [];
+
+                console.log('현재 데이터 개수:', currentData.length);
+
+                // 중복 체크
+                const existingCodes = currentData.map(p => p.model_code);
+                const duplicates = newProducts.filter(p => existingCodes.includes(p.model_code));
+
+                if (duplicates.length > 0) {
+                    statusDiv.className = 'status error';
+                    statusDiv.textContent = '❌ 이미 존재하는 제품이 있습니다';
+                    detailsDiv.innerHTML = `<pre>중복된 모델 코드: ${duplicates.map(p => p.model_code).join(', ')}</pre>`;
+                    button.disabled = false;
+                    return;
+                }
+
+                statusDiv.textContent = '✍️ Firebase에 데이터 추가 중...';
+
+                // 새 제품 추가
+                const updatedData = [...currentData, ...newProducts];
+                await set(uniformRef, updatedData);
+
+                statusDiv.className = 'status success';
+                statusDiv.textContent = '✅ 바르셀로나 25/26 유니폼 3개 추가 완료!';
+                detailsDiv.innerHTML = `
+                    <h3>추가된 제품:</h3>
+                    <pre>${newProducts.map(p => `${p.model_code} - ${p.name}`).join('\n')}</pre>
+                    <p><strong>총 제품 수:</strong> ${currentData.length} → ${updatedData.length}</p>
+                `;
+
+                console.log('✅ 추가 완료!');
+            } catch (error) {
+                console.error('❌ 오류 발생:', error);
+                statusDiv.className = 'status error';
+                statusDiv.textContent = '❌ 오류 발생: ' + error.message;
+                detailsDiv.innerHTML = `<pre>${error.stack}</pre>`;
+                button.disabled = false;
+            }
+        };
+
+        // 초기화 완료
+        document.getElementById('status').className = 'status success';
+        document.getElementById('status').textContent = '✅ Firebase 연결 완료. 추가할 준비가 되었습니다.';
+        document.getElementById('details').innerHTML = `
+            <h3>추가될 제품:</h3>
+            <ul>
+                <li>HJ4590 - FC Barcelona 홈킷 (Unisport, 신세계백화점)</li>
+                <li>HJ4554 - FC Barcelona 어웨이킷 Kobe (Unisport)</li>
+                <li>HM3193 - FC Barcelona 써드킷 T90 (Unisport)</li>
+            </ul>
+        `;
+        document.getElementById('addButton').disabled = false;
+
+        console.log('✅ Firebase 초기화 완료');
+    </script>
+</body>
+</html>

@@ -1,2863 +1,2575 @@
-// 유니폼 데이터
+// 유니폼 데이터 (Firebase와 동기화됨)
+// 마지막 동기화: 2025. 11. 15. 오전 9:41:04
 const uniformData = [
-    {
-        "team": "맨체스터 유나이티드",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "맨체스터 유나이티드 2025 2026 홈 유니폼 (레플리카)",
-        "model_code": "JI7428",
-        "image": "https://thumblr.uniid.it/product/396415/a20a2e44917f.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 60,
-                "regular_price_krw": 164115,
-                "sale_price_krw": 115880,
-                "discount_rate": 29,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-home-shirt-2025-2026-adults-377822"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 119000,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 119000,
-                "discount_rate": 0,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030461"
-            },
-            {
-                "site_name": "무신사",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 119000,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 119000,
-                "discount_rate": 0,
-                "affiliate_link": "https://www.musinsa.com/products/5180206"
-            },
-            {
-                "site_name": "지그재그",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 97000,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 97000,
-                "discount_rate": 18,
-                "affiliate_link": "https://zigzag.kr/catalog/products/163384852"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 유나이티드",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "어센틱",
-        "name": "맨체스터 유나이티드 2025 2026 홈 유니폼 (어센틱)",
-        "model_code": "JI7428-AUTH",
-        "image": "https://thumblr.uniid.it/product/396415/a20a2e44917f.jpg",
-        "site_offers": [],
-        "visible": false
-    },
-    {
-        "team": "맨체스터 유나이티드",
-        "kit_type": "어웨이킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "맨체스터 유나이티드 2025 2026 어웨이 유니폼 (레플리카)",
-        "model_code": "JI7423",
-        "image": "https://thumblr.uniid.it/product/396414/5238d844a7d9.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 60,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 100200,
-                "discount_rate": 29,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-away-shirt-2025-2026-adults-377818"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 119000,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 119000,
-                "discount_rate": 0,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030813"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 유나이티드",
-        "kit_type": "어웨이킷",
-        "season": "25/26",
-        "version": "어센틱",
-        "name": "맨체스터 유나이티드 2025 2026 어웨이 유니폼 (어센틱)",
-        "model_code": "JI7423-AUTH",
-        "image": "https://thumblr.uniid.it/product/396414/5238d844a7d9.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 129.99,
-                "sale_price": 92,
-                "regular_price_krw": 217083,
-                "sale_price_krw": 153640,
-                "discount_rate": 29,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-third-shirt-2025-2026-adults-377819"
-            }
-        ],
-        "visible": false
-    },
-    {
-        "team": "리버풀",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "name": "리버풀 FC 2025 2026 홈 유니폼 (아디다스) (레플리카)",
-        "model_code": "LFC-2526",
-        "image": "https://thumblr.uniid.it/product/397044/d1eda93d45bb.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct UK",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 70,
-                "regular_price_krw": 164144,
-                "sale_price_krw": 135193,
-                "discount_rate": 18,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-liverpool-home-shirt-2025-2026-adults-378725"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "리버풀",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "name": "리버풀 FC 2025 2026 홈 유니폼 (아디다스) (어센틱)",
-        "model_code": "JV6444",
-        "image": "https://thumblr.uniid.it/product/397044/d1eda93d45bb.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 119.99,
-                "sale_price": 100,
-                "regular_price_krw": 200383,
-                "sale_price_krw": 167000,
-                "discount_rate": 17,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-liverpool-away-shirt-2025-2026-adults-378722"
-            }
-        ],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "뉴캐슬 유나이티드",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "name": "뉴캐슬 유나이티드 FC 2025 2026 홈 저지 (레플리카)",
-        "model_code": "JI7382",
-        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNwRL3Xzeqg45xNc4mQo5Ghh0n1eZxdj6UCoZBGriIczeyLOdv-y2CsE7LRgTPTl7qdjH9r_4iyZ4ceGZees7Eas28bdADaCnJira93eHPkxCuKRNt5tqN4mndwEnWQq431RzSwsQmzz_GjGqjkX5YzcU26pjSIHN1C0ar-YyC_bJ5QQdqRDvunWzmZRs/s1600/newcastle-24-25-home-kit%20%284%29.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "뉴캐슬 유나이티드",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "name": "뉴캐슬 유나이티드 FC 2025 2026 홈 저지 (어센틱)",
-        "model_code": "JI7382-AUTH",
-        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNwRL3Xzeqg45xNc4mQo5Ghh0n1eZxdj6UCoZBGriIczeyLOdv-y2CsE7LRgTPTl7qdjH9r_4iyZ4ceGZees7Eas28bdADaCnJira93eHPkxCuKRNt5tqN4mndwEnWQq431RzSwsQmzz_GjGqjkX5YzcU26pjSIHN1C0ar-YyC_bJ5QQdqRDvunWzmZRs/s1600/newcastle-24-25-home-kit%20%284%29.jpg",
-        "site_offers": [],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "PSG",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "name": "파리 생제르맹 2025 2026 홈 유니폼 (레플리카)",
-        "model_code": "HJ4593-411",
-        "image": "https://thumblr.uniid.it/product/392883/9d76dbafcc03.jpg",
-        "site_offers": [
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 135000,
-                "sale_price": 135000,
-                "regular_price_krw": 135000,
-                "sale_price_krw": 135000,
-                "discount_rate": 0,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030385"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "PSG",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "name": "파리 생제르맹 2025 2026 홈 유니폼 (어센틱)",
-        "model_code": "HJ4593-411-AUTH",
-        "image": "https://thumblr.uniid.it/product/392883/9d76dbafcc03.jpg",
-        "site_offers": [],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "인터 밀란",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "name": "인터 밀란 2025 2026 홈 유니폼 (레플리카)",
-        "model_code": "HJ4591-439",
-        "image": "https://thumblr.uniid.it/product/392851/cbef7dd0dcc0.jpg",
-        "site_offers": [
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 135000,
-                "sale_price": 135000,
-                "regular_price_krw": 135000,
-                "sale_price_krw": 135000,
-                "discount_rate": 0,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030190"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "인터 밀란",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "name": "인터 밀란 2025 2026 홈 유니폼 (어센틱)",
-        "model_code": "HJ4591-439-AUTH",
-        "image": "https://thumblr.uniid.it/product/392851/cbef7dd0dcc0.jpg",
-        "site_offers": [],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "맨체스터 시티",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "맨체스터 시티 2024 2025 홈 유니폼 (레플리카)",
-        "model_code": "775075-01",
-        "image": "https://thumblr.uniid.it/product/356113/d673621e3163.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 79.99,
-                "sale_price": 25,
-                "regular_price_krw": 154487,
-                "sale_price_krw": 48283,
-                "discount_rate": 69,
-                "affiliate_link": "https://www.sportsdirect.com/puma-manchester-city-home-shirt-2024-2025-adults-377790"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 129000,
-                "sale_price": 45100,
-                "regular_price_krw": 129000,
-                "sale_price_krw": 45100,
-                "discount_rate": 65,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000027719"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "맨체스터 시티",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "name": "맨체스터 시티 2024 2025 어웨이 유니폼 (레플리카)",
-        "model_code": "775086-02",
-        "image": "https://thumblr.uniid.it/product/356281/72559c6635db.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 95,
-                "sale_price": 42.95,
-                "regular_price_krw": 161500,
-                "sale_price_krw": 73015,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/mcfc-away-jersey-replica-new-navy-yellow-glow/356281/"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 129000,
-                "sale_price": 45100,
-                "regular_price_krw": 129000,
-                "sale_price_krw": 45100,
-                "discount_rate": 65,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000028376"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "레알 마드리드",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "레알 마드리드 2024 2025 홈 유니폼 (레플리카)",
-        "model_code": "IU5011",
-        "image": "https://thumblr.uniid.it/product/359343/464a472c365c.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 79.99,
-                "sale_price": 58,
-                "regular_price_krw": 133583,
-                "sale_price_krw": 96860,
-                "discount_rate": 27,
-                "affiliate_link": "https://www.sportsdirect.com/nike-tottenham-hotspur-home-shirt-2024-2025-adults-367387"
-            },
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 49.95,
-                "regular_price_krw": 169915,
-                "sale_price_krw": 84915,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/real-h-jsy-white/359343/"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "레알 마드리드",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "레알 마드리드 2024 2025 홈 유니폼 (어센틱)",
-        "model_code": "IU5011-AUTH",
-        "image": "https://thumblr.uniid.it/product/359343/464a472c365c.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 120,
-                "sale_price": 37,
-                "regular_price_krw": 231760,
-                "sale_price_krw": 71459,
-                "discount_rate": 69,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-real-madrid-authentic-home-shirt-2024-2025-adults-331970"
-            },
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 159.95,
-                "sale_price": 111.96,
-                "regular_price_krw": 271978,
-                "sale_price_krw": 190385,
-                "discount_rate": 30,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/real-h-jsy-white/359343/"
-            }
-        ],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "레알 마드리드",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "name": "레알 마드리드 2024 2025 어웨이 유니폼 (레플리카)",
-        "model_code": "IU5013",
-        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhC0UCK5plo81tSrS_Fcdrp6N_UZpduIw0k_Qx3HV-gUHGDzQHtSv74bvku9EHq9WLuFj3WB7vzpXn5x49nXHlMT35cEGbm4w63iy_DRygWVT85PzWV-9AFFT3wu6ajOA4qCBdcPDnzYKs6YX6sGAoKXIPg1ZgYNG04yOGXdiXQHicB78ADhD1JpRuguPc/s1600/real-madrid-24-25-away-kit%20%2827%29.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "레알 마드리드",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "name": "레알 마드리드 2024 2025 어웨이 유니폼 (어센틱)",
-        "model_code": "IU5013-AUTH",
-        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhC0UCK5plo81tSrS_Fcdrp6N_UZpduIw0k_Qx3HV-gUHGDzQHtSv74bvku9EHq9WLuFj3WB7vzpXn5x49nXHlMT35cEGbm4w63iy_DRygWVT85PzWV-9AFFT3wu6ajOA4qCBdcPDnzYKs6YX6sGAoKXIPg1ZgYNG04yOGXdiXQHicB78ADhD1JpRuguPc/s1600/real-madrid-24-25-away-kit%20%2827%29.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 149.95,
-                "sale_price": 74.95,
-                "regular_price_krw": 254915,
-                "sale_price_krw": 127415,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-away-shirt-202425-authentic/359528/"
-            }
-        ],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "바르셀로나",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "FC 바르셀로나 2024 2025 홈 유니폼 (레플리카)",
-        "model_code": "FN8797-456",
-        "image": "https://thumblr.uniid.it/product/369612/7929b1566035.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "바르셀로나",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "FC 바르셀로나 2024 2025 홈 유니폼 (어센틱)",
-        "model_code": "FN8797-456-AUTH",
-        "image": "https://thumblr.uniid.it/product/369612/7929b1566035.jpg",
-        "site_offers": [],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "바르셀로나",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "name": "FC 바르셀로나 2024 2025 어웨이 유니폼 (레플리카)",
-        "model_code": "FN8792-010",
-        "image": "https://thumblr.uniid.it/product/373195/71b819728447.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "바르셀로나",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "name": "FC 바르셀로나 2024 2025 어웨이 유니폼 (어센틱)",
-        "model_code": "FN8771-011",
-        "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e0a8f0e1-7c8a-4b5f-8f6e-7e9a8f0e1c7d/fc-barcelona-2024-25-match-away-dri-fit-adv-football-authentic-shirt-GT9CmM.png",
-        "site_offers": [],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "리버풀",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "리버풀 FC 2024 2025 홈 유니폼 (레플리카)",
-        "model_code": "FN8776-688",
-        "image": "https://thumblr.uniid.it/product/352866/1724e0d95483.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 149.99,
-                "sale_price": 67.95,
-                "regular_price_krw": 254983,
-                "sale_price_krw": 115515,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/liverpool-home-shirt-202425-vapor/352866/"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "리버풀",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "리버풀 FC 2024 2025 홈 유니폼 (어센틱)",
-        "model_code": "FN8776-688-AUTH",
-        "image": "https://thumblr.uniid.it/product/352866/c8f3ffc37c12.jpg",
-        "site_offers": [],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "리버풀",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "name": "리버풀 FC 2024 2025 어웨이 유니폼 (레플리카)",
-        "model_code": "FQ2031-309",
-        "image": "https://thumblr.uniid.it/product/369621/9e8eb4fa0afa.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.99,
-                "sale_price": 49.95,
-                "regular_price_krw": 169983,
-                "sale_price_krw": 84915,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/liverpool-away-shirt-202425/369621/"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "첼시",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "첼시 FC 2024 2025 홈 유니폼 (레플리카)",
-        "model_code": "FN8779-496",
-        "image": "https://thumblr.uniid.it/product/369614/62610e444cf5.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "첼시",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "첼시 FC 2024 2025 홈 유니폼 (어센틱)",
-        "model_code": "FN8779-496-AUTH",
-        "image": "https://thumblr.uniid.it/product/369614/62610e444cf5.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 149.99,
-                "sale_price": 74.95,
-                "regular_price_krw": 254983,
-                "sale_price_krw": 127415,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/chelsea-home-shirt-202425-vapor/369005/"
-            }
-        ],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "첼시",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "name": "첼시 FC 2024 2025 어웨이 유니폼 (레플리카)",
-        "model_code": "FN8786-839",
-        "image": "https://thumblr.uniid.it/product/369623/e8e3cf0bf8dc.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 42.5,
-                "regular_price_krw": 164115,
-                "sale_price_krw": 82058,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.sportsdirect.com/nike-chelsea-away-shirt-2024-2025-adults-367445"
-            },
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 49.95,
-                "regular_price_krw": 169984,
-                "sale_price_krw": 84949,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/chelsea-away-shirt-202425/"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "첼시",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "name": "첼시 FC 2024 2025 어웨이 유니폼 (어센틱)",
-        "model_code": "FN8786-839-AUTH",
-        "image": "https://thumblr.uniid.it/product/369623/e8e3cf0bf8dc.jpg",
-        "site_offers": [],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "토트넘",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "토트넘 홋스퍼 2024 2025 홈 유니폼 (레플리카)",
-        "model_code": "FN8794-101",
-        "image": "https://thumblr.uniid.it/product/355878/b6377507deb8.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "토트넘",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "토트넘 홋스퍼 2024 2025 홈 유니폼 (어센틱)",
-        "model_code": "FN8794-101-AUTH",
-        "image": "https://thumblr.uniid.it/product/355878/b6377507deb8.jpg",
-        "site_offers": [],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "토트넘",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "name": "토트넘 홋스퍼 2024 2025 어웨이 유니폼 (레플리카)",
-        "model_code": "FN8788-480",
-        "image": "https://thumblr.uniid.it/product/369657/d43d02e75d48.jpg",
-        "site_offers": [
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 129000,
-                "sale_price": 64500,
-                "regular_price_krw": 129000,
-                "sale_price_krw": 64500,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000027977"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "아스널",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "아스널 FC 2024 2025 홈 유니폼 (레플리카)",
-        "model_code": "IT6141",
-        "image": "https://thumblr.uniid.it/product/359308/9ee611db6ab9.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 44.95,
-                "regular_price_krw": 169915,
-                "sale_price_krw": 76415,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/arsenal-home-shirt-202425/359308/"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 59500,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 59500,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000027867"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "아스널",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "name": "아스널 FC 2024 2025 어웨이 유니폼 (레플리카)",
-        "model_code": "IT6148",
-        "image": "https://thumblr.uniid.it/product/359310/507843ada0ab.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "아스널",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "name": "아스널 FC 2024 2025 어웨이 유니폼 (어센틱)",
-        "model_code": "IT6148-AUTH",
-        "image": "https://thumblr.uniid.it/product/359310/507843ada0ab.jpg",
-        "site_offers": [],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "뉴캐슬 유나이티드",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "뉴캐슬 유나이티드 2024 2025 홈 유니폼 (레플리카)",
-        "model_code": "IX3165",
-        "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiNwRL3Xzeqg45xNc4mQo5Ghh0n1eZxdj6UCoZBGriIczeyLOdv-y2CsE7LRgTPTl7qdjH9r_4iyZ4ceGZees7Eas28bdADaCnJira93eHPkxCuKRNt5tqN4mndwEnWQq431RzSwsQmzz_GjGqjkX5YzcU26pjSIHN1C0ar-YyC_bJ5QQdqRDvunWzmZRs/s1600/newcastle-24-25-home-kit%20%284%29.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "PSG",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "파리 생제르맹 2024 2025 홈 유니폼 (레플리카)",
-        "model_code": "FN8795-411",
-        "image": "https://thumblr.uniid.it/product/352890/95d639cef834.jpg",
-        "site_offers": [
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 129000,
-                "sale_price": 64500,
-                "regular_price_krw": 129000,
-                "sale_price_krw": 64500,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000027740"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "PSG",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "파리 생제르맹 2024 2025 홈 유니폼 (어센틱)",
-        "model_code": "FN8795-411-AUTH",
-        "image": "https://thumblr.uniid.it/product/352890/95d639cef834.jpg",
-        "site_offers": [],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "PSG",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "name": "파리 생제르맹 2024 2025 어웨이 유니폼 (레플리카)",
-        "model_code": "FN8781-101",
-        "image": "https://thumblr.uniid.it/product/369617/bd64aa3be109.jpg",
-        "site_offers": [
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 135000,
-                "sale_price": 108000,
-                "regular_price_krw": 135000,
-                "sale_price_krw": 108000,
-                "discount_rate": 20,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000028032"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "PSG",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "name": "파리 생제르맹 2024 2025 어웨이 유니폼 (어센틱)",
-        "model_code": "FN8781-101-AUTH",
-        "image": "https://thumblr.uniid.it/product/369617/bd64aa3be109.jpg",
-        "site_offers": [],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "유벤투스",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "유벤투스 FC 2024 2025 홈 유니폼 (레플리카)",
-        "model_code": "IS8002",
-        "image": "https://thumblr.uniid.it/product/359305/a75b429e403b.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 49.95,
-                "regular_price_krw": 169915,
-                "sale_price_krw": 84915,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/juventus-home-shirt-202425/359122/"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 59500,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 59500,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000028338"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "바이에른 뮌헨",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "바이에른 뮌헨 2024 2025 홈 유니폼 (레플리카)",
-        "model_code": "IT8511",
-        "image": "https://thumblr.uniid.it/product/359210/8a2725df992a.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 44.95,
-                "regular_price_krw": 169915,
-                "sale_price_krw": 76415,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/bayern-muenchen-home-shirt-202425/359319/"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 59500,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 59500,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000027833"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "바이에른 뮌헨",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "바이에른 뮌헨 2024 2025 홈 유니폼 (어센틱)",
-        "model_code": "IT8511-AUTH",
-        "image": "https://thumblr.uniid.it/product/359210/8a2725df992a.jpg",
-        "site_offers": [],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "인터 밀란",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "인터 밀란 2024 2025 홈 유니폼 (레플리카)",
-        "model_code": "FN8787-440",
-        "image": "https://thumblr.uniid.it/product/369622/81e1f3d35c96.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "AC 밀란",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "name": "AC 밀란 2024 2025 홈 유니폼 (레플리카)",
-        "model_code": "774979-01",
-        "image": "https://thumblr.uniid.it/product/368888/3c6be79c1d07.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "AC 밀란",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "name": "AC 밀란 2024 2025 어웨이 유니폼 (레플리카)",
-        "model_code": "775015-02",
-        "image": "https://thumblr.uniid.it/product/368909/6a1f26c57b48.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "벤피카",
-        "kit_type": "써드킷",
-        "season": "24/25",
-        "name": "벤피카 2024 2025 써드 유니폼 (레플리카)",
-        "model_code": "JJ5114",
-        "image": "https://thumblr.uniid.it/product/359611/d15a5b34f102.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 79.99,
-                "sale_price": 24,
-                "regular_price_krw": 154487,
-                "sale_price_krw": 46352,
-                "discount_rate": 70,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-benfica-third-shirt-2024-2025-adults-367363"
-            },
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 59.97,
-                "regular_price_krw": 169984,
-                "sale_price_krw": 101990,
-                "discount_rate": 40,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/benfica-3rd-shirt-202425/359611/"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "벤피카",
-        "kit_type": "써드킷",
-        "season": "24/25",
-        "name": "벤피카 2024 2025 써드 유니폼 (어센틱)",
-        "model_code": "JJ5114-AUTH",
-        "image": "https://thumblr.uniid.it/product/359611/d15a5b34f102.jpg",
-        "site_offers": [],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "맨체스터 유나이티드",
-        "kit_type": "홈킷",
-        "season": "23/24",
-        "name": "맨체스터 유나이티드 2023 2024 홈 유니폼 (레플리카)",
-        "model_code": "IP1726",
-        "image": "https://thumblr.uniid.it/product/274623/b4f6b1e62ba8.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "레알 마드리드",
-        "kit_type": "홈킷",
-        "season": "23/24",
-        "name": "레알 마드리드 2023 2024 홈 유니폼 (레플리카)",
-        "model_code": "HZ5310",
-        "image": "https://thumblr.uniid.it/product/287518/09e8285a621e.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "바르셀로나",
-        "kit_type": "홈킷",
-        "season": "23/24",
-        "name": "FC 바르셀로나 2023 2024 홈 유니폼 (레플리카)",
-        "model_code": "DX2687-456",
-        "image": "https://thumblr.uniid.it/product/287575/f9bf1fc6aa51.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "바르셀로나",
-        "kit_type": "홈킷",
-        "season": "23/24",
-        "name": "FC 바르셀로나 2023 2024 홈 유니폼 (어센틱)",
-        "model_code": "DX2687-456-AUTH",
-        "image": "https://thumblr.uniid.it/product/287575/f9bf1fc6aa51.jpg",
-        "site_offers": [],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "바르셀로나",
-        "kit_type": "어웨이킷",
-        "season": "23/24",
-        "name": "FC 바르셀로나 2023 2024 어웨이 유니폼 (레플리카)",
-        "model_code": "DX2688-838",
-        "image": "https://thumblr.uniid.it/product/300649/96c53c318f81.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "맨체스터 시티",
-        "kit_type": "홈킷",
-        "season": "23/24",
-        "name": "맨체스터 시티 2023 2024 홈 유니폼 (레플리카)",
-        "model_code": "757058-01",
-        "image": "https://thumblr.uniid.it/product/271956/b9edb31af7ff.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "아스널",
-        "kit_type": "홈킷",
-        "season": "23/24",
-        "name": "아스널 FC 2023 2024 홈 유니폼 (레플리카)",
-        "model_code": "IP3376",
-        "image": "https://thumblr.uniid.it/product/274668/fc2c05f1bdb8.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "리버풀",
-        "kit_type": "홈킷",
-        "season": "23/24",
-        "name": "리버풀 FC 2023 2024 홈 유니폼 (레플리카)",
-        "model_code": "DX2689-688",
-        "image": "https://thumblr.uniid.it/product/274617/9c5de67f78a2.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "맨체스터 유나이티드",
-        "kit_type": "홈킷",
-        "season": "22/23",
-        "name": "맨체스터 유나이티드 2022 2023 홈 유니폼 (레플리카)",
-        "model_code": "GM4545",
-        "image": "https://thumblr.uniid.it/product/221887/20d45ad57802.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 69.99,
-                "sale_price": 16.5,
-                "regular_price_krw": 135174,
-                "sale_price_krw": 31867,
-                "discount_rate": 76,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-fc-home-shirt-2022/2023-mens-377311"
-            }
-        ],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "레알 마드리드",
-        "kit_type": "홈킷",
-        "season": "22/23",
-        "name": "레알 마드리드 2022 2023 홈 유니폼 (레플리카)",
-        "model_code": "GU9728",
-        "image": "https://thumblr.uniid.it/product/214925/cc02cb5f087f.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "바르셀로나",
-        "kit_type": "홈킷",
-        "season": "22/23",
-        "name": "FC 바르셀로나 2022 2023 홈 유니폼 (레플리카)",
-        "model_code": "CV8933-456",
-        "image": "https://thumblr.uniid.it/product/215169/da748f1e0eb9.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "바르셀로나",
-        "kit_type": "홈킷",
-        "season": "22/23",
-        "name": "FC 바르셀로나 2022 2023 홈 유니폼 (어센틱)",
-        "model_code": "CV8933-456-AUTH",
-        "image": "https://thumblr.uniid.it/product/215169/da748f1e0eb9.jpg",
-        "site_offers": [],
-        "version": "어센틱",
-        "visible": false
-    },
-    {
-        "team": "맨체스터 시티",
-        "kit_type": "홈킷",
-        "season": "22/23",
-        "name": "맨체스터 시티 2022 2023 홈 유니폼 (레플리카)",
-        "model_code": "759242-01",
-        "image": "https://thumblr.uniid.it/product/215120/f6bfe4a7c6f2.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "리버풀",
-        "kit_type": "홈킷",
-        "season": "22/23",
-        "name": "리버풀 FC 2022 2023 홈 유니폼 (레플리카)",
-        "model_code": "DD9422-688",
-        "image": "https://thumblr.uniid.it/product/215115/0a0daaddc4d4.jpg",
-        "site_offers": [],
-        "version": "레플리카",
-        "visible": true
-    },
-    {
-        "team": "첼시",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "첼시 25/26 홈킷 (레플리카)",
-        "model_code": "HJ4589-496",
-        "image": "https://thumblr.uniid.it/product/396422/d6b33d6eae7d.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 73,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 121910,
-                "discount_rate": 14,
-                "affiliate_link": "https://www.sportsdirect.com/nike-chelsea-home-shirt-2025-2026-adults-377323"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 135000,
-                "sale_price": 135000,
-                "regular_price_krw": 135000,
-                "sale_price_krw": 135000,
-                "discount_rate": 0,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030274"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "첼시",
-        "kit_type": "어웨이킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "첼시 25/26 어웨이킷 (레플리카)",
-        "model_code": "HJ4553-031",
-        "image": "https://thumblr.uniid.it/product/400969/50a4e93c6097.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 54.5,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 91015,
-                "discount_rate": 36,
-                "affiliate_link": "https://www.sportsdirect.com/nike-chelsea-away-shirt-2025-2026-adults-377356"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "첼시",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "첼시 25/26 써드킷 (레플리카)",
-        "model_code": "HM3202-011",
-        "image": "https://thumblr.uniid.it/product/411890/9d5f0ddb6a40.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 73,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 121910,
-                "discount_rate": 14,
-                "affiliate_link": "https://www.sportsdirect.com/nike-chelsea-third-shirt-2025-2026-adults-377013"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "리버풀",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "리버풀 25/26 써드킷 (레플리카)",
-        "model_code": "JV6428",
-        "image": "https://thumblr.uniid.it/product/416933/33ab7e7e0e13.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 59.99,
-                "sale_price": 48,
-                "regular_price_krw": 100183,
-                "sale_price_krw": 80160,
-                "discount_rate": 20,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-liverpool-third-shirt-2025-2026-adults-378759"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 119000,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 119000,
-                "discount_rate": 0,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000031347"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "벤피카",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "벤피카 25/26 홈킷 (레플리카)",
-        "model_code": "ADIDAS-2024",
-        "image": "https://thumblr.uniid.it/product/393976/5d26e79e6c7e.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 70,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 116900,
-                "discount_rate": 18,
-                "affiliate_link": "https://www.sportsdirect.com/puma-manchester-city-away-shirt-2024-2025-adults-377811"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "아약스",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "아약스 25/26 써드킷 (레플리카)",
-        "model_code": "ADIDAS-2024",
-        "image": "https://thumblr.uniid.it/product/413255/4c5b6353e6d5.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 73,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 121910,
-                "discount_rate": 14,
-                "affiliate_link": "https://www.sportsdirect.com/puma-manchester-city-third-shirt-2024-2025-adults-377805"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "알 나스르",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "알 나스르 25/26 홈킷 (레플리카)",
-        "model_code": "ADIDAS-2526",
-        "image": "https://thumblr.uniid.it/product/421371/35c47c6b59e1.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 70,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 116900,
-                "discount_rate": 18,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-arsenal-home-shirt-2025-2026-adults-377827"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "아스널",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "아스널 25/26 써드킷 (레플리카)",
-        "model_code": "JI9556",
-        "image": "https://thumblr.uniid.it/product/403692/4e3ac9fd51e0.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 70,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 116900,
-                "discount_rate": 18,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-arsenal-third-shirt-2025-2026-adults-377828"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "아약스",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "version": "레플리카",
-        "name": "아약스 24/25 홈킷 (레플리카)",
-        "model_code": "SD-367394",
-        "image": "https://thumblr.uniid.it/product/362963/b97a8dabc63b.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 79.99,
-                "sale_price": 58,
-                "regular_price_krw": 133583,
-                "sale_price_krw": 96860,
-                "discount_rate": 27,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-ajax-amsterdam-home-shirt-2024-2025-adults-367394"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "아스널",
-        "kit_type": "어웨이킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "아스널 25/26 어웨이킷 (레플리카)",
-        "model_code": "MJI9511",
-        "image": "https://thumblr.uniid.it/product/397876/0b7e54db7d05.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 60,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 100200,
-                "discount_rate": 29,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-arsenal-away-shirt-2025-2026-adults-377831"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "아스널",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "아스널 25/26 홈킷 (레플리카)",
-        "model_code": "MJI9517",
-        "image": "https://thumblr.uniid.it/product/392036/ae53a42cdce5.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 60,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 100200,
-                "discount_rate": 29,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-arsenal-home-shirt-2025-2026-adults-377838"
-            },
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 74.95,
-                "regular_price_krw": 169915,
-                "sale_price_krw": 127415,
-                "discount_rate": 25,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/arsenal-home-shirt-202526/396434/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "아스널",
-        "kit_type": "써드킷",
-        "season": "24/25",
-        "version": "레플리카",
-        "name": "아스널 24/25 써드킷 (레플리카)",
-        "model_code": "SD-367415",
-        "image": "https://thumblr.uniid.it/product/372639/b8a3b68ad09b.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 79.99,
-                "sale_price": 40,
-                "regular_price_krw": 133583,
-                "sale_price_krw": 66800,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-arsenal-third-shirt-2024-2025-adults-367415"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "유벤투스",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "유벤투스 25/26 써드킷 (레플리카)",
-        "model_code": "KC3486",
-        "image": "https://thumblr.uniid.it/product/409395/39d5af70084d.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 73,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 121910,
-                "discount_rate": 14,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-juventus-third-shirt-2025-2026-adults-377848"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 119000,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 119000,
-                "discount_rate": 0,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000031350"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 유나이티드",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "version": "레플리카",
-        "name": "맨체스터 유나이티드 24/25 홈킷 (레플리카)",
-        "model_code": "IU1397",
-        "image": "https://thumblr.uniid.it/product/359339/8f2c9f16fbb7.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 79.99,
-                "sale_price": 40,
-                "regular_price_krw": 133583,
-                "sale_price_krw": 66800,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-home-shirt-2024-2025-adults-367399"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 59500,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 59500,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000028203"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 유나이티드",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "맨체스터 유나이티드 25/26 써드킷 (레플리카)",
-        "model_code": "KD4225",
-        "image": "https://thumblr.uniid.it/product/411836/1ab4cc59a15f.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 70,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 116900,
-                "discount_rate": 18,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-third-shirt-2025-2026-adults-377880"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 119000,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 119000,
-                "discount_rate": 0,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000031103"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "인테르 밀란",
-        "kit_type": "홈킷",
-        "season": "23/24",
-        "version": "레플리카",
-        "name": "인테르 밀란 23/24 홈킷 (레플리카)",
-        "model_code": "SD-371006",
-        "image": "https://thumblr.uniid.it/product/289169/e9ab574ada1c.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 26,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 43420,
-                "discount_rate": 69,
-                "affiliate_link": "https://www.sportsdirect.com/nike-inter-milan-2023-2024-home-shirt-adults-371006"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "PSG",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "PSG 25/26 써드킷 (레플리카)",
-        "model_code": "SD-377088",
-        "image": "https://thumblr.uniid.it/product/415063/5cb08ace85a1.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 73,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 121910,
-                "discount_rate": 14,
-                "affiliate_link": "https://www.sportsdirect.com/nike-psg-third-shirt-2025-2026-adults-377088"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "알 나스르",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "version": "레플리카",
-        "name": "알 나스르 24/25 홈킷 (레플리카)",
-        "model_code": "JP0459",
-        "image": "https://thumblr.uniid.it/product/368393/e3ddc70f5a3b.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 43,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 71810,
-                "discount_rate": 49,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-al-nassr-home-shirt-2024-2025-adults-367573"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "바이에른 뮌헨",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "바이에른 뮌헨 25/26 써드킷 (레플리카)",
-        "model_code": "KE6801",
-        "image": "https://thumblr.uniid.it/product/405970/e73926d80e88.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 73,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 121910,
-                "discount_rate": 14,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-bayern-munich-third-shirt-2025-2026-adults-377841"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 119000,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 119000,
-                "discount_rate": 0,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030844"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "인테르 마이애미",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "인테르 마이애미 25/26 홈킷 (레플리카)",
-        "model_code": "SD-377236",
-        "image": "https://thumblr.uniid.it/product/384798/3e1efcc0d3f2.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 89.99,
-                "sale_price": 72.99,
-                "regular_price_krw": 150283,
-                "sale_price_krw": 121893,
-                "discount_rate": 19,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-inter-miami-messi-home-shirt-2025-2026-adults-377236"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "리버풀",
-        "kit_type": "어웨이킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "리버풀 25/26 어웨이킷 (레플리카)",
-        "model_code": "JV6487",
-        "image": "https://thumblr.uniid.it/product/397878/efb16e7bc1a9.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 70,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 116900,
-                "discount_rate": 18,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-liverpool-away-shirt-2025-2026-adults-378746"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 107100,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 107100,
-                "discount_rate": 10,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000031147"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 유나이티드",
-        "kit_type": "어웨이킷",
-        "season": "23/24",
-        "version": "레플리카",
-        "name": "맨체스터 유나이티드 23/24 어웨이킷 (레플리카)",
-        "model_code": "SD-377734",
-        "image": "https://thumblr.uniid.it/product/285738/e46dcff8aaa8.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 26,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 43420,
-                "discount_rate": 69,
-                "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-away-long-sleeve-shirt-2023-2024-adults-377734"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "에버튼",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "에버튼 25/26 홈킷 (레플리카)",
-        "model_code": "SD-377098",
-        "image": "https://thumblr.uniid.it/product/394958/dede66a44caf.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 79.99,
-                "sale_price": 68,
-                "regular_price_krw": 133583,
-                "sale_price_krw": 113560,
-                "discount_rate": 15,
-                "affiliate_link": "https://www.sportsdirect.com/castore-everton-home-shirt-2025-2026-adults-377098"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "첼시",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "어센틱",
-        "name": "첼시 25/26 홈킷 (어센틱)",
-        "model_code": "SD-377310",
-        "image": "https://thumblr.uniid.it/product/396422/d6b33d6eae7d.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 124.99,
-                "sale_price": 110,
-                "regular_price_krw": 208733,
-                "sale_price_krw": 183700,
-                "discount_rate": 12,
-                "affiliate_link": "https://www.sportsdirect.com/nike-chelsea-authentic-home-shirt-2025-2026-adults-377310"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "토트넘",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "토트넘 25/26 홈킷 (레플리카)",
-        "model_code": "HJ4598101",
-        "image": "https://thumblr.uniid.it/product/390802/f8ea7f86a5a9.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 73,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 121910,
-                "discount_rate": 14,
-                "affiliate_link": "https://www.sportsdirect.com/nike-tottenham-hotspur-home-shirt-2025-2026-adults-377422"
-            },
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 69.95,
-                "regular_price_krw": 169915,
-                "sale_price_krw": 118915,
-                "discount_rate": 30,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/tottenham-home-shirt-202526/392868/"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 135000,
-                "sale_price": 121500,
-                "regular_price_krw": 135000,
-                "sale_price_krw": 121500,
-                "discount_rate": 10,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030348"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "AC 밀란",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "AC 밀란 25/26 홈킷 (레플리카)",
-        "model_code": "SD-377642",
-        "image": "https://thumblr.uniid.it/product/384779/13c4b3a8c8bb.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 73,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 121910,
-                "discount_rate": 14,
-                "affiliate_link": "https://www.sportsdirect.com/puma-ac-milan-home-shirt-2025-2026-adults-377642"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 시티",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "맨체스터 시티 25/26 홈킷 (레플리카)",
-        "model_code": "78033801",
-        "image": "https://thumblr.uniid.it/product/392010/4f97ae5b4a79.jpg",
-        "site_offers": [
-            {
-                "site_name": "Sports Direct",
-                "currency": "GBP",
-                "regular_price": 84.99,
-                "sale_price": 70,
-                "regular_price_krw": 141933,
-                "sale_price_krw": 116900,
-                "discount_rate": 18,
-                "affiliate_link": "https://www.sportsdirect.com/puma-manchester-city-home-shirt-2025-2026-adults-377428"
-            },
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 100,
-                "sale_price": 74.95,
-                "regular_price_krw": 170000,
-                "sale_price_krw": 127415,
-                "discount_rate": 25,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-city-home-shirt-202526/400408/"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 129000,
-                "sale_price": 116100,
-                "regular_price_krw": 129000,
-                "sale_price_krw": 116100,
-                "discount_rate": 10,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030231"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "레알 마드리드",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "레알 마드리드 25/26 홈킷 (레플리카)",
-        "model_code": "JJ1931",
-        "image": "https://thumblr.uniid.it/product/396488/c49df52f916b.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 74.95,
-                "regular_price_krw": 169915,
-                "sale_price_krw": 127415,
-                "discount_rate": 25,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-home-shirt-202526/396488/"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 107100,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 107100,
-                "discount_rate": 10,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030442"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "레알 마드리드",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "어센틱",
-        "name": "레알 마드리드 25/26 써드킷 (어센틱)",
-        "model_code": "JV5839",
-        "image": "https://thumblr.uniid.it/product/397033/9ac9b5f05ae9.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 149.95,
-                "sale_price": 104.95,
-                "regular_price_krw": 254915,
-                "sale_price_krw": 178415,
-                "discount_rate": 30,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-third-shirt-202526-authentic/397033/"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 189000,
-                "sale_price": 189000,
-                "regular_price_krw": 189000,
-                "sale_price_krw": 189000,
-                "discount_rate": 0,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000031080"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "레알 마드리드",
-        "kit_type": "어웨이킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "레알 마드리드 25/26 어웨이킷 (레플리카)",
-        "model_code": "JJ4182",
-        "image": "https://thumblr.uniid.it/product/396498/70868032a4a6.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 69.95,
-                "regular_price_krw": 169915,
-                "sale_price_krw": 118915,
-                "discount_rate": 30,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-away-shirt-202526/396498/"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 119000,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 119000,
-                "discount_rate": 0,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030450"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 시티",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "version": "어센틱",
-        "name": "맨체스터 시티 24/25 홈킷 (어센틱)",
-        "model_code": "775050 01",
-        "image": "https://thumblr.uniid.it/product/356113/05f98964e23d.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 140,
-                "sale_price": 55.95,
-                "regular_price_krw": 238000,
-                "sale_price_krw": 95115,
-                "discount_rate": 60,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/mcfc-home-authentic-jersey-team-light-blue-marine-blue/356113/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 시티",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "맨체스터 시티 25/26 써드킷 (레플리카)",
-        "model_code": "780362 03",
-        "image": "https://thumblr.uniid.it/product/399657/94f0acc0dec1.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 100,
-                "sale_price": 69.95,
-                "regular_price_krw": 170000,
-                "sale_price_krw": 118915,
-                "discount_rate": 30,
-                "affiliate_link": "https://www.unisportstore.com/t-shirts/mcfc-3rd-jersey-replica-cool-weather-pro-green/399657/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "AC 밀란",
-        "kit_type": "어웨이킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "AC 밀란 25/26 어웨이킷 (레플리카)",
-        "model_code": "779971 02",
-        "image": "https://thumblr.uniid.it/product/400480/aa1f8c1039ef.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 100,
-                "sale_price": 69.95,
-                "regular_price_krw": 170000,
-                "sale_price_krw": 118915,
-                "discount_rate": 30,
-                "affiliate_link": "https://www.unisportstore.com/t-shirts/acm-away-jersey-replica-puma-white-for-all-time-red/400480/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "AC 밀란",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "어센틱",
-        "name": "AC 밀란 25/26 홈킷 (어센틱)",
-        "model_code": "779961 01",
-        "image": "https://thumblr.uniid.it/product/400030/7d9684b254c8.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 150,
-                "sale_price": 112.95,
-                "regular_price_krw": 255000,
-                "sale_price_krw": 192015,
-                "discount_rate": 25,
-                "affiliate_link": "https://www.unisportstore.com/t-shirts/acm-home-jersey-authentic-for-all-time-red-puma-black/400030/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 시티",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "version": "어센틱",
-        "name": "맨체스터 시티 24/25 홈킷 (어센틱)",
-        "model_code": "778616 04",
-        "image": "https://thumblr.uniid.it/product/357119/6a0d5e16c06b.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 145,
-                "sale_price": 64.95,
-                "regular_price_krw": 246500,
-                "sale_price_krw": 110415,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/mcfc-fourth-authentic-jersey-w-packaging-rosebay-bold-blue/357119/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 유나이티드",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "어센틱",
-        "name": "맨체스터 유나이티드 25/26 써드킷 (어센틱)",
-        "model_code": "JI7419",
-        "image": "https://thumblr.uniid.it/product/396411/8f39911a24a1.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 149.95,
-                "sale_price": 112.95,
-                "regular_price_krw": 254915,
-                "sale_price_krw": 192015,
-                "discount_rate": 25,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-united-third-shirt-202526-authentic/396411/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "유벤투스",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "version": "레플리카",
-        "name": "유벤투스 24/25 어웨이킷 (레플리카)",
-        "model_code": "JH1357",
-        "image": "https://thumblr.uniid.it/product/359580/4cbc173846e3.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 44.95,
-                "regular_price_krw": 169915,
-                "sale_price_krw": 76415,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/juventus-away-shirt-202425/359580/"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 59500,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 59500,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000029821"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 유나이티드",
-        "kit_type": "골키퍼",
-        "season": "24/25",
-        "version": "레플리카",
-        "name": "맨체스터 유나이티드 24/25 골키퍼 (레플리카)",
-        "model_code": "JJ1383",
-        "image": "https://thumblr.uniid.it/product/359603/d9cc9f4438fa.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 109.95,
-                "sale_price": 43.95,
-                "regular_price_krw": 186915,
-                "sale_price_krw": 74715,
-                "discount_rate": 60,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-united-goalkeeper-shirt-202425/359603/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "레알 마드리드",
-        "kit_type": "어웨이킷",
-        "season": "99/00",
-        "version": "레플리카",
-        "name": "레알 마드리드 99/00 어웨이킷 (레플리카)",
-        "model_code": "JW1992",
-        "image": "https://thumblr.uniid.it/product/377493/461dbbf7eac0.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 109.95,
-                "sale_price": 76.95,
-                "regular_price_krw": 186915,
-                "sale_price_krw": 130815,
-                "discount_rate": 30,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-away-shirt-199900-limited-edition/377493/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "AC 밀란",
-        "kit_type": "써드킷",
-        "season": "24/25",
-        "version": "어센틱",
-        "name": "AC 밀란 24/25 써드킷 (어센틱)",
-        "model_code": "775028 03",
-        "image": "https://thumblr.uniid.it/product/357639/d445c504dd07.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 140,
-                "sale_price": 62.95,
-                "regular_price_krw": 238000,
-                "sale_price_krw": 107015,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/acm-third-authentic-jersey-fresh-mint/357639/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "토트넘",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "토트넘 25/26 써드킷 (레플리카)",
-        "model_code": "HM3207-741",
-        "image": "https://thumblr.uniid.it/product/408245/a10503bc2e3a.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 74.95,
-                "regular_price_krw": 169915,
-                "sale_price_krw": 127415,
-                "discount_rate": 25,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/tottenham-3rd-shirt-202526/408245/"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 135000,
-                "sale_price": 135000,
-                "regular_price_krw": 135000,
-                "sale_price_krw": 135000,
-                "discount_rate": 0,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000031211"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 시티",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "어센틱",
-        "name": "맨체스터 시티 25/26 홈킷 (어센틱)",
-        "model_code": "780336 01",
-        "image": "https://thumblr.uniid.it/product/400352/a6c4db84034a.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 150,
-                "sale_price": 104.95,
-                "regular_price_krw": 255000,
-                "sale_price_krw": 178415,
-                "discount_rate": 30,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-city-home-shirt-202526-authentic/400352/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 시티",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "version": "어센틱",
-        "name": "맨체스터 시티 24/25 어웨이킷 (어센틱)",
-        "model_code": "775085 02",
-        "image": "https://thumblr.uniid.it/product/355986/40e4fae98069.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 140,
-                "sale_price": 55.95,
-                "regular_price_krw": 238000,
-                "sale_price_krw": 95115,
-                "discount_rate": 60,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/mcfc-away-authentic-jersey-new-navy-yellow-glow/355986/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 시티",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "어센틱",
-        "name": "맨체스터 시티 25/26 써드킷 (어센틱)",
-        "model_code": "780360 03",
-        "image": "https://thumblr.uniid.it/product/399850/842c71edc2df.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 150,
-                "sale_price": 104.95,
-                "regular_price_krw": 255000,
-                "sale_price_krw": 178415,
-                "discount_rate": 30,
-                "affiliate_link": "https://www.unisportstore.com/t-shirts/mcfc-3rd-jersey-authentic-cool-weather-pro-green/399850/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "유벤투스",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "유벤투스 25/26 홈킷 (레플리카)",
-        "model_code": "JJ4320",
-        "image": "https://thumblr.uniid.it/product/396509/90ef675d911b.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 74.95,
-                "regular_price_krw": 169915,
-                "sale_price_krw": 127415,
-                "discount_rate": 25,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/juventus-home-shirt-202526/396509/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "바이에른 뮌헨",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "바이에른 뮌헨 25/26 홈킷 (레플리카)",
-        "model_code": "JJ2137",
-        "image": "https://thumblr.uniid.it/product/396490/a4c2a889d427.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 74.95,
-                "regular_price_krw": 169915,
-                "sale_price_krw": 127415,
-                "discount_rate": 25,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/bayern-muenchen-home-shirt-202526/396490/"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 95200,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 95200,
-                "discount_rate": 20,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000030465"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "인터 밀란",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "어센틱",
-        "name": "인터 밀란 25/26 써드킷 (어센틱)",
-        "model_code": "HM3196-438",
-        "image": "https://thumblr.uniid.it/product/408687/4c9442f53286.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 149.95,
-                "sale_price": 112.95,
-                "regular_price_krw": 254915,
-                "sale_price_krw": 192015,
-                "discount_rate": 25,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/inter-3rd-shirt-202526-vapor/408687/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "AC 밀란",
-        "kit_type": "골키퍼",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "AC 밀란 25/26 골키퍼 (레플리카)",
-        "model_code": "779984 07",
-        "image": "https://thumblr.uniid.it/product/400548/a4049876370d.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 100,
-                "sale_price": 74.95,
-                "regular_price_krw": 170000,
-                "sale_price_krw": 127415,
-                "discount_rate": 25,
-                "affiliate_link": "https://www.unisportstore.com/t-shirts/acm-gk-jersey-replica-ss-modern-mint-for-all-time-red/400548/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "리버풀",
-        "kit_type": "어웨이킷",
-        "season": "89/91",
-        "version": "레플리카",
-        "name": "리버풀 89/91 어웨이킷 (레플리카)",
-        "model_code": "A23PN06",
-        "image": "https://thumblr.uniid.it/product/310946/716d10e87bc3.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 59.95,
-                "sale_price": 38.95,
-                "regular_price_krw": 101915,
-                "sale_price_krw": 66215,
-                "discount_rate": 35,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/liverpool-away-shirt-198991/310946/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "AC 밀란",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "AC 밀란 25/26 써드킷 (레플리카)",
-        "model_code": "779979 03",
-        "image": "https://thumblr.uniid.it/product/400540/8c4e8b5aa2e5.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 100,
-                "sale_price": 69.95,
-                "regular_price_krw": 170000,
-                "sale_price_krw": 118915,
-                "discount_rate": 30,
-                "affiliate_link": "https://www.unisportstore.com/t-shirts/acm-3rd-jersey-replica-sunny-yellow-dark-myrtle/400540/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "AC 밀란",
-        "kit_type": "써드킷",
-        "season": "25/26",
-        "version": "어센틱",
-        "name": "AC 밀란 25/26 써드킷 (어센틱)",
-        "model_code": "779978 03",
-        "image": "https://thumblr.uniid.it/product/399922/4f882e97a2fd.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 150,
-                "sale_price": 112.95,
-                "regular_price_krw": 255000,
-                "sale_price_krw": 192015,
-                "discount_rate": 25,
-                "affiliate_link": "https://www.unisportstore.com/t-shirts/acm-3rd-jersey-authentic-sunny-yellow-dark-myrtle/399922/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "리버풀",
-        "kit_type": "어웨이킷",
-        "season": "98/99",
-        "version": "레플리카",
-        "name": "리버풀 98/99 어웨이킷 (레플리카)",
-        "model_code": "A23PN07",
-        "image": "https://thumblr.uniid.it/product/310947/6a5031ad3141.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 59.95,
-                "sale_price": 44.95,
-                "regular_price_krw": 101915,
-                "sale_price_krw": 76415,
-                "discount_rate": 25,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/liverpool-away-shirt-199899/310947/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "AC 밀란",
-        "kit_type": "어웨이킷",
-        "season": "25/26",
-        "version": "어센틱",
-        "name": "AC 밀란 25/26 어웨이킷 (어센틱)",
-        "model_code": "779970 02",
-        "image": "https://thumblr.uniid.it/product/400343/471751ca7ef1.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 150,
-                "sale_price": 104.95,
-                "regular_price_krw": 255000,
-                "sale_price_krw": 178415,
-                "discount_rate": 30,
-                "affiliate_link": "https://www.unisportstore.com/t-shirts/acm-away-jersey-authentic-puma-white-for-all-time-red/400343/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 유나이티드",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "version": "어센틱",
-        "name": "맨체스터 유나이티드 24/25 홈킷 (어센틱)",
-        "model_code": "JF1291",
-        "image": "https://thumblr.uniid.it/product/359559/2bf311ebfd8e.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 149.95,
-                "sale_price": 67.95,
-                "regular_price_krw": 254915,
-                "sale_price_krw": 115515,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-united-home-shirt-202425-authentic/359559/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "레알 마드리드",
-        "kit_type": "써드킷",
-        "season": "24/25",
-        "version": "어센틱",
-        "name": "레알 마드리드 24/25 써드킷 (어센틱)",
-        "model_code": "IY1761",
-        "image": "https://thumblr.uniid.it/product/359484/91b4adddb9f6.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 149.95,
-                "sale_price": 67.95,
-                "regular_price_krw": 254915,
-                "sale_price_krw": 115515,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-3rd-shirt-202425-authentic/359484/"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 189000,
-                "sale_price": 94500,
-                "regular_price_krw": 189000,
-                "sale_price_krw": 94500,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000028428"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "유벤투스",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "version": "어센틱",
-        "name": "유벤투스 24/25 어웨이킷 (어센틱)",
-        "model_code": "JH1362",
-        "image": "https://thumblr.uniid.it/product/359582/51af85e47c0d.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 149.95,
-                "sale_price": 67.95,
-                "regular_price_krw": 254915,
-                "sale_price_krw": 115515,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/juventus-away-shirt-202425-authentic/359582/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "유벤투스",
-        "kit_type": "홈킷",
-        "season": "25/26",
-        "version": "어센틱",
-        "name": "유벤투스 25/26 홈킷 (어센틱)",
-        "model_code": "JJ4314",
-        "image": "https://thumblr.uniid.it/product/396506/090cb9ec3d3f.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 149.95,
-                "sale_price": 104.95,
-                "regular_price_krw": 254915,
-                "sale_price_krw": 178415,
-                "discount_rate": 30,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/juventus-home-shirt-202526-authentic/396506/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "인터 밀란",
-        "kit_type": "어웨이킷",
-        "season": "24/25",
-        "version": "레플리카",
-        "name": "인터 밀란 24/25 어웨이킷 (레플리카)",
-        "model_code": "FN8793-123",
-        "image": "https://thumblr.uniid.it/product/369625/baeb8cd92edf.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.99,
-                "sale_price": 44.95,
-                "regular_price_krw": 169983,
-                "sale_price_krw": 76415,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/inter-away-shirt-202425/369625/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "레알 마드리드",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "version": "어센틱",
-        "name": "레알 마드리드 24/25 홈킷 (어센틱)",
-        "model_code": "IX8095",
-        "image": "https://thumblr.uniid.it/product/359447/056445c2ca03.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 149.95,
-                "sale_price": 74.95,
-                "regular_price_krw": 254915,
-                "sale_price_krw": 127415,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-home-shirt-202425/359447/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "아스널",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "version": "어센틱",
-        "name": "아스널 24/25 홈킷 (어센틱)",
-        "model_code": "IT6140",
-        "image": "https://thumblr.uniid.it/product/359307/de8b9fc4cdfe.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 149.95,
-                "sale_price": 59.95,
-                "regular_price_krw": 254915,
-                "sale_price_krw": 101915,
-                "discount_rate": 60,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/arsenal-home-shirt-202425-authentic/359307/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "리버풀",
-        "kit_type": "홈킷",
-        "season": "95/96",
-        "version": "레플리카",
-        "name": "리버풀 95/96 홈킷 (레플리카)",
-        "model_code": "A23HS10",
-        "image": "https://thumblr.uniid.it/product/289458/2416a7659339.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 59.95,
-                "sale_price": 44.95,
-                "regular_price_krw": 101915,
-                "sale_price_krw": 76415,
-                "discount_rate": 25,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/liverpool-home-shirt-199596/289458/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "AC 밀란",
-        "kit_type": "홈킷",
-        "season": "24/25",
-        "version": "어센틱",
-        "name": "AC 밀란 24/25 홈킷 (어센틱)",
-        "model_code": "774949 01",
-        "image": "https://thumblr.uniid.it/product/355995/4052fb10ab98.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 140,
-                "sale_price": 62.95,
-                "regular_price_krw": 238000,
-                "sale_price_krw": 107015,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/acm-home-authentic-jersey-for-all-time-red-puma-black/355995/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 유나이티드",
-        "kit_type": "써드킷",
-        "season": "24/25",
-        "version": "레플리카",
-        "name": "맨체스터 유나이티드 24/25 써드킷 (레플리카)",
-        "model_code": "IY7806",
-        "image": "https://thumblr.uniid.it/product/359516/d72149863ae3.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 44.95,
-                "regular_price_krw": 169915,
-                "sale_price_krw": 76415,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-united-3rd-shirt-202425/359516/"
-            },
-            {
-                "site_name": "카포스토어",
-                "currency": "KRW",
-                "regular_price": 119000,
-                "sale_price": 59500,
-                "regular_price_krw": 119000,
-                "sale_price_krw": 59500,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.capostore.co.kr/goods/goods_view.php?goodsNo=1000028430"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 유나이티드",
-        "kit_type": "써드킷",
-        "season": "24/25",
-        "version": "어센틱",
-        "name": "맨체스터 유나이티드 24/25 써드킷 (어센틱)",
-        "model_code": "IY7814",
-        "image": "https://thumblr.uniid.it/product/359519/fd2dc90a4517.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 149.95,
-                "sale_price": 67.95,
-                "regular_price_krw": 254915,
-                "sale_price_krw": 115515,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-united-3rd-shirt-202425-authentic/359519/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "리버풀",
-        "kit_type": "홈킷",
-        "season": "89/91",
-        "version": "레플리카",
-        "name": "리버풀 89/91 홈킷 (레플리카)",
-        "model_code": "A23PN05",
-        "image": "https://thumblr.uniid.it/product/289464/5152a128f575.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 59.95,
-                "sale_price": 29.95,
-                "regular_price_krw": 101915,
-                "sale_price_krw": 50915,
-                "discount_rate": 50,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/liverpool-home-shirt-1989-1991/289464/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 시티",
-        "kit_type": "써드킷",
-        "season": "24/25",
-        "version": "레플리카",
-        "name": "맨체스터 시티 24/25 써드킷 (레플리카)",
-        "model_code": "775201 03",
-        "image": "https://thumblr.uniid.it/product/356535/11afc119b7e7.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 95,
-                "sale_price": 42.95,
-                "regular_price_krw": 161500,
-                "sale_price_krw": 73015,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/mcfc-third-jersey-replica-dark-jasper/356535/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "첼시",
-        "kit_type": "골키퍼",
-        "season": "24/25",
-        "version": "레플리카",
-        "name": "첼시 24/25 골키퍼 (레플리카)",
-        "model_code": "FN8801-804",
-        "image": "https://thumblr.uniid.it/product/369051/f0ba69c7d7e5.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.99,
-                "sale_price": 44.95,
-                "regular_price_krw": 169983,
-                "sale_price_krw": 76415,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/chelsea-goalkeeper-shirt-202425/369051/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "AC 밀란",
-        "kit_type": "써드킷",
-        "season": "24/25",
-        "version": "레플리카",
-        "name": "AC 밀란 24/25 써드킷 (레플리카)",
-        "model_code": "775031 03",
-        "image": "https://thumblr.uniid.it/product/356078/9aa540ce641a.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 95,
-                "sale_price": 42.95,
-                "regular_price_krw": 161500,
-                "sale_price_krw": 73015,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/acm-third-jersey-replica-shadow-gray-fresh-mint/356078/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 시티",
-        "kit_type": "써드킷",
-        "season": "24/25",
-        "version": "어센틱",
-        "name": "맨체스터 시티 24/25 써드킷 (어센틱)",
-        "model_code": "775096 03",
-        "image": "https://thumblr.uniid.it/product/357872/86c4829ee7a4.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 140,
-                "sale_price": 55.95,
-                "regular_price_krw": 238000,
-                "sale_price_krw": 95115,
-                "discount_rate": 60,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/mcfc-third-authentic-jersey-dark-jasper/357872/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "유벤투스",
-        "kit_type": "골키퍼",
-        "season": "24/25",
-        "version": "레플리카",
-        "name": "유벤투스 24/25 골키퍼 (레플리카)",
-        "model_code": "IT3541",
-        "image": "https://thumblr.uniid.it/product/359228/1bfc2def5d66.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 99.95,
-                "sale_price": 44.95,
-                "regular_price_krw": 169915,
-                "sale_price_krw": 76415,
-                "discount_rate": 55,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/juventus-goalkeeper-shirt-202425/359228/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "리버풀",
-        "kit_type": "홈킷",
-        "season": "98/00",
-        "version": "레플리카",
-        "name": "리버풀 98/00 홈킷 (레플리카)",
-        "model_code": "A23HS07",
-        "image": "https://thumblr.uniid.it/product/289457/9bc7b4694984.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 59.95,
-                "sale_price": 41.95,
-                "regular_price_krw": 101915,
-                "sale_price_krw": 71315,
-                "discount_rate": 30,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/liverpool-home-shirt-199800/289457/"
-            }
-        ],
-        "visible": true
-    },
-    {
-        "team": "맨체스터 시티",
-        "kit_type": "골키퍼",
-        "season": "25/26",
-        "version": "레플리카",
-        "name": "맨체스터 시티 25/26 골키퍼 (레플리카)",
-        "model_code": "780454 80",
-        "image": "https://thumblr.uniid.it/product/399607/4ab095f27e8c.jpg",
-        "site_offers": [
-            {
-                "site_name": "Unisport",
-                "currency": "EUR",
-                "regular_price": 100,
-                "sale_price": 74.95,
-                "regular_price_krw": 170000,
-                "sale_price_krw": 127415,
-                "discount_rate": 25,
-                "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-city-goalkeeper-shirt-202526/399607/"
-            }
-        ],
-        "visible": true
-    }
+  {
+    "image": "https://www.sportsdirect.com/images/products/37782208_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "JI7428",
+    "name": "맨체스터 유나이티드 2025 2026 홈 유니폼 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-home-shirt-2025-2026-adults-377822",
+        "currency": "GBP",
+        "discount_rate": 29,
+        "regular_price": 84.99,
+        "regular_price_krw": 164115,
+        "sale_price": 60,
+        "sale_price_krw": 115880,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "맨체스터 유나이티드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37782308_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "JI7428-AUTH",
+    "name": "맨체스터 유나이티드 2025 2026 홈 유니폼 (어센틱)",
+    "season": "25/26",
+    "team": "맨체스터 유나이티드",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37781801_h.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "JI7423",
+    "name": "맨체스터 유나이티드 2025 2026 어웨이 유니폼 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-away-shirt-2025-2026-adults-377818",
+        "currency": "GBP",
+        "discount_rate": 29,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 60,
+        "sale_price_krw": 100200,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "맨체스터 유나이티드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37781901_h.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "JI7423-AUTH",
+    "name": "맨체스터 유나이티드 2025 2026 어웨이 유니폼 (어센틱)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-third-shirt-2025-2026-adults-377819",
+        "currency": "GBP",
+        "discount_rate": 29,
+        "regular_price": 129.99,
+        "regular_price_krw": 217083,
+        "sale_price": 92,
+        "sale_price_krw": 153640,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "맨체스터 유나이티드",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37872508_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "LFC-2526",
+    "name": "리버풀 FC 2025 2026 홈 유니폼 (아디다스) (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-liverpool-home-shirt-2025-2026-adults-378725",
+        "currency": "GBP",
+        "discount_rate": 18,
+        "regular_price": 84.99,
+        "regular_price_krw": 164144,
+        "sale_price": 70,
+        "sale_price_krw": 135193,
+        "site_name": "스포츠다이렉트 UK"
+      }
+    ],
+    "team": "리버풀",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37872208_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "JV6444",
+    "name": "리버풀 FC 2025 2026 홈 유니폼 (아디다스) (어센틱)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-liverpool-away-shirt-2025-2026-adults-378722",
+        "currency": "GBP",
+        "discount_rate": 17,
+        "regular_price": 119.99,
+        "regular_price_krw": 200383,
+        "sale_price": 100,
+        "sale_price_krw": 167000,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "리버풀",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37706403_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "JI7382",
+    "name": "뉴캐슬 유나이티드 FC 2025 2026 홈 저지 (레플리카)",
+    "season": "25/26",
+    "team": "뉴캐슬 유나이티드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37706403_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "JI7382-AUTH",
+    "name": "뉴캐슬 유나이티드 FC 2025 2026 홈 저지 (어센틱)",
+    "season": "25/26",
+    "team": "뉴캐슬 유나이티드",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/392883/9d76dbafcc03.jpg",
+    "kit_type": "홈킷",
+    "model_code": "HJ4593-411",
+    "name": "파리 생제르맹 2025 2026 홈 유니폼 (레플리카)",
+    "season": "25/26",
+    "team": "PSG",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/392883/9d76dbafcc03.jpg",
+    "kit_type": "홈킷",
+    "model_code": "HJ4593-411-AUTH",
+    "name": "파리 생제르맹 2025 2026 홈 유니폼 (어센틱)",
+    "season": "25/26",
+    "team": "PSG",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37736418_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "HJ4591-439",
+    "name": "인터 밀란 2025 2026 홈 유니폼 (레플리카)",
+    "season": "25/26",
+    "team": "인터 밀란",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37736418_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "HJ4591-439-AUTH",
+    "name": "인터 밀란 2025 2026 홈 유니폼 (어센틱)",
+    "season": "25/26",
+    "team": "인터 밀란",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/356113/d673621e3163.jpg",
+    "kit_type": "홈킷",
+    "model_code": "775075-01",
+    "name": "맨체스터 시티 2024 2025 홈 유니폼 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/puma-manchester-city-home-shirt-2024-2025-adults-377790",
+        "currency": "GBP",
+        "discount_rate": 69,
+        "regular_price": 79.99,
+        "regular_price_krw": 154487,
+        "sale_price": 25,
+        "sale_price_krw": 48283,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "맨체스터 시티",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/356281/72559c6635db.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "775086-02",
+    "name": "맨체스터 시티 2024 2025 어웨이 유니폼 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/mcfc-away-jersey-replica-new-navy-yellow-glow/356281/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 95,
+        "regular_price_krw": 161500,
+        "sale_price": 42.95,
+        "sale_price_krw": 73015,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 시티",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36738701_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "IU5011",
+    "name": "레알 마드리드 2024 2025 홈 유니폼 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/nike-tottenham-hotspur-home-shirt-2024-2025-adults-367387",
+        "currency": "GBP",
+        "discount_rate": 27,
+        "regular_price": 79.99,
+        "regular_price_krw": 133583,
+        "sale_price": 58,
+        "sale_price_krw": 96860,
+        "site_name": "스포츠다이렉트"
+      },
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/real-h-jsy-white/359343/",
+        "currency": "EUR",
+        "discount_rate": 50,
+        "regular_price": 99.95,
+        "regular_price_krw": 169915,
+        "sale_price": 49.95,
+        "sale_price_krw": 84915,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "레알 마드리드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36738701_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "IU5011-AUTH",
+    "name": "레알 마드리드 2024 2025 홈 유니폼 (어센틱)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-real-madrid-authentic-home-shirt-2024-2025-adults-331970",
+        "currency": "GBP",
+        "discount_rate": 69,
+        "regular_price": 120,
+        "regular_price_krw": 231760,
+        "sale_price": 37,
+        "sale_price_krw": 71459,
+        "site_name": "스포츠다이렉트"
+      },
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/real-h-jsy-white/359343/",
+        "currency": "EUR",
+        "discount_rate": 30,
+        "regular_price": 159.95,
+        "regular_price_krw": 271978,
+        "sale_price": 111.96,
+        "sale_price_krw": 190385,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "레알 마드리드",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36738812_h.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "IU5013",
+    "name": "레알 마드리드 2024 2025 어웨이 유니폼 (레플리카)",
+    "season": "24/25",
+    "team": "레알 마드리드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36738812_h.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "IU5013-AUTH",
+    "name": "레알 마드리드 2024 2025 어웨이 유니폼 (어센틱)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-away-shirt-202425-authentic/359528/",
+        "currency": "EUR",
+        "discount_rate": 50,
+        "regular_price": 149.95,
+        "regular_price_krw": 254915,
+        "sale_price": 74.95,
+        "sale_price_krw": 127415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "레알 마드리드",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/369612/7929b1566035.jpg",
+    "kit_type": "홈킷",
+    "model_code": "FN8797-456",
+    "name": "FC 바르셀로나 2024 2025 홈 유니폼 (레플리카)",
+    "season": "24/25",
+    "team": "바르셀로나",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/369612/7929b1566035.jpg",
+    "kit_type": "홈킷",
+    "model_code": "FN8797-456-AUTH",
+    "name": "FC 바르셀로나 2024 2025 홈 유니폼 (어센틱)",
+    "season": "24/25",
+    "team": "바르셀로나",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/373195/71b819728447.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "FN8792-010",
+    "name": "FC 바르셀로나 2024 2025 어웨이 유니폼 (레플리카)",
+    "season": "24/25",
+    "team": "바르셀로나",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/e0a8f0e1-7c8a-4b5f-8f6e-7e9a8f0e1c7d/fc-barcelona-2024-25-match-away-dri-fit-adv-football-authentic-shirt-GT9CmM.png",
+    "kit_type": "어웨이킷",
+    "model_code": "FN8771-011",
+    "name": "FC 바르셀로나 2024 2025 어웨이 유니폼 (어센틱)",
+    "season": "24/25",
+    "team": "바르셀로나",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/352866/1724e0d95483.jpg",
+    "kit_type": "홈킷",
+    "model_code": "FN8776-688",
+    "name": "리버풀 FC 2024 2025 홈 유니폼 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/liverpool-home-shirt-202425-vapor/352866/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 149.99,
+        "regular_price_krw": 254983,
+        "sale_price": 67.95,
+        "sale_price_krw": 115515,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "리버풀",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36530303_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "FN8776-688-AUTH",
+    "name": "리버풀 FC 2024 2025 홈 유니폼 (어센틱)",
+    "season": "24/25",
+    "team": "리버풀",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36743715_h.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "FQ2031-309",
+    "name": "리버풀 FC 2024 2025 어웨이 유니폼 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/liverpool-away-shirt-202425/369621/",
+        "currency": "EUR",
+        "discount_rate": 50,
+        "regular_price": 99.99,
+        "regular_price_krw": 169983,
+        "sale_price": 49.95,
+        "sale_price_krw": 84915,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "리버풀",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36744318_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "FN8779-496",
+    "name": "첼시 FC 2024 2025 홈 유니폼 (레플리카)",
+    "season": "24/25",
+    "team": "첼시",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36744318_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "FN8779-496-AUTH",
+    "name": "첼시 FC 2024 2025 홈 유니폼 (어센틱)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/chelsea-home-shirt-202425-vapor/369005/",
+        "currency": "EUR",
+        "discount_rate": 50,
+        "regular_price": 149.99,
+        "regular_price_krw": 254983,
+        "sale_price": 74.95,
+        "sale_price_krw": 127415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "첼시",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36744502_h.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "FN8786-839",
+    "name": "첼시 FC 2024 2025 어웨이 유니폼 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/nike-chelsea-away-shirt-2024-2025-adults-367445",
+        "currency": "GBP",
+        "discount_rate": 50,
+        "regular_price": 84.99,
+        "regular_price_krw": 164115,
+        "sale_price": 42.5,
+        "sale_price_krw": 82058,
+        "site_name": "스포츠다이렉트"
+      },
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/chelsea-away-shirt-202425/",
+        "currency": "EUR",
+        "discount_rate": 50,
+        "regular_price": 99.95,
+        "regular_price_krw": 169984,
+        "sale_price": 49.95,
+        "sale_price_krw": 84949,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "첼시",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36744502_h.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "FN8786-839-AUTH",
+    "name": "첼시 FC 2024 2025 어웨이 유니폼 (어센틱)",
+    "season": "24/25",
+    "team": "첼시",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36555103_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "FN8794-101",
+    "name": "토트넘 홋스퍼 2024 2025 홈 유니폼 (레플리카)",
+    "season": "24/25",
+    "team": "토트넘",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36555103_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "FN8794-101-AUTH",
+    "name": "토트넘 홋스퍼 2024 2025 홈 유니폼 (어센틱)",
+    "season": "24/25",
+    "team": "토트넘",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36811218_h.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "FN8788-480",
+    "name": "토트넘 홋스퍼 2024 2025 어웨이 유니폼 (레플리카)",
+    "season": "24/25",
+    "team": "토트넘",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36741108_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "IT6141",
+    "name": "아스널 FC 2024 2025 홈 유니폼 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/arsenal-home-shirt-202425/359308/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 99.95,
+        "regular_price_krw": 169915,
+        "sale_price": 44.95,
+        "sale_price_krw": 76415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "아스널",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36741303_h.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "IT6148",
+    "name": "아스널 FC 2024 2025 어웨이 유니폼 (레플리카)",
+    "season": "24/25",
+    "team": "아스널",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36741303_h.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "IT6148-AUTH",
+    "name": "아스널 FC 2024 2025 어웨이 유니폼 (어센틱)",
+    "season": "24/25",
+    "team": "아스널",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36575203_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "IX3165",
+    "name": "뉴캐슬 유나이티드 2024 2025 홈 유니폼 (레플리카)",
+    "season": "24/25",
+    "team": "뉴캐슬 유나이티드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36537903_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "FN8795-411",
+    "name": "파리 생제르맹 2024 2025 홈 유니폼 (레플리카)",
+    "season": "24/25",
+    "team": "PSG",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36537903_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "FN8795-411-AUTH",
+    "name": "파리 생제르맹 2024 2025 홈 유니폼 (어센틱)",
+    "season": "24/25",
+    "team": "PSG",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/369617/bd64aa3be109.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "FN8781-101",
+    "name": "파리 생제르맹 2024 2025 어웨이 유니폼 (레플리카)",
+    "season": "24/25",
+    "team": "PSG",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/369617/bd64aa3be109.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "FN8781-101-AUTH",
+    "name": "파리 생제르맹 2024 2025 어웨이 유니폼 (어센틱)",
+    "season": "24/25",
+    "team": "PSG",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36738401_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "IS8002",
+    "name": "유벤투스 FC 2024 2025 홈 유니폼 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/juventus-home-shirt-202425/359122/",
+        "currency": "EUR",
+        "discount_rate": 50,
+        "regular_price": 99.95,
+        "regular_price_krw": 169915,
+        "sale_price": 49.95,
+        "sale_price_krw": 84915,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "유벤투스",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37784308_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "IT8511",
+    "name": "바이에른 뮌헨 2024 2025 홈 유니폼 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/bayern-muenchen-home-shirt-202425/359319/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 99.95,
+        "regular_price_krw": 169915,
+        "sale_price": 44.95,
+        "sale_price_krw": 76415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "바이에른 뮌헨",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37784308_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "IT8511-AUTH",
+    "name": "바이에른 뮌헨 2024 2025 홈 유니폼 (어센틱)",
+    "season": "24/25",
+    "team": "바이에른 뮌헨",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37707818_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "FN8787-440",
+    "name": "인터 밀란 2024 2025 홈 유니폼 (레플리카)",
+    "season": "24/25",
+    "team": "인터 밀란",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36621803_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "774979-01",
+    "name": "AC 밀란 2024 2025 홈 유니폼 (레플리카)",
+    "season": "24/25",
+    "team": "AC 밀란",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37765001_h.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "775015-02",
+    "name": "AC 밀란 2024 2025 어웨이 유니폼 (레플리카)",
+    "season": "24/25",
+    "team": "AC 밀란",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36736302_h.jpg",
+    "kit_type": "써드킷",
+    "model_code": "JJ5114",
+    "name": "벤피카 2024 2025 써드 유니폼 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-benfica-third-shirt-2024-2025-adults-367363",
+        "currency": "GBP",
+        "discount_rate": 70,
+        "regular_price": 79.99,
+        "regular_price_krw": 154487,
+        "sale_price": 24,
+        "sale_price_krw": 46352,
+        "site_name": "스포츠다이렉트"
+      },
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/benfica-3rd-shirt-202425/359611/",
+        "currency": "EUR",
+        "discount_rate": 40,
+        "regular_price": 99.95,
+        "regular_price_krw": 169984,
+        "sale_price": 59.97,
+        "sale_price_krw": 101990,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "벤피카",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36736302_h.jpg",
+    "kit_type": "써드킷",
+    "model_code": "JJ5114-AUTH",
+    "name": "벤피카 2024 2025 써드 유니폼 (어센틱)",
+    "season": "24/25",
+    "team": "벤피카",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/32998501_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "IP1726",
+    "name": "맨체스터 유나이티드 2023 2024 홈 유니폼 (레플리카)",
+    "season": "23/24",
+    "team": "맨체스터 유나이티드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37894601_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "HZ5310",
+    "name": "레알 마드리드 2023 2024 홈 유니폼 (레플리카)",
+    "season": "23/24",
+    "team": "레알 마드리드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/32853901_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "DX2687-456",
+    "name": "FC 바르셀로나 2023 2024 홈 유니폼 (레플리카)",
+    "season": "23/24",
+    "team": "바르셀로나",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/32853901_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "DX2687-456-AUTH",
+    "name": "FC 바르셀로나 2023 2024 홈 유니폼 (어센틱)",
+    "season": "23/24",
+    "team": "바르셀로나",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/33152101_h.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "DX2688-838",
+    "name": "FC 바르셀로나 2023 2024 어웨이 유니폼 (레플리카)",
+    "season": "23/24",
+    "team": "바르셀로나",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/32841101_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "757058-01",
+    "name": "맨체스터 시티 2023 2024 홈 유니폼 (레플리카)",
+    "season": "23/24",
+    "team": "맨체스터 시티",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/32862401_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "IP3376",
+    "name": "아스널 FC 2023 2024 홈 유니폼 (레플리카)",
+    "season": "23/24",
+    "team": "아스널",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/32835401_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "DX2689-688",
+    "name": "리버풀 FC 2023 2024 홈 유니폼 (레플리카)",
+    "season": "23/24",
+    "team": "리버풀",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37731108_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "GM4545",
+    "name": "맨체스터 유나이티드 2022 2023 홈 유니폼 (레플리카)",
+    "season": "22/23",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-fc-home-shirt-2022/2023-mens-377311",
+        "currency": "GBP",
+        "discount_rate": 76,
+        "regular_price": 69.99,
+        "regular_price_krw": 135174,
+        "sale_price": 16.5,
+        "sale_price_krw": 31867,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "맨체스터 유나이티드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/31156101_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "GU9728",
+    "name": "레알 마드리드 2022 2023 홈 유니폼 (레플리카)",
+    "season": "22/23",
+    "team": "레알 마드리드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/31174601_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "CV8933-456",
+    "name": "FC 바르셀로나 2022 2023 홈 유니폼 (레플리카)",
+    "season": "22/23",
+    "team": "바르셀로나",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/31174601_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "CV8933-456-AUTH",
+    "name": "FC 바르셀로나 2022 2023 홈 유니폼 (어센틱)",
+    "season": "22/23",
+    "team": "바르셀로나",
+    "version": "어센틱",
+    "visible": false
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/31160001_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "759242-01",
+    "name": "맨체스터 시티 2022 2023 홈 유니폼 (레플리카)",
+    "season": "22/23",
+    "team": "맨체스터 시티",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/31154501_h.jpg",
+    "kit_type": "홈킷",
+    "model_code": "DD9422-688",
+    "name": "리버풀 FC 2022 2023 홈 유니폼 (레플리카)",
+    "season": "22/23",
+    "team": "리버풀",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37732318_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "HJ4589-496",
+    "name": "첼시 25/26 홈킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/nike-chelsea-home-shirt-2025-2026-adults-377323",
+        "currency": "GBP",
+        "discount_rate": 14,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 73,
+        "sale_price_krw": 121910,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "첼시",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37735603_l.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "HJ4553-031",
+    "name": "첼시 25/26 어웨이킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/nike-chelsea-away-shirt-2025-2026-adults-377356",
+        "currency": "GBP",
+        "discount_rate": 36,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 54.5,
+        "sale_price_krw": 91015,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "첼시",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37701303_l.jpg",
+    "kit_type": "써드킷",
+    "model_code": "HM3202-011",
+    "name": "첼시 25/26 써드킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/nike-chelsea-third-shirt-2025-2026-adults-377013",
+        "currency": "GBP",
+        "discount_rate": 14,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 73,
+        "sale_price_krw": 121910,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "첼시",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37875915_l.jpg",
+    "kit_type": "써드킷",
+    "model_code": "JV6428",
+    "name": "리버풀 25/26 써드킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-liverpool-third-shirt-2025-2026-adults-378759",
+        "currency": "GBP",
+        "discount_rate": 20,
+        "regular_price": 59.99,
+        "regular_price_krw": 100183,
+        "sale_price": 48,
+        "sale_price_krw": 80160,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "리버풀",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37781108_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "ADIDAS-2024",
+    "name": "벤피카 25/26 홈킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/puma-manchester-city-away-shirt-2024-2025-adults-377811",
+        "currency": "GBP",
+        "discount_rate": 18,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 70,
+        "sale_price_krw": 116900,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "벤피카",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37780569_l.jpg",
+    "kit_type": "써드킷",
+    "model_code": "ADIDAS-2024",
+    "name": "아약스 25/26 써드킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/puma-manchester-city-third-shirt-2024-2025-adults-377805",
+        "currency": "GBP",
+        "discount_rate": 14,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 73,
+        "sale_price_krw": 121910,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "아약스",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37782713_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "ADIDAS-2526",
+    "name": "알 나스르 25/26 홈킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-arsenal-home-shirt-2025-2026-adults-377827",
+        "currency": "GBP",
+        "discount_rate": 18,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 70,
+        "sale_price_krw": 116900,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "알 나스르",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37782801_l.jpg",
+    "kit_type": "써드킷",
+    "model_code": "JI9556",
+    "name": "아스널 25/26 써드킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-arsenal-third-shirt-2025-2026-adults-377828",
+        "currency": "GBP",
+        "discount_rate": 18,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 70,
+        "sale_price_krw": 116900,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "아스널",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36739401_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "SD-367394",
+    "name": "아약스 24/25 홈킷 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-ajax-amsterdam-home-shirt-2024-2025-adults-367394",
+        "currency": "GBP",
+        "discount_rate": 27,
+        "regular_price": 79.99,
+        "regular_price_krw": 133583,
+        "sale_price": 58,
+        "sale_price_krw": 96860,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "아약스",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37783118_l.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "MJI9511",
+    "name": "아스널 25/26 어웨이킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-arsenal-away-shirt-2025-2026-adults-377831",
+        "currency": "GBP",
+        "discount_rate": 29,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 60,
+        "sale_price_krw": 100200,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "아스널",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37783808_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "MJI9517",
+    "name": "아스널 25/26 홈킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-arsenal-home-shirt-2025-2026-adults-377838",
+        "currency": "GBP",
+        "discount_rate": 29,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 60,
+        "sale_price_krw": 100200,
+        "site_name": "스포츠다이렉트"
+      },
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/arsenal-home-shirt-202526/396434/",
+        "currency": "EUR",
+        "discount_rate": 25,
+        "regular_price": 99.95,
+        "regular_price_krw": 169915,
+        "sale_price": 74.95,
+        "sale_price_krw": 127415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "아스널",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36741518_l.jpg",
+    "kit_type": "써드킷",
+    "model_code": "SD-367415",
+    "name": "아스널 24/25 써드킷 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-arsenal-third-shirt-2024-2025-adults-367415",
+        "currency": "GBP",
+        "discount_rate": 50,
+        "regular_price": 79.99,
+        "regular_price_krw": 133583,
+        "sale_price": 40,
+        "sale_price_krw": 66800,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "아스널",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37784803_l.jpg",
+    "kit_type": "써드킷",
+    "model_code": "SD-377848",
+    "name": "유벤투스 25/26 써드킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-juventus-third-shirt-2025-2026-adults-377848",
+        "currency": "GBP",
+        "discount_rate": 14,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 73,
+        "sale_price_krw": 121910,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "유벤투스",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36739908_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "SD-367399",
+    "name": "맨체스터 유나이티드 24/25 홈킷 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-home-shirt-2024-2025-adults-367399",
+        "currency": "GBP",
+        "discount_rate": 50,
+        "regular_price": 79.99,
+        "regular_price_krw": 133583,
+        "sale_price": 40,
+        "sale_price_krw": 66800,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "맨체스터 유나이티드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37788003_l.jpg",
+    "kit_type": "써드킷",
+    "model_code": "SD-377880",
+    "name": "맨체스터 유나이티드 25/26 써드킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-third-shirt-2025-2026-adults-377880",
+        "currency": "GBP",
+        "discount_rate": 18,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 70,
+        "sale_price_krw": 116900,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "맨체스터 유나이티드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37100618_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "SD-371006",
+    "name": "인테르 밀란 23/24 홈킷 (레플리카)",
+    "season": "23/24",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/nike-inter-milan-2023-2024-home-shirt-adults-371006",
+        "currency": "GBP",
+        "discount_rate": 69,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 26,
+        "sale_price_krw": 43420,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "인테르 밀란",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37708808_l.jpg",
+    "kit_type": "써드킷",
+    "model_code": "SD-377088",
+    "name": "PSG 25/26 써드킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/nike-psg-third-shirt-2025-2026-adults-377088",
+        "currency": "GBP",
+        "discount_rate": 14,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 73,
+        "sale_price_krw": 121910,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "PSG",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/36757313_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "JP0459",
+    "name": "알 나스르 24/25 홈킷 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-al-nassr-home-shirt-2024-2025-adults-367573",
+        "currency": "GBP",
+        "discount_rate": 49,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 43,
+        "sale_price_krw": 71810,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "알 나스르",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37784103_l.jpg",
+    "kit_type": "써드킷",
+    "model_code": "SD-377841",
+    "name": "바이에른 뮌헨 25/26 써드킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-bayern-munich-third-shirt-2025-2026-adults-377841",
+        "currency": "GBP",
+        "discount_rate": 14,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 73,
+        "sale_price_krw": 121910,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "바이에른 뮌헨",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37723606_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "SD-377236",
+    "name": "인테르 마이애미 25/26 홈킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-inter-miami-messi-home-shirt-2025-2026-adults-377236",
+        "currency": "GBP",
+        "discount_rate": 19,
+        "regular_price": 89.99,
+        "regular_price_krw": 150283,
+        "sale_price": 72.99,
+        "sale_price_krw": 121893,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "인테르 마이애미",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37874601_l.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "SD-378746",
+    "name": "리버풀 25/26 어웨이킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-liverpool-away-shirt-2025-2026-adults-378746",
+        "currency": "GBP",
+        "discount_rate": 18,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 70,
+        "sale_price_krw": 116900,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "리버풀",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37773415_l.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "SD-377734",
+    "name": "맨체스터 유나이티드 23/24 어웨이킷 (레플리카)",
+    "season": "23/24",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/adidas-manchester-united-away-long-sleeve-shirt-2023-2024-adults-377734",
+        "currency": "GBP",
+        "discount_rate": 69,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 26,
+        "sale_price_krw": 43420,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "맨체스터 유나이티드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37709818_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "SD-377098",
+    "name": "에버튼 25/26 홈킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/castore-everton-home-shirt-2025-2026-adults-377098",
+        "currency": "GBP",
+        "discount_rate": 15,
+        "regular_price": 79.99,
+        "regular_price_krw": 133583,
+        "sale_price": 68,
+        "sale_price_krw": 113560,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "에버튼",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37731018_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "SD-377310",
+    "name": "첼시 25/26 홈킷 (어센틱)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/nike-chelsea-authentic-home-shirt-2025-2026-adults-377310",
+        "currency": "GBP",
+        "discount_rate": 12,
+        "regular_price": 124.99,
+        "regular_price_krw": 208733,
+        "sale_price": 110,
+        "sale_price_krw": 183700,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "첼시",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37742201_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "SD-377422",
+    "name": "토트넘 25/26 홈킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/nike-tottenham-hotspur-home-shirt-2025-2026-adults-377422",
+        "currency": "GBP",
+        "discount_rate": 14,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 73,
+        "sale_price_krw": 121910,
+        "site_name": "스포츠다이렉트"
+      },
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/tottenham-home-shirt-202526/392868/",
+        "currency": "EUR",
+        "discount_rate": 30,
+        "regular_price": 99.95,
+        "regular_price_krw": 169915,
+        "sale_price": 69.95,
+        "sale_price_krw": 118915,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "토트넘",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37764208_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "SD-377642",
+    "name": "AC 밀란 25/26 홈킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/puma-ac-milan-home-shirt-2025-2026-adults-377642",
+        "currency": "GBP",
+        "discount_rate": 14,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 73,
+        "sale_price_krw": 121910,
+        "site_name": "스포츠다이렉트"
+      }
+    ],
+    "team": "AC 밀란",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://www.sportsdirect.com/images/products/37742818_l.jpg",
+    "kit_type": "홈킷",
+    "model_code": "SD-377428",
+    "name": "맨체스터 시티 25/26 홈킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.sportsdirect.com/puma-manchester-city-home-shirt-2025-2026-adults-377428",
+        "currency": "GBP",
+        "discount_rate": 18,
+        "regular_price": 84.99,
+        "regular_price_krw": 141933,
+        "sale_price": 70,
+        "sale_price_krw": 116900,
+        "site_name": "스포츠다이렉트"
+      },
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-city-home-shirt-202526/400408/",
+        "currency": "EUR",
+        "discount_rate": 25,
+        "regular_price": 100,
+        "regular_price_krw": 170000,
+        "sale_price": 74.95,
+        "sale_price_krw": 127415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 시티",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/396488/c49df52f916b.jpg",
+    "kit_type": "홈킷",
+    "model_code": "JJ1931",
+    "name": "레알 마드리드 25/26 홈킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-home-shirt-202526/396488/",
+        "currency": "EUR",
+        "discount_rate": 25,
+        "regular_price": 99.95,
+        "regular_price_krw": 169915,
+        "sale_price": 74.95,
+        "sale_price_krw": 127415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "레알 마드리드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/397033/9ac9b5f05ae9.jpg",
+    "kit_type": "써드킷",
+    "model_code": "JV5839",
+    "name": "레알 마드리드 25/26 써드킷 (어센틱)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-third-shirt-202526-authentic/397033/",
+        "currency": "EUR",
+        "discount_rate": 30,
+        "regular_price": 149.95,
+        "regular_price_krw": 254915,
+        "sale_price": 104.95,
+        "sale_price_krw": 178415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "레알 마드리드",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/396498/70868032a4a6.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "JJ4182",
+    "name": "레알 마드리드 25/26 어웨이킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-away-shirt-202526/396498/",
+        "currency": "EUR",
+        "discount_rate": 30,
+        "regular_price": 99.95,
+        "regular_price_krw": 169915,
+        "sale_price": 69.95,
+        "sale_price_krw": 118915,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "레알 마드리드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/356113/05f98964e23d.jpg",
+    "kit_type": "홈킷",
+    "model_code": "775050 01",
+    "name": "맨체스터 시티 24/25 홈킷 (어센틱)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/mcfc-home-authentic-jersey-team-light-blue-marine-blue/356113/",
+        "currency": "EUR",
+        "discount_rate": 60,
+        "regular_price": 140,
+        "regular_price_krw": 238000,
+        "sale_price": 55.95,
+        "sale_price_krw": 95115,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 시티",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/399657/94f0acc0dec1.jpg",
+    "kit_type": "써드킷",
+    "model_code": "780362 03",
+    "name": "맨체스터 시티 25/26 써드킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/t-shirts/mcfc-3rd-jersey-replica-cool-weather-pro-green/399657/",
+        "currency": "EUR",
+        "discount_rate": 30,
+        "regular_price": 100,
+        "regular_price_krw": 170000,
+        "sale_price": 69.95,
+        "sale_price_krw": 118915,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 시티",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/400480/aa1f8c1039ef.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "779971 02",
+    "name": "AC 밀란 25/26 어웨이킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/t-shirts/acm-away-jersey-replica-puma-white-for-all-time-red/400480/",
+        "currency": "EUR",
+        "discount_rate": 30,
+        "regular_price": 100,
+        "regular_price_krw": 170000,
+        "sale_price": 69.95,
+        "sale_price_krw": 118915,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "AC 밀란",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/400030/7d9684b254c8.jpg",
+    "kit_type": "홈킷",
+    "model_code": "779961 01",
+    "name": "AC 밀란 25/26 홈킷 (어센틱)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/t-shirts/acm-home-jersey-authentic-for-all-time-red-puma-black/400030/",
+        "currency": "EUR",
+        "discount_rate": 25,
+        "regular_price": 150,
+        "regular_price_krw": 255000,
+        "sale_price": 112.95,
+        "sale_price_krw": 192015,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "AC 밀란",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/357119/6a0d5e16c06b.jpg",
+    "kit_type": "홈킷",
+    "model_code": "778616 04",
+    "name": "맨체스터 시티 24/25 홈킷 (어센틱)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/mcfc-fourth-authentic-jersey-w-packaging-rosebay-bold-blue/357119/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 145,
+        "regular_price_krw": 246500,
+        "sale_price": 64.95,
+        "sale_price_krw": 110415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 시티",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/396411/8f39911a24a1.jpg",
+    "kit_type": "써드킷",
+    "model_code": "JI7419",
+    "name": "맨체스터 유나이티드 25/26 써드킷 (어센틱)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-united-third-shirt-202526-authentic/396411/",
+        "currency": "EUR",
+        "discount_rate": 25,
+        "regular_price": 149.95,
+        "regular_price_krw": 254915,
+        "sale_price": 112.95,
+        "sale_price_krw": 192015,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 유나이티드",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/359580/4cbc173846e3.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "JH1357",
+    "name": "유벤투스 24/25 어웨이킷 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/juventus-away-shirt-202425/359580/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 99.95,
+        "regular_price_krw": 169915,
+        "sale_price": 44.95,
+        "sale_price_krw": 76415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "유벤투스",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/359603/d9cc9f4438fa.jpg",
+    "kit_type": "골키퍼",
+    "model_code": "JJ1383",
+    "name": "맨체스터 유나이티드 24/25 골키퍼 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-united-goalkeeper-shirt-202425/359603/",
+        "currency": "EUR",
+        "discount_rate": 60,
+        "regular_price": 109.95,
+        "regular_price_krw": 186915,
+        "sale_price": 43.95,
+        "sale_price_krw": 74715,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 유나이티드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/377493/461dbbf7eac0.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "JW1992",
+    "name": "레알 마드리드 99/00 어웨이킷 (레플리카)",
+    "season": "99/00",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-away-shirt-199900-limited-edition/377493/",
+        "currency": "EUR",
+        "discount_rate": 30,
+        "regular_price": 109.95,
+        "regular_price_krw": 186915,
+        "sale_price": 76.95,
+        "sale_price_krw": 130815,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "레알 마드리드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/357639/d445c504dd07.jpg",
+    "kit_type": "써드킷",
+    "model_code": "775028 03",
+    "name": "AC 밀란 24/25 써드킷 (어센틱)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/acm-third-authentic-jersey-fresh-mint/357639/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 140,
+        "regular_price_krw": 238000,
+        "sale_price": 62.95,
+        "sale_price_krw": 107015,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "AC 밀란",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/408245/a10503bc2e3a.jpg",
+    "kit_type": "써드킷",
+    "model_code": "HM3207-741",
+    "name": "토트넘 25/26 써드킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/tottenham-3rd-shirt-202526/408245/",
+        "currency": "EUR",
+        "discount_rate": 25,
+        "regular_price": 99.95,
+        "regular_price_krw": 169915,
+        "sale_price": 74.95,
+        "sale_price_krw": 127415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "토트넘",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/400352/a6c4db84034a.jpg",
+    "kit_type": "홈킷",
+    "model_code": "780336 01",
+    "name": "맨체스터 시티 25/26 홈킷 (어센틱)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-city-home-shirt-202526-authentic/400352/",
+        "currency": "EUR",
+        "discount_rate": 30,
+        "regular_price": 150,
+        "regular_price_krw": 255000,
+        "sale_price": 104.95,
+        "sale_price_krw": 178415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 시티",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/355986/40e4fae98069.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "775085 02",
+    "name": "맨체스터 시티 24/25 어웨이킷 (어센틱)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/mcfc-away-authentic-jersey-new-navy-yellow-glow/355986/",
+        "currency": "EUR",
+        "discount_rate": 60,
+        "regular_price": 140,
+        "regular_price_krw": 238000,
+        "sale_price": 55.95,
+        "sale_price_krw": 95115,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 시티",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/399850/842c71edc2df.jpg",
+    "kit_type": "써드킷",
+    "model_code": "780360 03",
+    "name": "맨체스터 시티 25/26 써드킷 (어센틱)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/t-shirts/mcfc-3rd-jersey-authentic-cool-weather-pro-green/399850/",
+        "currency": "EUR",
+        "discount_rate": 30,
+        "regular_price": 150,
+        "regular_price_krw": 255000,
+        "sale_price": 104.95,
+        "sale_price_krw": 178415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 시티",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/396509/90ef675d911b.jpg",
+    "kit_type": "홈킷",
+    "model_code": "JJ4320",
+    "name": "유벤투스 25/26 홈킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/juventus-home-shirt-202526/396509/",
+        "currency": "EUR",
+        "discount_rate": 25,
+        "regular_price": 99.95,
+        "regular_price_krw": 169915,
+        "sale_price": 74.95,
+        "sale_price_krw": 127415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "유벤투스",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/396490/a4c2a889d427.jpg",
+    "kit_type": "홈킷",
+    "model_code": "JJ2137",
+    "name": "바이에른 뮌헨 25/26 홈킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/bayern-muenchen-home-shirt-202526/396490/",
+        "currency": "EUR",
+        "discount_rate": 25,
+        "regular_price": 99.95,
+        "regular_price_krw": 169915,
+        "sale_price": 74.95,
+        "sale_price_krw": 127415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "바이에른 뮌헨",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/408687/4c9442f53286.jpg",
+    "kit_type": "써드킷",
+    "model_code": "HM3196-438",
+    "name": "인터 밀란 25/26 써드킷 (어센틱)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/inter-3rd-shirt-202526-vapor/408687/",
+        "currency": "EUR",
+        "discount_rate": 25,
+        "regular_price": 149.95,
+        "regular_price_krw": 254915,
+        "sale_price": 112.95,
+        "sale_price_krw": 192015,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "인터 밀란",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/400548/a4049876370d.jpg",
+    "kit_type": "골키퍼",
+    "model_code": "779984 07",
+    "name": "AC 밀란 25/26 골키퍼 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/t-shirts/acm-gk-jersey-replica-ss-modern-mint-for-all-time-red/400548/",
+        "currency": "EUR",
+        "discount_rate": 25,
+        "regular_price": 100,
+        "regular_price_krw": 170000,
+        "sale_price": 74.95,
+        "sale_price_krw": 127415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "AC 밀란",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/310946/716d10e87bc3.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "A23PN06",
+    "name": "리버풀 89/91 어웨이킷 (레플리카)",
+    "season": "89/91",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/liverpool-away-shirt-198991/310946/",
+        "currency": "EUR",
+        "discount_rate": 35,
+        "regular_price": 59.95,
+        "regular_price_krw": 101915,
+        "sale_price": 38.95,
+        "sale_price_krw": 66215,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "리버풀",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/400540/8c4e8b5aa2e5.jpg",
+    "kit_type": "써드킷",
+    "model_code": "779979 03",
+    "name": "AC 밀란 25/26 써드킷 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/t-shirts/acm-3rd-jersey-replica-sunny-yellow-dark-myrtle/400540/",
+        "currency": "EUR",
+        "discount_rate": 30,
+        "regular_price": 100,
+        "regular_price_krw": 170000,
+        "sale_price": 69.95,
+        "sale_price_krw": 118915,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "AC 밀란",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/399922/4f882e97a2fd.jpg",
+    "kit_type": "써드킷",
+    "model_code": "779978 03",
+    "name": "AC 밀란 25/26 써드킷 (어센틱)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/t-shirts/acm-3rd-jersey-authentic-sunny-yellow-dark-myrtle/399922/",
+        "currency": "EUR",
+        "discount_rate": 25,
+        "regular_price": 150,
+        "regular_price_krw": 255000,
+        "sale_price": 112.95,
+        "sale_price_krw": 192015,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "AC 밀란",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/310947/6a5031ad3141.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "A23PN07",
+    "name": "리버풀 98/99 어웨이킷 (레플리카)",
+    "season": "98/99",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/liverpool-away-shirt-199899/310947/",
+        "currency": "EUR",
+        "discount_rate": 25,
+        "regular_price": 59.95,
+        "regular_price_krw": 101915,
+        "sale_price": 44.95,
+        "sale_price_krw": 76415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "리버풀",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/400343/471751ca7ef1.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "779970 02",
+    "name": "AC 밀란 25/26 어웨이킷 (어센틱)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/t-shirts/acm-away-jersey-authentic-puma-white-for-all-time-red/400343/",
+        "currency": "EUR",
+        "discount_rate": 30,
+        "regular_price": 150,
+        "regular_price_krw": 255000,
+        "sale_price": 104.95,
+        "sale_price_krw": 178415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "AC 밀란",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/359559/2bf311ebfd8e.jpg",
+    "kit_type": "홈킷",
+    "model_code": "JF1291",
+    "name": "맨체스터 유나이티드 24/25 홈킷 (어센틱)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-united-home-shirt-202425-authentic/359559/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 149.95,
+        "regular_price_krw": 254915,
+        "sale_price": 67.95,
+        "sale_price_krw": 115515,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 유나이티드",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/359484/91b4adddb9f6.jpg",
+    "kit_type": "써드킷",
+    "model_code": "IY1761",
+    "name": "레알 마드리드 24/25 써드킷 (어센틱)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-3rd-shirt-202425-authentic/359484/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 149.95,
+        "regular_price_krw": 254915,
+        "sale_price": 67.95,
+        "sale_price_krw": 115515,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "레알 마드리드",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/359582/51af85e47c0d.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "JH1362",
+    "name": "유벤투스 24/25 어웨이킷 (어센틱)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/juventus-away-shirt-202425-authentic/359582/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 149.95,
+        "regular_price_krw": 254915,
+        "sale_price": 67.95,
+        "sale_price_krw": 115515,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "유벤투스",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/396506/090cb9ec3d3f.jpg",
+    "kit_type": "홈킷",
+    "model_code": "JJ4314",
+    "name": "유벤투스 25/26 홈킷 (어센틱)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/juventus-home-shirt-202526-authentic/396506/",
+        "currency": "EUR",
+        "discount_rate": 30,
+        "regular_price": 149.95,
+        "regular_price_krw": 254915,
+        "sale_price": 104.95,
+        "sale_price_krw": 178415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "유벤투스",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/369625/baeb8cd92edf.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "FN8793-123",
+    "name": "인터 밀란 24/25 어웨이킷 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/inter-away-shirt-202425/369625/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 99.99,
+        "regular_price_krw": 169983,
+        "sale_price": 44.95,
+        "sale_price_krw": 76415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "인터 밀란",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/359447/056445c2ca03.jpg",
+    "kit_type": "홈킷",
+    "model_code": "IX8095",
+    "name": "레알 마드리드 24/25 홈킷 (어센틱)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/real-madrid-home-shirt-202425/359447/",
+        "currency": "EUR",
+        "discount_rate": 50,
+        "regular_price": 149.95,
+        "regular_price_krw": 254915,
+        "sale_price": 74.95,
+        "sale_price_krw": 127415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "레알 마드리드",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/359307/de8b9fc4cdfe.jpg",
+    "kit_type": "홈킷",
+    "model_code": "IT6140",
+    "name": "아스널 24/25 홈킷 (어센틱)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/arsenal-home-shirt-202425-authentic/359307/",
+        "currency": "EUR",
+        "discount_rate": 60,
+        "regular_price": 149.95,
+        "regular_price_krw": 254915,
+        "sale_price": 59.95,
+        "sale_price_krw": 101915,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "아스널",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/289458/2416a7659339.jpg",
+    "kit_type": "홈킷",
+    "model_code": "A23HS10",
+    "name": "리버풀 95/96 홈킷 (레플리카)",
+    "season": "95/96",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/liverpool-home-shirt-199596/289458/",
+        "currency": "EUR",
+        "discount_rate": 25,
+        "regular_price": 59.95,
+        "regular_price_krw": 101915,
+        "sale_price": 44.95,
+        "sale_price_krw": 76415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "리버풀",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/355995/4052fb10ab98.jpg",
+    "kit_type": "홈킷",
+    "model_code": "774949 01",
+    "name": "AC 밀란 24/25 홈킷 (어센틱)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/acm-home-authentic-jersey-for-all-time-red-puma-black/355995/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 140,
+        "regular_price_krw": 238000,
+        "sale_price": 62.95,
+        "sale_price_krw": 107015,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "AC 밀란",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/359516/d72149863ae3.jpg",
+    "kit_type": "써드킷",
+    "model_code": "IY7806",
+    "name": "맨체스터 유나이티드 24/25 써드킷 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-united-3rd-shirt-202425/359516/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 99.95,
+        "regular_price_krw": 169915,
+        "sale_price": 44.95,
+        "sale_price_krw": 76415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 유나이티드",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/359519/fd2dc90a4517.jpg",
+    "kit_type": "써드킷",
+    "model_code": "IY7814",
+    "name": "맨체스터 유나이티드 24/25 써드킷 (어센틱)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-united-3rd-shirt-202425-authentic/359519/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 149.95,
+        "regular_price_krw": 254915,
+        "sale_price": 67.95,
+        "sale_price_krw": 115515,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 유나이티드",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/289464/5152a128f575.jpg",
+    "kit_type": "홈킷",
+    "model_code": "A23PN05",
+    "name": "리버풀 89/91 홈킷 (레플리카)",
+    "season": "89/91",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/liverpool-home-shirt-1989-1991/289464/",
+        "currency": "EUR",
+        "discount_rate": 50,
+        "regular_price": 59.95,
+        "regular_price_krw": 101915,
+        "sale_price": 29.95,
+        "sale_price_krw": 50915,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "리버풀",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/356535/11afc119b7e7.jpg",
+    "kit_type": "써드킷",
+    "model_code": "775201 03",
+    "name": "맨체스터 시티 24/25 써드킷 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/mcfc-third-jersey-replica-dark-jasper/356535/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 95,
+        "regular_price_krw": 161500,
+        "sale_price": 42.95,
+        "sale_price_krw": 73015,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 시티",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/369051/f0ba69c7d7e5.jpg",
+    "kit_type": "골키퍼",
+    "model_code": "FN8801-804",
+    "name": "첼시 24/25 골키퍼 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/chelsea-goalkeeper-shirt-202425/369051/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 99.99,
+        "regular_price_krw": 169983,
+        "sale_price": 44.95,
+        "sale_price_krw": 76415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "첼시",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/356078/9aa540ce641a.jpg",
+    "kit_type": "써드킷",
+    "model_code": "775031 03",
+    "name": "AC 밀란 24/25 써드킷 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/acm-third-jersey-replica-shadow-gray-fresh-mint/356078/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 95,
+        "regular_price_krw": 161500,
+        "sale_price": 42.95,
+        "sale_price_krw": 73015,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "AC 밀란",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/357872/86c4829ee7a4.jpg",
+    "kit_type": "써드킷",
+    "model_code": "775096 03",
+    "name": "맨체스터 시티 24/25 써드킷 (어센틱)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/mcfc-third-authentic-jersey-dark-jasper/357872/",
+        "currency": "EUR",
+        "discount_rate": 60,
+        "regular_price": 140,
+        "regular_price_krw": 238000,
+        "sale_price": 55.95,
+        "sale_price_krw": 95115,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 시티",
+    "version": "어센틱",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/359228/1bfc2def5d66.jpg",
+    "kit_type": "골키퍼",
+    "model_code": "IT3541",
+    "name": "유벤투스 24/25 골키퍼 (레플리카)",
+    "season": "24/25",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/juventus-goalkeeper-shirt-202425/359228/",
+        "currency": "EUR",
+        "discount_rate": 55,
+        "regular_price": 99.95,
+        "regular_price_krw": 169915,
+        "sale_price": 44.95,
+        "sale_price_krw": 76415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "유벤투스",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/289457/9bc7b4694984.jpg",
+    "kit_type": "홈킷",
+    "model_code": "A23HS07",
+    "name": "리버풀 98/00 홈킷 (레플리카)",
+    "season": "98/00",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/liverpool-home-shirt-199800/289457/",
+        "currency": "EUR",
+        "discount_rate": 30,
+        "regular_price": 59.95,
+        "regular_price_krw": 101915,
+        "sale_price": 41.95,
+        "sale_price_krw": 71315,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "리버풀",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/399607/4ab095f27e8c.jpg",
+    "kit_type": "골키퍼",
+    "model_code": "780454 80",
+    "name": "맨체스터 시티 25/26 골키퍼 (레플리카)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/manchester-city-goalkeeper-shirt-202526/399607/",
+        "currency": "EUR",
+        "discount_rate": 25,
+        "regular_price": 100,
+        "regular_price_krw": 170000,
+        "sale_price": 74.95,
+        "sale_price_krw": 127415,
+        "site_name": "유니스포츠"
+      }
+    ],
+    "team": "맨체스터 시티",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/393279/0aa8d4376cb4.jpg",
+    "kit_type": "홈킷",
+    "model_code": "HJ4590-456",
+    "name": "바르셀로나 2025/26 홈 유니폼",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/barcelona-home-shirt-202526/393279/",
+        "currency": "EUR",
+        "discount_rate": 0,
+        "regular_price": 99.95,
+        "sale_price": 99.95,
+        "site_name": "Unisport"
+      },
+      {
+        "affiliate_link": "https://department.ssg.com/search.ssg?query=%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98%EC%9C%A0%EB%8B%88%ED%8F%BC",
+        "currency": "KRW",
+        "discount_rate": 8,
+        "regular_price": 138000,
+        "sale_price": 126960,
+        "sale_price_krw": 126960,
+        "site_name": "신세계백화점"
+      }
+    ],
+    "team": "바르셀로나",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/423995/c2ea5021834c.jpg",
+    "kit_type": "어웨이킷",
+    "model_code": "HJ4554-784",
+    "name": "바르셀로나 2025/26 어웨이 유니폼 (코비 에디션)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/barcelona-away-shirt-202526-vapor/423995/",
+        "currency": "EUR",
+        "discount_rate": 0,
+        "regular_price": 99.95,
+        "sale_price": 99.95,
+        "site_name": "Unisport"
+      }
+    ],
+    "team": "바르셀로나",
+    "version": "레플리카",
+    "visible": true
+  },
+  {
+    "image": "https://thumblr.uniid.it/product/408201/4c1e9beb56df.jpg",
+    "kit_type": "써드킷",
+    "model_code": "HM3193-855",
+    "name": "바르셀로나 2025/26 써드 유니폼 (T90)",
+    "season": "25/26",
+    "site_offers": [
+      {
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/barcelona-3rd-shirt-202526-vapor/408200/",
+        "currency": "EUR",
+        "discount_rate": 0,
+        "regular_price": 99.95,
+        "sale_price": 99.95,
+        "site_name": "Unisport"
+      }
+    ],
+    "team": "바르셀로나",
+    "version": "레플리카",
+    "visible": true
+  }
 ];

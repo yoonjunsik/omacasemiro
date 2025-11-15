@@ -223,6 +223,16 @@ function initializePage() {
             if (snapshot.exists()) {
                 window.uniformData = snapshot.val();
                 console.log('✅ Firebase 데이터 로드 완료:', window.uniformData.length, '개');
+
+                // Affiliate links 처리
+                if (typeof processAffiliateLinks === 'function') {
+                    window.uniformData = processAffiliateLinks(window.uniformData);
+                    console.log('🔗 Affiliate links applied to uniformData');
+                }
+
+                console.log('🔍 검색할 제품 ID:', productId);
+                console.log('📦 전체 제품 모델 코드:', window.uniformData.map(p => p.model_code).join(', '));
+
                 displayProduct(productId, loading, error, productDetail);
             } else {
                 console.log('⚠️ Firebase에 데이터 없음, data.js 사용');
@@ -240,6 +250,18 @@ function initializePage() {
 
 // 제품 표시 함수
 function displayProduct(productId, loading, error, productDetail) {
+    // uniformData 존재 확인
+    if (!window.uniformData) {
+        console.error('❌ uniformData가 로드되지 않음');
+        loading.classList.add('hidden');
+        error.classList.remove('hidden');
+        return;
+    }
+
+    console.log('🔎 제품 검색 중:', productId);
+    console.log('📊 uniformData 타입:', Array.isArray(window.uniformData) ? 'Array' : typeof window.uniformData);
+    console.log('📊 uniformData 길이:', window.uniformData.length);
+
     // 제품 찾기
     const product = findProduct(productId);
 
@@ -248,6 +270,7 @@ function displayProduct(productId, loading, error, productDetail) {
         loading.classList.add('hidden');
         error.classList.remove('hidden');
         console.error('❌ 제품을 찾을 수 없음:', productId);
+        console.error('🔍 사용 가능한 모델 코드:', window.uniformData.map(p => p && p.model_code).filter(Boolean).join(', '));
         return;
     }
 

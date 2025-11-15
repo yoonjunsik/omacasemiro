@@ -174,6 +174,11 @@
         window.firebaseDBOnValue = onValue;
 
         console.log('✅ Firebase 초기화 완료 (상품 페이지)');
+
+        // 🔥 HOTFIX: Firebase 데이터 로드 후 처리 (임시 인라인 코드)
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('🔥 HOTFIX: 인라인 코드 실행됨');
+        });
     </script>
 
     <!-- data.js는 Firebase 연결 실패 시 fallback용으로만 사용 -->

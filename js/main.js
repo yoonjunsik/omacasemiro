@@ -18,11 +18,25 @@ function setupRealtimeListeners() {
             if (snapshot.exists()) {
                 window.uniformData = snapshot.val();
                 console.log('🔄 uniformData 업데이트됨:', window.uniformData.length, '개');
+
+                // 어필리에이트 링크 적용
+                if (typeof processAffiliateLinks === 'function') {
+                    window.uniformData = processAffiliateLinks(window.uniformData);
+                    console.log('🔗 Affiliate links applied');
+                }
+
                 renderProducts();
             } else {
                 console.log('⚠️ Firebase에 uniformData가 없습니다. data.js 사용');
                 if (typeof uniformData !== 'undefined') {
                     window.uniformData = uniformData;
+
+                    // 어필리에이트 링크 적용
+                    if (typeof processAffiliateLinks === 'function') {
+                        window.uniformData = processAffiliateLinks(window.uniformData);
+                        console.log('🔗 Affiliate links applied');
+                    }
+
                     renderProducts();
                 }
             }
@@ -290,10 +304,10 @@ function convertToKRW(amount, currency) {
     if (!rate) return amount;
 
     if (currency === 'JPY') {
-        return (amount / 100) * rate;
+        return Math.round((amount / 100) * rate);
     }
 
-    return amount * rate;
+    return Math.round(amount * rate);
 }
 
 // 최저가 계산 (원화 기준)
@@ -376,6 +390,12 @@ function createProductCard(product) {
 
 // 제품 렌더링
 function renderProducts() {
+    // uniformData가 로드되지 않았으면 렌더링하지 않음
+    if (!window.uniformData || window.uniformData.length === 0) {
+        console.log('⏳ uniformData 로딩 중...');
+        return;
+    }
+
     const filteredProducts = filterProducts();
     const sortedProducts = sortProducts(filteredProducts);
     const productGrid = document.getElementById('productGrid');

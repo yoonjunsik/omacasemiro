@@ -201,6 +201,246 @@ const christmasClubs = [
             { name: 'BVB Christmas Product 7', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23FDE100" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="black" text-anchor="middle" dy=".3em"%3EBVB%3C/text%3E%3C/svg%3E', url: 'https://shop.bvb.de/en-de/christmas' },
             { name: 'BVB Christmas Product 8', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23FDE100" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="black" text-anchor="middle" dy=".3em"%3EBVB%3C/text%3E%3C/svg%3E', url: 'https://shop.bvb.de/en-de/christmas' }
         ]
+    },
+    {
+        name: '레알 마드리드',
+        nameEn: 'Real Madrid',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg',
+        url: 'https://shop.realmadrid.com/en-es/gifts/christmas/jumpers',
+        color: 'from-white to-purple-100',
+        league: '라리가',
+        products: [
+            {
+                name: 'Rudolph Christmas Sweater',
+                image: 'https://cdn.shopify.com/s/files/1/0405/9807/7603/products/RMCFMS0161-01_de3f7920-7e40-4190-bc15-dadf4d6750af.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfms0161-real-madrid-rudolph-xmas-jumper'
+            },
+            {
+                name: 'Mens Christmas Sweater Crest Ice White',
+                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFMS0337-1.jpg?contextRequest=%7B%22forceCatalogForFetch%22:false,%22forceFilterByCatalogIncludeInheritance%22:false,%22forceFilterByCatalogExcludeInheritance%22:false,%22applicationId%22:%2201H4RD9NXMKQBQ1WVKM1181VD8%22,%22tenantId%22:%22REAL_MADRID%22%7D',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfms0337-mens-christmas-jumper-crest-ice-white-real-madrid'
+            },
+            {
+                name: 'Kids Christmas Sweater Crest Ice White',
+                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFYS0093-1.jpg?contextRequest=%7B%22forceCatalogForFetch%22:false,%22forceFilterByCatalogIncludeInheritance%22:false,%22forceFilterByCatalogExcludeInheritance%22:false,%22applicationId%22:%2201H4RD9NXMKQBQ1WVKM1181VD8%22,%22tenantId%22:%22REAL_MADRID%22%7D',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfys0093-youth-christmas-jumper-crest-ice-white-real-madrid'
+            },
+            {
+                name: 'Crest Christmas Sweater Navy/Grey',
+                image: 'https://cdn.shopify.com/s/files/1/0405/9807/7603/products/RMCFMS0160-01_1_076937d3-42a8-4f85-bb5c-e1f5ef1834be.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfms0160-real-madrid-crest-xmas-jumper-navy-grey'
+            },
+            {
+                name: 'Mens Christmas Sweater Cable Knit',
+                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFMS0335-1.jpg?contextRequest=%7B%22forceCatalogForFetch%22:false,%22forceFilterByCatalogIncludeInheritance%22:false,%22forceFilterByCatalogExcludeInheritance%22:false,%22applicationId%22:%2201H4RD9NXMKQBQ1WVKM1181VD8%22,%22tenantId%22:%22REAL_MADRID%22%7D',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfms0335-mens-christmas-jumper-cable-knit-real-madrid'
+            },
+            {
+                name: 'Mens Christmas Sweater Teddy Bear',
+                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFMS0334-1.jpg?contextRequest=%7B%22forceCatalogForFetch%22:false,%22forceFilterByCatalogIncludeInheritance%22:false,%22forceFilterByCatalogExcludeInheritance%22:false,%22applicationId%22:%2201H4RD9NXMKQBQ1WVKM1181VD8%22,%22tenantId%22:%22REAL_MADRID%22%7D',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfms0334-mens-christmas-jumper-teddy-bear-real-madrid'
+            },
+            {
+                name: 'Kids Christmas Sweater Teddy Bear',
+                image: 'https://legends.broadleafcloud.com/api/asset/content/RMCFYS0089-1-1.jpg?contextRequest=%7B%22forceCatalogForFetch%22:false,%22forceFilterByCatalogIncludeInheritance%22:false,%22forceFilterByCatalogExcludeInheritance%22:false,%22applicationId%22:%2201H4RD9NXMKQBQ1WVKM1181VD8%22,%22tenantId%22:%22REAL_MADRID%22%7D',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfys0089-youth-christmas-jumper-teddy-bear-real-madrid'
+            },
+            {
+                name: 'Kids Christmas Sweater Ski Penguin',
+                image: 'https://cdn.shopify.com/s/files/1/0405/9807/7603/products/RMCFYS0060_01.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfys0060-youth-xmas-jumper-ski-penguin'
+            },
+            {
+                name: 'Mens Christmas Sweater Ski Penguin',
+                image: 'https://cdn.shopify.com/s/files/1/0405/9807/7603/products/RMCFMS0245-01.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfms0245-mens-xmas-jumper-ski-penguin'
+            },
+            {
+                name: 'Mens Christmas Sweater Crest Green/Multicolor',
+                image: 'https://cdn.shopify.com/s/files/1/0405/9807/7603/products/RMCFMS0244-01.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfms0244-mens-xmas-jumper-xmas-colors'
+            },
+            {
+                name: 'Kids Rudolph Christmas Sweater',
+                image: 'https://cdn.shopify.com/s/files/1/0405/9807/7603/products/RMCFYS0042-01_1_557100a3-7f82-4ff6-a790-2ba7a4911256.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfys0042-real-madrid-youth-rudolph-xmas-jumper'
+            },
+            {
+                name: 'Ladies Christmas Sweater Pastel Blue',
+                image: 'https://cdn.shopify.com/s/files/1/0405/9807/7603/products/RMCFLS0047-01.jpg',
+                url: 'https://shop.realmadrid.com/en-es/product/rmcfls0047-ladies-xmas-jumper-pastel-blue'
+            }
+        ]
+    },
+    {
+        name: '유벤투스',
+        nameEn: 'Juventus',
+        logo: 'https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/111.png',
+        url: 'https://store.juventus.com/kr/holiday-gifts',
+        color: 'from-gray-100 to-gray-300',
+        league: '세리에 A',
+        products: [
+            {
+                name: 'Juventus Christmas Jumper 2025',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU25Q51.webp',
+                url: 'https://store.juventus.com/kr/juventus-christmas-jumper-2025'
+            },
+            {
+                name: 'Juventus Christmas Jumper 2025 - Kids',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU25Q52.webp',
+                url: 'https://store.juventus.com/kr/juventus-christmas-jumper-2025-kids'
+            },
+            {
+                name: 'Juventus Christmas Beanie 2025',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU25Q54.webp',
+                url: 'https://store.juventus.com/kr/juventus-christmas-beanie-2025'
+            },
+            {
+                name: 'Juventus Christmas Socks 2025',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU25Q53.webp',
+                url: 'https://store.juventus.com/kr/juventus-christmas-socks-2025'
+            },
+            {
+                name: 'Juventus Christmas Mug 2025',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU95007.webp',
+                url: 'https://store.juventus.com/kr/juventus-christmas-mug-2025'
+            },
+            {
+                name: 'Juventus Christmas Teddy',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU25J08.webp',
+                url: 'https://store.juventus.com/kr/juventus-christmas-teddy'
+            },
+            {
+                name: 'Juventus 6 Christmas Ball Set',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU25Q56.webp',
+                url: 'https://store.juventus.com/kr/juventus-6-christmas-ball-set'
+            },
+            {
+                name: 'Juventus Snowglobe',
+                image: 'https://store.juventus.com/images/juventus/products/large/JU25Q57.webp',
+                url: 'https://store.juventus.com/kr/juventus-snowglobe'
+            }
+        ]
+    },
+    {
+        name: 'AC 밀란',
+        nameEn: 'AC Milan',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg',
+        url: 'https://store.acmilan.com/en-me/collections/christmas',
+        color: 'from-red-600 to-black',
+        league: '세리에 A',
+        products: [
+            {
+                name: 'AC Milan White Christmas Jumper',
+                image: 'https://store.acmilan.com/cdn/shop/files/XMASJMPA25-A01_01_867dabe7-18f0-4392-a1c8-01bbafaf04f0.jpg',
+                url: 'https://store.acmilan.com/en-me/products/gnome-wrap-adult'
+            },
+            {
+                name: 'AC Milan Kids White Christmas Jumper',
+                image: 'https://store.acmilan.com/cdn/shop/files/XMASJMPK25-A01_01.jpg',
+                url: 'https://store.acmilan.com/en-me/products/gnome-wrap-kids'
+            },
+            {
+                name: 'AC Milan Tartan Christmas Jumper',
+                image: 'https://store.acmilan.com/cdn/shop/files/AJMPTN-A02_01_6dcffc2a-845d-486f-b046-38f69643762a.png',
+                url: 'https://store.acmilan.com/en-me/products/adult-jumper-tartan'
+            },
+            {
+                name: 'AC Milan Christmas Jumper',
+                image: 'https://store.acmilan.com/cdn/shop/files/AJMPTB-A02_01_6cf456f5-8a99-47c0-ae30-17cd5eb6cb62.jpg',
+                url: 'https://store.acmilan.com/en-me/products/adult-jumper-tremblant'
+            },
+            {
+                name: 'AC Milan Kids Christmas Jumper',
+                image: 'https://store.acmilan.com/cdn/shop/files/KJMPTB-A02_01_24a0f698-57af-453c-bb6a-48151332e61e.jpg',
+                url: 'https://store.acmilan.com/en-me/products/kids-jumper-tremblant'
+            },
+            {
+                name: 'AC Milan Big Christmas Gnome',
+                image: 'https://store.acmilan.com/cdn/shop/files/TCGNOMEBIG-A00_01.jpg',
+                url: 'https://store.acmilan.com/en-me/products/felt-gnome-size-40cm'
+            },
+            {
+                name: 'AC Milan Set of 4 Christmas Ornaments',
+                image: 'https://store.acmilan.com/cdn/shop/files/TCXMBALLST-A41_01.jpg',
+                url: 'https://store.acmilan.com/en-me/products/x-mas-baubles-set-of-4-tcxmballst-a41'
+            },
+            {
+                name: 'AC Milan Christmas Socks Set',
+                image: 'https://store.acmilan.com/cdn/shop/files/WBOOSOCKAD-A13_01_9c26c103-e482-49f6-95de-51bc6f955308.jpg',
+                url: 'https://store.acmilan.com/en-me/products/xmas-socks-adults-39-42'
+            },
+            {
+                name: 'AC Milan Christmas Mug',
+                image: 'https://store.acmilan.com/cdn/shop/files/TCMUGXMBLK-A00_01_75958e67-f987-427b-87a8-25e091009a62.png',
+                url: 'https://store.acmilan.com/en-me/products/mug'
+            },
+            {
+                name: 'AC Milan Snow Globe - Devil',
+                image: 'https://store.acmilan.com/cdn/shop/files/DVLSNOWGLB-A48_01.jpg',
+                url: 'https://store.acmilan.com/en-me/products/milan-snow-globe-devil'
+            },
+            {
+                name: 'AC Milan Snow Globe - Crest',
+                image: 'https://store.acmilan.com/cdn/shop/files/ACMSNOWGLB-A48_01.jpg',
+                url: 'https://store.acmilan.com/en-me/products/milan-snow-globe-acm-crest'
+            },
+            {
+                name: 'AC Milan Christmas Tree Top',
+                image: 'https://store.acmilan.com/cdn/shop/files/XMSTREETP-A48_01.jpg',
+                url: 'https://store.acmilan.com/en-me/products/christmas-tree-top'
+            }
+        ]
+    },
+    {
+        name: '인터 밀란',
+        nameEn: 'Inter Milan',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg',
+        url: 'https://store.inter.it/kr/xmas-collection',
+        color: 'from-blue-600 to-black',
+        league: '세리에 A',
+        products: [
+            {
+                name: 'Inter Winter Holiday Jumper',
+                image: 'https://store.inter.it/images/inter/products/large/IN25Q71.webp',
+                url: 'https://store.inter.it/kr/inter-winter-holiday-jumper'
+            },
+            {
+                name: 'Inter Winter Holiday Beanie',
+                image: 'https://store.inter.it/images/inter/products/large/IN25Q72.webp',
+                url: 'https://store.inter.it/kr/inter-winter-holiday-beanie'
+            },
+            {
+                name: 'Inter Winter Holiday Pajamas',
+                image: 'https://store.inter.it/images/inter/products/large/IN25Q73.webp',
+                url: 'https://store.inter.it/kr/inter-winter-holiday-pajamas'
+            },
+            {
+                name: 'Inter Winter Holiday Non Slip Socks',
+                image: 'https://store.inter.it/images/inter/products/large/IN25Q76.webp',
+                url: 'https://store.inter.it/kr/inter-winter-holiday-non-slip-socks'
+            },
+            {
+                name: 'Inter Winter Holiday Glass Mug',
+                image: 'https://store.inter.it/images/inter/products/large/IN25Q80.webp',
+                url: 'https://store.inter.it/kr/inter-winter-holiday-glass-mug'
+            },
+            {
+                name: 'Inter 34cm Reindeer',
+                image: 'https://store.inter.it/images/inter/products/large/IN23J08.webp',
+                url: 'https://store.inter.it/kr/inter-34-cm-reindeer'
+            },
+            {
+                name: 'Inter Christmas Snowglobe',
+                image: 'https://store.inter.it/images/inter/products/large/IN23Q53.webp',
+                url: 'https://store.inter.it/kr/inter-christmas-snowglobe'
+            },
+            {
+                name: 'Inter Christmas Ball Set',
+                image: 'https://store.inter.it/images/inter/products/large/IN22Q52.webp',
+                url: 'https://store.inter.it/kr/inter-christmas-ball-set'
+            }
+        ]
     }
 ];
 
@@ -231,9 +471,6 @@ function createClubCard(club) {
         <div class="relative h-48 bg-gradient-to-br ${club.color} flex items-center justify-center p-6">
             <div class="absolute top-2 left-2 bg-white px-2 py-1 rounded text-xs font-bold text-gray-700">
                 ${club.league}
-            </div>
-            <div class="absolute top-2 right-2 text-2xl">
-                🎄
             </div>
             <img src="${club.logo}" alt="${club.name}" class="w-24 h-24 md:w-32 md:h-32 object-contain filter drop-shadow-2xl group-hover:scale-110 transition-transform">
         </div>

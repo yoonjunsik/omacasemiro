@@ -1,0 +1,29 @@
+[
+  {
+    "team": "아스널",
+    "kit_type": "홈킷",
+    "season": "25/26",
+    "model_code": "MJI9517",
+    "unisport_url": "https://www.unisportstore.com/football-shirts/arsenal-home-shirt-202526/396434/",
+    "sale_price_eur": 74.95,
+    "regular_price_eur": 99.95
+  },
+  {
+    "team": "토트넘",
+    "kit_type": "홈킷",
+    "season": "25/26",
+    "model_code": null,
+    "unisport_url": "https://www.unisportstore.com/football-shirts/tottenham-home-shirt-202526/392868/",
+    "sale_price_eur": 74.95,
+    "regular_price_eur": 99.95
+  },
+  {
+    "team": "맨체스터 시티",
+    "kit_type": "홈킷",
+    "season": "25/26",
+    "model_code": null,
+    "unisport_url": "https://www.unisportstore.com/football-shirts/manchester-city-home-shirt-202526/400408/",
+    "sale_price_eur": 74.95,
+    "regular_price_eur": 99.95
+  }
+]

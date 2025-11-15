@@ -1,12 +1,62 @@
+// 구 모델 코드 → 새 모델 코드 매핑
+const modelCodeRedirects = {
+    'SD-367399': 'IU1397',      // 맨유 24/25 홈킷
+    'SD-377880': 'KD4225',      // 맨유 25/26 써드킷
+    'SD-377428': '78033801',    // 맨시티 25/26 홈킷
+    'SD-377422': 'HJ4598101',   // 토트넘 25/26 홈킷
+    'SD-378746': 'JV6487',      // 리버풀 25/26 어웨이킷
+    'SD-377841': 'KE6801',      // 바이에른 25/26 써드킷
+    'SD-377848': 'KC3486'       // 유벤투스 25/26 써드킷
+};
+
 // URL 파라미터에서 상품 ID 가져오기
 function getProductIdFromUrl() {
     const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('id');
+    let modelCode = urlParams.get('id');
+
+    // 구 모델 코드인 경우 새 모델 코드로 리다이렉트
+    if (modelCode && modelCodeRedirects[modelCode]) {
+        const newModelCode = modelCodeRedirects[modelCode];
+        console.log(`Redirecting from old model code ${modelCode} to ${newModelCode}`);
+        window.location.href = `product.html?id=${newModelCode}`;
+        return null; // 리다이렉트 중이므로 null 반환
+    }
+
+    return modelCode;
 }
 
 // 상품 데이터 찾기
 function findProduct(modelCode) {
-    return uniformData.find(product => product.model_code === modelCode);
+    console.log('🔍 findProduct 호출됨');
+    console.log('   찾으려는 모델 코드:', modelCode, '(타입:', typeof modelCode, ')');
+    console.log('   uniformData 존재:', !!window.uniformData);
+    console.log('   uniformData 타입:', typeof window.uniformData);
+    console.log('   uniformData.length:', window.uniformData?.length);
+
+    if (!window.uniformData) {
+        console.error('   ❌ uniformData가 없음!');
+        return null;
+    }
+
+    // 처음 5개 제품의 model_code 출력
+    console.log('   처음 5개 제품 샘플:');
+    window.uniformData.slice(0, 5).forEach((p, i) => {
+        console.log(`     [${i}] model_code:`, p?.model_code, '(타입:', typeof p?.model_code, ')');
+    });
+
+    // 바르셀로나 제품만 필터링
+    const barcelonaProducts = window.uniformData.filter(p =>
+        p && p.team && p.team.includes('바르셀로나')
+    );
+    console.log('   바르셀로나 제품 수:', barcelonaProducts.length);
+    barcelonaProducts.forEach(p => {
+        console.log(`     - ${p.model_code} (일치: ${p.model_code === modelCode})`);
+    });
+
+    const found = window.uniformData.find(product => product.model_code === modelCode);
+    console.log('   검색 결과:', found ? '✅ 찾음' : '❌ 못 찾음');
+
+    return found;
 }
 
 // 환율 정보 (네이버 증권 실시간 환율 기준)
@@ -25,10 +75,10 @@ function convertToKRW(amount, currency) {
     if (!rate) return amount;
 
     if (currency === 'JPY') {
-        return (amount / 100) * rate;
+        return Math.round((amount / 100) * rate);
     }
 
-    return amount * rate;
+    return Math.round(amount * rate);
 }
 
 // 가격 포맷팅 (통화 지원)
@@ -114,8 +164,22 @@ function renderPriceTable(siteOffers) {
     const tableBody = document.getElementById('priceTableBody');
     tableBody.innerHTML = '';
 
+    // 어필리에이트 링크 적용
+    let processedOffers = siteOffers;
+    if (typeof convertToAffiliateLink === 'function') {
+        processedOffers = siteOffers.map(offer => {
+            const processedOffer = { ...offer };
+            processedOffer.affiliate_link = convertToAffiliateLink(
+                offer.site_name,
+                offer.affiliate_link
+            );
+            return processedOffer;
+        });
+        console.log('🔗 Affiliate links applied to product page');
+    }
+
     // 가격순으로 정렬 (원화 기준)
-    const sortedOffers = [...siteOffers].sort((a, b) => {
+    const sortedOffers = [...processedOffers].sort((a, b) => {
         const priceA = a.sale_price_krw || convertToKRW(a.sale_price, a.currency);
         const priceB = b.sale_price_krw || convertToKRW(b.sale_price, b.currency);
         return priceA - priceB;
@@ -180,6 +244,59 @@ function initializePage() {
         return;
     }
 
+    // Firebase에서 데이터 가져오기
+    if (window.firebaseDB && window.firebaseDBRef && window.firebaseDBOnValue) {
+        console.log('🔵 Firebase에서 제품 데이터 로드 중...');
+        const uniformRef = window.firebaseDBRef(window.firebaseDB, 'uniformData');
+        window.firebaseDBOnValue(uniformRef, (snapshot) => {
+            if (snapshot.exists()) {
+                window.uniformData = snapshot.val();
+                console.log('✅ Firebase 데이터 로드 완료:', window.uniformData.length, '개');
+
+                // Affiliate links 처리
+                try {
+                    if (typeof processAffiliateLinks === 'function') {
+                        window.uniformData = processAffiliateLinks(window.uniformData);
+                        console.log('🔗 Affiliate links applied to uniformData');
+                    } else {
+                        console.warn('⚠️ processAffiliateLinks 함수를 찾을 수 없음 (affiliate-links.js 로드 확인 필요)');
+                    }
+                } catch (e) {
+                    console.error('❌ Affiliate links 처리 중 오류:', e);
+                }
+
+                console.log('🔍 검색할 제품 ID:', productId);
+                console.log('📦 전체 제품 모델 코드 (처음 10개):', window.uniformData.slice(0, 10).map(p => p.model_code).join(', '));
+
+                displayProduct(productId, loading, error, productDetail);
+            } else {
+                console.log('⚠️ Firebase에 데이터 없음, data.js 사용');
+                displayProduct(productId, loading, error, productDetail);
+            }
+        }, {
+            onlyOnce: true  // 한 번만 읽기
+        });
+    } else {
+        // Firebase 없으면 data.js 사용
+        console.log('⚠️ Firebase 초기화 안됨, data.js 사용');
+        displayProduct(productId, loading, error, productDetail);
+    }
+}
+
+// 제품 표시 함수
+function displayProduct(productId, loading, error, productDetail) {
+    // uniformData 존재 확인
+    if (!window.uniformData) {
+        console.error('❌ uniformData가 로드되지 않음');
+        loading.classList.add('hidden');
+        error.classList.remove('hidden');
+        return;
+    }
+
+    console.log('🔎 제품 검색 중:', productId);
+    console.log('📊 uniformData 타입:', Array.isArray(window.uniformData) ? 'Array' : typeof window.uniformData);
+    console.log('📊 uniformData 길이:', window.uniformData.length);
+
     // 제품 찾기
     const product = findProduct(productId);
 
@@ -187,6 +304,8 @@ function initializePage() {
         // 제품을 찾지 못하면 에러 표시
         loading.classList.add('hidden');
         error.classList.remove('hidden');
+        console.error('❌ 제품을 찾을 수 없음:', productId);
+        console.error('🔍 사용 가능한 모델 코드:', window.uniformData.map(p => p && p.model_code).filter(Boolean).join(', '));
         return;
     }
 
@@ -200,6 +319,8 @@ function initializePage() {
     // 로딩 숨기고 상세 정보 표시
     loading.classList.add('hidden');
     productDetail.classList.remove('hidden');
+
+    console.log('✅ 제품 표시 완료:', product.name);
 }
 
 // DOM 로드 시 초기화

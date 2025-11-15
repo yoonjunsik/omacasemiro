@@ -148,7 +148,42 @@
         </div>
     </footer>
 
-    <script src="js/data.js?v=2"></script>
-    <script src="js/product.js"></script>
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js';
+        import { getDatabase, ref, onValue } from 'https://www.gstatic.com/firebasejs/11.0.2/firebase-database.js';
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyBu7tXrbeWjp3h0Xt_mCTp4oswsuGMSGkw",
+            authDomain: "omacasemiro-8fd4c.firebaseapp.com",
+            databaseURL: "https://omacasemiro-8fd4c-default-rtdb.firebaseio.com",
+            projectId: "omacasemiro-8fd4c",
+            storageBucket: "omacasemiro-8fd4c.firebasestorage.app",
+            messagingSenderId: "322343249421",
+            appId: "1:322343249421:web:de70a69176f468d5d05744"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Make database available globally
+        window.firebaseDB = database;
+        window.firebaseDBRef = ref;
+        window.firebaseDBOnValue = onValue;
+
+        console.log('✅ Firebase 초기화 완료 (상품 페이지)');
+
+        // 🔥 HOTFIX: Firebase 데이터 로드 후 처리 (임시 인라인 코드)
+        window.addEventListener('DOMContentLoaded', () => {
+            console.log('🔥 HOTFIX: 인라인 코드 실행됨');
+        });
+    </script>
+
+    <!-- data.js는 Firebase 연결 실패 시 fallback용으로만 사용 -->
+    <script src="js/data.js?v=20250115-001"></script>
+    <script src="js/affiliate-links.js?v=20250115-001"></script>
+    <script src="js/product.js?v=20250115-001"></script>
 </body>
 </html>

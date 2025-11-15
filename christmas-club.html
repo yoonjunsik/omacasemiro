@@ -219,10 +219,26 @@
                         const card = createProductCard(product);
                         productsGrid.appendChild(card);
                     });
-                }
 
-                // 안내 메시지 표시
-                document.getElementById('notice').classList.remove('hidden');
+                    // 안내 메시지 표시
+                    document.getElementById('notice').classList.remove('hidden');
+                } else {
+                    // 제품이 없는 경우 메시지 표시
+                    const productsSection = document.getElementById('productsSection');
+                    productsSection.classList.remove('hidden');
+                    productsSection.innerHTML = `
+                        <div class="text-center py-12 bg-gray-50 rounded-lg">
+                            <svg class="mx-auto h-16 w-16 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
+                            </svg>
+                            <h3 class="text-xl font-bold text-gray-700 mb-2">제품 정보 준비 중</h3>
+                            <p class="text-gray-600 mb-6">아직 ${club.name}의 크리스마스 제품 정보가 등록되지 않았습니다.</p>
+                            <a href="${club.url}" target="_blank" class="inline-block bg-gradient-to-r ${club.color} text-white px-8 py-3 rounded-lg font-bold hover:opacity-90 transition shadow-lg">
+                                🎁 공식 스토어에서 보기
+                            </a>
+                        </div>
+                    `;
+                }
             } else {
                 // 클럽을 찾을 수 없는 경우
                 document.getElementById('loading').innerHTML = `

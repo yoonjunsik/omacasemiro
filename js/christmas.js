@@ -79,16 +79,7 @@ const christmasClubs = [
         url: 'https://store.chelseafc.com/en/c-7104',
         color: 'from-blue-600 to-blue-800',
         league: '프리미어리그',
-        products: [
-            { name: 'Chelsea Christmas Product 1', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23034694" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EChelsea%3C/text%3E%3C/svg%3E', url: 'https://store.chelseafc.com/en/c-7104' },
-            { name: 'Chelsea Christmas Product 2', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23034694" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EChelsea%3C/text%3E%3C/svg%3E', url: 'https://store.chelseafc.com/en/c-7104' },
-            { name: 'Chelsea Christmas Product 3', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23034694" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EChelsea%3C/text%3E%3C/svg%3E', url: 'https://store.chelseafc.com/en/c-7104' },
-            { name: 'Chelsea Christmas Product 4', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23034694" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EChelsea%3C/text%3E%3C/svg%3E', url: 'https://store.chelseafc.com/en/c-7104' },
-            { name: 'Chelsea Christmas Product 5', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23034694" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EChelsea%3C/text%3E%3C/svg%3E', url: 'https://store.chelseafc.com/en/c-7104' },
-            { name: 'Chelsea Christmas Product 6', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23034694" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EChelsea%3C/text%3E%3C/svg%3E', url: 'https://store.chelseafc.com/en/c-7104' },
-            { name: 'Chelsea Christmas Product 7', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23034694" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EChelsea%3C/text%3E%3C/svg%3E', url: 'https://store.chelseafc.com/en/c-7104' },
-            { name: 'Chelsea Christmas Product 8', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23034694" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EChelsea%3C/text%3E%3C/svg%3E', url: 'https://store.chelseafc.com/en/c-7104' }
-        ]
+        products: []  // 실제 제품 이미지 없음 - 크롤링 필요
     },
     {
         name: '토트넘',
@@ -97,16 +88,7 @@ const christmasClubs = [
         url: 'https://shop.tottenhamhotspur.com/spurs-christmas',
         color: 'from-white to-gray-200',
         league: '프리미어리그',
-        products: [
-            { name: 'Spurs Christmas Product 1', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23132257" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3ESpurs%3C/text%3E%3C/svg%3E', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' },
-            { name: 'Spurs Christmas Product 2', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23132257" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3ESpurs%3C/text%3E%3C/svg%3E', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' },
-            { name: 'Spurs Christmas Product 3', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23132257" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3ESpurs%3C/text%3E%3C/svg%3E', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' },
-            { name: 'Spurs Christmas Product 4', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23132257" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3ESpurs%3C/text%3E%3C/svg%3E', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' },
-            { name: 'Spurs Christmas Product 5', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23132257" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3ESpurs%3C/text%3E%3C/svg%3E', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' },
-            { name: 'Spurs Christmas Product 6', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23132257" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3ESpurs%3C/text%3E%3C/svg%3E', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' },
-            { name: 'Spurs Christmas Product 7', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23132257" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3ESpurs%3C/text%3E%3C/svg%3E', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' },
-            { name: 'Spurs Christmas Product 8', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23132257" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3ESpurs%3C/text%3E%3C/svg%3E', url: 'https://shop.tottenhamhotspur.com/spurs-christmas' }
-        ]
+        products: []  // 실제 제품 이미지 없음 - 크롤링 필요
     },
     {
         name: '맨체스터 유나이티드',
@@ -115,16 +97,7 @@ const christmasClubs = [
         url: 'https://store.manutd.com/en/c/christmas',
         color: 'from-red-700 to-red-900',
         league: '프리미어리그',
-        products: [
-            { name: 'Man Utd Christmas Product 1', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23DA291C" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20Utd%3C/text%3E%3C/svg%3E', url: 'https://store.manutd.com/en/c/christmas' },
-            { name: 'Man Utd Christmas Product 2', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23DA291C" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20Utd%3C/text%3E%3C/svg%3E', url: 'https://store.manutd.com/en/c/christmas' },
-            { name: 'Man Utd Christmas Product 3', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23DA291C" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20Utd%3C/text%3E%3C/svg%3E', url: 'https://store.manutd.com/en/c/christmas' },
-            { name: 'Man Utd Christmas Product 4', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23DA291C" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20Utd%3C/text%3E%3C/svg%3E', url: 'https://store.manutd.com/en/c/christmas' },
-            { name: 'Man Utd Christmas Product 5', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23DA291C" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20Utd%3C/text%3E%3C/svg%3E', url: 'https://store.manutd.com/en/c/christmas' },
-            { name: 'Man Utd Christmas Product 6', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23DA291C" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20Utd%3C/text%3E%3C/svg%3E', url: 'https://store.manutd.com/en/c/christmas' },
-            { name: 'Man Utd Christmas Product 7', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23DA291C" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20Utd%3C/text%3E%3C/svg%3E', url: 'https://store.manutd.com/en/c/christmas' },
-            { name: 'Man Utd Christmas Product 8', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23DA291C" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20Utd%3C/text%3E%3C/svg%3E', url: 'https://store.manutd.com/en/c/christmas' }
-        ]
+        products: []  // 실제 제품 이미지 없음 - 크롤링 필요
     },
     {
         name: '맨체스터 시티',
@@ -133,16 +106,7 @@ const christmasClubs = [
         url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/',
         color: 'from-sky-400 to-sky-600',
         league: '프리미어리그',
-        products: [
-            { name: 'Man City Christmas Product 1', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%236CABDD" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20City%3C/text%3E%3C/svg%3E', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' },
-            { name: 'Man City Christmas Product 2', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%236CABDD" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20City%3C/text%3E%3C/svg%3E', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' },
-            { name: 'Man City Christmas Product 3', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%236CABDD" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20City%3C/text%3E%3C/svg%3E', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' },
-            { name: 'Man City Christmas Product 4', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%236CABDD" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20City%3C/text%3E%3C/svg%3E', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' },
-            { name: 'Man City Christmas Product 5', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%236CABDD" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20City%3C/text%3E%3C/svg%3E', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' },
-            { name: 'Man City Christmas Product 6', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%236CABDD" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20City%3C/text%3E%3C/svg%3E', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' },
-            { name: 'Man City Christmas Product 7', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%236CABDD" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20City%3C/text%3E%3C/svg%3E', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' },
-            { name: 'Man City Christmas Product 8', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%236CABDD" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="white" text-anchor="middle" dy=".3em"%3EMan%20City%3C/text%3E%3C/svg%3E', url: 'https://shop.mancity.com/ca/en/christmas/featured/christmas-essentials/' }
-        ]
+        products: []  // 실제 제품 이미지 없음 - 크롤링 필요
     },
     {
         name: '바르셀로나',
@@ -191,16 +155,7 @@ const christmasClubs = [
         url: 'https://shop.bvb.de/en-de/christmas',
         color: 'from-yellow-400 to-black',
         league: '분데스리가',
-        products: [
-            { name: 'BVB Christmas Product 1', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23FDE100" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="black" text-anchor="middle" dy=".3em"%3EBVB%3C/text%3E%3C/svg%3E', url: 'https://shop.bvb.de/en-de/christmas' },
-            { name: 'BVB Christmas Product 2', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23FDE100" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="black" text-anchor="middle" dy=".3em"%3EBVB%3C/text%3E%3C/svg%3E', url: 'https://shop.bvb.de/en-de/christmas' },
-            { name: 'BVB Christmas Product 3', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23FDE100" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="black" text-anchor="middle" dy=".3em"%3EBVB%3C/text%3E%3C/svg%3E', url: 'https://shop.bvb.de/en-de/christmas' },
-            { name: 'BVB Christmas Product 4', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23FDE100" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="black" text-anchor="middle" dy=".3em"%3EBVB%3C/text%3E%3C/svg%3E', url: 'https://shop.bvb.de/en-de/christmas' },
-            { name: 'BVB Christmas Product 5', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23FDE100" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="black" text-anchor="middle" dy=".3em"%3EBVB%3C/text%3E%3C/svg%3E', url: 'https://shop.bvb.de/en-de/christmas' },
-            { name: 'BVB Christmas Product 6', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23FDE100" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="black" text-anchor="middle" dy=".3em"%3EBVB%3C/text%3E%3C/svg%3E', url: 'https://shop.bvb.de/en-de/christmas' },
-            { name: 'BVB Christmas Product 7', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23FDE100" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="black" text-anchor="middle" dy=".3em"%3EBVB%3C/text%3E%3C/svg%3E', url: 'https://shop.bvb.de/en-de/christmas' },
-            { name: 'BVB Christmas Product 8', image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="400"%3E%3Crect fill="%23FDE100" width="400" height="400"/%3E%3Ctext x="50%25" y="50%25" font-size="24" fill="black" text-anchor="middle" dy=".3em"%3EBVB%3C/text%3E%3C/svg%3E', url: 'https://shop.bvb.de/en-de/christmas' }
-        ]
+        products: []  // 실제 제품 이미지 없음 - 크롤링 필요
     },
     {
         name: '레알 마드리드',

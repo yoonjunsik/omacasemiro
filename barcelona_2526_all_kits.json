@@ -1,0 +1,71 @@
+[
+  {
+    "model_code": "HJ4590",
+    "name": "FC Barcelona 2025/26 Stadium Home Jersey",
+    "team": "바르셀로나",
+    "kit_type": "홈킷",
+    "season": "25/26",
+    "version": "레플리카",
+    "image": "https://thumblr.uniid.it/product/393279/0aa8d4376cb4.jpg",
+    "visible": true,
+    "site_offers": [
+      {
+        "site_name": "Unisport",
+        "regular_price": 99.95,
+        "sale_price": 99.95,
+        "discount_rate": 0,
+        "currency": "EUR",
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/barcelona-home-shirt-202526/393279/"
+      },
+      {
+        "site_name": "신세계백화점",
+        "regular_price": 138000,
+        "sale_price": 126960,
+        "discount_rate": 8,
+        "currency": "KRW",
+        "sale_price_krw": 126960,
+        "affiliate_link": "https://department.ssg.com/search.ssg?query=%EB%B0%94%EB%A5%B4%EC%85%80%EB%A1%9C%EB%82%98%EC%9C%A0%EB%8B%88%ED%8F%BC"
+      }
+    ]
+  },
+  {
+    "model_code": "HJ4554",
+    "name": "FC Barcelona 2025/26 Kobe Away Jersey",
+    "team": "바르셀로나",
+    "kit_type": "어웨이킷",
+    "season": "25/26",
+    "version": "레플리카",
+    "image": "https://thumblr.uniid.it/product/423995/c2ea5021834c.jpg",
+    "visible": true,
+    "site_offers": [
+      {
+        "site_name": "Unisport",
+        "regular_price": 99.95,
+        "sale_price": 99.95,
+        "discount_rate": 0,
+        "currency": "EUR",
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/barcelona-away-shirt-202526-vapor/423995/"
+      }
+    ]
+  },
+  {
+    "model_code": "HM3193",
+    "name": "FC Barcelona 2025/26 Third Jersey T90",
+    "team": "바르셀로나",
+    "kit_type": "써드킷",
+    "season": "25/26",
+    "version": "레플리카",
+    "image": "https://thumblr.uniid.it/product/408201/4c1e9beb56df.jpg",
+    "visible": true,
+    "site_offers": [
+      {
+        "site_name": "Unisport",
+        "regular_price": 99.95,
+        "sale_price": 99.95,
+        "discount_rate": 0,
+        "currency": "EUR",
+        "affiliate_link": "https://www.unisportstore.com/football-shirts/barcelona-3rd-shirt-202526-vapor/408200/"
+      }
+    ]
+  }
+]

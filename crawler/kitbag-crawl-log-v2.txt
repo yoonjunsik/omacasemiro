@@ -1,0 +1,45 @@
+🔵 Kitbag 크롤링 시작...
+
+[1m[43m[30m
+  Puppeteer old Headless deprecation warning:[0m[33m
+    In the near future `headless: true` will default to the new Headless mode
+    for Chrome instead of the old Headless implementation. For more
+    information, please see https://developer.chrome.com/articles/new-headless/.
+    Consider opting in early by passing `headless: "new"` to `puppeteer.launch()`
+    If you encounter any bugs, please report them to https://github.com/puppeteer/puppeteer/issues/new/choose.[0m
+
+📄 페이지 로드 중...
+❌ 오류 발생: TargetCloseError: Protocol error (Page.navigate): Target closed
+    at CallbackRegistry.clear (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:75:36)
+    at CdpCDPSession._onClosed (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:101:25)
+    at #onClose (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:157:21)
+    at WebSocket.<anonymous> (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:47:30)
+    at callListener (/Users/junsikyoon/omacasemiro/node_modules/ws/lib/event-target.js:290:14)
+    at WebSocket.onClose (/Users/junsikyoon/omacasemiro/node_modules/ws/lib/event-target.js:220:9)
+    at WebSocket.emit (node:events:518:28)
+    at WebSocket.emitClose (/Users/junsikyoon/omacasemiro/node_modules/ws/lib/websocket.js:265:10)
+    at Socket.socketOnClose (/Users/junsikyoon/omacasemiro/node_modules/ws/lib/websocket.js:1289:15)
+    at Socket.emit (node:events:518:28) {
+  cause: ProtocolError
+      at <instance_members_initializer> (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:96:14)
+      at new Callback (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:100:16)
+      at CallbackRegistry.create (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:22:26)
+      at Connection._rawSend (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:80:26)
+      at CdpCDPSession.send (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:66:33)
+      at navigate (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:159:51)
+      at CdpFrame.goto (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Frame.js:137:17)
+      at CdpFrame.<anonymous> (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/util/decorators.js:98:27)
+      at CdpPage.goto (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/api/Page.js:603:43)
+      at crawlKitbag (/Users/junsikyoon/omacasemiro/crawler/crawl-kitbag.js:34:20)
+}
+TargetCloseError: Protocol error (Page.navigate): Target closed
+    at CallbackRegistry.clear (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/common/CallbackRegistry.js:75:36)
+    at CdpCDPSession._onClosed (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/CDPSession.js:101:25)
+    at #onClose (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:157:21)
+    at WebSocket.<anonymous> (/Users/junsikyoon/omacasemiro/node_modules/puppeteer-core/lib/cjs/puppeteer/node/NodeWebSocketTransport.js:47:30)
+    at callListener (/Users/junsikyoon/omacasemiro/node_modules/ws/lib/event-target.js:290:14)
+    at WebSocket.onClose (/Users/junsikyoon/omacasemiro/node_modules/ws/lib/event-target.js:220:9)
+    at WebSocket.emit (node:events:518:28)
+    at WebSocket.emitClose (/Users/junsikyoon/omacasemiro/node_modules/ws/lib/websocket.js:265:10)
+    at Socket.socketOnClose (/Users/junsikyoon/omacasemiro/node_modules/ws/lib/websocket.js:1289:15)
+    at Socket.emit (node:events:518:28)

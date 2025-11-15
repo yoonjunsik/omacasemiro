@@ -1,5 +1,5 @@
 // 유니폼 데이터 (Firebase와 동기화됨)
-// 마지막 동기화: 2025. 11. 15. 오전 9:41:04
+// 마지막 동기화: 2025. 11. 15. 오후 7:38:05
 const uniformData = [
   {
     "image": "https://www.sportsdirect.com/images/products/37782208_h.jpg",
@@ -17,6 +17,15 @@ const uniformData = [
         "sale_price": 60,
         "sale_price_krw": 115880,
         "site_name": "스포츠다이렉트"
+      },
+      {
+        "affiliate_link": "https://www.kitbag.com/en/premier-league/manchester-united/manchester-united-adidas-home-shirt-2025-26/o-32868251+t-81979046+p-02885579438+z-9-218282672",
+        "currency": "GBP",
+        "discount_rate": 20,
+        "in_stock": true,
+        "regular_price": 80,
+        "sale_price": 64,
+        "site_name": "Kitbag"
       }
     ],
     "team": "맨체스터 유나이티드",
@@ -197,6 +206,15 @@ const uniformData = [
         "sale_price": 25,
         "sale_price_krw": 48283,
         "site_name": "스포츠다이렉트"
+      },
+      {
+        "affiliate_link": "https://www.kitbag.com/en/premier-league/manchester-city/manchester-city-puma-home-shirt-2024-25/o-10754828+t-92759055+p-80442778543+z-9-4265275630",
+        "currency": "GBP",
+        "discount_rate": 20,
+        "in_stock": true,
+        "regular_price": 75,
+        "sale_price": 60,
+        "site_name": "Kitbag"
       }
     ],
     "team": "맨체스터 시티",
@@ -219,6 +237,15 @@ const uniformData = [
         "sale_price": 42.95,
         "sale_price_krw": 73015,
         "site_name": "유니스포츠"
+      },
+      {
+        "affiliate_link": "https://www.kitbag.com/en/premier-league/manchester-city/manchester-city-puma-away-shirt-2024-25/o-21209395+t-70192388+p-79773225394+z-9-3052911132",
+        "currency": "GBP",
+        "discount_rate": 20,
+        "in_stock": true,
+        "regular_price": 75,
+        "sale_price": 60,
+        "site_name": "Kitbag"
       }
     ],
     "team": "맨체스터 시티",
@@ -971,6 +998,15 @@ const uniformData = [
         "sale_price": 48,
         "sale_price_krw": 80160,
         "site_name": "스포츠다이렉트"
+      },
+      {
+        "affiliate_link": "https://www.kitbag.com/en/premier-league/liverpool/liverpool-adidas-third-shirt-2025-26/o-98755973+t-58751129+p-4699269393+z-8-60273370",
+        "currency": "GBP",
+        "discount_rate": 20,
+        "in_stock": true,
+        "regular_price": 80,
+        "sale_price": 64,
+        "site_name": "Kitbag"
       }
     ],
     "team": "리버풀",
@@ -1223,6 +1259,15 @@ const uniformData = [
         "sale_price": 70,
         "sale_price_krw": 116900,
         "site_name": "스포츠다이렉트"
+      },
+      {
+        "affiliate_link": "https://www.kitbag.com/en/premier-league/manchester-united/manchester-united-adidas-third-shirt-2025-26/o-32754873+t-69318957+p-24335431299+z-9-1571159626",
+        "currency": "GBP",
+        "discount_rate": 20,
+        "in_stock": true,
+        "regular_price": 80,
+        "sale_price": 64,
+        "site_name": "Kitbag"
       }
     ],
     "team": "맨체스터 유나이티드",
@@ -1453,6 +1498,15 @@ const uniformData = [
         "sale_price": 69.95,
         "sale_price_krw": 118915,
         "site_name": "유니스포츠"
+      },
+      {
+        "affiliate_link": "https://www.kitbag.com/en/premier-league/tottenham-hotspur/tottenham-hotspur-nike-home-stadium-shirt-2025-26/o-32084839+t-36865258+p-80115547490+z-9-2884896066",
+        "currency": "GBP",
+        "discount_rate": 20,
+        "in_stock": true,
+        "regular_price": 75,
+        "sale_price": 60,
+        "site_name": "Kitbag"
       }
     ],
     "team": "토트넘",
@@ -1507,6 +1561,15 @@ const uniformData = [
         "sale_price": 74.95,
         "sale_price_krw": 127415,
         "site_name": "유니스포츠"
+      },
+      {
+        "affiliate_link": "https://www.kitbag.com/en/premier-league/manchester-city/manchester-city-puma-home-shirt-2025-26/o-32866062+t-92317899+p-46445255253+z-9-3156113284",
+        "currency": "GBP",
+        "discount_rate": 20,
+        "in_stock": true,
+        "regular_price": 75,
+        "sale_price": 60,
+        "site_name": "Kitbag"
       }
     ],
     "team": "맨체스터 시티",

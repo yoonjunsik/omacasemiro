@@ -1,0 +1,31 @@
+🔵 Kitbag 제품 추가 시작...
+
+📊 현재 데이터베이스: 137개 제품
+
+
+🔍 맨체스터 유나이티드 25/26 써드킷
+   ✅ 매칭 제품: SD-377880 - 맨체스터 유나이티드 25/26 써드킷 (레플리카)
+[1m[43m[30m
+  Puppeteer old Headless deprecation warning:[0m[33m
+    In the near future `headless: true` will default to the new Headless mode
+    for Chrome instead of the old Headless implementation. For more
+    information, please see https://developer.chrome.com/articles/new-headless/.
+    Consider opting in early by passing `headless: "new"` to `puppeteer.launch()`
+    If you encounter any bugs, please report them to https://github.com/puppeteer/puppeteer/issues/new/choose.[0m
+
+📄 로드 중: https://www.kitbag.com/en/premier-league/manchester-united/manchester-united-adi...
+❌ 오류 (https://www.kitbag.com/en/premier-league/manchester-united/manchester-united-adidas-third-shirt-2025-26/o-32754873+t-69318957+p-24335431299+z-9-1571159626): Protocol error (Page.navigate): Target closed
+   ❌ 가격 정보 가져오기 실패
+
+🔍 리버풀 25/26 써드킷
+   ✅ 매칭 제품: JV6428 - 리버풀 25/26 써드킷 (레플리카)
+[1m[43m[30m
+  Puppeteer old Headless deprecation warning:[0m[33m
+    In the near future `headless: true` will default to the new Headless mode
+    for Chrome instead of the old Headless implementation. For more
+    information, please see https://developer.chrome.com/articles/new-headless/.
+    Consider opting in early by passing `headless: "new"` to `puppeteer.launch()`
+    If you encounter any bugs, please report them to https://github.com/puppeteer/puppeteer/issues/new/choose.[0m
+
+📄 로드 중: https://www.kitbag.com/en/premier-league/liverpool/liverpool-adidas-third-shirt-...
+❌ 오류 (https://www.kitbag.com/en/premier-league/liverpool/liverpool-adidas-third-shirt-2025-26/o-98755973+t-58751129+p-4699269393+z-8-60273370): Protocol error (Page.navigate): Target closed

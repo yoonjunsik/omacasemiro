@@ -27,8 +27,10 @@ const teamConfigs = {
             league: 'Premier League',
             storeUrl: 'https://shop.mancity.com',
             blackFridayUrls: [
-                'https://shop.mancity.com/ca/en/black-friday',
-                'https://shop.mancity.com/ca/en/sale'
+                'https://shop.mancity.com/kr/ko/black-friday',  // 한국
+                'https://shop.mancity.com/gb/en/black-friday',  // 영국
+                'https://shop.mancity.com/kr/ko/sale',
+                'https://shop.mancity.com/gb/en/sale'
             ],
             selectors: {
                 products: '.product-tile, .ProductCard',
@@ -63,7 +65,9 @@ const teamConfigs = {
             league: 'Premier League',
             storeUrl: 'https://store.chelseafc.com',
             blackFridayUrls: [
-                'https://store.chelseafc.com/en/black-friday',
+                'https://store.chelseafc.com/ko/black-friday',  // 한국
+                'https://store.chelseafc.com/en/black-friday',  // 영국
+                'https://store.chelseafc.com/ko/sale',
                 'https://store.chelseafc.com/en/sale'
             ],
             selectors: {
@@ -99,7 +103,9 @@ const teamConfigs = {
             league: 'Premier League',
             storeUrl: 'https://store.manutd.com',
             blackFridayUrls: [
-                'https://store.manutd.com/en/black-friday',
+                'https://store.manutd.com/ko/black-friday',  // 한국
+                'https://store.manutd.com/en/black-friday',  // 영국
+                'https://store.manutd.com/ko/c/sale',
                 'https://store.manutd.com/en/c/sale'
             ],
             selectors: {
@@ -175,8 +181,10 @@ const teamConfigs = {
             league: 'La Liga',
             storeUrl: 'https://store.fcbarcelona.com',
             blackFridayUrls: [
-                'https://store.fcbarcelona.com/ko-kr/black-friday',
-                'https://store.fcbarcelona.com/ko-kr/sale'
+                'https://store.fcbarcelona.com/ko-kr/black-friday',  // 한국
+                'https://store.fcbarcelona.com/es-es/black-friday',  // 스페인
+                'https://store.fcbarcelona.com/ko-kr/sale',
+                'https://store.fcbarcelona.com/es-es/sale'
             ],
             selectors: {
                 products: '.product-card',
@@ -278,8 +286,10 @@ const teamConfigs = {
             league: 'Serie A',
             storeUrl: 'https://store.inter.it',
             blackFridayUrls: [
-                'https://store.inter.it/kr/black-friday',
-                'https://store.inter.it/kr/sale'
+                'https://store.inter.it/kr/black-friday',  // 한국
+                'https://store.inter.it/it/black-friday',  // 이탈리아
+                'https://store.inter.it/kr/sale',
+                'https://store.inter.it/it/sale'
             ],
             selectors: {
                 products: '.product-card',
@@ -314,8 +324,10 @@ const teamConfigs = {
             league: 'Serie A',
             storeUrl: 'https://store.juventus.com',
             blackFridayUrls: [
-                'https://store.juventus.com/kr/black-friday',
-                'https://store.juventus.com/kr/sale'
+                'https://store.juventus.com/kr/black-friday',  // 한국
+                'https://store.juventus.com/it/black-friday',  // 이탈리아
+                'https://store.juventus.com/kr/sale',
+                'https://store.juventus.com/it/sale'
             ],
             selectors: {
                 products: '.product-card',

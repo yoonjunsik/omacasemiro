@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코스 설계 - GoalRoute</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .step-active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .step-completed {
+            background: #10b981;
+            color: white;
+        }
+
+        .step-inactive {
+            background: #e5e7eb;
+            color: #9ca3af;
+        }
+
+        .tab-active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .tab-inactive {
+            background: white;
+            color: #6b7280;
+            border: 2px solid #e5e7eb;
+        }
+
+        .calendar-day {
+            transition: all 0.2s;
+        }
+
+        .calendar-day:hover {
+            background: #f3f4f6;
+            cursor: pointer;
+        }
+
+        .calendar-day.selected {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .calendar-day.has-match {
+            border-bottom: 3px solid #667eea;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center mb-3">
+                <a href="goalroute.html" class="flex items-center space-x-2">
+                    <span class="text-3xl">⚽</span>
+                    <h1 class="text-2xl font-bold text-gray-800">GoalRoute</h1>
+                </a>
+                <div class="flex gap-2">
+                    <a href="/" class="bg-green-600 text-white px-3 md:px-4 py-2 rounded-lg font-bold text-xs md:text-sm hover:bg-green-700 transition">
+                        블프 세일
+                    </a>
+                    <a href="/christmas.html" class="bg-red-600 text-white px-3 md:px-4 py-2 rounded-lg font-bold text-xs md:text-sm hover:bg-red-700 transition">
+                        크리스마스
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-center">
+                <a href="goalroute.html" class="text-gray-600 hover:text-purple-600 font-medium">
+                    ← 홈으로
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Bar -->
+    <div class="bg-white border-b">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex items-center justify-between max-w-4xl mx-auto">
+                <div class="flex items-center flex-1">
+                    <div id="step1-indicator" class="step-active w-10 h-10 rounded-full flex items-center justify-center font-bold mr-3">1</div>
+                    <span class="text-sm font-medium hidden md:inline">경기 선택</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-300 mx-2"></div>
+
+                <div class="flex items-center flex-1">
+                    <div id="step2-indicator" class="step-inactive w-10 h-10 rounded-full flex items-center justify-center font-bold mr-3">2</div>
+                    <span class="text-sm font-medium hidden md:inline">출발지 입력</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-300 mx-2"></div>
+
+                <div class="flex items-center flex-1">
+                    <div id="step3-indicator" class="step-inactive w-10 h-10 rounded-full flex items-center justify-center font-bold mr-3">3</div>
+                    <span class="text-sm font-medium hidden md:inline">유형 선택</span>
+                </div>
+                <div class="flex-1 h-1 bg-gray-300 mx-2"></div>
+
+                <div class="flex items-center flex-1">
+                    <div id="step4-indicator" class="step-inactive w-10 h-10 rounded-full flex items-center justify-center font-bold mr-3">4</div>
+                    <span class="text-sm font-medium hidden md:inline">최종 견적</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Step 1: 경기 선택 -->
+        <div id="step1" class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-2">📅 관전하고 싶은 경기를 선택하세요</h2>
+                <p class="text-gray-600 mb-6">원하는 날짜를 선택하면, 해당 날짜에 열리는 경기를 보여드립니다.</p>
+
+                <!-- Calendar (Simplified) -->
+                <div class="mb-8">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold">2024년 12월</h3>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 bg-gray-100 rounded hover:bg-gray-200">←</button>
+                            <button class="px-3 py-1 bg-gray-100 rounded hover:bg-gray-200">→</button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-7 gap-2 text-center">
+                        <div class="text-gray-500 font-medium py-2">일</div>
+                        <div class="text-gray-500 font-medium py-2">월</div>
+                        <div class="text-gray-500 font-medium py-2">화</div>
+                        <div class="text-gray-500 font-medium py-2">수</div>
+                        <div class="text-gray-500 font-medium py-2">목</div>
+                        <div class="text-gray-500 font-medium py-2">금</div>
+                        <div class="text-gray-500 font-medium py-2">토</div>
+
+                        <div class="calendar-day py-3 rounded"></div>
+                        <div class="calendar-day py-3 rounded"></div>
+                        <div class="calendar-day py-3 rounded"></div>
+                        <div class="calendar-day py-3 rounded"></div>
+                        <div class="calendar-day py-3 rounded"></div>
+                        <div class="calendar-day py-3 rounded"></div>
+                        <div class="calendar-day py-3 rounded">1</div>
+
+                        <!-- Week with matches -->
+                        <div class="calendar-day py-3 rounded">8</div>
+                        <div class="calendar-day py-3 rounded">9</div>
+                        <div class="calendar-day py-3 rounded">10</div>
+                        <div class="calendar-day py-3 rounded">11</div>
+                        <div class="calendar-day py-3 rounded">12</div>
+                        <div class="calendar-day py-3 rounded">13</div>
+                        <div class="calendar-day has-match py-3 rounded" data-date="2024-12-14">14</div>
+
+                        <div class="calendar-day has-match py-3 rounded" data-date="2024-12-15">15</div>
+                        <div class="calendar-day has-match py-3 rounded" data-date="2024-12-16">16</div>
+                        <div class="calendar-day has-match py-3 rounded" data-date="2024-12-17">17</div>
+                        <div class="calendar-day py-3 rounded">18</div>
+                        <div class="calendar-day py-3 rounded">19</div>
+                        <div class="calendar-day py-3 rounded">20</div>
+                        <div class="calendar-day has-match py-3 rounded" data-date="2024-12-21">21</div>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">* 밑줄이 있는 날짜는 경기가 있는 날입니다</p>
+                </div>
+
+                <!-- Match List -->
+                <div id="matchList" class="hidden">
+                    <h3 class="text-xl font-bold mb-4">해당 날짜의 경기 목록</h3>
+                    <div class="space-y-3" id="matchCards"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 2: 출발지 입력 -->
+        <div id="step2" class="max-w-4xl mx-auto hidden">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-2">✈️ 출발 도시를 알려주세요</h2>
+                <p class="text-gray-600 mb-6">항공권 검색을 위해 출발 도시가 필요합니다.</p>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-medium mb-2">선택한 경기</label>
+                    <div class="bg-purple-50 p-4 rounded-lg">
+                        <p class="font-bold" id="selectedMatch"></p>
+                        <p class="text-sm text-gray-600" id="selectedMatchDetails"></p>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-medium mb-2">출발 도시</label>
+                    <select id="departureCity" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500">
+                        <option value="">선택하세요</option>
+                        <option value="ICN">인천 (ICN)</option>
+                        <option value="GMP">김포 (GMP)</option>
+                        <option value="PUS">부산 (PUS)</option>
+                    </select>
+                </div>
+
+                <div class="flex space-x-3">
+                    <button onclick="goToStep(1)" class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-bold hover:bg-gray-300">
+                        ← 이전
+                    </button>
+                    <button onclick="goToStep(3)" class="flex-1 px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-lg font-bold hover:opacity-90">
+                        다음 단계 →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: 코스 유형 선택 -->
+        <div id="step3" class="max-w-4xl mx-auto hidden">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-2">⚖️ 여행 스타일을 선택하세요</h2>
+                <p class="text-gray-600 mb-6">예산과 취향에 맞는 코스를 제안해드립니다.</p>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- 가성비 버전 -->
+                    <div class="border-2 border-purple-200 rounded-lg p-6 cursor-pointer hover:border-purple-500 transition" onclick="selectRouteType('budget')">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold">💰 가성비 버전</h3>
+                            <input type="radio" name="routeType" value="budget" class="w-5 h-5">
+                        </div>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>✈️ 경유 항공편 (저가 항공사)</li>
+                            <li>🏨 호스텔 / 2성급 호텔</li>
+                            <li>🎫 일반석 경기 티켓</li>
+                            <li>🚆 저가 교통수단</li>
+                        </ul>
+                        <p class="mt-4 text-sm text-gray-500">예상 비용: ₩1,250,000~</p>
+                    </div>
+
+                    <!-- 프라이빗 버전 -->
+                    <div class="border-2 border-purple-200 rounded-lg p-6 cursor-pointer hover:border-purple-500 transition" onclick="selectRouteType('premium')">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-2xl font-bold">🎩 프라이빗 버전</h3>
+                            <input type="radio" name="routeType" value="premium" class="w-5 h-5">
+                        </div>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>✈️ 직항 항공편 (일반 항공사)</li>
+                            <li>🏨 3~4성급 호텔</li>
+                            <li>🎫 프리미엄 좌석 티켓</li>
+                            <li>🚗 편안한 교통수단</li>
+                        </ul>
+                        <p class="mt-4 text-sm text-gray-500">예상 비용: ₩2,800,000~</p>
+                    </div>
+                </div>
+
+                <div class="flex space-x-3 mt-6">
+                    <button onclick="goToStep(1)" class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-bold hover:bg-gray-300">
+                        ← 이전
+                    </button>
+                    <button id="calculateBtn" onclick="calculateEstimate()" class="flex-1 px-6 py-3 bg-gradient-to-r from-purple-600 to-purple-800 text-white rounded-lg font-bold hover:opacity-90 disabled:opacity-50" disabled>
+                        견적 확인하기 →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: 최종 견적 -->
+        <div id="step4" class="max-w-4xl mx-auto hidden">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-2">📊 여행 코스 완성!</h2>
+                <p class="text-gray-600 mb-6">아래 견적을 확인하고 각 플랫폼에서 예약하세요.</p>
+
+                <!-- Tabs -->
+                <div class="flex space-x-4 mb-6">
+                    <button id="budgetTab" class="tab-active flex-1 px-6 py-3 rounded-lg font-bold" onclick="showTab('budget')">
+                        💰 가성비 버전
+                    </button>
+                    <button id="premiumTab" class="tab-inactive flex-1 px-6 py-3 rounded-lg font-bold" onclick="showTab('premium')">
+                        🎩 프라이빗 버전
+                    </button>
+                </div>
+
+                <!-- Budget Route -->
+                <div id="budgetRoute">
+                    <div class="bg-purple-50 p-6 rounded-lg mb-6">
+                        <h3 class="text-3xl font-black mb-2">총 예상 금액</h3>
+                        <p class="text-5xl font-black text-purple-600">₩1,250,000</p>
+                        <p class="text-sm text-gray-600 mt-2">* 환율 및 재고 상황에 따라 변동될 수 있습니다</p>
+                    </div>
+
+                    <div class="space-y-4 mb-6">
+                        <!-- Flight -->
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-bold text-lg">✈️ 항공권</h4>
+                                <span class="text-xl font-bold text-purple-600">₩650,000</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">인천(ICN) → 런던(LHR) 왕복</p>
+                            <p class="text-sm text-gray-500">경유 1회 / 저가 항공사 / 12월 14일 출발 - 12월 18일 귀국</p>
+                            <a href="https://www.skyscanner.co.kr" target="_blank" class="inline-block mt-3 px-4 py-2 bg-blue-500 text-white rounded text-sm font-bold hover:bg-blue-600">
+                                Skyscanner에서 검색 →
+                            </a>
+                        </div>
+
+                        <!-- Hotel -->
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-bold text-lg">🏨 숙소</h4>
+                                <span class="text-xl font-bold text-purple-600">₩350,000</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">리버풀 시내 호스텔 / 3박</p>
+                            <p class="text-sm text-gray-500">체크인: 12/14 / 체크아웃: 12/17 / 평점 7.5+</p>
+                            <a href="https://www.agoda.com" target="_blank" class="inline-block mt-3 px-4 py-2 bg-red-500 text-white rounded text-sm font-bold hover:bg-red-600">
+                                Agoda에서 검색 →
+                            </a>
+                        </div>
+
+                        <!-- Ticket -->
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-bold text-lg">🎫 경기 티켓</h4>
+                                <span class="text-xl font-bold text-purple-600">₩180,000</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">리버풀 vs 맨시티 / 안필드</p>
+                            <p class="text-sm text-gray-500">일반석 (상층부) / 12월 15일 21:00</p>
+                            <a href="https://www.stubhub.com" target="_blank" class="inline-block mt-3 px-4 py-2 bg-orange-500 text-white rounded text-sm font-bold hover:bg-orange-600">
+                                StubHub에서 검색 →
+                            </a>
+                        </div>
+
+                        <!-- Transport -->
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-bold text-lg">🚆 도시 간 이동</h4>
+                                <span class="text-xl font-bold text-purple-600">₩70,000</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">런던 → 리버풀 기차</p>
+                            <p class="text-sm text-gray-500">왕복 / 약 2시간 30분 소요</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium Route (Hidden by default) -->
+                <div id="premiumRoute" class="hidden">
+                    <div class="bg-purple-50 p-6 rounded-lg mb-6">
+                        <h3 class="text-3xl font-black mb-2">총 예상 금액</h3>
+                        <p class="text-5xl font-black text-purple-600">₩2,800,000</p>
+                        <p class="text-sm text-gray-600 mt-2">* 환율 및 재고 상황에 따라 변동될 수 있습니다</p>
+                    </div>
+
+                    <div class="space-y-4 mb-6">
+                        <!-- Flight -->
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-bold text-lg">✈️ 항공권</h4>
+                                <span class="text-xl font-bold text-purple-600">₩1,650,000</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">인천(ICN) → 런던(LHR) 왕복</p>
+                            <p class="text-sm text-gray-500">직항 / 대한항공 / 12월 14일 출발 - 12월 18일 귀국</p>
+                            <a href="https://www.skyscanner.co.kr" target="_blank" class="inline-block mt-3 px-4 py-2 bg-blue-500 text-white rounded text-sm font-bold hover:bg-blue-600">
+                                Skyscanner에서 검색 →
+                            </a>
+                        </div>
+
+                        <!-- Hotel -->
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-bold text-lg">🏨 숙소</h4>
+                                <span class="text-xl font-bold text-purple-600">₩750,000</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">리버풀 시내 4성급 호텔 / 3박</p>
+                            <p class="text-sm text-gray-500">체크인: 12/14 / 체크아웃: 12/17 / 평점 8.5+</p>
+                            <a href="https://www.agoda.com" target="_blank" class="inline-block mt-3 px-4 py-2 bg-red-500 text-white rounded text-sm font-bold hover:bg-red-600">
+                                Agoda에서 검색 →
+                            </a>
+                        </div>
+
+                        <!-- Ticket -->
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-bold text-lg">🎫 경기 티켓</h4>
+                                <span class="text-xl font-bold text-purple-600">₩320,000</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">리버풀 vs 맨시티 / 안필드</p>
+                            <p class="text-sm text-gray-500">프리미엄석 (중앙부) / 12월 15일 21:00</p>
+                            <a href="https://www.stubhub.com" target="_blank" class="inline-block mt-3 px-4 py-2 bg-orange-500 text-white rounded text-sm font-bold hover:bg-orange-600">
+                                StubHub에서 검색 →
+                            </a>
+                        </div>
+
+                        <!-- Transport -->
+                        <div class="border rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-bold text-lg">🚗 도시 간 이동</h4>
+                                <span class="text-xl font-bold text-purple-600">₩80,000</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mb-2">런던 → 리버풀 1등석 기차</p>
+                            <p class="text-sm text-gray-500">왕복 / 약 2시간 30분 소요 / Wi-Fi 제공</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <p class="text-sm text-yellow-800">
+                        <strong>⚠️ 안내사항</strong><br>
+                        - 본 견적은 예상 금액으로, 실제 구매 시 가격이 변동될 수 있습니다.<br>
+                        - 티켓 가격은 리셀 시장 기준이며, 공식 판매가와 다를 수 있습니다.<br>
+                        - 환율 및 재고 상황에 따라 최종 금액이 달라질 수 있습니다.
+                    </p>
+                </div>
+
+                <div class="flex space-x-3">
+                    <button onclick="goToStep(3)" class="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg font-bold hover:bg-gray-300">
+                        ← 이전
+                    </button>
+                    <a href="goalroute.html" class="flex-1 px-6 py-3 bg-gradient-to-r from-green-500 to-green-700 text-white rounded-lg font-bold text-center hover:opacity-90">
+                        ✅ 새로운 코스 만들기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/goalroute-api.js"></script>
+</body>
+</html>

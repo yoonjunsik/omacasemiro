@@ -114,6 +114,42 @@ class DiscordNotifier {
             }
         ];
 
+        // 블랙프라이데이 페이지 링크 추가
+        const bfPageSignal = teamResult.signals ? teamResult.signals.find(s => s.type === 'bf_page_exists') : null;
+        if (bfPageSignal && bfPageSignal.details) {
+            const detectedUrls = [];
+
+            // details가 배열인 경우 (여러 URL 체크)
+            if (Array.isArray(bfPageSignal.details)) {
+                bfPageSignal.details.forEach(detail => {
+                    if (detail.exists && detail.url) {
+                        detectedUrls.push(detail.url);
+                    }
+                });
+            }
+            // details가 단일 객체인 경우
+            else if (bfPageSignal.details.url) {
+                detectedUrls.push(bfPageSignal.details.url);
+            }
+
+            if (detectedUrls.length > 0) {
+                fields.push({
+                    name: '🔗 블랙프라이데이 페이지',
+                    value: detectedUrls.map(url => `[바로가기](${url})`).join('\n'),
+                    inline: false
+                });
+            }
+        }
+
+        // URL이 teamResult에 직접 있는 경우 (test-blackfriday-check.js)
+        if (teamResult.url && !bfPageSignal) {
+            fields.push({
+                name: '🔗 감지된 페이지',
+                value: `[바로가기](${teamResult.url})`,
+                inline: false
+            });
+        }
+
         // 감지 신호 추가
         if (teamResult.signals && teamResult.signals.length > 0) {
             const signalsText = teamResult.signals.map(signal => {

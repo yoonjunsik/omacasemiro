@@ -75,30 +75,34 @@
 npm install puppeteer
 ```
 
-### 2. Slack Webhook URL 설정
+### 2. Discord Webhook URL 설정
 
-#### Slack에서 Webhook URL 생성:
-1. https://api.slack.com/apps 접속
-2. "Create New App" → "From scratch"
-3. 앱 이름 입력 (예: "Black Friday Monitor")
-4. Workspace 선택
-5. "Incoming Webhooks" 활성화
-6. "Add New Webhook to Workspace"
-7. 알림받을 채널 선택
-8. Webhook URL 복사
+#### Discord에서 Webhook URL 생성:
+1. Discord 서버에서 알림받을 채널 선택
+2. 채널 설정(톱니바퀴 아이콘) 클릭
+3. "연동(Integrations)" → "Webhook" 클릭
+4. "새 Webhook" 버튼 클릭
+5. Webhook 이름 설정 (예: "Black Friday Monitor")
+6. "Webhook URL 복사" 클릭
 
 #### 환경 변수 설정:
 
 **로컬 실행:**
 ```bash
-export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+export DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/YOUR/WEBHOOK/URL"
 ```
 
 **GitHub Actions:**
 1. Repository Settings → Secrets and variables → Actions
 2. "New repository secret" 클릭
-3. Name: `SLACK_WEBHOOK_URL`
+3. Name: `DISCORD_WEBHOOK_URL`
 4. Value: Webhook URL 입력
+
+#### 테스트:
+```bash
+# Discord 연결 테스트
+DISCORD_WEBHOOK_URL="your-webhook-url" node monitors/test-discord.js
+```
 
 ## 💻 사용 방법
 
@@ -264,11 +268,11 @@ brew install chromium
 sudo apt-get install chromium-browser
 ```
 
-### Slack 알림이 오지 않을 때
+### Discord 알림이 오지 않을 때
 
 1. Webhook URL이 올바른지 확인
-2. Slack 앱 권한 확인
-3. 채널에 앱이 추가되어 있는지 확인
+2. Discord 채널 권한 확인
+3. 테스트 스크립트 실행: `node monitors/test-discord.js`
 
 ### 크롤링 실패
 

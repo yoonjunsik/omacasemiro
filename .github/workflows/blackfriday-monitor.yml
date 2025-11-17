@@ -39,7 +39,7 @@ jobs:
 
       - name: Run Black Friday Monitor
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         run: |
           if [ -n "${{ github.event.inputs.league }}" ]; then
             node monitors/run-monitor.js ${{ github.event.inputs.league }}

@@ -13,17 +13,17 @@
  */
 
 const BlackFridayDetector = require('./blackfriday-detector');
-const SlackNotifier = require('./slack-notifier');
+const DiscordNotifier = require('./discord-notifier');
 const teamConfigs = require('./team-configs');
 const fs = require('fs');
 const path = require('path');
 
-// 환경 변수에서 Slack Webhook URL 가져오기
-const SLACK_WEBHOOK_URL = process.env.SLACK_WEBHOOK_URL || '';
+// 환경 변수에서 Discord Webhook URL 가져오기
+const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL || '';
 
 class MonitorRunner {
-    constructor(slackWebhookUrl) {
-        this.notifier = slackWebhookUrl ? new SlackNotifier(slackWebhookUrl) : null;
+    constructor(discordWebhookUrl) {
+        this.notifier = discordWebhookUrl ? new DiscordNotifier(discordWebhookUrl) : null;
         this.results = [];
     }
 
@@ -103,12 +103,12 @@ class MonitorRunner {
         // 결과 저장
         await this.saveResults();
 
-        // Slack 알림
+        // Discord 알림
         if (this.notifier) {
             await this.sendNotifications();
         } else {
-            console.log('⚠️  Slack Webhook URL이 설정되지 않아 알림을 전송하지 않습니다.');
-            console.log('   환경 변수 SLACK_WEBHOOK_URL을 설정해주세요.');
+            console.log('⚠️  Discord Webhook URL이 설정되지 않아 알림을 전송하지 않습니다.');
+            console.log('   환경 변수 DISCORD_WEBHOOK_URL을 설정해주세요.');
         }
 
         return this.results;
@@ -176,17 +176,17 @@ class MonitorRunner {
     }
 
     /**
-     * Slack 알림 전송
+     * Discord 알림 전송
      */
     async sendNotifications() {
-        console.log('\n📢 Slack 알림 전송 중...');
+        console.log('\n📢 Discord 알림 전송 중...');
 
         try {
             await this.notifier.notifyBlackFridayDetected(this.results);
             // await this.notifier.sendDailyReport(this.results); // 일일 리포트는 선택적
-            console.log('✅ Slack 알림 전송 완료');
+            console.log('✅ Discord 알림 전송 완료');
         } catch (error) {
-            console.error('❌ Slack 알림 전송 실패:', error.message);
+            console.error('❌ Discord 알림 전송 실패:', error.message);
         }
     }
 
@@ -210,7 +210,7 @@ async function main() {
     const args = process.argv.slice(2);
     const league = args[0];
 
-    const runner = new MonitorRunner(SLACK_WEBHOOK_URL);
+    const runner = new MonitorRunner(DISCORD_WEBHOOK_URL);
 
     try {
         if (league) {

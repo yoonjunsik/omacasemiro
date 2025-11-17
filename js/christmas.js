@@ -465,6 +465,15 @@ const christmasClubs = [
                 url: 'https://store.inter.it/kr/inter-christmas-ball-set'
             }
         ]
+    },
+    {
+        name: '파리 생제르맹',
+        nameEn: 'Paris Saint-Germain',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg',
+        url: 'https://store.psg.fr/ko/?query=christmas&_ref=p-CLP:m-SEARCH',
+        color: 'from-blue-900 to-red-600',
+        league: '리그 1',
+        products: []  // 실제 제품 이미지 없음 - 크롤링 필요
     }
 ];
 

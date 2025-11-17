@@ -347,12 +347,38 @@ async function calculateEstimate() {
     showLoading('premiumRoute');
 
     try {
-        // 여행 날짜 계산 (경기 날짜 기준 전후 1일)
-        const matchDate = new Date(selectedMatch.date);
+        // 여행 날짜 계산 (경기 날짜 기준 전 3일, 후 4일 = 6박8일)
+        // selectedMatch.date가 'MM/DD' 형식이므로 연도 추가 필요
+        const parseDateWithYear = (dateStr) => {
+            const [month, day] = dateStr.split('/').map(Number);
+            const currentDate = new Date();
+            const currentYear = currentDate.getFullYear();
+
+            // 해당 날짜를 올해로 가정
+            let matchDate = new Date(currentYear, month - 1, day);
+
+            // 만약 경기 날짜가 이미 지났다면 내년으로 설정
+            if (matchDate < currentDate) {
+                matchDate = new Date(currentYear + 1, month - 1, day);
+            }
+
+            return matchDate;
+        };
+
+        const matchDate = parseDateWithYear(selectedMatch.date);
         const departureDate = new Date(matchDate);
-        departureDate.setDate(departureDate.getDate() - 1);
+        departureDate.setDate(departureDate.getDate() - 3); // 경기 3일 전 출발
         const returnDate = new Date(matchDate);
-        returnDate.setDate(returnDate.getDate() + 1);
+        returnDate.setDate(returnDate.getDate() + 4); // 경기 4일 후 귀국 (총 8일)
+
+        // 날짜를 전역 변수로 저장 (URL 생성에 사용)
+        window.travelDates = {
+            departure: departureDate,
+            return: returnDate,
+            departureStr: departureDate.toISOString().split('T')[0],
+            returnStr: returnDate.toISOString().split('T')[0],
+            nights: 7 // 기본 6박8일
+        };
 
         // 병렬로 데이터 조회
         const [flights, hotels, budgetTicket, premiumTicket] = await Promise.all([
@@ -371,27 +397,38 @@ async function calculateEstimate() {
             fetchTicketPrice(selectedMatch.league, selectedMatch.homeTeam, selectedMatch.awayTeam, 'premium')
         ]);
 
-        // 가격 계산
+        // 가격 계산 (숙박일수 = 총 일수 - 1)
+        const nights = Math.floor((returnDate - departureDate) / (1000 * 60 * 60 * 24));
         const budgetFlight = flights.length > 0 ? flights[0].price : 650000;
         const premiumFlight = flights.length > 0 ? flights[flights.length - 1].price : 1200000;
-        const budgetHotel = hotels.length > 0 ? hotels[0].price : 80000;
-        const premiumHotel = hotels.length > 0 ? hotels[hotels.length - 1].price : 200000;
-        const localTransport = 70000;
+        const budgetHotelPerNight = hotels.length > 0 ? hotels[0].price : 80000;
+        const premiumHotelPerNight = hotels.length > 0 ? hotels[hotels.length - 1].price : 200000;
+        const budgetHotelTotal = budgetHotelPerNight * nights; // 총 숙박비
+        const premiumHotelTotal = premiumHotelPerNight * nights; // 총 숙박비
+        const localTransport = 100000; // 일주일 기준 교통비
 
         // Budget 견적 표시
         displayEstimate('budget', {
             flight: budgetFlight,
-            hotel: budgetHotel,
+            hotel: budgetHotelTotal,
+            hotelPerNight: budgetHotelPerNight,
             ticket: budgetTicket.price,
-            transport: localTransport
+            transport: localTransport,
+            flights: flights.slice(0, 3), // 상위 3개 항공편
+            hotels: hotels.slice(0, 3), // 상위 3개 숙소
+            nights: nights
         });
 
         // Premium 견적 표시
         displayEstimate('premium', {
             flight: premiumFlight,
-            hotel: premiumHotel,
+            hotel: premiumHotelTotal,
+            hotelPerNight: premiumHotelPerNight,
             ticket: premiumTicket.price,
-            transport: localTransport
+            transport: localTransport,
+            flights: flights.slice(-3).reverse(), // 상위 3개 고가 항공편
+            hotels: hotels.slice(-3).reverse(), // 상위 3개 고급 숙소
+            nights: nights
         });
 
         // 선택한 탭 표시
@@ -412,8 +449,71 @@ function displayEstimate(type, prices) {
 
     if (!element) return;
 
+    // URL 생성에 필요한 정보
+    const origin = selectedDepartureCity || 'ICN';
+    const destination = getAirportCode(selectedMatch.city);
+    const cityId = getAgodaCityId(selectedMatch.city);
+    const dates = window.travelDates || {
+        departureStr: '2024-12-15',
+        returnStr: '2024-12-18',
+        departure: new Date('2024-12-15'),
+        return: new Date('2024-12-18')
+    };
+
+    // Skyscanner 검색 URL
+    const skyscannerURL = generateSkyscannerURL(origin, destination, dates.departure, dates.return);
+
+    // Agoda 검색 URL
+    const agodaURL = generateAgodaURL(cityId, dates.departureStr, dates.returnStr);
+
+    // 항공편 리스트 HTML 생성
+    const flightListHTML = prices.flights && prices.flights.length > 0
+        ? prices.flights.map((flight, index) => `
+            <div class="border border-gray-200 rounded-lg p-4 hover:border-purple-500 transition ${index === 0 ? 'bg-purple-50' : ''}">
+                <div class="flex justify-between items-start mb-2">
+                    <div>
+                        <p class="font-bold text-gray-800">${flight.airline || '항공사'}</p>
+                        <p class="text-sm text-gray-600">${flight.route || 'ICN → 목적지 왕복'}</p>
+                        <p class="text-xs text-gray-500 mt-1">${flight.duration || '경유 1회'} • ${flight.class || '이코노미'}</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-lg font-bold text-purple-600">₩${(flight.price || prices.flight).toLocaleString()}</p>
+                        ${index === 0 ? '<span class="text-xs bg-purple-600 text-white px-2 py-1 rounded">추천</span>' : ''}
+                    </div>
+                </div>
+                <a href="${skyscannerURL}" target="_blank" class="block w-full text-center bg-blue-500 text-white py-2 rounded mt-2 text-sm font-bold hover:bg-blue-600">
+                    Skyscanner에서 예약 →
+                </a>
+            </div>
+        `).join('')
+        : `<div class="text-center text-gray-500 py-4">항공편 검색 결과가 없습니다</div>`;
+
+    // 숙소 리스트 HTML 생성
+    const hotelListHTML = prices.hotels && prices.hotels.length > 0
+        ? prices.hotels.map((hotel, index) => `
+            <div class="border border-gray-200 rounded-lg p-4 hover:border-purple-500 transition ${index === 0 ? 'bg-purple-50' : ''}">
+                <div class="flex justify-between items-start mb-2">
+                    <div>
+                        <p class="font-bold text-gray-800">${hotel.name || '추천 숙소'}</p>
+                        <p class="text-sm text-gray-600">${hotel.location || '시내 중심가'}</p>
+                        <p class="text-xs text-gray-500 mt-1">⭐ ${hotel.rating || '7.5+'} • ${hotel.type || '호스텔/2성급'}</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="text-lg font-bold text-purple-600">₩${(hotel.price || prices.hotel).toLocaleString()}</p>
+                        <p class="text-xs text-gray-500">1박 기준</p>
+                        ${index === 0 ? '<span class="text-xs bg-purple-600 text-white px-2 py-1 rounded">추천</span>' : ''}
+                    </div>
+                </div>
+                <a href="${agodaURL}" target="_blank" class="block w-full text-center bg-red-500 text-white py-2 rounded mt-2 text-sm font-bold hover:bg-red-600">
+                    Agoda에서 예약 →
+                </a>
+            </div>
+        `).join('')
+        : `<div class="text-center text-gray-500 py-4">숙소 검색 결과가 없습니다</div>`;
+
     element.innerHTML = `
-        <div class="space-y-4">
+        <div class="space-y-6">
+            <!-- 총 예상 금액 -->
             <div class="bg-gradient-to-r ${type === 'budget' ? 'from-green-500 to-green-600' : 'from-purple-500 to-purple-600'} text-white p-6 rounded-lg">
                 <div class="text-center">
                     <p class="text-sm opacity-90">총 예상 금액</p>
@@ -421,17 +521,29 @@ function displayEstimate(type, prices) {
                 </div>
             </div>
 
+            <!-- 항목별 요약 -->
+            <!-- 여행 기간 정보 -->
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+                <p class="text-sm text-blue-700 font-medium">여행 기간</p>
+                <p class="text-2xl font-black text-blue-900 mt-1">${prices.nights || 7}박 ${(prices.nights || 7) + 1}일</p>
+                <p class="text-xs text-blue-600 mt-1">${dates.departureStr} ~ ${dates.returnStr}</p>
+            </div>
+
+            <!-- 항목별 요약 -->
             <div class="space-y-3">
                 <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                    <span class="text-gray-700">✈️ 항공권</span>
+                    <span class="text-gray-700">✈️ 항공권 (왕복)</span>
                     <span class="font-bold">₩${prices.flight.toLocaleString()}</span>
                 </div>
                 <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                    <span class="text-gray-700">🏨 숙소</span>
+                    <div>
+                        <span class="text-gray-700">🏨 숙소 (${prices.nights || 7}박)</span>
+                        <p class="text-xs text-gray-500 mt-1">1박 평균 ₩${(prices.hotelPerNight || Math.floor(prices.hotel / (prices.nights || 7))).toLocaleString()}</p>
+                    </div>
                     <span class="font-bold">₩${prices.hotel.toLocaleString()}</span>
                 </div>
                 <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-                    <span class="text-gray-700">🎫 티켓</span>
+                    <span class="text-gray-700">🎫 경기 티켓</span>
                     <span class="font-bold">₩${prices.ticket.toLocaleString()}</span>
                 </div>
                 <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
@@ -440,7 +552,29 @@ function displayEstimate(type, prices) {
                 </div>
             </div>
 
-            <div class="text-sm text-gray-500 text-center">
+            <!-- 추천 항공편 -->
+            <div class="mt-6">
+                <h3 class="text-lg font-bold mb-3 flex items-center">
+                    ✈️ 추천 항공편
+                    <span class="ml-2 text-sm text-gray-500 font-normal">(최저가 순)</span>
+                </h3>
+                <div class="space-y-3">
+                    ${flightListHTML}
+                </div>
+            </div>
+
+            <!-- 추천 숙소 -->
+            <div class="mt-6">
+                <h3 class="text-lg font-bold mb-3 flex items-center">
+                    🏨 추천 숙소
+                    <span class="ml-2 text-sm text-gray-500 font-normal">(가성비 순)</span>
+                </h3>
+                <div class="space-y-3">
+                    ${hotelListHTML}
+                </div>
+            </div>
+
+            <div class="text-sm text-gray-500 text-center mt-6">
                 * 실제 가격은 예약 시점에 따라 변동될 수 있습니다.
             </div>
         </div>
@@ -557,6 +691,44 @@ function getCityCode(city) {
         '파리': 'PAR'
     };
     return cityMap[city] || 'LON';
+}
+
+// 헬퍼 함수: 도시 → Agoda 도시 ID
+function getAgodaCityId(city) {
+    const cityIdMap = {
+        '런던': '9179',
+        '리버풀': '30564',
+        '맨체스터': '8725',
+        '마드리드': '17823',
+        '바르셀로나': '6606',
+        '뮌헨': '8899',
+        '밀라노': '5985',
+        '토리노': '6683',
+        '파리': '9798'
+    };
+    return cityIdMap[city] || '9179';
+}
+
+// Skyscanner 검색 URL 생성
+function generateSkyscannerURL(origin, destination, departureDate, returnDate) {
+    // 날짜를 YYMMDD 형식으로 변환
+    const formatDate = (date) => {
+        const d = new Date(date);
+        const year = d.getFullYear().toString().substr(-2);
+        const month = ('0' + (d.getMonth() + 1)).slice(-2);
+        const day = ('0' + d.getDate()).slice(-2);
+        return year + month + day;
+    };
+
+    const depDate = formatDate(departureDate);
+    const retDate = formatDate(returnDate);
+
+    return `https://www.skyscanner.co.kr/transport/flights/${origin.toLowerCase()}/${destination.toLowerCase()}/${depDate}/${retDate}/?adultsv2=1&cabinclass=economy&children=0&inboundaltsenabled=false&outboundaltsenabled=false&preferdirects=false&ref=home&rtn=1`;
+}
+
+// Agoda 검색 URL 생성
+function generateAgodaURL(cityId, checkIn, checkOut) {
+    return `https://www.agoda.com/search?city=${cityId}&checkIn=${checkIn}&checkOut=${checkOut}&rooms=1&adults=1&cid=1844104`;
 }
 
 // URL 파라미터에서 경기 정보 가져오기

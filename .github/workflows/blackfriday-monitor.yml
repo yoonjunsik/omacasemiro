@@ -1,0 +1,65 @@
+name: Black Friday Monitor
+
+on:
+  # 6시간마다 자동 실행 (0시, 6시, 12시, 18시 UTC)
+  schedule:
+    - cron: '0 0,6,12,18 * * *'
+
+  # 수동 실행 가능
+  workflow_dispatch:
+    inputs:
+      league:
+        description: 'League to monitor (leave empty for all)'
+        required: false
+        type: choice
+        options:
+          - ''
+          - 'premierLeague'
+          - 'laLiga'
+          - 'bundesliga'
+          - 'ligue1'
+          - 'serieA'
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: |
+          npm install puppeteer
+
+      - name: Run Black Friday Monitor
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          if [ -n "${{ github.event.inputs.league }}" ]; then
+            node monitors/run-monitor.js ${{ github.event.inputs.league }}
+          else
+            node monitors/run-monitor.js
+          fi
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: monitor-results
+          path: monitor-results/
+          retention-days: 30
+
+      - name: Commit results to repo (optional)
+        if: always()
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add monitor-results/latest.json || true
+          git commit -m "Update Black Friday monitoring results" || true
+          git push || true

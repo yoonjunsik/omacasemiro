@@ -23,7 +23,7 @@ const testTeams = [
         name: 'Manchester City',
         nameKo: '맨체스터 시티',
         league: 'Premier League',
-        url: 'https://shop.mancity.com/ca/en/black-friday'
+        url: 'https://shop.mancity.com/kr/ko/black-friday'
     },
     {
         name: 'Arsenal',
@@ -35,7 +35,7 @@ const testTeams = [
         name: 'Chelsea',
         nameKo: '첼시',
         league: 'Premier League',
-        url: 'https://store.chelseafc.com/en/black-friday'
+        url: 'https://store.chelseafc.com/ko/black-friday'
     },
     {
         name: 'Newcastle United',
@@ -47,7 +47,7 @@ const testTeams = [
         name: 'Manchester United',
         nameKo: '맨체스터 유나이티드',
         league: 'Premier League',
-        url: 'https://store.manutd.com/en/black-friday'
+        url: 'https://store.manutd.com/ko/black-friday'
     },
     {
         name: 'Tottenham',

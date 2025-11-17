@@ -3,6 +3,66 @@
 // 크리스마스 샵 구단 데이터
 const christmasClubs = [
     {
+        name: '리버풀',
+        nameEn: 'Liverpool',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg',
+        url: 'https://store.liverpoolfc.com/christmas',
+        color: 'from-red-700 to-red-900',
+        league: '프리미어리그',
+        products: [
+            {
+                name: 'Liverpool FC Christmas Jumper 2024/25',
+                image: 'https://store.liverpoolfc.com/media/catalog/product/a/5/a565008rdd_1.jpg',
+                url: 'https://store.liverpoolfc.com/liverpool-fc-christmas-jumper-2024-25'
+            },
+            {
+                name: 'LFC Adults Fairisle Christmas Jumper',
+                image: 'https://store.liverpoolfc.com/media/catalog/product/a/5/a565007rdd_1.jpg',
+                url: 'https://store.liverpoolfc.com/lfc-adults-fairisle-christmas-jumper'
+            },
+            {
+                name: 'LFC Kids Christmas Jumper 2024/25',
+                image: 'https://store.liverpoolfc.com/media/catalog/product/b/5/b565008rdd_1.jpg',
+                url: 'https://store.liverpoolfc.com/lfc-kids-christmas-jumper-2024-25'
+            },
+            {
+                name: 'LFC Kids Fairisle Christmas Jumper',
+                image: 'https://store.liverpoolfc.com/media/catalog/product/b/5/b565007rdd_1.jpg',
+                url: 'https://store.liverpoolfc.com/lfc-kids-fairisle-christmas-jumper'
+            },
+            {
+                name: 'LFC Christmas Stocking',
+                image: 'https://store.liverpoolfc.com/media/catalog/product/a/0/a024491rdd_1.jpg',
+                url: 'https://store.liverpoolfc.com/lfc-christmas-stocking'
+            },
+            {
+                name: 'LFC Christmas Tree Decoration Set',
+                image: 'https://store.liverpoolfc.com/media/catalog/product/a/0/a024489rdd_1.jpg',
+                url: 'https://store.liverpoolfc.com/lfc-christmas-tree-decoration-set'
+            },
+            {
+                name: 'LFC Christmas Baubles Pack of 6',
+                image: 'https://store.liverpoolfc.com/media/catalog/product/a/0/a024488rdd_1.jpg',
+                url: 'https://store.liverpoolfc.com/lfc-christmas-baubles-pack-of-6'
+            },
+            {
+                name: 'LFC Santa Hat',
+                image: 'https://store.liverpoolfc.com/media/catalog/product/a/0/a024492rdd_1.jpg',
+                url: 'https://store.liverpoolfc.com/lfc-santa-hat'
+            },
+            {
+                name: 'LFC Christmas Teddy Bear',
+                image: 'https://store.liverpoolfc.com/media/catalog/product/a/0/a024490rdd_1.jpg',
+                url: 'https://store.liverpoolfc.com/lfc-christmas-teddy-bear'
+            },
+            {
+                name: 'LFC Advent Calendar 2024',
+                image: 'https://store.liverpoolfc.com/media/catalog/product/a/0/a024487rdd_1.jpg',
+                url: 'https://store.liverpoolfc.com/lfc-advent-calendar-2024'
+            }
+        ]
+    },
+    {
         name: '뉴캐슬',
         nameEn: 'Newcastle',
         logo: 'https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg',

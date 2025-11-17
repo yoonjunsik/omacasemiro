@@ -36,7 +36,7 @@ class DiscordNotifier {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Content-Length': data.length
+                    'Content-Length': Buffer.byteLength(data, 'utf8')
                 }
             };
 
@@ -169,8 +169,6 @@ class DiscordNotifier {
         };
 
         const message = {
-            username: 'Black Friday Monitor',
-            avatar_url: 'https://cdn-icons-png.flaticon.com/512/2331/2331966.png',
             embeds: [embed]
         };
 
@@ -239,8 +237,6 @@ class DiscordNotifier {
         };
 
         const message = {
-            username: 'Black Friday Monitor',
-            avatar_url: 'https://cdn-icons-png.flaticon.com/512/2331/2331966.png',
             content: summary.detected > 0 ? `🚨 **${summary.detected}개 팀에서 블랙프라이데이 시작!**` : '✅ 모든 팀 정상 (블랙프라이데이 미감지)',
             embeds: [embed]
         };
@@ -287,8 +283,6 @@ class DiscordNotifier {
         };
 
         const message = {
-            username: 'Black Friday Monitor',
-            avatar_url: 'https://cdn-icons-png.flaticon.com/512/2331/2331966.png',
             embeds: [embed]
         };
 
@@ -327,8 +321,6 @@ class DiscordNotifier {
         };
 
         const message = {
-            username: 'Black Friday Monitor',
-            avatar_url: 'https://cdn-icons-png.flaticon.com/512/2331/2331966.png',
             content: '🚀 **모니터링 시스템 시작!**',
             embeds: [embed]
         };

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoalRoute - 유럽 축구 여행 코스 설계</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .match-card {
+            border-left: 4px solid #667eea;
+        }
+
+        /* 슬라이더 스타일 */
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+            padding: 0 50px;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 24px;
+        }
+
+        .slider-card {
+            min-width: calc(33.333% - 16px);
+            flex-shrink: 0;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: 2px solid #667eea;
+            color: #667eea;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+        }
+
+        .slider-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .slider-btn-left {
+            left: 0;
+        }
+
+        .slider-btn-right {
+            right: 0;
+        }
+
+        @media (max-width: 768px) {
+            .slider-card {
+                min-width: 100%;
+            }
+
+            .slider-container {
+                padding: 0 40px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center mb-3">
+                <div class="flex items-center space-x-2">
+                    <span class="text-3xl">⚽</span>
+                    <h1 class="text-2xl font-bold text-gray-800">GoalRoute</h1>
+                </div>
+                <div class="flex gap-2">
+                    <a href="/" class="bg-green-600 text-white px-3 md:px-4 py-2 rounded-lg font-bold text-xs md:text-sm hover:bg-green-700 transition">
+                        블프 세일
+                    </a>
+                    <a href="/christmas.html" class="bg-red-600 text-white px-3 md:px-4 py-2 rounded-lg font-bold text-xs md:text-sm hover:bg-red-700 transition">
+                        크리스마스
+                    </a>
+                </div>
+            </div>
+            <nav class="flex flex-wrap gap-3 md:gap-6 justify-center">
+                <a href="/goalroute.html" class="text-purple-600 font-bold border-b-2 border-purple-600">홈</a>
+                <a href="plan-route.html" class="text-gray-700 hover:text-purple-600 font-medium">코스 설계</a>
+                <a href="#features" class="text-gray-700 hover:text-purple-600 font-medium">서비스 소개</a>
+                <a href="#how-it-works" class="text-gray-700 hover:text-purple-600 font-medium">이용 방법</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-6xl font-black mb-6">
+                가슴 뛰는 경기장으로<br>
+                가는 가장 효율적인 루트
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 text-purple-100">
+                유럽 축구 경기 관전을 위한 맞춤형 여행 코스 자동 설계
+            </p>
+            <a href="plan-route.html" class="inline-block bg-white text-purple-600 px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition shadow-lg">
+                직관 코스 짜기
+            </a>
+            <p class="mt-6 text-purple-200 text-sm">
+                항공권 + 숙소 + 경기 티켓을 한 번에 검색
+            </p>
+        </div>
+    </section>
+
+    <!-- Hot Matches Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-3">🔥 다가오는 빅매치</h3>
+                <p class="text-gray-600">직관 비용 알아보기</p>
+            </div>
+
+            <div class="slider-container">
+                <button class="slider-btn slider-btn-left" onclick="moveSlider(-1)">‹</button>
+                <button class="slider-btn slider-btn-right" onclick="moveSlider(1)">›</button>
+                <div class="slider-wrapper" id="matchSlider">
+                    <!-- 빅매치 카드들이 여기에 동적으로 추가됩니다 -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-3">어떻게 사용하나요?</h3>
+                <p class="text-gray-600">4단계만 거치면 완벽한 여행 코스가 완성됩니다</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-start mb-8">
+                    <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+                    <div class="ml-6">
+                        <h4 class="text-xl font-bold mb-2">경기 일정 선택</h4>
+                        <p class="text-gray-600">달력에서 원하는 날짜를 선택하고, 해당 날짜에 열리는 유럽 경기를 확인하세요.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start mb-8">
+                    <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+                    <div class="ml-6">
+                        <h4 class="text-xl font-bold mb-2">경기 및 출발지 확정</h4>
+                        <p class="text-gray-600">관전하고 싶은 경기를 선택하고, 출발 도시(예: 인천)를 입력하세요.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start mb-8">
+                    <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+                    <div class="ml-6">
+                        <h4 class="text-xl font-bold mb-2">코스 유형 선택</h4>
+                        <p class="text-gray-600">'가성비' 또는 '프라이빗' 중 원하는 여행 스타일을 선택하세요.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">4</div>
+                    <div class="ml-6">
+                        <h4 class="text-xl font-bold mb-2">최종 견적 확인 및 예약</h4>
+                        <p class="text-gray-600">총 예산과 세부 내역을 확인하고, 각 플랫폼으로 바로 이동해 예약하세요!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="plan-route.html" class="inline-block bg-gradient-to-r from-purple-600 to-purple-800 text-white px-10 py-4 rounded-lg text-lg font-bold hover:opacity-90 transition shadow-lg">
+                    지금 시작하기 →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-2">
+                        <span class="text-2xl">⚽</span>
+                        <span class="text-xl font-bold">GoalRoute</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">가슴 뛰는 경기장으로 가는 가장 효율적인 루트</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 text-sm mb-2">
+                        ⚠️ 본 서비스는 여행 계획 보조 도구입니다.<br>
+                        실제 예약은 각 플랫폼에서 진행됩니다.
+                    </p>
+                    <p class="text-gray-500 text-xs">
+                        © 2024 GoalRoute. Part of omacasemiro.shop
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // API 베이스 URL
+        const API_BASE_URL = 'http://localhost:3000/api';
+
+        // 페이지 로드 시 다가오는 빅매치 로드
+        document.addEventListener('DOMContentLoaded', async function() {
+            await loadHotMatches();
+        });
+
+        // 다가오는 빅매치 로드
+        async function loadHotMatches() {
+            const matchSlider = document.getElementById('matchSlider');
+            if (!matchSlider) return;
+
+            // 정적 빅매치 데이터 (실제 API로 검증된 향후 3개월 일정)
+            // 실제 API 데이터는 plan-route.html에서 확인 가능
+            const staticHotMatches = [
+                {
+                    league: 'Premier League',
+                    homeTeamKo: '아스널',
+                    awayTeamKo: '토트넘',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg',
+                    stadium: '에미레이트 스타디움',
+                    city: '런던',
+                    date: '11/24',
+                    time: '01:30 KST',
+                    id: 'arsenal-tottenham'
+                },
+                {
+                    league: 'Premier League',
+                    homeTeamKo: '첼시',
+                    awayTeamKo: '아스널',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg',
+                    stadium: '스탬포드 브리지',
+                    city: '런던',
+                    date: '12/01',
+                    time: '01:30 KST',
+                    id: 'chelsea-arsenal'
+                },
+                {
+                    league: 'Premier League',
+                    homeTeamKo: '토트넘',
+                    awayTeamKo: '리버풀',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg',
+                    stadium: '토트넘 호츠퍼 스타디움',
+                    city: '런던',
+                    date: '12/21',
+                    time: '02:30 KST',
+                    id: 'tottenham-liverpool'
+                },
+                {
+                    league: 'Premier League',
+                    homeTeamKo: '맨체스터 시티',
+                    awayTeamKo: '첼시',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg',
+                    stadium: '에티하드 스타디움',
+                    city: '맨체스터',
+                    date: '01/05',
+                    time: '02:30 KST',
+                    id: 'mancity-chelsea'
+                },
+                {
+                    league: 'Premier League',
+                    homeTeamKo: '아스널',
+                    awayTeamKo: '리버풀',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg',
+                    stadium: '에미레이트 스타디움',
+                    city: '런던',
+                    date: '01/09',
+                    time: '05:00 KST',
+                    id: 'arsenal-liverpool'
+                },
+                {
+                    league: 'Premier League',
+                    homeTeamKo: '맨체스터 유나이티드',
+                    awayTeamKo: '맨체스터 시티',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg',
+                    stadium: '올드 트래포드',
+                    city: '맨체스터',
+                    date: '01/17',
+                    time: '09:00 KST',
+                    id: 'manutd-mancity'
+                },
+                {
+                    league: 'Premier League',
+                    homeTeamKo: '아스널',
+                    awayTeamKo: '맨체스터 유나이티드',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg',
+                    stadium: '에미레이트 스타디움',
+                    city: '런던',
+                    date: '01/24',
+                    time: '09:00 KST',
+                    id: 'arsenal-manutd'
+                },
+                {
+                    league: 'Premier League',
+                    homeTeamKo: '토트넘',
+                    awayTeamKo: '맨체스터 시티',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg',
+                    stadium: '토트넘 호츠퍼 스타디움',
+                    city: '런던',
+                    date: '01/31',
+                    time: '09:00 KST',
+                    id: 'tottenham-mancity'
+                },
+                {
+                    league: 'Premier League',
+                    homeTeamKo: '리버풀',
+                    awayTeamKo: '맨체스터 시티',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg',
+                    stadium: '안필드',
+                    city: '리버풀',
+                    date: '02/07',
+                    time: '09:00 KST',
+                    id: 'liverpool-mancity'
+                },
+                {
+                    league: 'Premier League',
+                    homeTeamKo: '맨체스터 유나이티드',
+                    awayTeamKo: '토트넘',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg',
+                    stadium: '올드 트래포드',
+                    city: '맨체스터',
+                    date: '02/07',
+                    time: '09:00 KST',
+                    id: 'manutd-tottenham'
+                }
+            ];
+
+            // 경기 카드 즉시 표시 (슬라이더용)
+            matchSlider.innerHTML = staticHotMatches.map(match => {
+                const leagueColor = getLeagueColor(match.league);
+
+                return `
+                    <div class="slider-card match-card bg-white rounded-lg shadow-md p-6 card-hover">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-${leagueColor}-100 text-${leagueColor}-700 text-xs font-bold px-3 py-1 rounded-full">${match.league}</span>
+                            <span class="text-gray-500 text-sm">${match.date}</span>
+                        </div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="text-center">
+                                <img src="${match.homeLogo}" alt="${match.homeTeamKo}" class="w-16 h-16 mx-auto mb-2" onerror="this.src='https://via.placeholder.com/64'">
+                                <p class="font-bold">${match.homeTeamKo}</p>
+                            </div>
+                            <div class="text-2xl font-black text-gray-400">VS</div>
+                            <div class="text-center">
+                                <img src="${match.awayLogo}" alt="${match.awayTeamKo}" class="w-16 h-16 mx-auto mb-2" onerror="this.src='https://via.placeholder.com/64'">
+                                <p class="font-bold">${match.awayTeamKo}</p>
+                            </div>
+                        </div>
+                        <div class="text-sm text-gray-600 mb-4">
+                            📍 ${match.stadium}, ${match.city}<br>
+                            ⏰ ${match.time}
+                        </div>
+                        <a href="plan-route.html?match=${encodeURIComponent(JSON.stringify(match))}" class="block w-full bg-purple-600 text-white text-center py-3 rounded-lg font-bold hover:bg-purple-700 transition">
+                            여행 코스 만들기
+                        </a>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 슬라이더 기능
+        let currentSlide = 0;
+        const slideWidth = 33.333; // 한 번에 3개씩 표시
+
+        function moveSlider(direction) {
+            const slider = document.getElementById('matchSlider');
+            const totalSlides = 10; // 총 10개 경기
+            const maxSlide = totalSlides - 3; // 마지막 슬라이드 (3개씩 보이므로)
+
+            currentSlide += direction;
+
+            // 경계 처리
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide > maxSlide) currentSlide = maxSlide;
+
+            // 슬라이드 이동
+            const translateX = -(currentSlide * (slideWidth + 0.8)); // gap 고려
+            slider.style.transform = `translateX(${translateX}%)`;
+        }
+
+        // 리그별 색상
+        function getLeagueColor(league) {
+            const colors = {
+                'Premier League': 'red',
+                'La Liga': 'yellow',
+                'Serie A': 'blue',
+                'Bundesliga': 'green',
+                'Ligue 1': 'purple'
+            };
+            return colors[league] || 'gray';
+        }
+    </script>
+</body>
+</html>

@@ -180,7 +180,7 @@ const christmasClubs = [
     {
         name: '아스톤 빌라',
         nameEn: 'Aston Villa',
-        logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Aston_Villa_FC_new_crest.svg/887px-Aston_Villa_FC_new_crest.svg.png',
+        logo: 'https://1000logos.net/wp-content/uploads/2022/05/Aston-Villa-Logo.png',
         url: 'https://shop.avfc.co.uk/en/aston-villa-christmas-2025/t-42325359+x-08259219+z-81-3286515707',
         color: 'from-purple-900 to-blue-900',
         league: '프리미어리그',

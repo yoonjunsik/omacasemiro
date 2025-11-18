@@ -178,6 +178,15 @@ const christmasClubs = [
         products: []  // 실제 제품 이미지 없음 - 크롤링 필요
     },
     {
+        name: '아스톤 빌라',
+        nameEn: 'Aston Villa',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/f/f9/Aston_Villa_FC_crest_%282016%29.svg',
+        url: 'https://shop.avfc.co.uk/en/aston-villa-christmas-2025/t-42325359+x-08259219+z-81-3286515707',
+        color: 'from-purple-900 to-blue-900',
+        league: '프리미어리그',
+        products: []  // 실제 제품 이미지 없음 - 크롤링 필요
+    },
+    {
         name: '바르셀로나',
         nameEn: 'Barcelona',
         logo: 'https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg',

@@ -477,13 +477,32 @@ function renderBlackFridaySites() {
     let visibleSites = sites.filter(site => site.visible !== false);
 
     // 리그 순서대로 정렬
-    // 1순위: league 필드로 정렬 (프리미어리그 > 라리가 > 분데스리가 > 세리에 > 리그앙)
-    // 2순위: type이 "공식 편집샵"인 경우 맨 뒤로
+    // 1순위: 구단 공식 스토어 (league 필드 있음) - 리그 순서대로
+    // 2순위: 브랜드 홈페이지 (league 없음, type이 "공식 홈페이지")
+    // 3순위: 공식 편집샵 (type이 "공식 편집샵")
     visibleSites = visibleSites.sort((a, b) => {
-        // league 필드가 있으면 사용, 없으면 type이 "공식 편집샵"이면 999
-        const leagueA = a.league ? (leagueOrder[a.league] || 999) : (a.type === '공식 편집샵' ? 999 : 998);
-        const leagueB = b.league ? (leagueOrder[b.league] || 999) : (b.type === '공식 편집샵' ? 999 : 998);
-        return leagueA - leagueB;
+        // league 필드가 있으면 해당 리그 우선순위 사용 (1-5)
+        // league 없고 type이 "공식 편집샵"이면 999 (맨 뒤)
+        // league 없고 type이 "공식 홈페이지"이거나 기타이면 100 (구단 스토어와 편집샵 사이)
+        let priorityA, priorityB;
+
+        if (a.league) {
+            priorityA = leagueOrder[a.league] || 50;
+        } else if (a.type === '공식 편집샵') {
+            priorityA = 999;
+        } else {
+            priorityA = 100; // 브랜드 홈페이지
+        }
+
+        if (b.league) {
+            priorityB = leagueOrder[b.league] || 50;
+        } else if (b.type === '공식 편집샵') {
+            priorityB = 999;
+        } else {
+            priorityB = 100; // 브랜드 홈페이지
+        }
+
+        return priorityA - priorityB;
     });
 
     container.innerHTML = '';

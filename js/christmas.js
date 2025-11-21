@@ -483,6 +483,75 @@ const christmasClubs = [
         color: 'from-blue-900 to-red-600',
         league: '리그 1',
         products: []  // 실제 제품 이미지 없음 - 크롤링 필요
+    },
+    {
+        name: '나폴리',
+        nameEn: 'Napoli',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/SSC_Neapel.svg',
+        url: 'https://store.sscnapoli.it/en/search?q=christmas',
+        color: 'from-sky-400 to-blue-600',
+        league: '세리에 A',
+        products: [
+            {
+                name: 'SSC Napoli Christmas Sweater 2025',
+                image: 'https://store.sscnapoli.it/cdn/shop/files/JG8A1118.jpg',
+                url: 'https://store.sscnapoli.it/en/products/ssc-napoli-christmas-sweater-2025'
+            }
+        ]
+    },
+    {
+        name: '레버쿠젠',
+        nameEn: 'Bayer Leverkusen',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/5/59/Bayer_04_Leverkusen_logo.svg',
+        url: 'https://shop.bayer04.de/en/christmas',
+        color: 'from-red-600 to-black',
+        league: '분데스리가',
+        products: []
+    },
+    {
+        name: '웨스트햄',
+        nameEn: 'West Ham United',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg',
+        url: 'https://shop.whufc.com/christmas',
+        color: 'from-purple-900 to-sky-400',
+        league: '프리미어리그',
+        products: []
+    },
+    {
+        name: '브라이튼',
+        nameEn: 'Brighton',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg',
+        url: 'https://shop.brightonandhovealbion.com/christmas',
+        color: 'from-blue-500 to-white',
+        league: '프리미어리그',
+        products: []
+    },
+    {
+        name: '크리스탈 팰리스',
+        nameEn: 'Crystal Palace',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/a/a2/Crystal_Palace_FC_logo_%282022%29.svg',
+        url: 'https://shop.cpfc.co.uk/christmas',
+        color: 'from-blue-600 to-red-600',
+        league: '프리미어리그',
+        products: []
+    },
+    {
+        name: '레스터',
+        nameEn: 'Leicester City',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg',
+        url: 'https://shop.lcfc.com/christmas',
+        color: 'from-blue-600 to-white',
+        league: '프리미어리그',
+        products: []
+    },
+    {
+        name: '리옹',
+        nameEn: 'Lyon',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/e/e2/Olympique_Lyonnais_logo.svg',
+        url: 'https://www.olympiquelyonnais.com/boutique/en/christmas',
+        color: 'from-blue-600 to-red-600',
+        league: '리그 1',
+        products: []
     }
 ];
 

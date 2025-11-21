@@ -450,6 +450,21 @@ function getDateRangeText(startDate, endDate) {
     }
 }
 
+// 리그 순서 정의 (낮을수록 우선순위 높음)
+const leagueOrder = {
+    '프리미어리그': 1,
+    'Premier League': 1,
+    '라리가': 2,
+    'La Liga': 2,
+    '분데스리가': 3,
+    'Bundesliga': 3,
+    '세리에 A': 4,
+    'Serie A': 4,
+    '리그앙': 5,
+    'Ligue 1': 5,
+    '편집샵': 6
+};
+
 // 블프 세일 사이트 렌더링
 function renderBlackFridaySites() {
     const container = document.getElementById('blackFridaySitesContainer');
@@ -459,7 +474,17 @@ function renderBlackFridaySites() {
     const sites = window.blackFridaySites || blackFridaySites || [];
 
     // visible이 true인 사이트만 필터링
-    const visibleSites = sites.filter(site => site.visible !== false);
+    let visibleSites = sites.filter(site => site.visible !== false);
+
+    // 리그 순서대로 정렬
+    // 1순위: league 필드로 정렬 (프리미어리그 > 라리가 > 분데스리가 > 세리에 > 리그앙)
+    // 2순위: type이 "공식 편집샵"인 경우 맨 뒤로
+    visibleSites = visibleSites.sort((a, b) => {
+        // league 필드가 있으면 사용, 없으면 type이 "공식 편집샵"이면 999
+        const leagueA = a.league ? (leagueOrder[a.league] || 999) : (a.type === '공식 편집샵' ? 999 : 998);
+        const leagueB = b.league ? (leagueOrder[b.league] || 999) : (b.type === '공식 편집샵' ? 999 : 998);
+        return leagueA - leagueB;
+    });
 
     container.innerHTML = '';
 

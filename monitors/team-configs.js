@@ -226,10 +226,12 @@ const teamConfigs = {
             name: 'Bayern Munich',
             nameKo: '바이에른 뮌헨',
             league: 'Bundesliga',
-            storeUrl: 'https://fcbayern.com/store',
+            storeUrl: 'https://fcbayern.com/shop',
             blackFridayUrls: [
-                'https://fcbayern.com/store/en-zz/black-friday',
-                'https://fcbayern.com/store/en-zz/sale'
+                'https://fcbayern.com/shop/en/black-friday',
+                'https://fcbayern.com/shop/de/black-friday',
+                'https://fcbayern.com/shop/en/black-week',
+                'https://fcbayern.com/shop/de/black-week'
             ],
             selectors: {
                 products: '.product-tile',
@@ -246,8 +248,10 @@ const teamConfigs = {
             league: 'Bundesliga',
             storeUrl: 'https://shop.bvb.de',
             blackFridayUrls: [
+                'https://shop.bvb.de/en-de/black-week',
+                'https://shop.bvb.de/de-de/black-week',
                 'https://shop.bvb.de/en-de/black-friday',
-                'https://shop.bvb.de/en-de/sale'
+                'https://shop.bvb.de/de-de/black-friday'
             ],
             selectors: {
                 products: '.product-tile',
@@ -328,8 +332,10 @@ const teamConfigs = {
             league: 'Serie A',
             storeUrl: 'https://store.juventus.com',
             blackFridayUrls: [
-                'https://store.juventus.com/kr/black-friday',  // 한국
-                'https://store.juventus.com/it/black-friday',  // 이탈리아
+                'https://store.juventus.com/it/black-week',  // 실제 작동 URL
+                'https://store.juventus.com/en/black-week',
+                'https://store.juventus.com/kr/black-friday',
+                'https://store.juventus.com/it/black-friday',
                 'https://store.juventus.com/kr/sale',
                 'https://store.juventus.com/it/sale'
             ],

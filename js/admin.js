@@ -984,6 +984,8 @@ async function addBlackFridaySite() {
     const endDate = document.getElementById('newBFEndDate').value;
     const discount = document.getElementById('newBFDiscount').value.trim();
     const badgeColor = document.getElementById('newBFBadgeColor').value;
+    const league = document.getElementById('newBFLeague').value;
+    const type = document.getElementById('newBFType').value;
     const description = document.getElementById('newBFDescription').value.trim();
 
     // 유효성 검사
@@ -1019,12 +1021,17 @@ async function addBlackFridaySite() {
         discount: discount,
         url: siteUrl,
         location: '국내', // 기본값
-        type: '공식', // 기본값
+        type: type,
         color: badgeColor,
         startDate: startDate,
         endDate: endDate,
         visible: true
     };
+
+    // league 필드는 값이 있을 때만 추가
+    if (league) {
+        newSite.league = league;
+    }
 
     // Firebase 데이터 우선 사용
     const sites = window.blackFridaySites || blackFridaySites;
@@ -1050,6 +1057,8 @@ async function addBlackFridaySite() {
         document.getElementById('newBFDiscount').value = '';
         document.getElementById('newBFDescription').value = '';
         document.getElementById('newBFBadgeColor').value = 'red';
+        document.getElementById('newBFLeague').value = '';
+        document.getElementById('newBFType').value = '구단 공식 스토어';
 
         // 리스트 다시 렌더링
         renderBlackFridaySitesList();

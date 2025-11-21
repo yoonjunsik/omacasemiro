@@ -38,6 +38,7 @@ class MonitorRunner {
         const leagueResults = [];
 
         for (const team of teams) {
+            console.log(`\n🔍 ${team.nameKo} (${team.name}) 크롤링 시작...`);
             const detector = new BlackFridayDetector(team);
 
             try {
@@ -45,10 +46,17 @@ class MonitorRunner {
                 leagueResults.push(result);
                 this.results.push(result);
 
+                // 결과 로깅
+                if (result.blackFridayDetected) {
+                    console.log(`   ✅ 블랙프라이데이 감지! (신뢰도: ${result.confidence}%)`);
+                } else {
+                    console.log(`   ⭕ 미감지`);
+                }
+
                 // 팀 간 딜레이 (Rate limiting)
                 await new Promise(resolve => setTimeout(resolve, 5000));
             } catch (error) {
-                console.error(`❌ ${team.nameKo} 모니터링 실패:`, error.message);
+                console.error(`   ❌ 모니터링 실패: ${error.message}`);
                 leagueResults.push({
                     team: team.nameKo,
                     teamEn: team.name,

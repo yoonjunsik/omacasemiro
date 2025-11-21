@@ -567,7 +567,21 @@ function renderClubs() {
     const grid = document.getElementById('clubsGrid');
     grid.innerHTML = '';
 
-    christmasClubs.forEach(club => {
+    // 리그 순서 정의: PL > 라리가 > 분데스리가 > 세리에 A > 리그 1
+    const leagueOrder = {
+        '프리미어리그': 1,
+        '라리가': 2,
+        '분데스리가': 3,
+        '세리에 A': 4,
+        '리그 1': 5
+    };
+
+    // 리그 순서대로 정렬
+    const sortedClubs = [...christmasClubs].sort((a, b) => {
+        return (leagueOrder[a.league] || 999) - (leagueOrder[b.league] || 999);
+    });
+
+    sortedClubs.forEach(club => {
         const card = createClubCard(club);
         grid.appendChild(card);
     });

@@ -180,7 +180,7 @@ const christmasClubs = [
     {
         name: '아스톤 빌라',
         nameEn: 'Aston Villa',
-        logo: 'https://1000logos.net/wp-content/uploads/2022/05/Aston-Villa-Logo.png',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/f/f9/Aston_Villa_logo.svg',
         url: 'https://shop.avfc.co.uk/en/aston-villa-christmas-2025/t-42325359+x-08259219+z-81-3286515707',
         color: 'from-purple-900 to-blue-900',
         league: '프리미어리그',
@@ -547,7 +547,7 @@ const christmasClubs = [
     {
         name: '리옹',
         nameEn: 'Lyon',
-        logo: 'https://upload.wikimedia.org/wikipedia/en/e/e2/Olympique_Lyonnais_logo.svg',
+        logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e2/Olympique_Lyonnais_logo.svg',
         url: 'https://www.olympiquelyonnais.com/boutique/en/christmas',
         color: 'from-blue-600 to-red-600',
         league: '리그 1',

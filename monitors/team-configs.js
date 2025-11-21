@@ -9,6 +9,7 @@ const teamConfigs = {
             league: 'Premier League',
             storeUrl: 'https://store.liverpoolfc.com',
             blackFridayUrls: [
+                'https://store.liverpoolfc.com/en/liverpool-fc/black-friday/t-65098729+d-4538556712+z-9-1432134526',
                 'https://store.liverpoolfc.com/black-friday',
                 'https://store.liverpoolfc.com/sale'
             ],
@@ -47,6 +48,7 @@ const teamConfigs = {
             league: 'Premier League',
             storeUrl: 'https://arsenaldirect.arsenal.com',
             blackFridayUrls: [
+                'https://arsenaldirect.arsenal.com/Shop-All-Black-Friday/c/black-friday',
                 'https://arsenaldirect.arsenal.com/black-friday',
                 'https://arsenaldirect.arsenal.com/sale'
             ],
@@ -65,8 +67,9 @@ const teamConfigs = {
             league: 'Premier League',
             storeUrl: 'https://store.chelseafc.com',
             blackFridayUrls: [
-                'https://store.chelseafc.com/ko/black-friday',  // 한국
-                'https://store.chelseafc.com/en/black-friday',  // 영국
+                'https://store.chelseafc.com/en/chelsea/black-friday/t-10096475+d-7838009012+z-9-2750392639',
+                'https://store.chelseafc.com/ko/black-friday',
+                'https://store.chelseafc.com/en/black-friday',
                 'https://store.chelseafc.com/ko/sale',
                 'https://store.chelseafc.com/en/sale'
             ],
@@ -123,6 +126,7 @@ const teamConfigs = {
             league: 'Premier League',
             storeUrl: 'https://shop.tottenhamhotspur.com',
             blackFridayUrls: [
+                'https://shop.tottenhamhotspur.com/en/tottenham-hotspur/black-friday/t-32431818+d-8949898534+z-9-527071804',
                 'https://shop.tottenhamhotspur.com/black-friday',
                 'https://shop.tottenhamhotspur.com/sale'
             ],

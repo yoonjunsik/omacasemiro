@@ -1,0 +1,11 @@
+# Ignore large/unnecessary files for Railway deployment
+node_modules/
+cache/
+crawler/
+monitor-results/
+soccer-dna/
+.git/
+.github/
+*.log
+firebase-data.json
+omacasemiro-8fd4c-firebase-adminsdk-fbsvc-8c438c494c.json

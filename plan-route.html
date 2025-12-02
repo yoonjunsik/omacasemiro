@@ -122,13 +122,13 @@
                 <h2 class="text-2xl md:text-3xl font-bold mb-2">📅 관전하고 싶은 경기를 선택하세요</h2>
                 <p class="text-gray-600 mb-6">원하는 날짜를 선택하면, 해당 날짜에 열리는 경기를 보여드립니다.</p>
 
-                <!-- Calendar (Simplified) -->
+                <!-- Calendar (Dynamic) -->
                 <div class="mb-8">
                     <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-xl font-bold">2024년 12월</h3>
+                        <h3 id="calendarTitle" class="text-xl font-bold">2025년 11월</h3>
                         <div class="flex space-x-2">
-                            <button class="px-3 py-1 bg-gray-100 rounded hover:bg-gray-200">←</button>
-                            <button class="px-3 py-1 bg-gray-100 rounded hover:bg-gray-200">→</button>
+                            <button onclick="changeMonth(-1)" class="px-3 py-1 bg-gray-100 rounded hover:bg-gray-200">←</button>
+                            <button onclick="changeMonth(1)" class="px-3 py-1 bg-gray-100 rounded hover:bg-gray-200">→</button>
                         </div>
                     </div>
                     <div class="grid grid-cols-7 gap-2 text-center">
@@ -139,32 +139,9 @@
                         <div class="text-gray-500 font-medium py-2">목</div>
                         <div class="text-gray-500 font-medium py-2">금</div>
                         <div class="text-gray-500 font-medium py-2">토</div>
-
-                        <div class="calendar-day py-3 rounded"></div>
-                        <div class="calendar-day py-3 rounded"></div>
-                        <div class="calendar-day py-3 rounded"></div>
-                        <div class="calendar-day py-3 rounded"></div>
-                        <div class="calendar-day py-3 rounded"></div>
-                        <div class="calendar-day py-3 rounded"></div>
-                        <div class="calendar-day py-3 rounded">1</div>
-
-                        <!-- Week with matches -->
-                        <div class="calendar-day py-3 rounded">8</div>
-                        <div class="calendar-day py-3 rounded">9</div>
-                        <div class="calendar-day py-3 rounded">10</div>
-                        <div class="calendar-day py-3 rounded">11</div>
-                        <div class="calendar-day py-3 rounded">12</div>
-                        <div class="calendar-day py-3 rounded">13</div>
-                        <div class="calendar-day has-match py-3 rounded" data-date="2024-12-14">14</div>
-
-                        <div class="calendar-day has-match py-3 rounded" data-date="2024-12-15">15</div>
-                        <div class="calendar-day has-match py-3 rounded" data-date="2024-12-16">16</div>
-                        <div class="calendar-day has-match py-3 rounded" data-date="2024-12-17">17</div>
-                        <div class="calendar-day py-3 rounded">18</div>
-                        <div class="calendar-day py-3 rounded">19</div>
-                        <div class="calendar-day py-3 rounded">20</div>
-                        <div class="calendar-day has-match py-3 rounded" data-date="2024-12-21">21</div>
                     </div>
+                    <!-- 동적으로 생성될 날짜들 -->
+                    <div id="calendarDays" class="grid grid-cols-7 gap-2 text-center"></div>
                     <p class="text-sm text-gray-500 mt-2">* 밑줄이 있는 날짜는 경기가 있는 날입니다</p>
                 </div>
 
@@ -226,11 +203,11 @@
                         </div>
                         <ul class="space-y-2 text-gray-700">
                             <li>✈️ 경유 항공편 (저가 항공사)</li>
-                            <li>🏨 호스텔 / 2성급 호텔</li>
+                            <li>🏨 호스텔 / 2성급 호텔 (7박)</li>
                             <li>🎫 일반석 경기 티켓</li>
                             <li>🚆 저가 교통수단</li>
                         </ul>
-                        <p class="mt-4 text-sm text-gray-500">예상 비용: ₩1,250,000~</p>
+                        <p class="mt-4 text-sm text-gray-500">예상 비용: ₩1,460,000~ (7박8일)</p>
                     </div>
 
                     <!-- 프라이빗 버전 -->
@@ -241,11 +218,11 @@
                         </div>
                         <ul class="space-y-2 text-gray-700">
                             <li>✈️ 직항 항공편 (일반 항공사)</li>
-                            <li>🏨 3~4성급 호텔</li>
+                            <li>🏨 3~4성급 호텔 (7박)</li>
                             <li>🎫 프리미엄 좌석 티켓</li>
                             <li>🚗 편안한 교통수단</li>
                         </ul>
-                        <p class="mt-4 text-sm text-gray-500">예상 비용: ₩2,800,000~</p>
+                        <p class="mt-4 text-sm text-gray-500">예상 비용: ₩3,000,000~ (7박8일)</p>
                     </div>
                 </div>
 
@@ -280,48 +257,188 @@
                 <div id="budgetRoute">
                     <div class="bg-purple-50 p-6 rounded-lg mb-6">
                         <h3 class="text-3xl font-black mb-2">총 예상 금액</h3>
-                        <p class="text-5xl font-black text-purple-600">₩1,250,000</p>
+                        <p class="text-5xl font-black text-purple-600" id="budgetTotalPrice">₩1,250,000</p>
                         <p class="text-sm text-gray-600 mt-2">* 환율 및 재고 상황에 따라 변동될 수 있습니다</p>
                     </div>
 
-                    <div class="space-y-4 mb-6">
-                        <!-- Flight -->
-                        <div class="border rounded-lg p-4">
-                            <div class="flex items-center justify-between mb-2">
-                                <h4 class="font-bold text-lg">✈️ 항공권</h4>
-                                <span class="text-xl font-bold text-purple-600">₩650,000</span>
+                    <div class="space-y-6 mb-6">
+                        <!-- Flight Options -->
+                        <div class="border-2 border-gray-200 rounded-lg p-5">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="font-bold text-xl">✈️ 항공권 옵션</h4>
                             </div>
-                            <p class="text-sm text-gray-600 mb-2">인천(ICN) → 런던(LHR) 왕복</p>
-                            <p class="text-sm text-gray-500">경유 1회 / 저가 항공사 / 12월 14일 출발 - 12월 18일 귀국</p>
-                            <a href="https://www.skyscanner.co.kr" target="_blank" class="inline-block mt-3 px-4 py-2 bg-blue-500 text-white rounded text-sm font-bold hover:bg-blue-600">
-                                Skyscanner에서 검색 →
-                            </a>
+
+                            <!-- Flight Tips -->
+                            <div class="bg-blue-50 p-3 rounded-lg mb-4">
+                                <p class="text-sm text-blue-800 font-medium mb-2">💡 항공권 팁</p>
+                                <ul class="text-xs text-blue-700 space-y-1">
+                                    <li>• 경기 일정 변동에 대비해 앞뒤로 하루씩 여유를 두세요</li>
+                                    <li>• 경유편은 직항 대비 50% 저렴하지만 시간이 오래 걸립니다</li>
+                                    <li>• 항공권은 출발 2-3개월 전 예매 시 가장 저렴합니다</li>
+                                </ul>
+                            </div>
+
+                            <div id="budgetFlightOptions" class="space-y-3">
+                                <!-- 동적으로 생성됩니다 -->
+                                <div class="bg-gray-50 p-4 rounded border-l-4 border-green-500">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <div>
+                                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-bold">가성비 ⭐</span>
+                                            <p class="font-bold mt-2">일반항공 (1회 경유)</p>
+                                            <p class="text-sm text-gray-600">소요시간: 15-18시간</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-xl font-bold text-purple-600">₩910,000</p>
+                                            <p class="text-xs text-gray-500">845,000~975,000원</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-gray-600 mb-3">가격과 편의성의 균형</p>
+                                    <a href="https://www.skyscanner.co.kr" target="_blank" class="inline-block px-4 py-2 bg-blue-500 text-white rounded text-sm font-bold hover:bg-blue-600">
+                                        Skyscanner에서 검색 →
+                                    </a>
+                                </div>
+
+                                <div class="bg-white p-4 rounded border border-gray-200">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <div>
+                                            <span class="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded font-bold">초가성비</span>
+                                            <p class="font-bold mt-2">저가항공 (1회 경유)</p>
+                                            <p class="text-sm text-gray-600">소요시간: 17-20시간</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-xl font-bold text-purple-600">₩715,000</p>
+                                            <p class="text-xs text-gray-500">650,000~780,000원</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-gray-600 mb-3">가장 저렴하지만 대기시간이 길 수 있음</p>
+                                    <a href="https://www.skyscanner.co.kr" target="_blank" class="inline-block px-4 py-2 bg-blue-500 text-white rounded text-sm font-bold hover:bg-blue-600">
+                                        Skyscanner에서 검색 →
+                                    </a>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- Hotel -->
-                        <div class="border rounded-lg p-4">
-                            <div class="flex items-center justify-between mb-2">
-                                <h4 class="font-bold text-lg">🏨 숙소</h4>
-                                <span class="text-xl font-bold text-purple-600">₩350,000</span>
+                        <!-- Accommodation Options -->
+                        <div class="border-2 border-gray-200 rounded-lg p-5">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="font-bold text-xl">🏨 숙소 옵션</h4>
                             </div>
-                            <p class="text-sm text-gray-600 mb-2">리버풀 시내 호스텔 / 3박</p>
-                            <p class="text-sm text-gray-500">체크인: 12/14 / 체크아웃: 12/17 / 평점 7.5+</p>
-                            <a href="https://www.agoda.com" target="_blank" class="inline-block mt-3 px-4 py-2 bg-red-500 text-white rounded text-sm font-bold hover:bg-red-600">
-                                Agoda에서 검색 →
-                            </a>
+
+                            <!-- Accommodation Tips -->
+                            <div class="bg-orange-50 p-3 rounded-lg mb-4">
+                                <p class="text-sm text-orange-800 font-medium mb-2">💡 숙소 팁</p>
+                                <ul class="text-xs text-orange-700 space-y-1">
+                                    <li>• 2인 이상이면 호스텔비를 합쳐 모텔/호텔로 업그레이드 가능</li>
+                                    <li>• 1인 여행이라면 호스텔 도미토리가 가장 경제적</li>
+                                    <li>• 경기장 근처 호스텔이 없다면 시내에서 예약 후 대중교통 이용</li>
+                                </ul>
+                            </div>
+
+                            <div id="budgetAccommodationOptions" class="space-y-3">
+                                <!-- 동적으로 생성됩니다 -->
+                                <div class="bg-gray-50 p-4 rounded border-l-4 border-green-500">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <div>
+                                            <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded font-bold">1인 가성비 ⭐</span>
+                                            <p class="font-bold mt-2">호스텔 (도미토리)</p>
+                                            <p class="text-sm text-gray-600">공용 침실 (4-8인실)</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-xl font-bold text-purple-600">₩108,000</p>
+                                            <p class="text-xs text-gray-500">1박 36,000원 × 3박</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <p class="text-xs text-green-600 font-medium">✓ 최저가 · 중심가 위치</p>
+                                        <p class="text-xs text-gray-500">✗ 프라이버시 없음 · 소음 가능</p>
+                                    </div>
+                                    <a href="https://www.booking.com" target="_blank" class="inline-block px-4 py-2 bg-red-500 text-white rounded text-sm font-bold hover:bg-red-600">
+                                        Booking.com에서 검색 →
+                                    </a>
+                                </div>
+
+                                <div class="bg-white p-4 rounded border border-gray-200">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <div>
+                                            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded font-bold">프라이버시</span>
+                                            <p class="font-bold mt-2">호스텔 (개인실)</p>
+                                            <p class="text-sm text-gray-600">개인 침실, 공용 샤워실</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-xl font-bold text-purple-600">₩180,000</p>
+                                            <p class="text-xs text-gray-500">1박 60,000원 × 3박</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <p class="text-xs text-green-600 font-medium">✓ 저렴한 가격 · 개인 공간</p>
+                                        <p class="text-xs text-gray-500">✗ 공용 샤워실</p>
+                                    </div>
+                                    <a href="https://www.booking.com" target="_blank" class="inline-block px-4 py-2 bg-red-500 text-white rounded text-sm font-bold hover:bg-red-600">
+                                        Booking.com에서 검색 →
+                                    </a>
+                                </div>
+
+                                <div class="bg-white p-4 rounded border border-gray-200">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <div>
+                                            <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded font-bold">2인+ 추천</span>
+                                            <p class="font-bold mt-2">2성급 호텔/모텔</p>
+                                            <p class="text-sm text-gray-600">개인실, 개인 욕실</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-xl font-bold text-purple-600">₩252,000</p>
+                                            <p class="text-xs text-gray-500">1박 84,000원 × 3박</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <p class="text-xs text-green-600 font-medium">✓ 완전한 프라이버시 · 개인 욕실</p>
+                                        <p class="text-xs text-gray-500">✗ 시설 기본적</p>
+                                    </div>
+                                    <a href="https://www.agoda.com" target="_blank" class="inline-block px-4 py-2 bg-red-500 text-white rounded text-sm font-bold hover:bg-red-600">
+                                        Agoda에서 검색 →
+                                    </a>
+                                </div>
+                            </div>
                         </div>
 
                         <!-- Ticket -->
-                        <div class="border rounded-lg p-4">
-                            <div class="flex items-center justify-between mb-2">
-                                <h4 class="font-bold text-lg">🎫 경기 티켓</h4>
-                                <span class="text-xl font-bold text-purple-600">₩180,000</span>
+                        <div class="border-2 border-gray-200 rounded-lg p-5">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="font-bold text-xl">🎫 경기 티켓</h4>
+                                <span class="text-xl font-bold text-purple-600">₩280,000</span>
                             </div>
-                            <p class="text-sm text-gray-600 mb-2">리버풀 vs 맨시티 / 안필드</p>
-                            <p class="text-sm text-gray-500">일반석 (상층부) / 12월 15일 21:00</p>
-                            <a href="https://www.stubhub.com" target="_blank" class="inline-block mt-3 px-4 py-2 bg-orange-500 text-white rounded text-sm font-bold hover:bg-orange-600">
-                                StubHub에서 검색 →
-                            </a>
+
+                            <!-- Ticket Tips -->
+                            <div class="bg-green-50 p-3 rounded-lg mb-4">
+                                <p class="text-sm text-green-800 font-medium mb-2">💡 티켓 구매 팁</p>
+                                <ul class="text-xs text-green-700 space-y-1">
+                                    <li>📉 일반 경기는 경기일에 가까워질수록 티켓 가격이 5-10% 하락</li>
+                                    <li>📈 빅매치(챔피언스리그, 더비)는 경기가 가까워져도 가격 상승 가능</li>
+                                    <li>💡 Football Ticket Net이 수수료 포함 가격이 다른 곳보다 5% 저렴</li>
+                                </ul>
+                            </div>
+
+                            <div class="bg-white p-4 rounded border border-gray-200 mb-3">
+                                <p class="text-sm text-gray-600 mb-2"><strong>리버풀 vs PSV (챔피언스리그)</strong></p>
+                                <p class="text-sm text-gray-600 mb-2">📍 안필드, 리버풀</p>
+                                <p class="text-xs text-gray-500">일반석 (상층부)</p>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-2 mb-4">
+                                <a href="https://www.footballticketnet.com" target="_blank" class="px-3 py-2 bg-green-500 text-white rounded text-xs font-bold hover:bg-green-600 text-center">
+                                    Football Ticket Net ⭐
+                                </a>
+                                <a href="https://www.stubhub.com" target="_blank" class="px-3 py-2 bg-orange-500 text-white rounded text-xs font-bold hover:bg-orange-600 text-center">
+                                    StubHub
+                                </a>
+                                <a href="https://www.livefootballtickets.com" target="_blank" class="px-3 py-2 bg-blue-500 text-white rounded text-xs font-bold hover:bg-blue-600 text-center">
+                                    LiveFootball
+                                </a>
+                            </div>
+
+                            <p class="text-xs text-gray-500">
+                                💬 공식 홈페이지 예매는 유료 멤버십 필수. 1-2경기만 보는 여행객은 리셀 사이트 추천
+                            </p>
                         </div>
 
                         <!-- Transport -->
@@ -340,48 +457,131 @@
                 <div id="premiumRoute" class="hidden">
                     <div class="bg-purple-50 p-6 rounded-lg mb-6">
                         <h3 class="text-3xl font-black mb-2">총 예상 금액</h3>
-                        <p class="text-5xl font-black text-purple-600">₩2,800,000</p>
+                        <p class="text-5xl font-black text-purple-600" id="premiumTotalPrice">₩1,970,000</p>
                         <p class="text-sm text-gray-600 mt-2">* 환율 및 재고 상황에 따라 변동될 수 있습니다</p>
                     </div>
 
-                    <div class="space-y-4 mb-6">
-                        <!-- Flight -->
-                        <div class="border rounded-lg p-4">
-                            <div class="flex items-center justify-between mb-2">
-                                <h4 class="font-bold text-lg">✈️ 항공권</h4>
-                                <span class="text-xl font-bold text-purple-600">₩1,650,000</span>
+                    <div class="space-y-6 mb-6">
+                        <!-- Flight Options (Direct) -->
+                        <div class="border-2 border-gray-200 rounded-lg p-5">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="font-bold text-xl">✈️ 항공권 옵션 (직항)</h4>
                             </div>
-                            <p class="text-sm text-gray-600 mb-2">인천(ICN) → 런던(LHR) 왕복</p>
-                            <p class="text-sm text-gray-500">직항 / 대한항공 / 12월 14일 출발 - 12월 18일 귀국</p>
-                            <a href="https://www.skyscanner.co.kr" target="_blank" class="inline-block mt-3 px-4 py-2 bg-blue-500 text-white rounded text-sm font-bold hover:bg-blue-600">
-                                Skyscanner에서 검색 →
-                            </a>
+
+                            <div id="premiumFlightOptions" class="space-y-3">
+                                <div class="bg-gray-50 p-4 rounded border-l-4 border-blue-500">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <div>
+                                            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded font-bold">직항 ⭐</span>
+                                            <p class="font-bold mt-2">대한항공/아시아나</p>
+                                            <p class="text-sm text-gray-600">소요시간: 11-13시간 (직항)</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-xl font-bold text-purple-600">₩1,300,000</p>
+                                            <p class="text-xs text-gray-500">1,170,000~1,430,000원</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-gray-600 mb-3">가장 빠르고 편안한 여정</p>
+                                    <a href="https://www.skyscanner.co.kr/?preferdirects=true" target="_blank" class="inline-block px-4 py-2 bg-blue-500 text-white rounded text-sm font-bold hover:bg-blue-600">
+                                        Skyscanner에서 검색 →
+                                    </a>
+                                </div>
+
+                                <div class="bg-white p-4 rounded border border-gray-200">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <div>
+                                            <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded font-bold">프리미엄</span>
+                                            <p class="font-bold mt-2">외항사 직항</p>
+                                            <p class="text-sm text-gray-600">소요시간: 11-13시간</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-xl font-bold text-purple-600">₩1,560,000</p>
+                                            <p class="text-xs text-gray-500">1,430,000~1,690,000원</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-gray-600 mb-3">최고급 서비스 및 라운지 이용</p>
+                                    <a href="https://www.skyscanner.co.kr/?preferdirects=true&cabinclass=business" target="_blank" class="inline-block px-4 py-2 bg-blue-500 text-white rounded text-sm font-bold hover:bg-blue-600">
+                                        Skyscanner에서 검색 →
+                                    </a>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- Hotel -->
-                        <div class="border rounded-lg p-4">
-                            <div class="flex items-center justify-between mb-2">
-                                <h4 class="font-bold text-lg">🏨 숙소</h4>
-                                <span class="text-xl font-bold text-purple-600">₩750,000</span>
+                        <!-- Premium Accommodation Options -->
+                        <div class="border-2 border-gray-200 rounded-lg p-5">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="font-bold text-xl">🏨 숙소 옵션 (프리미엄)</h4>
                             </div>
-                            <p class="text-sm text-gray-600 mb-2">리버풀 시내 4성급 호텔 / 3박</p>
-                            <p class="text-sm text-gray-500">체크인: 12/14 / 체크아웃: 12/17 / 평점 8.5+</p>
-                            <a href="https://www.agoda.com" target="_blank" class="inline-block mt-3 px-4 py-2 bg-red-500 text-white rounded text-sm font-bold hover:bg-red-600">
-                                Agoda에서 검색 →
-                            </a>
+
+                            <div id="premiumAccommodationOptions" class="space-y-3">
+                                <div class="bg-gray-50 p-4 rounded border-l-4 border-blue-500">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <div>
+                                            <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded font-bold">3성급 ⭐</span>
+                                            <p class="font-bold mt-2">3성급 호텔</p>
+                                            <p class="text-sm text-gray-600">개인실, 개인 욕실, 양호한 시설</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-xl font-bold text-purple-600">₩360,000</p>
+                                            <p class="text-xs text-gray-500">1박 120,000원 × 3박</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <p class="text-xs text-green-600 font-medium">✓ 좋은 위치 · 괜찮은 시설</p>
+                                        <p class="text-xs text-gray-500">• 무료 Wi-Fi, 미니바, 조식 가능</p>
+                                    </div>
+                                    <a href="https://www.agoda.com" target="_blank" class="inline-block px-4 py-2 bg-red-500 text-white rounded text-sm font-bold hover:bg-red-600">
+                                        Agoda에서 검색 →
+                                    </a>
+                                </div>
+
+                                <div class="bg-white p-4 rounded border border-gray-200">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <div>
+                                            <span class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded font-bold">4성급 럭셔리</span>
+                                            <p class="font-bold mt-2">4성급 호텔</p>
+                                            <p class="text-sm text-gray-600">넓은 객실, 고급 시설</p>
+                                        </div>
+                                        <div class="text-right">
+                                            <p class="text-xl font-bold text-purple-600">₩540,000</p>
+                                            <p class="text-xs text-gray-500">1박 180,000원 × 3박</p>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <p class="text-xs text-green-600 font-medium">✓ 최고급 시설 · 우수한 위치</p>
+                                        <p class="text-xs text-gray-500">• 룸서비스, 피트니스, 조식 포함</p>
+                                    </div>
+                                    <a href="https://www.agoda.com" target="_blank" class="inline-block px-4 py-2 bg-red-500 text-white rounded text-sm font-bold hover:bg-red-600">
+                                        Agoda에서 검색 →
+                                    </a>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- Ticket -->
-                        <div class="border rounded-lg p-4">
-                            <div class="flex items-center justify-between mb-2">
-                                <h4 class="font-bold text-lg">🎫 경기 티켓</h4>
-                                <span class="text-xl font-bold text-purple-600">₩320,000</span>
+                        <!-- Ticket (Same as budget) -->
+                        <div class="border-2 border-gray-200 rounded-lg p-5">
+                            <div class="flex items-center justify-between mb-4">
+                                <h4 class="font-bold text-xl">🎫 경기 티켓</h4>
+                                <span class="text-xl font-bold text-purple-600">₩280,000</span>
                             </div>
-                            <p class="text-sm text-gray-600 mb-2">리버풀 vs 맨시티 / 안필드</p>
-                            <p class="text-sm text-gray-500">프리미엄석 (중앙부) / 12월 15일 21:00</p>
-                            <a href="https://www.stubhub.com" target="_blank" class="inline-block mt-3 px-4 py-2 bg-orange-500 text-white rounded text-sm font-bold hover:bg-orange-600">
-                                StubHub에서 검색 →
-                            </a>
+
+                            <div class="bg-white p-4 rounded border border-gray-200 mb-3">
+                                <p class="text-sm text-gray-600 mb-2"><strong>리버풀 vs PSV (챔피언스리그)</strong></p>
+                                <p class="text-sm text-gray-600 mb-2">📍 안필드, 리버풀</p>
+                                <p class="text-xs text-gray-500">일반석 (상층부)</p>
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-2">
+                                <a href="https://www.footballticketnet.com" target="_blank" class="px-3 py-2 bg-green-500 text-white rounded text-xs font-bold hover:bg-green-600 text-center">
+                                    Football Ticket Net ⭐
+                                </a>
+                                <a href="https://www.stubhub.com" target="_blank" class="px-3 py-2 bg-orange-500 text-white rounded text-xs font-bold hover:bg-orange-600 text-center">
+                                    StubHub
+                                </a>
+                                <a href="https://www.livefootballtickets.com" target="_blank" class="px-3 py-2 bg-blue-500 text-white rounded text-xs font-bold hover:bg-blue-600 text-center">
+                                    LiveFootball
+                                </a>
+                            </div>
                         </div>
 
                         <!-- Transport -->
@@ -417,6 +617,6 @@
         </div>
     </div>
 
-    <script src="js/goalroute-api.js"></script>
+    <script src="js/goalroute-api.js?v=2.0"></script>
 </body>
 </html>

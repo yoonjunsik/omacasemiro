@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoalRoute API 테스트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8 text-center">🧪 GoalRoute API 통합 테스트</h1>
+
+        <!-- API 키 입력 섹션 -->
+        <div class="bg-white rounded-lg shadow p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4">🔑 API 키 입력</h2>
+            <div class="space-y-3">
+                <div>
+                    <label class="block text-sm font-medium mb-1">Football-Data.org API Key</label>
+                    <input type="text" id="footballApiKey" class="w-full border rounded px-3 py-2" placeholder="API Key">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Amadeus API Key</label>
+                    <input type="text" id="amadeusApiKey" class="w-full border rounded px-3 py-2" placeholder="API Key">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Amadeus API Secret</label>
+                    <input type="text" id="amadeusApiSecret" class="w-full border rounded px-3 py-2" placeholder="API Secret">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">ExchangeRate API Key</label>
+                    <input type="text" id="exchangeApiKey" class="w-full border rounded px-3 py-2" placeholder="API Key">
+                </div>
+            </div>
+        </div>
+
+        <!-- Football-Data.org 테스트 -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4">⚽ Football-Data.org API 테스트</h2>
+            <div class="space-y-3">
+                <div class="flex gap-2">
+                    <input type="date" id="matchDate" class="border rounded px-3 py-2" value="2024-12-15">
+                    <button onclick="testFootballAPI()" class="bg-blue-600 text-white px-6 py-2 rounded font-bold hover:bg-blue-700">
+                        경기 일정 조회
+                    </button>
+                </div>
+                <div id="footballResult" class="mt-4 p-4 bg-gray-50 rounded min-h-[100px]">
+                    결과가 여기에 표시됩니다...
+                </div>
+            </div>
+        </div>
+
+        <!-- Amadeus 테스트 -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4">✈️ Amadeus API 테스트</h2>
+            <div class="space-y-3">
+                <div class="grid grid-cols-2 gap-2">
+                    <input type="text" id="flightOrigin" class="border rounded px-3 py-2" placeholder="출발지 (ICN)" value="ICN">
+                    <input type="text" id="flightDest" class="border rounded px-3 py-2" placeholder="도착지 (LHR)" value="LHR">
+                    <input type="date" id="flightDepart" class="border rounded px-3 py-2" value="2024-12-15">
+                    <input type="date" id="flightReturn" class="border rounded px-3 py-2" value="2024-12-17">
+                </div>
+                <button onclick="testAmadeusFlights()" class="bg-green-600 text-white px-6 py-2 rounded font-bold hover:bg-green-700 w-full">
+                    항공권 검색
+                </button>
+                <div id="flightResult" class="mt-4 p-4 bg-gray-50 rounded min-h-[100px]">
+                    결과가 여기에 표시됩니다...
+                </div>
+
+                <hr class="my-4">
+
+                <div class="grid grid-cols-3 gap-2">
+                    <input type="text" id="hotelCity" class="border rounded px-3 py-2" placeholder="도시 (LON)" value="LON">
+                    <input type="date" id="hotelCheckIn" class="border rounded px-3 py-2" value="2024-12-15">
+                    <input type="date" id="hotelCheckOut" class="border rounded px-3 py-2" value="2024-12-17">
+                </div>
+                <button onclick="testAmadeusHotels()" class="bg-green-600 text-white px-6 py-2 rounded font-bold hover:bg-green-700 w-full">
+                    숙소 검색
+                </button>
+                <div id="hotelResult" class="mt-4 p-4 bg-gray-50 rounded min-h-[100px]">
+                    결과가 여기에 표시됩니다...
+                </div>
+            </div>
+        </div>
+
+        <!-- ExchangeRate 테스트 -->
+        <div class="bg-white rounded-lg shadow p-6 mb-6">
+            <h2 class="text-xl font-bold mb-4">💱 ExchangeRate API 테스트</h2>
+            <div class="space-y-3">
+                <div class="flex gap-2">
+                    <input type="number" id="krwAmount" class="border rounded px-3 py-2" placeholder="원화 금액" value="1000000">
+                    <select id="targetCurrency" class="border rounded px-3 py-2">
+                        <option value="EUR">EUR (유로)</option>
+                        <option value="GBP">GBP (파운드)</option>
+                        <option value="USD">USD (달러)</option>
+                    </select>
+                    <button onclick="testExchangeRate()" class="bg-purple-600 text-white px-6 py-2 rounded font-bold hover:bg-purple-700">
+                        환율 조회
+                    </button>
+                </div>
+                <div id="exchangeResult" class="mt-4 p-4 bg-gray-50 rounded min-h-[100px]">
+                    결과가 여기에 표시됩니다...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- API 서비스 스크립트 로드 -->
+    <script src="football-data-service.js"></script>
+    <script src="amadeus-service.js"></script>
+    <script src="exchange-rate-service.js"></script>
+
+    <script>
+        // Football-Data.org API 테스트
+        async function testFootballAPI() {
+            const apiKey = document.getElementById('footballApiKey').value;
+            const date = document.getElementById('matchDate').value;
+            const resultDiv = document.getElementById('footballResult');
+
+            if (!apiKey) {
+                resultDiv.innerHTML = '<span class="text-red-600">⚠️ API Key를 입력하세요</span>';
+                return;
+            }
+
+            resultDiv.innerHTML = '<span class="text-blue-600">⏳ 경기 일정 조회 중...</span>';
+
+            try {
+                const service = new FootballDataService(apiKey);
+                const matches = await service.getMatchesByDate(date);
+
+                if (matches.length === 0) {
+                    resultDiv.innerHTML = '<span class="text-yellow-600">해당 날짜에 경기가 없습니다.</span>';
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="space-y-2">
+                            <div class="font-bold text-green-600">✅ ${matches.length}개 경기 발견</div>
+                            ${matches.map(match => `
+                                <div class="border-l-4 border-blue-500 pl-3">
+                                    <div class="font-bold">${match.homeTeamKo} vs ${match.awayTeamKo}</div>
+                                    <div class="text-sm text-gray-600">${match.league} | ${match.stadium}, ${match.city}</div>
+                                    <div class="text-sm text-gray-500">⏰ ${match.time}</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<span class="text-red-600">❌ 오류: ${error.message}</span>`;
+            }
+        }
+
+        // Amadeus 항공권 테스트
+        async function testAmadeusFlights() {
+            const apiKey = document.getElementById('amadeusApiKey').value;
+            const apiSecret = document.getElementById('amadeusApiSecret').value;
+            const origin = document.getElementById('flightOrigin').value;
+            const dest = document.getElementById('flightDest').value;
+            const depart = document.getElementById('flightDepart').value;
+            const returnDate = document.getElementById('flightReturn').value;
+            const resultDiv = document.getElementById('flightResult');
+
+            if (!apiKey || !apiSecret) {
+                resultDiv.innerHTML = '<span class="text-red-600">⚠️ API Key와 Secret을 입력하세요</span>';
+                return;
+            }
+
+            resultDiv.innerHTML = '<span class="text-blue-600">⏳ 항공권 검색 중...</span>';
+
+            try {
+                const service = new AmadeusService(apiKey, apiSecret);
+                const flights = await service.searchFlights(origin, dest, depart, returnDate);
+
+                if (flights.length === 0) {
+                    resultDiv.innerHTML = '<span class="text-yellow-600">검색 결과가 없습니다.</span>';
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="space-y-2">
+                            <div class="font-bold text-green-600">✅ ${flights.length}개 항공편 발견</div>
+                            ${flights.map(flight => `
+                                <div class="border-l-4 border-green-500 pl-3">
+                                    <div class="font-bold">₩${flight.price.toLocaleString()}</div>
+                                    <div class="text-sm text-gray-600">
+                                        출발편: ${flight.outbound.stops}회 경유 | ${flight.outbound.airline}
+                                    </div>
+                                    <div class="text-sm text-gray-600">
+                                        귀국편: ${flight.inbound.stops}회 경유 | ${flight.inbound.airline}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<span class="text-red-600">❌ 오류: ${error.message}</span>`;
+            }
+        }
+
+        // Amadeus 숙소 테스트
+        async function testAmadeusHotels() {
+            const apiKey = document.getElementById('amadeusApiKey').value;
+            const apiSecret = document.getElementById('amadeusApiSecret').value;
+            const city = document.getElementById('hotelCity').value;
+            const checkIn = document.getElementById('hotelCheckIn').value;
+            const checkOut = document.getElementById('hotelCheckOut').value;
+            const resultDiv = document.getElementById('hotelResult');
+
+            if (!apiKey || !apiSecret) {
+                resultDiv.innerHTML = '<span class="text-red-600">⚠️ API Key와 Secret을 입력하세요</span>';
+                return;
+            }
+
+            resultDiv.innerHTML = '<span class="text-blue-600">⏳ 숙소 검색 중...</span>';
+
+            try {
+                const service = new AmadeusService(apiKey, apiSecret);
+                const hotels = await service.searchHotels(city, checkIn, checkOut);
+
+                if (hotels.length === 0) {
+                    resultDiv.innerHTML = '<span class="text-yellow-600">검색 결과가 없습니다.</span>';
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="space-y-2">
+                            <div class="font-bold text-green-600">✅ ${hotels.length}개 숙소 발견</div>
+                            ${hotels.map(hotel => `
+                                <div class="border-l-4 border-green-500 pl-3">
+                                    <div class="font-bold">${hotel.name}</div>
+                                    <div class="text-sm text-gray-600">
+                                        ₩${hotel.price.toLocaleString()} | ${hotel.roomType} | ⭐ ${hotel.rating}
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<span class="text-red-600">❌ 오류: ${error.message}</span>`;
+            }
+        }
+
+        // ExchangeRate 테스트
+        async function testExchangeRate() {
+            const apiKey = document.getElementById('exchangeApiKey').value;
+            const amount = parseFloat(document.getElementById('krwAmount').value);
+            const target = document.getElementById('targetCurrency').value;
+            const resultDiv = document.getElementById('exchangeResult');
+
+            if (!apiKey) {
+                resultDiv.innerHTML = '<span class="text-red-600">⚠️ API Key를 입력하세요</span>';
+                return;
+            }
+
+            resultDiv.innerHTML = '<span class="text-blue-600">⏳ 환율 조회 중...</span>';
+
+            try {
+                const service = new ExchangeRateService(apiKey);
+                const result = await service.convertFromKRW(amount, target);
+
+                if (result) {
+                    resultDiv.innerHTML = `
+                        <div class="space-y-2">
+                            <div class="font-bold text-green-600">✅ 환율 변환 성공</div>
+                            <div class="border-l-4 border-purple-500 pl-3">
+                                <div class="font-bold text-lg">
+                                    ₩${result.originalAmount.toLocaleString()} =
+                                    ${service.getCurrencySymbol(target)}${result.convertedAmount.toLocaleString()}
+                                </div>
+                                <div class="text-sm text-gray-600">
+                                    환율: 1 KRW = ${result.exchangeRate.toFixed(6)} ${target}
+                                </div>
+                                <div class="text-sm text-gray-500">
+                                    업데이트: ${new Date(result.lastUpdated).toLocaleString('ko-KR')}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    resultDiv.innerHTML = '<span class="text-yellow-600">환율 조회 실패</span>';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `<span class="text-red-600">❌ 오류: ${error.message}</span>`;
+            }
+        }
+    </script>
+</body>
+</html>

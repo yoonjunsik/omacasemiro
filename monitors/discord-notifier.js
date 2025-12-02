@@ -223,6 +223,8 @@ class DiscordNotifier {
         const summary = {
             total: allResults.length,
             detected: detectedTeams.length,
+            failed: allResults.filter(r => r.error).length,
+            notDetected: allResults.filter(r => !r.blackFridayDetected && !r.error).length,
             byLeague: {}
         };
 
@@ -243,10 +245,17 @@ class DiscordNotifier {
             .map((t, i) => `${i + 1}. ${this.getLeagueEmoji(t.league)} **${t.team}** (신뢰도: ${t.confidence}%)`)
             .join('\n') || '없음';
 
+        // 실패한 팀 목록 (최대 5개만 표시)
+        const failedTeams = allResults.filter(r => r.error);
+        const failedText = failedTeams.length > 0
+            ? failedTeams.slice(0, 5).map(t => `• ${t.team || t.teamEn}: ${t.error}`).join('\n') +
+              (failedTeams.length > 5 ? `\n... 외 ${failedTeams.length - 5}개 팀` : '')
+            : '없음';
+
         const fields = [
             {
                 name: '📊 모니터링 현황',
-                value: `전체: **${summary.total}개 팀**\n감지: **${summary.detected}개 팀**`,
+                value: `전체: **${summary.total}개 팀**\n감지: **${summary.detected}개 팀**\n미감지: **${summary.notDetected}개 팀**\n실패: **${summary.failed}개 팀**`,
                 inline: false
             },
             {
@@ -260,6 +269,15 @@ class DiscordNotifier {
                 inline: false
             }
         ];
+
+        // 실패한 팀이 있으면 추가
+        if (failedTeams.length > 0) {
+            fields.push({
+                name: '❌ 크롤링 실패 팀',
+                value: failedText,
+                inline: false
+            });
+        }
 
         const embed = {
             title: '📊 블랙프라이데이 모니터링 요약',

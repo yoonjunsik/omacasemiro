@@ -253,9 +253,21 @@
             const matchSlider = document.getElementById('matchSlider');
             if (!matchSlider) return;
 
-            // 정적 빅매치 데이터 (실제 API로 검증된 향후 3개월 일정)
-            // 실제 API 데이터는 plan-route.html에서 확인 가능
+            // 정적 빅매치 데이터 (2025년 11월 18일 기준 실제 검증된 향후 3-4개월 일정)
+            // WebSearch로 확인한 실제 일정 (Nov 2025 - Feb 2026)
             const staticHotMatches = [
+                {
+                    league: 'Premier League',
+                    homeTeamKo: '뉴캐슬',
+                    awayTeamKo: '맨체스터 시티',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg',
+                    stadium: '세인트 제임스 파크',
+                    city: '뉴캐슬',
+                    date: '11/22',
+                    time: '15:00 GMT',
+                    id: 'newcastle-mancity'
+                },
                 {
                     league: 'Premier League',
                     homeTeamKo: '아스널',
@@ -264,33 +276,93 @@
                     awayLogo: 'https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg',
                     stadium: '에미레이트 스타디움',
                     city: '런던',
-                    date: '11/24',
-                    time: '01:30 KST',
+                    date: '11/23',
+                    time: '16:30 GMT',
                     id: 'arsenal-tottenham'
+                },
+                {
+                    league: 'Serie A',
+                    homeTeamKo: 'AC 밀란',
+                    awayTeamKo: '인터 밀란',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg',
+                    stadium: '산 시로',
+                    city: '밀라노',
+                    date: '11/23',
+                    time: '20:45 CET',
+                    id: 'acmilan-inter'
+                },
+                {
+                    league: 'Serie A',
+                    homeTeamKo: 'AC 밀란',
+                    awayTeamKo: '라치오',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/commons/c/ce/S.S._Lazio_badge.svg',
+                    stadium: '산 시로',
+                    city: '밀라노',
+                    date: '11/30',
+                    time: '20:45 CET',
+                    id: 'acmilan-lazio'
+                },
+                {
+                    league: 'Premier League',
+                    homeTeamKo: '맨체스터 유나이티드',
+                    awayTeamKo: '뉴캐슬',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg',
+                    stadium: '올드 트래포드',
+                    city: '맨체스터',
+                    date: '12/26',
+                    time: '20:00 GMT',
+                    id: 'manutd-newcastle'
                 },
                 {
                     league: 'Premier League',
                     homeTeamKo: '첼시',
-                    awayTeamKo: '아스널',
+                    awayTeamKo: '애스턴 빌라',
                     homeLogo: 'https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg',
-                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/f/f9/Aston_Villa_FC_crest_%282016%29.svg',
                     stadium: '스탬포드 브리지',
                     city: '런던',
-                    date: '12/01',
-                    time: '01:30 KST',
-                    id: 'chelsea-arsenal'
+                    date: '12/27',
+                    time: '17:30 GMT',
+                    id: 'chelsea-villa'
                 },
                 {
                     league: 'Premier League',
-                    homeTeamKo: '토트넘',
-                    awayTeamKo: '리버풀',
-                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg',
-                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg',
-                    stadium: '토트넘 호츠퍼 스타디움',
+                    homeTeamKo: '크리스탈 팰리스',
+                    awayTeamKo: '토트넘',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/a/a2/Crystal_Palace_FC_logo_%282022%29.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg',
+                    stadium: '셀허스트 파크',
                     city: '런던',
-                    date: '12/21',
-                    time: '02:30 KST',
-                    id: 'tottenham-liverpool'
+                    date: '12/28',
+                    time: '16:30 GMT',
+                    id: 'palace-tottenham'
+                },
+                {
+                    league: 'Premier League',
+                    homeTeamKo: '아스널',
+                    awayTeamKo: '애스턴 빌라',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/f/f9/Aston_Villa_FC_crest_%282016%29.svg',
+                    stadium: '에미레이트 스타디움',
+                    city: '런던',
+                    date: '12/30',
+                    time: '20:00 GMT',
+                    id: 'arsenal-villa'
+                },
+                {
+                    league: 'Premier League',
+                    homeTeamKo: '리버풀',
+                    awayTeamKo: '리즈 유나이티드',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/5/54/Leeds_United_F.C._logo.svg',
+                    stadium: '안필드',
+                    city: '리버풀',
+                    date: '01/01',
+                    time: '17:30 GMT',
+                    id: 'liverpool-leeds'
                 },
                 {
                     league: 'Premier League',
@@ -300,8 +372,8 @@
                     awayLogo: 'https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg',
                     stadium: '에티하드 스타디움',
                     city: '맨체스터',
-                    date: '01/05',
-                    time: '02:30 KST',
+                    date: '01/04',
+                    time: '17:30 GMT',
                     id: 'mancity-chelsea'
                 },
                 {
@@ -312,8 +384,8 @@
                     awayLogo: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg',
                     stadium: '에미레이트 스타디움',
                     city: '런던',
-                    date: '01/09',
-                    time: '05:00 KST',
+                    date: '01/08',
+                    time: '20:00 GMT',
                     id: 'arsenal-liverpool'
                 },
                 {
@@ -325,7 +397,7 @@
                     stadium: '올드 트래포드',
                     city: '맨체스터',
                     date: '01/17',
-                    time: '09:00 KST',
+                    time: '16:30 GMT',
                     id: 'manutd-mancity'
                 },
                 {
@@ -337,7 +409,7 @@
                     stadium: '에미레이트 스타디움',
                     city: '런던',
                     date: '01/24',
-                    time: '09:00 KST',
+                    time: '17:30 GMT',
                     id: 'arsenal-manutd'
                 },
                 {
@@ -349,7 +421,7 @@
                     stadium: '토트넘 호츠퍼 스타디움',
                     city: '런던',
                     date: '01/31',
-                    time: '09:00 KST',
+                    time: '16:30 GMT',
                     id: 'tottenham-mancity'
                 },
                 {
@@ -361,7 +433,7 @@
                     stadium: '안필드',
                     city: '리버풀',
                     date: '02/07',
-                    time: '09:00 KST',
+                    time: '16:30 GMT',
                     id: 'liverpool-mancity'
                 },
                 {
@@ -373,8 +445,32 @@
                     stadium: '올드 트래포드',
                     city: '맨체스터',
                     date: '02/07',
-                    time: '09:00 KST',
+                    time: '14:00 GMT',
                     id: 'manutd-tottenham'
+                },
+                {
+                    league: 'Serie A',
+                    homeTeamKo: '인터 밀란',
+                    awayTeamKo: '유벤투스',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/commons/a/a8/Juventus_FC_-_pictogram_black_%28Italy%2C_2017%29.svg',
+                    stadium: '산 시로',
+                    city: '밀라노',
+                    date: '02/15',
+                    time: '20:45 CET',
+                    id: 'inter-juventus'
+                },
+                {
+                    league: 'Premier League',
+                    homeTeamKo: '토트넘',
+                    awayTeamKo: '아스널',
+                    homeLogo: 'https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg',
+                    awayLogo: 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg',
+                    stadium: '토트넘 호츠퍼 스타디움',
+                    city: '런던',
+                    date: '02/21',
+                    time: '16:30 GMT',
+                    id: 'tottenham-arsenal'
                 }
             ];
 
@@ -417,8 +513,8 @@
 
         function moveSlider(direction) {
             const slider = document.getElementById('matchSlider');
-            const totalSlides = 10; // 총 10개 경기
-            const maxSlide = totalSlides - 3; // 마지막 슬라이드 (3개씩 보이므로)
+            const totalSlides = slider.children.length; // 동적으로 카드 개수 계산
+            const maxSlide = Math.max(0, totalSlides - 3); // 마지막 슬라이드 (3개씩 보이므로)
 
             currentSlide += direction;
 

@@ -6,7 +6,7 @@
 // API 베이스 URL (환경에 따라 자동 설정)
 const API_BASE_URL = window.location.hostname === 'localhost'
     ? 'http://localhost:3000/api'
-    : 'https://omacasemiro-api.up.railway.app/api'; // Railway 배포 후 이 URL로 변경하세요
+    : 'https://omacasemiro-production.up.railway.app/api';
 
 // 전역 상태 관리
 let selectedMatch = null;

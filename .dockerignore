@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Cache
+cache/
+.cache/
+
+# Environment files
+.env.local
+.env.*.local
+
+# Crawler results
+crawler/
+monitor-results/
+
+# Documentation
+*.md
+!README.md
+
+# Git
+.git/
+.github/
+
+# Firebase
+firebase-data.json
+omacasemiro-8fd4c-firebase-adminsdk-fbsvc-8c438c494c.json
+
+# Notion sync
+sync-notion-football.js
+sync-season-calendar.js
+
+# Other services
+soccer-dna/
+update-bf-sites.js
+check-laliga.js
+
+# Deployment configs for other platforms
+vercel.json
+.vercel/

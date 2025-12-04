@@ -55,28 +55,25 @@ const admin = require('firebase-admin');
 let db = null;
 
 try {
-    // Railway에서는 환경 변수로 Firebase credentials 전달
-    if (isRailway && process.env.FIREBASE_SERVICE_ACCOUNT) {
-        console.log('[RAILWAY] Firebase credentials from environment variable');
-        const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
-        admin.initializeApp({
-            credential: admin.credential.cert(serviceAccount)
-        });
-        db = admin.firestore();
-        console.log('✅ Firebase Admin 초기화 완료 (Firestore 사용)');
-    } else if (!isRailway) {
-        // 로컬에서는 파일에서 읽기
+    let serviceAccount;
+
+    // Railway: Base64 인코딩된 환경 변수 사용
+    if (isRailway && process.env.FIREBASE_CREDENTIALS_BASE64) {
+        console.log('[RAILWAY] Firebase credentials from Base64 environment variable');
+        const decoded = Buffer.from(process.env.FIREBASE_CREDENTIALS_BASE64, 'base64').toString('utf-8');
+        serviceAccount = JSON.parse(decoded);
+    } else {
+        // 로컬: 파일에서 읽기
         console.log('[LOCAL] Firebase credentials from file');
         const serviceAccountPath = path.join(__dirname, 'omacasemiro-8fd4c-firebase-adminsdk-fbsvc-8c438c494c.json');
-        admin.initializeApp({
-            credential: admin.credential.cert(serviceAccountPath)
-        });
-        db = admin.firestore();
-        console.log('✅ Firebase Admin 초기화 완료 (Firestore 사용)');
-    } else {
-        console.warn('⚠️  FIREBASE_SERVICE_ACCOUNT 환경 변수 없음');
-        console.warn('⚠️  로컬 파일 캐시만 사용 (Railway 재배포 시 삭제됨)');
+        serviceAccount = require(serviceAccountPath);
     }
+
+    admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount)
+    });
+    db = admin.firestore();
+    console.log('✅ Firebase Admin 초기화 완료 (Firestore 사용)');
 } catch (error) {
     console.error('❌ Firebase Admin 초기화 실패:', error.message);
     console.warn('⚠️  로컬 파일 캐시로 Fallback (Railway 재배포 시 삭제됨)');

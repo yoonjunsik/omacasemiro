@@ -41,10 +41,19 @@ class MatchCacheService {
                 this.lastUpdateTime = new Date(cache.lastUpdate);
                 console.log(`✅ 기존 캐시 로드 완료 (마지막 업데이트: ${this.lastUpdateTime.toLocaleString('ko-KR')})`);
                 console.log(`📊 캐시된 경기 수: ${Object.keys(cache.matches || {}).length}일치`);
+
+                // 캐시가 24시간 이상 오래되었으면 백그라운드 업데이트
+                const cacheAge = Date.now() - new Date(cache.lastUpdate).getTime();
+                const oneDayMs = 24 * 60 * 60 * 1000;
+                if (cacheAge > oneDayMs) {
+                    console.log('⏰ 캐시가 24시간 이상 오래됨 - 백그라운드 업데이트 시작');
+                    // await 없이 백그라운드 실행
+                    this.collectMatchData().catch(err => console.error('백그라운드 수집 실패:', err));
+                }
             } else {
-                console.log('📭 기존 캐시 없음 - 새로 수집 시작');
-                // 즉시 첫 수집 시작
-                this.collectMatchData();
+                console.log('📭 기존 캐시 없음 - 백그라운드 수집 시작');
+                // 서버 시작을 빠르게 하기 위해 백그라운드에서 수집 (await 없이)
+                this.collectMatchData().catch(err => console.error('백그라운드 수집 실패:', err));
             }
 
             // 매일 새벽 3시에 자동 업데이트
@@ -134,8 +143,12 @@ class MatchCacheService {
         const matches = {};
         const weekRanges = this.generateWeekRanges();
 
-        console.log(`📊 총 ${weekRanges.length}주치 데이터 수집 예정 (약 ${weekRanges.length * 7}일)`);
-        console.log(`⏰ 예상 소요 시간: 약 ${Math.ceil(weekRanges.length * this.REQUEST_INTERVAL / 60000)}분\n`);
+        // 5개 리그 × 18주 = 90개 요청, 리그당 6.5초 delay
+        const estimatedMinutes = Math.ceil((weekRanges.length * 5 * 6.5) / 60);
+
+        console.log(`📊 총 ${weekRanges.length}주치 × 5개 리그 데이터 수집 예정`);
+        console.log(`🌍 리그: PL(프리미어리그), PD(라리가), BL1(분데스리가), SA(세리에A), FL1(리그1)`);
+        console.log(`⏰ 예상 소요 시간: 약 ${estimatedMinutes}분\n`);
 
         let totalMatches = 0;
         let errorCount = 0;

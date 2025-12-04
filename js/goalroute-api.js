@@ -15,8 +15,10 @@ let selectedRouteType = null;
 let matchesCache = {}; // 날짜별 경기 캐시
 
 // 캘린더 상태
-let currentYear = new Date().getFullYear();
-let currentMonth = new Date().getMonth(); // 0-11
+const now = new Date();
+let currentYear = now.getFullYear();
+let currentMonth = now.getMonth(); // 0-11
+console.log(`[Calendar] 초기 날짜 설정: ${currentYear}년 ${currentMonth + 1}월 (${now.toLocaleDateString('ko-KR')})`);
 let monthMatchesData = {}; // 해당 월의 모든 경기 데이터
 
 // 정적 빅매치 데이터 (Football-Data API에 없는 경기 보완)
@@ -1557,41 +1559,26 @@ async function loadMonthMatches(year, month) {
     const lastDay = new Date(year, month + 1, 0);
     const daysInMonth = lastDay.getDate();
 
-    // 1순위: API 캐시 데이터 사용 (백그라운드 수집된 실제 데이터)
-    try {
-        const dateFrom = `${year}-${String(month + 1).padStart(2, '0')}-01`;
-        const dateTo = `${year}-${String(month + 1).padStart(2, '0')}-${String(daysInMonth).padStart(2, '0')}`;
+    const dateFrom = `${year}-${String(month + 1).padStart(2, '0')}-01`;
+    const dateTo = `${year}-${String(month + 1).padStart(2, '0')}-${String(daysInMonth).padStart(2, '0')}`;
 
-        console.log(`[Calendar] Loading matches from API cache: ${dateFrom} ~ ${dateTo}`);
+    console.log(`[Calendar] Loading matches from preloaded cache: ${dateFrom} ~ ${dateTo}`);
 
-        // 서버의 캐시된 데이터 조회
-        for (let day = 1; day <= daysInMonth; day++) {
-            const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-            try {
-                const matches = await fetchMatches(dateStr);
-                if (matches && matches.length > 0) {
-                    monthMatchesData[dateStr] = matches;
-                }
-            } catch (error) {
-                console.log(`[Calendar] No cache data for ${dateStr}, using static data if available`);
-                // API 캐시에 없으면 정적 데이터 사용
-                if (staticBigMatches[dateStr]) {
-                    monthMatchesData[dateStr] = staticBigMatches[dateStr];
-                }
-            }
+    // 1순위: Preload된 matchesCache에서 직접 가져오기 (API 호출 없음!)
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+
+        // Preload된 캐시에서 바로 가져오기
+        if (matchesCache[dateStr] && matchesCache[dateStr].length > 0) {
+            monthMatchesData[dateStr] = matchesCache[dateStr];
         }
-    } catch (error) {
-        console.error('[Calendar] Failed to load from API cache, using static data:', error);
-        // 2순위: 정적 데이터 사용 (fallback)
-        for (let day = 1; day <= daysInMonth; day++) {
-            const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-            if (staticBigMatches[dateStr]) {
-                monthMatchesData[dateStr] = staticBigMatches[dateStr];
-            }
+        // 캐시에 없으면 정적 데이터 사용
+        else if (staticBigMatches[dateStr]) {
+            monthMatchesData[dateStr] = staticBigMatches[dateStr];
         }
     }
 
-    console.log('[Calendar] Month matches loaded:', Object.keys(monthMatchesData).length, 'days with matches');
+    console.log('[Calendar] Month matches loaded from cache:', Object.keys(monthMatchesData).length, 'days with matches');
 }
 
 // 월 이동

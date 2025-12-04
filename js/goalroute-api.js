@@ -740,16 +740,18 @@ async function fetchTicketPrice(league, homeTeam, awayTeam, tier = 'budget') {
     try {
         console.log(`[API] 티켓 가격 조회: ${homeTeam} vs ${awayTeam}`);
         const response = await fetch(
-            `${API_BASE_URL}/ticket-price?league=${encodeURIComponent(league)}&homeTeam=${encodeURIComponent(homeTeam)}&awayTeam=${encodeURIComponent(awayTeam)}&tier=${tier}`
+            `${API_BASE_URL}/ticket-price?league=${encodeURIComponent(league)}&homeTeam=${encodeURIComponent(homeTeam)}&awayTeam=${encodeURIComponent(awayTeam)}&tier=${tier}`,
+            { timeout: 5000 } // 5초 타임아웃
         );
 
         if (!response.ok) {
+            console.warn(`[API] 티켓 가격 API 오류 (${response.status}), fallback 사용`);
             throw new Error(`API 오류: ${response.status}`);
         }
 
         return await response.json();
     } catch (error) {
-        console.error('[ERROR] 티켓 가격 조회 실패:', error);
+        console.warn('[FALLBACK] 티켓 가격 조회 실패, 기본값 사용:', error.message);
         // Fallback 티켓 가격
         return { price: tier === 'budget' ? 280000 : 450000 };
     }
@@ -1104,8 +1106,15 @@ async function calculateEstimate() {
 
     } catch (error) {
         console.error('[ERROR] 견적 계산 실패:', error);
-        showError('budgetRoute', '견적을 계산할 수 없습니다. 나중에 다시 시도해주세요.');
-        showError('premiumRoute', '견적을 계산할 수 없습니다. 나중에 다시 시도해주세요.');
+        console.error('[ERROR] Stack:', error.stack);
+
+        // 더 자세한 에러 메시지 표시
+        const errorMessage = `견적 계산 중 오류가 발생했습니다.<br/>
+            <span class="text-xs">에러: ${error.message}</span><br/>
+            <span class="text-xs">Railway API가 응답하지 않으면 기본 견적으로 표시됩니다.</span>`;
+
+        showError('budgetRoute', errorMessage);
+        showError('premiumRoute', errorMessage);
     }
 }
 

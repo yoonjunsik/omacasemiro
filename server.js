@@ -5,14 +5,18 @@
  * 접속: http://localhost:3000
  */
 
-// Railway는 환경 변수를 process.env로 직접 주입하므로 dotenv는 로컬 개발에만 필요
-if (process.env.NODE_ENV !== 'production') {
+// Railway는 환경 변수를 process.env로 직접 주입
+// RAILWAY_ENVIRONMENT가 있으면 Railway 환경 (dotenv 불필요)
+if (!process.env.RAILWAY_ENVIRONMENT) {
+    // 로컬 개발 환경에서만 .env 파일 로드
     require('dotenv').config();
+    console.log('[LOCAL] .env 파일에서 환경 변수 로드');
 } else {
-    console.log('[RAILWAY] 프로덕션 환경 - Railway 환경 변수 사용');
-    console.log('[ENV] Available env vars:', Object.keys(process.env).filter(k =>
+    console.log('[RAILWAY] Railway 환경 변수 사용');
+    console.log('[ENV] RAILWAY_ENVIRONMENT:', process.env.RAILWAY_ENVIRONMENT);
+    console.log('[ENV] Available API keys:', Object.keys(process.env).filter(k =>
         k.includes('API') || k.includes('AMADEUS') || k.includes('EXCHANGE') || k.includes('FOOTBALL')
-    ));
+    ).join(', '));
 }
 
 const express = require('express');

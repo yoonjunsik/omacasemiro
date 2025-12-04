@@ -51,9 +51,9 @@ class MatchCacheService {
                     this.collectMatchData().catch(err => console.error('백그라운드 수집 실패:', err));
                 }
             } else {
-                console.log('📭 기존 캐시 없음 - 백그라운드 수집 시작');
-                // 서버 시작을 빠르게 하기 위해 백그라운드에서 수집 (await 없이)
-                this.collectMatchData().catch(err => console.error('백그라운드 수집 실패:', err));
+                console.log('📭 기존 캐시 없음 - 긴급 데이터 수집 시작');
+                // 빠른 초기화를 위해 프리미어리그만 먼저 수집
+                this.quickInitialize().catch(err => console.error('긴급 수집 실패:', err));
             }
 
             // 매일 새벽 3시에 자동 업데이트
@@ -123,6 +123,82 @@ class MatchCacheService {
     async getAllCachedMatches() {
         const cache = await this.loadCache();
         return cache ? cache.matches : {};
+    }
+
+    /**
+     * 긴급 초기화: 프리미어리그만 먼저 빠르게 수집
+     * Railway 재배포 시 캐시가 비어있을 때 사용자에게 빠르게 데이터 제공
+     */
+    async quickInitialize() {
+        console.log('\n⚡ 긴급 초기화: 프리미어리그 우선 수집 시작...');
+
+        const matches = {};
+        const weekRanges = this.generateWeekRanges();
+
+        console.log(`📊 ${weekRanges.length}주치 프리미어리그 데이터 수집 예정`);
+        console.log(`⏰ 예상 소요 시간: 약 ${Math.ceil(weekRanges.length * 6.5 / 60)}분\n`);
+
+        let totalMatches = 0;
+        let errorCount = 0;
+
+        for (let i = 0; i < weekRanges.length; i++) {
+            const { dateFrom, dateTo } = weekRanges[i];
+
+            try {
+                // Rate Limit 준수를 위한 대기
+                if (i > 0) {
+                    await this.sleep(this.REQUEST_INTERVAL);
+                }
+
+                // 프리미어리그만 조회
+                console.log(`⚡ [${i + 1}/${weekRanges.length}] ${dateFrom} ~ ${dateTo} 조회 중...`);
+                const weekMatches = await this.footballDataService.getMatches('PL', dateFrom, dateTo);
+
+                if (weekMatches && weekMatches.length > 0) {
+                    // 날짜별로 분류
+                    weekMatches.forEach(match => {
+                        const matchDate = match.date.split('T')[0];
+                        if (!matches[matchDate]) {
+                            matches[matchDate] = [];
+                        }
+                        matches[matchDate].push(match);
+                    });
+
+                    totalMatches += weekMatches.length;
+                    console.log(`✅ [${i + 1}/${weekRanges.length}] ${weekMatches.length}경기 수집 완료`);
+                } else {
+                    console.log(`⚪ [${i + 1}/${weekRanges.length}] 경기 없음`);
+                }
+
+                // 5주마다 중간 저장
+                if ((i + 1) % 5 === 0) {
+                    await this.saveCache(matches);
+                    console.log(`💾 중간 저장 완료 (${i + 1}/${weekRanges.length}주, ${totalMatches}경기)\n`);
+                }
+
+            } catch (error) {
+                errorCount++;
+                console.error(`❌ [${i + 1}/${weekRanges.length}] ${dateFrom} ~ ${dateTo}: 수집 실패 -`, error.message);
+
+                // 429 에러면 추가 대기
+                if (error.message.includes('429')) {
+                    console.log('⏸️  Rate Limit 감지 - 60초 대기 중...');
+                    await this.sleep(60000);
+                }
+            }
+        }
+
+        // 최종 저장
+        await this.saveCache(matches);
+
+        console.log('\n✅ 프리미어리그 데이터 수집 완료!');
+        console.log(`📊 총 ${totalMatches}경기 수집 완료`);
+        console.log(`📅 ${Object.keys(matches).length}일치 데이터 캐시됨`);
+        console.log(`❌ 실패: ${errorCount}주\n`);
+
+        // 프리미어리그 수집 완료 후 나머지 리그 백그라운드 수집
+        console.log('🌍 나머지 리그(라리가, 분데스리가, 세리에A, 리그1) 백그라운드 수집 시작...\n');
+        this.collectMatchData().catch(err => console.error('전체 리그 수집 실패:', err));
     }
 
     /**

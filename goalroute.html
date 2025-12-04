@@ -474,37 +474,65 @@
                 }
             ];
 
-            // 경기 카드 즉시 표시 (슬라이더용)
-            matchSlider.innerHTML = staticHotMatches.map(match => {
-                const leagueColor = getLeagueColor(match.league);
+            // 날짜 필터링: 현재 날짜 기준 3일 후부터 3개월 이내 경기만 표시
+            const now = new Date();
+            const threeDaysLater = new Date(now);
+            threeDaysLater.setDate(threeDaysLater.getDate() + 3);
+            const threeMonthsLater = new Date(now);
+            threeMonthsLater.setMonth(threeMonthsLater.getMonth() + 3);
 
-                return `
-                    <div class="slider-card match-card bg-white rounded-lg shadow-md p-6 card-hover">
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-${leagueColor}-100 text-${leagueColor}-700 text-xs font-bold px-3 py-1 rounded-full">${match.league}</span>
-                            <span class="text-gray-500 text-sm">${match.date}</span>
-                        </div>
-                        <div class="flex items-center justify-between mb-6">
-                            <div class="text-center">
-                                <img src="${match.homeLogo}" alt="${match.homeTeamKo}" class="w-16 h-16 mx-auto mb-2" onerror="this.src='https://via.placeholder.com/64'">
-                                <p class="font-bold">${match.homeTeamKo}</p>
+            const filteredMatches = staticHotMatches.filter(match => {
+                // MM/DD 형식의 날짜를 파싱
+                const [month, day] = match.date.split('/').map(Number);
+                const currentYear = now.getFullYear();
+
+                // 월이 현재 월보다 작으면 내년 경기로 간주
+                let matchYear = currentYear;
+                if (month < now.getMonth() + 1) {
+                    matchYear = currentYear + 1;
+                }
+
+                const matchDate = new Date(matchYear, month - 1, day);
+
+                // 3일 후 ~ 3개월 이내 경기만 포함
+                return matchDate >= threeDaysLater && matchDate <= threeMonthsLater;
+            });
+
+            // 필터링된 경기 카드 표시 (슬라이더용)
+            if (filteredMatches.length === 0) {
+                matchSlider.innerHTML = '<div class="text-center text-gray-500 py-12">곧 있을 빅매치가 없습니다.</div>';
+            } else {
+                matchSlider.innerHTML = filteredMatches.map(match => {
+                    const leagueColor = getLeagueColor(match.league);
+
+                    return `
+                        <div class="slider-card match-card bg-white rounded-lg shadow-md p-6 card-hover">
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="bg-${leagueColor}-100 text-${leagueColor}-700 text-xs font-bold px-3 py-1 rounded-full">${match.league}</span>
+                                <span class="text-gray-500 text-sm">${match.date}</span>
                             </div>
-                            <div class="text-2xl font-black text-gray-400">VS</div>
-                            <div class="text-center">
-                                <img src="${match.awayLogo}" alt="${match.awayTeamKo}" class="w-16 h-16 mx-auto mb-2" onerror="this.src='https://via.placeholder.com/64'">
-                                <p class="font-bold">${match.awayTeamKo}</p>
+                            <div class="flex items-center justify-between mb-6">
+                                <div class="text-center">
+                                    <img src="${match.homeLogo}" alt="${match.homeTeamKo}" class="w-16 h-16 mx-auto mb-2" onerror="this.src='https://via.placeholder.com/64'">
+                                    <p class="font-bold">${match.homeTeamKo}</p>
+                                </div>
+                                <div class="text-2xl font-black text-gray-400">VS</div>
+                                <div class="text-center">
+                                    <img src="${match.awayLogo}" alt="${match.awayTeamKo}" class="w-16 h-16 mx-auto mb-2" onerror="this.src='https://via.placeholder.com/64'">
+                                    <p class="font-bold">${match.awayTeamKo}</p>
+                                </div>
                             </div>
+                            <div class="text-sm text-gray-600 mb-4">
+                                📍 ${match.stadium}, ${match.city}<br>
+                                ⏰ ${match.time}
+                            </div>
+                            <a href="plan-route.html?match=${encodeURIComponent(JSON.stringify(match))}" class="block w-full bg-purple-600 text-white text-center py-3 rounded-lg font-bold hover:bg-purple-700 transition">
+                                여행 코스 만들기
+                            </a>
                         </div>
-                        <div class="text-sm text-gray-600 mb-4">
-                            📍 ${match.stadium}, ${match.city}<br>
-                            ⏰ ${match.time}
-                        </div>
-                        <a href="plan-route.html?match=${encodeURIComponent(JSON.stringify(match))}" class="block w-full bg-purple-600 text-white text-center py-3 rounded-lg font-bold hover:bg-purple-700 transition">
-                            여행 코스 만들기
-                        </a>
-                    </div>
-                `;
-            }).join('');
+                    `;
+                }).join('');
+            }
         }
 
         // 슬라이더 기능

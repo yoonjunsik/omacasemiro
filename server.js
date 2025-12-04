@@ -6,18 +6,29 @@
  */
 
 // Railway는 환경 변수를 process.env로 직접 주입
-// RAILWAY_ENVIRONMENT가 있으면 Railway 환경 (dotenv 불필요)
-if (!process.env.RAILWAY_ENVIRONMENT) {
+// 먼저 Railway 환경인지 확인
+const isRailway = process.env.RAILWAY_ENVIRONMENT || process.env.RAILWAY_STATIC_URL || process.env.RAILWAY_PROJECT_ID;
+
+console.log('[DEBUG] Environment check:');
+console.log('  - RAILWAY_ENVIRONMENT:', process.env.RAILWAY_ENVIRONMENT);
+console.log('  - RAILWAY_STATIC_URL:', process.env.RAILWAY_STATIC_URL);
+console.log('  - RAILWAY_PROJECT_ID:', process.env.RAILWAY_PROJECT_ID);
+console.log('  - Is Railway:', !!isRailway);
+
+if (!isRailway) {
     // 로컬 개발 환경에서만 .env 파일 로드
     require('dotenv').config();
     console.log('[LOCAL] .env 파일에서 환경 변수 로드');
 } else {
-    console.log('[RAILWAY] Railway 환경 변수 사용');
-    console.log('[ENV] RAILWAY_ENVIRONMENT:', process.env.RAILWAY_ENVIRONMENT);
-    console.log('[ENV] Available API keys:', Object.keys(process.env).filter(k =>
-        k.includes('API') || k.includes('AMADEUS') || k.includes('EXCHANGE') || k.includes('FOOTBALL')
-    ).join(', '));
+    console.log('[RAILWAY] Railway 환경에서 실행 중');
 }
+
+// API 키 상태 확인
+console.log('[DEBUG] API Keys in process.env:');
+console.log('  - FOOTBALL_DATA_API_KEY:', process.env.FOOTBALL_DATA_API_KEY ? `${process.env.FOOTBALL_DATA_API_KEY.substring(0, 8)}...` : '❌ MISSING');
+console.log('  - AMADEUS_API_KEY:', process.env.AMADEUS_API_KEY ? `${process.env.AMADEUS_API_KEY.substring(0, 8)}...` : '❌ MISSING');
+console.log('  - AMADEUS_API_SECRET:', process.env.AMADEUS_API_SECRET ? `${process.env.AMADEUS_API_SECRET.substring(0, 8)}...` : '❌ MISSING');
+console.log('  - EXCHANGE_RATE_API_KEY:', process.env.EXCHANGE_RATE_API_KEY ? `${process.env.EXCHANGE_RATE_API_KEY.substring(0, 8)}...` : '❌ MISSING');
 
 const express = require('express');
 const cors = require('cors');

@@ -181,6 +181,12 @@ class MatchCacheService {
      * Railway 재배포 시 캐시가 비어있을 때 사용자에게 빠르게 데이터 제공
      */
     async quickInitialize() {
+        if (this.isCollecting) {
+            console.log('⏳ 이미 데이터 수집 중입니다...');
+            return;
+        }
+
+        this.isCollecting = true;
         console.log('\n⚡ 긴급 초기화: 프리미어리그 우선 수집 시작...');
 
         const matches = {};
@@ -246,6 +252,9 @@ class MatchCacheService {
         console.log(`📊 총 ${totalMatches}경기 수집 완료`);
         console.log(`📅 ${Object.keys(matches).length}일치 데이터 캐시됨`);
         console.log(`❌ 실패: ${errorCount}주\n`);
+
+        // isCollecting 플래그 해제하여 전체 리그 수집 가능하도록
+        this.isCollecting = false;
 
         // 프리미어리그 수집 완료 후 나머지 리그 백그라운드 수집
         console.log('🌍 나머지 리그(라리가, 분데스리가, 세리에A, 리그1) 백그라운드 수집 시작...\n');

@@ -608,15 +608,55 @@ function showError(elementId, message) {
 }
 
 /**
- * API: 경기 일정 조회
+ * API: 전체 캐시 데이터 미리 로드 (페이지 초기화 시 1회 호출)
+ */
+async function preloadAllMatches() {
+    try {
+        console.log('[PRELOAD] 전체 경기 데이터 로드 시작...');
+        const startTime = performance.now();
+
+        const response = await fetch(`${API_BASE_URL}/matches/all`);
+
+        if (!response.ok) {
+            throw new Error(`API 오류: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (data.success && data.matches) {
+            // 전체 캐시 저장
+            Object.assign(matchesCache, data.matches);
+
+            const endTime = performance.now();
+            const loadTime = ((endTime - startTime) / 1000).toFixed(2);
+            const totalMatches = Object.values(data.matches).reduce((sum, matches) => sum + matches.length, 0);
+
+            console.log(`[PRELOAD] ✅ 완료 (${loadTime}초)`);
+            console.log(`[PRELOAD] 📊 ${Object.keys(data.matches).length}일치 / ${totalMatches}경기 로드`);
+            console.log(`[PRELOAD] 🕐 최종 업데이트: ${data.lastUpdate || 'N/A'}`);
+
+            return true;
+        }
+
+        console.warn('[PRELOAD] 캐시 데이터 없음');
+        return false;
+    } catch (error) {
+        console.error('[PRELOAD] 전체 데이터 로드 실패:', error);
+        return false;
+    }
+}
+
+/**
+ * API: 경기 일정 조회 (로컬 캐시 우선, fallback으로 개별 API 호출)
  */
 async function fetchMatches(date) {
-    // 캐시 확인
+    // 1. 로컬 캐시 확인 (preload된 데이터)
     if (matchesCache[date]) {
         console.log(`[CACHE] 캐시된 경기 데이터 사용: ${date}`);
         return matchesCache[date];
     }
 
+    // 2. 캐시 없으면 개별 API 호출 (fallback)
     try {
         console.log(`[API] 경기 일정 조회: ${date}`);
         const response = await fetch(`${API_BASE_URL}/matches?date=${date}`);
@@ -633,7 +673,8 @@ async function fetchMatches(date) {
         return matches;
     } catch (error) {
         console.error('[ERROR] 경기 조회 실패:', error);
-        throw error;
+        // 빈 배열 반환 (에러 처리)
+        return [];
     }
 }
 
@@ -1571,4 +1612,26 @@ async function changeMonth(direction) {
 
     await renderCalendar();
 }
+
+// ============================================================
+// 페이지 초기화
+// ============================================================
+
+// 페이지 로드 시 자동으로 전체 캐시 데이터를 미리 로드
+(async function initPageData() {
+    console.log('[INIT] 페이지 초기화 시작...');
+
+    // 전체 경기 데이터 preload (백그라운드)
+    preloadAllMatches().then(success => {
+        if (success) {
+            console.log('[INIT] ✅ 전체 데이터 로드 완료 - 이제 달력 클릭 시 즉시 표시됩니다!');
+        } else {
+            console.log('[INIT] ⚠️  캐시 데이터 없음 - 개별 API 호출로 fallback');
+        }
+    }).catch(error => {
+        console.error('[INIT] ❌ Preload 실패:', error);
+    });
+
+    console.log('[INIT] 페이지 초기화 완료 (데이터 로드는 백그라운드에서 진행 중)');
+})();
 

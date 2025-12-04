@@ -90,7 +90,40 @@ const cache = {
 // ============================================================
 
 /**
- * 경기 일정 조회
+ * 전체 캐시된 경기 데이터 조회 (한 번에 모두 가져오기)
+ * GET /api/matches/all
+ */
+app.get('/api/matches/all', async (req, res) => {
+    try {
+        console.log('[API] 전체 캐시 데이터 조회');
+
+        // 파일 캐시에서 전체 데이터 가져오기
+        const allMatches = await matchCacheService.getAllCachedMatches();
+
+        if (allMatches && Object.keys(allMatches).length > 0) {
+            console.log(`[FILE CACHE] 전체 캐시 데이터 반환: ${Object.keys(allMatches).length}일치`);
+            return res.json({
+                success: true,
+                matches: allMatches,
+                lastUpdate: (await matchCacheService.loadCache())?.lastUpdate
+            });
+        }
+
+        // 캐시 없으면 빈 객체 반환
+        console.log('[FILE CACHE] 캐시 없음');
+        return res.json({
+            success: true,
+            matches: {},
+            lastUpdate: null
+        });
+    } catch (error) {
+        console.error('[ERROR] 전체 캐시 조회 실패:', error.message);
+        res.status(500).json({ error: '전체 캐시 조회 실패', message: error.message });
+    }
+});
+
+/**
+ * 경기 일정 조회 (특정 날짜)
  * GET /api/matches?date=2024-12-15
  */
 app.get('/api/matches', async (req, res) => {

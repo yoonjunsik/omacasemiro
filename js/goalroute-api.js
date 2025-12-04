@@ -807,11 +807,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     console.log('[GoalRoute] API 버전 시작');
 
     // plan-route.html 페이지인 경우 캘린더 렌더링
-    const calendarDays = document.getElementById('calendarDays');
-    if (calendarDays) {
-        console.log('[Calendar] Rendering calendar...');
-        await renderCalendar();
-    }
+    // 주의: renderCalendar()는 preload 완료 후 initPageData()에서 호출됩니다
 
     // URL 쿼리 파라미터에서 경기 정보 확인
     const urlParams = new URLSearchParams(window.location.search);
@@ -1621,17 +1617,22 @@ async function changeMonth(direction) {
 (async function initPageData() {
     console.log('[INIT] 페이지 초기화 시작...');
 
-    // 전체 경기 데이터 preload (백그라운드)
-    preloadAllMatches().then(success => {
-        if (success) {
-            console.log('[INIT] ✅ 전체 데이터 로드 완료 - 이제 달력 클릭 시 즉시 표시됩니다!');
-        } else {
-            console.log('[INIT] ⚠️  캐시 데이터 없음 - 개별 API 호출로 fallback');
-        }
-    }).catch(error => {
-        console.error('[INIT] ❌ Preload 실패:', error);
-    });
+    // 전체 경기 데이터 preload
+    const success = await preloadAllMatches();
 
-    console.log('[INIT] 페이지 초기화 완료 (데이터 로드는 백그라운드에서 진행 중)');
+    if (success) {
+        console.log('[INIT] ✅ 전체 데이터 로드 완료 - 이제 달력 클릭 시 즉시 표시됩니다!');
+    } else {
+        console.log('[INIT] ⚠️  캐시 데이터 없음 - 개별 API 호출로 fallback');
+    }
+
+    // Preload 완료 후 캘린더 렌더링
+    const calendarDays = document.getElementById('calendarDays');
+    if (calendarDays) {
+        console.log('[Calendar] Rendering calendar with preloaded data...');
+        await renderCalendar();
+    }
+
+    console.log('[INIT] 페이지 초기화 완료');
 })();
 

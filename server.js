@@ -5,7 +5,16 @@
  * 접속: http://localhost:3000
  */
 
-require('dotenv').config();
+// Railway는 환경 변수를 process.env로 직접 주입하므로 dotenv는 로컬 개발에만 필요
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+} else {
+    console.log('[RAILWAY] 프로덕션 환경 - Railway 환경 변수 사용');
+    console.log('[ENV] Available env vars:', Object.keys(process.env).filter(k =>
+        k.includes('API') || k.includes('AMADEUS') || k.includes('EXCHANGE') || k.includes('FOOTBALL')
+    ));
+}
+
 const express = require('express');
 const cors = require('cors');
 const path = require('path');

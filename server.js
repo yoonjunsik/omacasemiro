@@ -15,6 +15,22 @@ console.log('  - RAILWAY_STATIC_URL:', process.env.RAILWAY_STATIC_URL);
 console.log('  - RAILWAY_PROJECT_ID:', process.env.RAILWAY_PROJECT_ID);
 console.log('  - Is Railway:', !!isRailway);
 
+// 🔍 모든 환경 변수 출력 (디버깅용)
+console.log('\n[DEBUG] ALL Environment Variables:');
+const envKeys = Object.keys(process.env).sort();
+console.log(`Total: ${envKeys.length} variables`);
+envKeys.forEach(key => {
+    // 민감한 정보는 마스킹
+    const value = process.env[key];
+    const displayValue = (key.includes('KEY') || key.includes('SECRET')) && value
+        ? `${value.substring(0, 8)}...`
+        : value && value.length > 50
+        ? `${value.substring(0, 50)}...`
+        : value;
+    console.log(`  ${key}=${displayValue}`);
+});
+console.log('\n');
+
 if (!isRailway) {
     // 로컬 개발 환경에서만 .env 파일 로드
     require('dotenv').config();

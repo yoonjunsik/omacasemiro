@@ -50,6 +50,32 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 
+// Firebase Admin SDK 초기화
+const admin = require('firebase-admin');
+
+try {
+    // Railway에서는 환경 변수로 Firebase credentials 전달
+    if (isRailway && process.env.FIREBASE_SERVICE_ACCOUNT) {
+        console.log('[RAILWAY] Firebase credentials from environment variable');
+        const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+        admin.initializeApp({
+            credential: admin.credential.cert(serviceAccount)
+        });
+    } else {
+        // 로컬에서는 파일에서 읽기
+        console.log('[LOCAL] Firebase credentials from file');
+        const serviceAccountPath = path.join(__dirname, 'omacasemiro-8fd4c-firebase-adminsdk-fbsvc-8c438c494c.json');
+        admin.initializeApp({
+            credential: admin.credential.cert(serviceAccountPath)
+        });
+    }
+    console.log('✅ Firebase Admin 초기화 완료');
+} catch (error) {
+    console.error('❌ Firebase Admin 초기화 실패:', error.message);
+}
+
+const db = admin.firestore();
+
 // API 서비스 불러오기
 const FootballDataService = require('./api/football-data-service.js');
 const AmadeusService = require('./api/amadeus-service.js');
@@ -72,7 +98,7 @@ const amadeusService = new AmadeusService(
     process.env.AMADEUS_API_SECRET
 );
 const exchangeService = new ExchangeRateService(process.env.EXCHANGE_RATE_API_KEY);
-const matchCacheService = new MatchCacheService(footballService);
+const matchCacheService = new MatchCacheService(footballService, db);
 
 // 캐시 서비스 초기화 (서버 시작 시 자동으로 데이터 수집 시작)
 matchCacheService.initialize();

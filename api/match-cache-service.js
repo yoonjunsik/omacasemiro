@@ -9,10 +9,11 @@ const path = require('path');
 const cron = require('node-cron');
 
 class MatchCacheService {
-    constructor(footballDataService) {
+    constructor(footballDataService, db) {
         this.footballDataService = footballDataService;
-        this.cacheDir = path.join(__dirname, '../cache');
-        this.cacheFile = path.join(this.cacheDir, 'matches-cache.json');
+        this.db = db; // Firestore 데이터베이스
+        this.cacheCollection = 'matches-cache';
+        this.cacheDocId = 'current';
         this.isCollecting = false;
         this.lastUpdateTime = null;
 
@@ -22,6 +23,10 @@ class MatchCacheService {
 
         // 수집 기간: 현재부터 4개월 후까지
         this.COLLECTION_MONTHS = 4;
+
+        // 로컬 파일 캐시 (Fallback용)
+        this.cacheDir = path.join(__dirname, '../cache');
+        this.cacheFile = path.join(this.cacheDir, 'matches-cache.json');
     }
 
     /**
@@ -78,11 +83,31 @@ class MatchCacheService {
     }
 
     /**
-     * 캐시 로드
+     * 캐시 로드 (Firestore 우선, 실패 시 로컬 파일)
      */
     async loadCache() {
+        // Firestore에서 캐시 로드 시도
+        if (this.db) {
+            try {
+                const docRef = this.db.collection(this.cacheCollection).doc(this.cacheDocId);
+                const doc = await docRef.get();
+
+                if (doc.exists) {
+                    console.log('🔥 [FIRESTORE] 캐시 로드 성공');
+                    return doc.data();
+                } else {
+                    console.log('📭 [FIRESTORE] 캐시 문서 없음');
+                }
+            } catch (error) {
+                console.error('❌ [FIRESTORE] 캐시 로드 실패:', error.message);
+                console.log('🔄 로컬 파일로 Fallback 시도...');
+            }
+        }
+
+        // Fallback: 로컬 파일에서 캐시 로드
         try {
             const data = await fs.readFile(this.cacheFile, 'utf-8');
+            console.log('📂 [FILE] 로컬 캐시 로드 성공');
             return JSON.parse(data);
         } catch (error) {
             return null;
@@ -90,19 +115,45 @@ class MatchCacheService {
     }
 
     /**
-     * 캐시 저장
+     * 캐시 저장 (Firestore 우선, 실패 시 로컬 파일)
      */
     async saveCache(matches) {
+        const cacheData = {
+            lastUpdate: new Date().toISOString(),
+            matches: matches
+        };
+
+        // Firestore에 저장 시도
+        if (this.db) {
+            try {
+                const docRef = this.db.collection(this.cacheCollection).doc(this.cacheDocId);
+                await docRef.set(cacheData, { merge: true });
+                this.lastUpdateTime = new Date();
+                console.log('🔥 [FIRESTORE] 캐시 저장 완료');
+
+                // Firestore 저장 성공 시에도 로컬 파일 백업
+                await this.saveLocalCache(cacheData);
+                return;
+            } catch (error) {
+                console.error('❌ [FIRESTORE] 캐시 저장 실패:', error.message);
+                console.log('🔄 로컬 파일로 Fallback...');
+            }
+        }
+
+        // Fallback: 로컬 파일에 저장
+        await this.saveLocalCache(cacheData);
+    }
+
+    /**
+     * 로컬 파일에 캐시 저장 (Fallback 및 백업용)
+     */
+    async saveLocalCache(cacheData) {
         try {
-            const cacheData = {
-                lastUpdate: new Date().toISOString(),
-                matches: matches
-            };
             await fs.writeFile(this.cacheFile, JSON.stringify(cacheData, null, 2));
             this.lastUpdateTime = new Date();
-            console.log('💾 캐시 저장 완료:', this.cacheFile);
+            console.log('📂 [FILE] 로컬 캐시 저장 완료:', this.cacheFile);
         } catch (error) {
-            console.error('❌ 캐시 저장 실패:', error);
+            console.error('❌ [FILE] 캐시 저장 실패:', error);
         }
     }
 

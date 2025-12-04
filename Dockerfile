@@ -14,7 +14,8 @@ RUN npm ci --production --ignore-scripts
 # 소스 코드 복사
 COPY . .
 
-# 포트 설정
+# Railway는 런타임에 환경 변수를 자동으로 주입합니다
+# 기본 포트만 설정 (Railway가 PORT를 오버라이드할 수 있음)
 ENV PORT=3000
 EXPOSE 3000
 

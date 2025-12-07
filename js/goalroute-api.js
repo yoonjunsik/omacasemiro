@@ -1533,10 +1533,20 @@ async function renderCalendar() {
         calendarHTML += '<div class="calendar-day py-3 rounded"></div>';
     }
 
+    // 현재 날짜 (오늘)
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // 시간 부분 제거하여 날짜만 비교
+
     // 현재 달 날짜
     for (let day = 1; day <= daysInMonth; day++) {
         const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-        const hasMatch = monthMatchesData[dateStr] && monthMatchesData[dateStr].length > 0;
+        const currentDate = new Date(currentYear, currentMonth, day);
+
+        // 과거 날짜인지 확인
+        const isPastDate = currentDate < today;
+
+        // 과거 날짜가 아니고 경기가 있는 경우만 표시
+        const hasMatch = !isPastDate && monthMatchesData[dateStr] && monthMatchesData[dateStr].length > 0;
         const matchClass = hasMatch ? 'has-match' : '';
 
         calendarHTML += `

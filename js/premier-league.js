@@ -255,12 +255,6 @@ const premierLeagueClubs = [
             { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_161_S000300A_MOD_3.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
             { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_165_SA6059A_GREY_MOD_10.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
             { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_8_KB1815AWJACKET2.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' }
-        ],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-adidas-anthem-jacket-black' },
-            { name: 'Newcastle United adidas Tiro 24 Track Jacket Black', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/ix8007_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-adidas-tiro-24-track-jacket' },
-            { name: 'Newcastle United adidas All Weather Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/jf7260_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-adidas-all-weather-jacket' },
-            { name: 'Newcastle United adidas Pre-Match Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/jf7258_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-adidas-pre-match-jacket' },
-            { name: 'Newcastle United adidas Travel Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/jf7259_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-adidas-travel-jacket' },
-            { name: 'Newcastle United Terrace Coaches Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/nufc-terrace-coaches-jacket_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-terrace-coaches-jacket' }
         ]
     },
     {
@@ -285,11 +279,6 @@ const premierLeagueClubs = [
             { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_6_aston-villa-padded-jacket-navy-mens_ss5_p-202797231+u-mejxfjz0zk3gs5vfu0dc+v-opcif34qfryljz1no140.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' },
             { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_7_aston-villa-microfleece-jacket-black-mens_ss5_p-202533430+u-h58ekelwecggv2jownk3+v-2gcl8i1p9mbjlex2rzkp.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' },
             { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_9_aston-villa-softshell-jacket-black-mens_ss5_p-202076706+u-etrk9ghy8md1kqqypolw+v-7ti0yjhdnumwybbpsqtu.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' }
-        ],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.avfc.co.uk/aston-villa-anthem-jacket' },
-            { name: 'Aston Villa adidas All Weather Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/avfc-all-weather_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.avfc.co.uk/aston-villa-all-weather-jacket' },
-            { name: 'Aston Villa adidas Travel Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/avfc-travel-jacket_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.avfc.co.uk/aston-villa-travel-jacket' },
-            { name: 'Aston Villa Varsity Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/avfc-varsity_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.avfc.co.uk/aston-villa-varsity-jacket' },
-            { name: 'Aston Villa Coaches Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/avfc-coaches_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.avfc.co.uk/aston-villa-coaches-jacket' }
         ]
     },
     {
@@ -308,11 +297,6 @@ const premierLeagueClubs = [
             { name: 'West Ham United Outerwear Product', image: 'images/products/westham/imgi_26_12000.jpg', url: 'https://shop.whufc.com/fashion/mens-fashion/coats-and-jackets/' },
             { name: 'West Ham United Outerwear Product', image: 'images/products/westham/imgi_27_12003-872.jpg', url: 'https://shop.whufc.com/fashion/mens-fashion/coats-and-jackets/' },
             { name: 'West Ham United Outerwear Product', image: 'images/products/westham/imgi_28_12075.jpg', url: 'https://shop.whufc.com/fashion/mens-fashion/coats-and-jackets/' }
-        ],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.whufc.com/west-ham-padded-jacket-navy' },
-            { name: 'West Ham United Coaches Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/wham-coaches-jacket_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.whufc.com/west-ham-coaches-jacket' },
-            { name: 'West Ham United Varsity Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/wham-varsity_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.whufc.com/west-ham-varsity-jacket' },
-            { name: 'West Ham United Bomber Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/wham-bomber_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.whufc.com/west-ham-bomber-jacket' },
-            { name: 'West Ham United Track Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/wham-track-jacket_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.whufc.com/west-ham-track-jacket' }
         ]
     },
     {

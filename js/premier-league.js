@@ -9,7 +9,37 @@ const premierLeagueClubs = [
         url: 'https://store.manutd.com/en/c/clothing/outerwear',
         color: 'from-red-700 to-red-900',
         popularity: 1,
-        products: []
+        products: [
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_118_12e7feacf766f5bf5d9a769cbebf03ec.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_119_14258af34ef8b3d512a4f0b03ddd2bc2.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_120_f46a30ff38182203ced025d38461b851.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_122_7bff6f532895de66565f051a5f2cfd26.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_124_64831d8dc6c70b2df19c0df362322caf.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_125_a91bca76b0d37850164520d2c6efdaf1.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_126_e7069fc635a3c0374fc5a23d2c0cdb75.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_127_0e38c3acbb123f1af3239fb258ff6f2d.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_128_d347c34836c9072de9c4a1fa38194f69.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_129_e8d8c5ab711b0dfa5b192c26b2b8cec1.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_131_a316b1122841782f6a6aabc25607b712.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_132_3a84d9cacf393bb3044cb91564cd3065.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_133_48e7bc98b5caff296f0c1310f96f1297.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_134_a5e1ee3a3235a54513ba04b09b7e6cb4.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_135_561811cbfba903cc9211d173e8b87706.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_137_c09ebd11015cb9fd7e38a66271f7438d.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_139_3c9f79a75002e05d0454803e59d10e9b.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_140_35f46b119ce8501251866555b818b8f9.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_141_c9c37ce72e2277321798ac4215c5ff9d.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_142_7050604a9b0d1322f3b57c6585e9012c.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_143_21e3d28d12778f85bfb6aaf4f1a36be8.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_54_48e7bc98b5caff296f0c1310f96f1297.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_55_a5e1ee3a3235a54513ba04b09b7e6cb4.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_56_561811cbfba903cc9211d173e8b87706.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_58_c09ebd11015cb9fd7e38a66271f7438d.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_60_3c9f79a75002e05d0454803e59d10e9b.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_62_c9c37ce72e2277321798ac4215c5ff9d.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_63_7050604a9b0d1322f3b57c6585e9012c.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' },
+            { name: 'Manchester United Outerwear Product', image: 'images/products/manunited/imgi_64_21e3d28d12778f85bfb6aaf4f1a36be8.jpg', url: 'https://store.manutd.com/en/c/fashion/mens/jackets-coats' }
+        ]
     },
     {
         name: '리버풀',
@@ -19,14 +49,34 @@ const premierLeagueClubs = [
         color: 'from-red-700 to-red-900',
         popularity: 2,
         products: [
-            { name: 'LFC adidas Mens 25/26 Home Anthem Jacket', image: 'https://store.liverpoolfc.com/media/catalog/product/a/0/a06535-lfc-mens-25-26-home-anthem-jacket.jpg', url: 'https://store.liverpoolfc.com/lfc-adidas-mens-25-26-home-anthem-jacket' },
-            { name: 'LFC adidas Mens 25/26 Icons Third Anthem Jacket', image: 'https://store.liverpoolfc.com/media/catalog/product/i/z/iz7543-lfc-adidas-mens-25-26-icons-third-anthem-jacket.jpg', url: 'https://store.liverpoolfc.com/lfc-adidas-mens-25-26-icons-third-anthem-jacket' },
-            { name: 'LFC adidas Mens 25/26 Vis Tech Travel Jacket', image: 'https://store.liverpoolfc.com/media/catalog/product/i/z/iz7587-lfc-adidas-mens-25-26-vis-tech-travel-jacket.jpg', url: 'https://store.liverpoolfc.com/lfc-adidas-mens-25-26-vis-tech-travel-jacket' },
-            { name: 'LFC adidas Mens 25/26 Domestic All Weather Jacket Black', image: 'https://store.liverpoolfc.com/media/catalog/product/i/z/iz7594-lfc-adidas-mens-25-26-domestic-all-weather-jacket-black.jpg', url: 'https://store.liverpoolfc.com/lfc-adidas-mens-25-26-domestic-all-weather-jacket-black' },
-            { name: 'LFC adidas Mens 25/26 Domestic All Weather Jacket White', image: 'https://store.liverpoolfc.com/media/catalog/product/i/z/iz7595-lfc-adidas-mens-25-26-domestic-all-weather-jacket-white.jpg', url: 'https://store.liverpoolfc.com/lfc-adidas-mens-25-25-domestic-all-weather-jacket-white' },
-            { name: 'LFC Mens Bomber Jacket Black', image: 'https://store.liverpoolfc.com/media/catalog/product/2/4/24lfc1101-lfc-mens-bomber-jacket-black.jpg', url: 'https://store.liverpoolfc.com/lfc-mens-bomber-jacket-black' },
-            { name: 'LFC adidas Terrace Icons Half-Zip Jacket Green', image: 'https://store.liverpoolfc.com/media/catalog/product/i/z/iz7550-lfc-adidas-mens-terrace-icons-half-zip-jacket-green.jpg', url: 'https://store.liverpoolfc.com/lfc-adidas-mens-terrace-icons-half-zip-jacket-green' },
-            { name: 'LFC adidas DNA Full-Zip Track Jacket Red', image: 'https://store.liverpoolfc.com/media/catalog/product/i/x/ix3734-lfc-adidas-dna-full-zip-track-jacket-red.jpg', url: 'https://store.liverpoolfc.com/lfc-adidas-dna-full-zip-track-jacket-red' }
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_103_jv6572_f_model_ecom_1.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_19_s24he12_1689.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_21_s24he17_00006.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_23_s25he12_2.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_25_s25he09_3_1.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_27_a25ht02_309.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_29_jx4132_2_apparel_on_model_standard_view_custom.png', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_31_jw7902_2_apparel_on_model_standard_view_custom.png', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_33_jw5474_2_apparel_on_model_standard_view_custom.png', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_35_jw5464_2_apparel_on_model_standard_view_custom.png', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_37_s25he11.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_39_s24he15_2571.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_42_kc7802_2_apparel_on_model_standard_view_custom.png', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_46_a25ls02_1372.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_50_jz5556_2_apparel_on_model_standard_view_custom.png', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_56_s24he18_2902.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_59_s23et07_1.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_65_a21et01_1.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_67_a25yn01_290.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_69_s25he13_657.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_71_jv9009_3_apparel_on_model_standard_view_custom.png', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_85_a13344_konte2.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_87_jw5469_2_apparel_on_model_standard_view_custom.png', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_89_jv6553_f_model_ecom_1.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_93_s25pw161_164.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_95_jv9001_3_apparel_on_model_standard_view_custom.png', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_97_jv6563_f_model_ecom_1.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' },
+            { name: 'Liverpool Outerwear Product', image: 'images/products/liverpool/imgi_99_jv6562_f_model_ecom.jpg', url: 'https://store.liverpoolfc.com/kr/catalogsearch/result/?q=jacket' }
         ]
     },
     {
@@ -37,14 +87,25 @@ const premierLeagueClubs = [
         color: 'from-sky-400 to-sky-600',
         popularity: 3,
         products: [
-            { name: 'Manchester City Showerproof Jacket', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dwf6d72d94/images/large/701238832001_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/manchester-city-showerproof-jacket/701238832-black.html' },
-            { name: 'Kids Manchester City Showerproof Jacket', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw856c7794/images/large/701238970001_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/kids-manchester-city-showerproof-jacket/701238970-blue.html' },
-            { name: 'Manchester City Pre-Match KING Anthem Jacket', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw7186efa6/images/large/701237124002_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/manchester-city-pre-match-king-anthem-jacket/701237124-blue.html' },
-            { name: 'Kids Manchester City Essentials Fleece Lined Hoodie Jacket', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw785cecac/images/large/701221095002_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/kids-manchester-city-essentials-fleece-lined-hoodie-jacket/701221095-grey.html' },
-            { name: 'Manchester City Quilted Jacket', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/images/large/701238834001_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/manchester-city-quilted-jacket/701238834-black.html' },
-            { name: 'Manchester City Training Winter Jacket 2025/26', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/images/large/701237205001_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/manchester-city-training-winter-jacket-2025-26/701237205-black.html' },
-            { name: 'Manchester City Training All Weather Jacket 2025/26', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/images/large/701237202001_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/manchester-city-training-all-weather-jacket-2025-26/701237202-black.html' },
-            { name: 'Manchester City FtblCulture Jacket 2025/26', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/images/large/701237231001_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/manchester-city-ftblculture-jacket-2025-26/701237231-grey.html' }
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_106_701235147001_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_108_701235147001_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_116_701235147001_pp_03_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_138_701237201003_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_142_701238831001_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_144_701238831001_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_152_701237562001_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_162_701237562002_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_46_701238832001_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_54_701237124002_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_56_701237124002_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_62_701237124001_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_68_701237124003_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_70_701238834001_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_72_701238834001_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_78_701237205001_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_80_701237205001_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_86_701237202001_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' },
+            { name: 'Manchester City Outerwear Product', image: 'images/products/mancity/imgi_98_701237231001_pp_01_mcfc.png', url: 'https://shop.mancity.com/en/search/?q=jacket' }
         ]
     },
     {
@@ -169,7 +230,32 @@ const premierLeagueClubs = [
         color: 'from-black to-gray-800',
         popularity: 7,
         products: [
-            { name: 'Newcastle United adidas 2025/26 Anthem Full-Zip Hoodie Jacket Black', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/jf7256_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-adidas-anthem-jacket-black' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_116_JN1825_FLAT_1.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_118_INLINEMENSBLACKZIPUPJACKET2.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_120_NULO16ADULTFULLZIPFLEECE6.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_124_LEWISHALL5.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_126_TinoLivramento9.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_127_NUM162ADULTSSHOWERJACKET8.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_128_LEWIS_HALL_2.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_129_LEWIS_HALL_1.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_130_HARVEYBARNES13.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_131_NUM164ADULTSPUFFERJACKET-BLACK2_e58d68f9-2e0d-4975-a9d1-1103a482fd23.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_132_TinoLivramento6.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_134_JACOBRAMSEY9.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_135_Cagoule_3.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_137_S001543A_MOD_3.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_139_Polaroid.23.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_13_HARVEYBARNES13_webp.jpg', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_143_JM9494_MOD_1.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_145_SA6059A_MOD_NAVY_2.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_147_JD1043_MOD_7.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_151_NUM153-BLACK_MOD_11.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_155_NUM126-BLACK_MOD_4.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_159_S000227A_BLUE_MOD_3.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_161_S000300A_MOD_3.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_165_SA6059A_GREY_MOD_10.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' },
+            { name: 'Newcastle Outerwear Product', image: 'images/products/newcastle/imgi_8_KB1815AWJACKET2.webp', url: 'https://shop.newcastleunited.com/collections/mens-outerwear' }
+        ],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-adidas-anthem-jacket-black' },
             { name: 'Newcastle United adidas Tiro 24 Track Jacket Black', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/ix8007_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-adidas-tiro-24-track-jacket' },
             { name: 'Newcastle United adidas All Weather Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/jf7260_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-adidas-all-weather-jacket' },
             { name: 'Newcastle United adidas Pre-Match Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/jf7258_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-adidas-pre-match-jacket' },
@@ -185,7 +271,21 @@ const premierLeagueClubs = [
         color: 'from-purple-900 to-blue-900',
         popularity: 8,
         products: [
-            { name: 'Aston Villa adidas Anthem Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/avfc-anthem-jacket_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.avfc.co.uk/aston-villa-anthem-jacket' },
+            { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_10_aston-villa-adidas-training-all-weather-jacket-light-green_ss5_p-202699166+u-0ikvbpzlg8cgc92zjefe+v-mxfxrv5ybrbjyvklxv2m.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' },
+            { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_11_aston-villa-adidas-training-presentation-jacket-navy_ss5_p-202699213+u-d9yf5ikkrjlo8aiqa3bf+v-3psii7erj0omwf0lrupx.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' },
+            { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_13_aston-villa-adidas-training-all-weather-jacket-navy_ss5_p-202699205+u-wjpgpuwoalyw9jsq6bqr+v-1dhpygtk62hsqoofkdcs.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' },
+            { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_14_aston-villa-adidas-training-all-weather-jacket-light-blue_ss5_p-202699187+u-miwfz9kkjeevhfohhfdc+v-jdg4plofn5srgslllxhg.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' },
+            { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_16_aston-villa-adidas-training-all-weather-jacket-pink_ss5_p-202699173+u-5kg1koitdo3tttk47jyo+v-fhac2ea1soxpci2q1yfk.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' },
+            { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_17_aston-villa-adidas-training-presentation-jacket-light-blue_ss5_p-202699182+u-wlq5fxutobqkoltg70gw+v-pklsbjhijssw138gv94k.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' },
+            { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_18_aston-villa-trinity-road-lightweight-jacket-navy-unisex_ss5_p-202650788+u-hu7ou9bmgezsxijwxunv+v-lnmsiq4f5k1wcfk8izrn.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' },
+            { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_19_aston-villa-adidas-training-stadium-parka-jacket-light-blue_ss5_p-202699198+u-2f8wancpglw4eyijlsr8+v-b44awnpwyin7c5btwy3e.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' },
+            { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_2_aston-villa-elements-shacket-classic-pewter-mens_ss5_p-203087805+u-flcis49fspgyxurx0bgl+v-vh2ieed09wivfix2uw2b.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' },
+            { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_3_aston-villa-elements-varsity-jacket-cappucino-mens_ss5_p-203087806+u-wflxcs2ikuy9ymxhpkoe+v-hy1amr6zuvpxjlgy6vnr.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' },
+            { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_4_aston-villa-windbreaker-navy-mens_ss5_p-202797232+u-ak6in5cqvuoxjpdmbvca+v-fxnsufu3e5macxcfycgr.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' },
+            { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_6_aston-villa-padded-jacket-navy-mens_ss5_p-202797231+u-mejxfjz0zk3gs5vfu0dc+v-opcif34qfryljz1no140.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' },
+            { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_7_aston-villa-microfleece-jacket-black-mens_ss5_p-202533430+u-h58ekelwecggv2jownk3+v-2gcl8i1p9mbjlex2rzkp.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' },
+            { name: 'Aston Villa Outerwear Product', image: 'images/products/astonvilla/imgi_9_aston-villa-softshell-jacket-black-mens_ss5_p-202076706+u-etrk9ghy8md1kqqypolw+v-7ti0yjhdnumwybbpsqtu.jpg', url: 'https://shop.avfc.co.uk/en/aston-villa-men-jackets/t-19103171+ga-67+d-9027655092+z-9-3887032976?_ref=m-TOPNAV' }
+        ],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.avfc.co.uk/aston-villa-anthem-jacket' },
             { name: 'Aston Villa adidas All Weather Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/avfc-all-weather_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.avfc.co.uk/aston-villa-all-weather-jacket' },
             { name: 'Aston Villa adidas Travel Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/avfc-travel-jacket_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.avfc.co.uk/aston-villa-travel-jacket' },
             { name: 'Aston Villa Varsity Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/avfc-varsity_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.avfc.co.uk/aston-villa-varsity-jacket' },
@@ -200,7 +300,15 @@ const premierLeagueClubs = [
         color: 'from-purple-900 to-sky-400',
         popularity: 9,
         products: [
-            { name: 'West Ham United Padded Hoodie Full-Zip Jacket Navy', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/wham-padded-jacket-navy_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.whufc.com/west-ham-padded-jacket-navy' },
+            { name: 'West Ham United Outerwear Product', image: 'images/products/westham/imgi_21_8907.jpg', url: 'https://shop.whufc.com/fashion/mens-fashion/coats-and-jackets/' },
+            { name: 'West Ham United Outerwear Product', image: 'images/products/westham/imgi_22_8908.jpg', url: 'https://shop.whufc.com/fashion/mens-fashion/coats-and-jackets/' },
+            { name: 'West Ham United Outerwear Product', image: 'images/products/westham/imgi_23_8933-872.jpg', url: 'https://shop.whufc.com/fashion/mens-fashion/coats-and-jackets/' },
+            { name: 'West Ham United Outerwear Product', image: 'images/products/westham/imgi_24_11208.jpg', url: 'https://shop.whufc.com/fashion/mens-fashion/coats-and-jackets/' },
+            { name: 'West Ham United Outerwear Product', image: 'images/products/westham/imgi_25_11996.jpg', url: 'https://shop.whufc.com/fashion/mens-fashion/coats-and-jackets/' },
+            { name: 'West Ham United Outerwear Product', image: 'images/products/westham/imgi_26_12000.jpg', url: 'https://shop.whufc.com/fashion/mens-fashion/coats-and-jackets/' },
+            { name: 'West Ham United Outerwear Product', image: 'images/products/westham/imgi_27_12003-872.jpg', url: 'https://shop.whufc.com/fashion/mens-fashion/coats-and-jackets/' },
+            { name: 'West Ham United Outerwear Product', image: 'images/products/westham/imgi_28_12075.jpg', url: 'https://shop.whufc.com/fashion/mens-fashion/coats-and-jackets/' }
+        ],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.whufc.com/west-ham-padded-jacket-navy' },
             { name: 'West Ham United Coaches Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/wham-coaches-jacket_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.whufc.com/west-ham-coaches-jacket' },
             { name: 'West Ham United Varsity Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/wham-varsity_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.whufc.com/west-ham-varsity-jacket' },
             { name: 'West Ham United Bomber Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/wham-bomber_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.whufc.com/west-ham-bomber-jacket' },
@@ -214,7 +322,13 @@ const premierLeagueClubs = [
         url: 'https://shop.brightonandhovealbion.com/outerwear',
         color: 'from-blue-500 to-white',
         popularity: 10,
-        products: []
+        products: [
+            { name: 'Brighton Outerwear Product', image: 'images/products/brighton/imgi_17_6645.jpg', url: 'https://shop.brightonandhovealbion.com/listing.php?criteria=jacket' },
+            { name: 'Brighton Outerwear Product', image: 'images/products/brighton/imgi_18_5609.jpg', url: 'https://shop.brightonandhovealbion.com/listing.php?criteria=jacket' },
+            { name: 'Brighton Outerwear Product', image: 'images/products/brighton/imgi_21_3636.jpg', url: 'https://shop.brightonandhovealbion.com/listing.php?criteria=jacket' },
+            { name: 'Brighton Outerwear Product', image: 'images/products/brighton/imgi_22_5853.jpg', url: 'https://shop.brightonandhovealbion.com/listing.php?criteria=jacket' },
+            { name: 'Brighton Outerwear Product', image: 'images/products/brighton/imgi_24_5608.jpg', url: 'https://shop.brightonandhovealbion.com/listing.php?criteria=jacket' }
+        ]
     },
     {
         name: '에버튼',
@@ -223,7 +337,19 @@ const premierLeagueClubs = [
         url: 'https://store.evertonfc.com/en/everton-clothing/t-21098998+x-64698777+z-87-4155919997',
         color: 'from-blue-700 to-blue-900',
         popularity: 11,
-        products: []
+        products: [
+            { name: 'Everton Outerwear Product', image: 'images/products/everton/imgi_10_everton-x-mitchell-and-ness-lightweight-satin-jacket-royal-unisex_ss5_p-201952160+u-cx7l4koxgvnyyvifwt6m+v-ogotkqzxrb40ttfhvlab.jpg', url: 'https://store.evertonfc.com/en/everton-men-jackets/t-20873487+ga-56+d-457276835+z-8-562081417?_ref=m-TOPNAV' },
+            { name: 'Everton Outerwear Product', image: 'images/products/everton/imgi_11_everton-castore-coaches-training-rain-jacket-navy_ss5_p-202445354+u-vosz17unosea72dupzir+v-s9alghhh2qwiiypgbprp.jpg', url: 'https://store.evertonfc.com/en/everton-men-jackets/t-20873487+ga-56+d-457276835+z-8-562081417?_ref=m-TOPNAV' },
+            { name: 'Everton Outerwear Product', image: 'images/products/everton/imgi_12_everton-castore-players-training-rain-jacket-grey_ss5_p-202445339+u-69ihvzanpu1dbdxkjrgf+v-je2dbdeyt6rrfvws8p6z.jpg', url: 'https://store.evertonfc.com/en/everton-men-jackets/t-20873487+ga-56+d-457276835+z-8-562081417?_ref=m-TOPNAV' },
+            { name: 'Everton Outerwear Product', image: 'images/products/everton/imgi_13_everton-active-leisure-softshell-jacket-grey-mens_ss5_p-201881599+u-c6lal5skqmlenn6fprlc+v-04nnxwcahz2drvowlfuf.jpg', url: 'https://store.evertonfc.com/en/everton-men-jackets/t-20873487+ga-56+d-457276835+z-8-562081417?_ref=m-TOPNAV' },
+            { name: 'Everton Outerwear Product', image: 'images/products/everton/imgi_2_everton-elements-shacket-classic-pewter-mens_ss5_p-203087811+u-ahnvy5ljdroe5pkzy66v+v-ovrfxizvu2huahajqbl8.jpg', url: 'https://store.evertonfc.com/en/everton-men-jackets/t-20873487+ga-56+d-457276835+z-8-562081417?_ref=m-TOPNAV' },
+            { name: 'Everton Outerwear Product', image: 'images/products/everton/imgi_3_everton-castore-third-matchday-anthem-jacket-black_ss5_p-202445327+u-adi3khw4opdjz3mgevpf+v-rcz8mm5xiyygbrm7r6xe.jpg', url: 'https://store.evertonfc.com/en/everton-men-jackets/t-20873487+ga-56+d-457276835+z-8-562081417?_ref=m-TOPNAV' },
+            { name: 'Everton Outerwear Product', image: 'images/products/everton/imgi_4_everton-windbreaker-navy-mens_ss5_p-202849360+u-uauwbiukstymyfdlh0wk+v-f52mmpcgysadpjgrqhle.jpg', url: 'https://store.evertonfc.com/en/everton-men-jackets/t-20873487+ga-56+d-457276835+z-8-562081417?_ref=m-TOPNAV' },
+            { name: 'Everton Outerwear Product', image: 'images/products/everton/imgi_5_everton-puffer-jacket-navy-mens_ss5_p-202849359+u-o6xbcghunxtaxqrbons8+v-gjh2qrh6x6r5i7qumyjp.jpg', url: 'https://store.evertonfc.com/en/everton-men-jackets/t-20873487+ga-56+d-457276835+z-8-562081417?_ref=m-TOPNAV' },
+            { name: 'Everton Outerwear Product', image: 'images/products/everton/imgi_6_everton-castore-league-matchday-anthem-jacket-navy_ss5_p-202445322+u-qbe9ibuwzakfqltvm4kb+v-htphzd7ag7swszpz1u1s.jpg', url: 'https://store.evertonfc.com/en/everton-men-jackets/t-20873487+ga-56+d-457276835+z-8-562081417?_ref=m-TOPNAV' },
+            { name: 'Everton Outerwear Product', image: 'images/products/everton/imgi_7_everton-fantech-shower-jacket-navy-mens_ss5_p-13384144+u-phgeabtsh0yebbivsreg+v-trsjly0ojiwnbngwtg5n.jpg', url: 'https://store.evertonfc.com/en/everton-men-jackets/t-20873487+ga-56+d-457276835+z-8-562081417?_ref=m-TOPNAV' },
+            { name: 'Everton Outerwear Product', image: 'images/products/everton/imgi_9_everton-active-leisure-gilet-grey-mens_ss5_p-201881597+u-uxr4lsivcgfyma35emxh+v-met6bonq3b2qy8rxolfc.jpg', url: 'https://store.evertonfc.com/en/everton-men-jackets/t-20873487+ga-56+d-457276835+z-8-562081417?_ref=m-TOPNAV' }
+        ]
     },
     {
         name: '크리스탈 팰리스',
@@ -232,7 +358,17 @@ const premierLeagueClubs = [
         url: 'https://shop.cpfc.co.uk/outerwear',
         color: 'from-blue-600 to-red-600',
         popularity: 12,
-        products: []
+        products: [
+            { name: 'Crystal Palace Outerwear Product', image: 'images/products/crystalpalace/imgi_29_6113.jpg', url: 'https://shop.cpfc.co.uk/listing.php?criteria=jacket' },
+            { name: 'Crystal Palace Outerwear Product', image: 'images/products/crystalpalace/imgi_30_6333.jpg', url: 'https://shop.cpfc.co.uk/listing.php?criteria=jacket' },
+            { name: 'Crystal Palace Outerwear Product', image: 'images/products/crystalpalace/imgi_31_6125.jpg', url: 'https://shop.cpfc.co.uk/listing.php?criteria=jacket' },
+            { name: 'Crystal Palace Outerwear Product', image: 'images/products/crystalpalace/imgi_32_6124.jpg', url: 'https://shop.cpfc.co.uk/listing.php?criteria=jacket' },
+            { name: 'Crystal Palace Outerwear Product', image: 'images/products/crystalpalace/imgi_33_6132.jpg', url: 'https://shop.cpfc.co.uk/listing.php?criteria=jacket' },
+            { name: 'Crystal Palace Outerwear Product', image: 'images/products/crystalpalace/imgi_34_5484.jpg', url: 'https://shop.cpfc.co.uk/listing.php?criteria=jacket' },
+            { name: 'Crystal Palace Outerwear Product', image: 'images/products/crystalpalace/imgi_35_6114.jpg', url: 'https://shop.cpfc.co.uk/listing.php?criteria=jacket' },
+            { name: 'Crystal Palace Outerwear Product', image: 'images/products/crystalpalace/imgi_36_6334-407.jpg', url: 'https://shop.cpfc.co.uk/listing.php?criteria=jacket' },
+            { name: 'Crystal Palace Outerwear Product', image: 'images/products/crystalpalace/imgi_37_1562.jpg', url: 'https://shop.cpfc.co.uk/listing.php?criteria=jacket' }
+        ]
     },
     {
         name: '레스터',
@@ -250,7 +386,17 @@ const premierLeagueClubs = [
         url: 'https://shop.fulhamfc.com/collections/mens-outerwear',
         color: 'from-white to-black',
         popularity: 14,
-        products: []
+        products: [
+            { name: 'Fulham Outerwear Product', image: 'images/products/fulham/imgi_35_6242.jpg', url: 'https://shop.fulhamfc.com/fashion/mens-fashion/outerwear/' },
+            { name: 'Fulham Outerwear Product', image: 'images/products/fulham/imgi_36_6577.jpg', url: 'https://shop.fulhamfc.com/fashion/mens-fashion/outerwear/' },
+            { name: 'Fulham Outerwear Product', image: 'images/products/fulham/imgi_37_6573.jpg', url: 'https://shop.fulhamfc.com/fashion/mens-fashion/outerwear/' },
+            { name: 'Fulham Outerwear Product', image: 'images/products/fulham/imgi_38_5700.jpg', url: 'https://shop.fulhamfc.com/fashion/mens-fashion/outerwear/' },
+            { name: 'Fulham Outerwear Product', image: 'images/products/fulham/imgi_39_5698.jpg', url: 'https://shop.fulhamfc.com/fashion/mens-fashion/outerwear/' },
+            { name: 'Fulham Outerwear Product', image: 'images/products/fulham/imgi_40_6572.jpg', url: 'https://shop.fulhamfc.com/fashion/mens-fashion/outerwear/' },
+            { name: 'Fulham Outerwear Product', image: 'images/products/fulham/imgi_41_6404.jpg', url: 'https://shop.fulhamfc.com/fashion/mens-fashion/outerwear/' },
+            { name: 'Fulham Outerwear Product', image: 'images/products/fulham/imgi_42_5916.jpg', url: 'https://shop.fulhamfc.com/fashion/mens-fashion/outerwear/' },
+            { name: 'Fulham Outerwear Product', image: 'images/products/fulham/imgi_43_5917.jpg', url: 'https://shop.fulhamfc.com/fashion/mens-fashion/outerwear/' }
+        ]
     },
     {
         name: '본머스',
@@ -260,18 +406,18 @@ const premierLeagueClubs = [
         color: 'from-red-600 to-black',
         popularity: 15,
         products: [
-            { name: 'Premium Cherries Windbreaker Anorak', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/PRMCHANORAKBK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/PRMCHANORAKBK' },
-            { name: 'Premium Cherries Varsity Jacket - Black', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/PRMCHVARJACKBK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/PRMCHVARJACKBK' },
-            { name: 'Adults Alaska Long Coat - Charcoal', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/ALASKAJKADCH.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/ALASKAJKADCH' },
-            { name: 'Adults Columbus Coat - Khaki', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/COLUMBUSJKADKH.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/COLUMBUSJKADKH' },
-            { name: 'Adults Oakland Puffer Jacket - Black', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/OAKLANDJKADBK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/OAKLANDJKADBK' },
-            { name: 'Adults Dakota Lightweight Jacket - Black', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/DAKOTAJKADBK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/DAKOTAJKADBK' },
-            { name: 'Adults Berkeley Jacket - Black', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/BERKELEYJKADBK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/BERKELEYJKADBK' },
-            { name: 'Adults Manor Jacket - Black', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/MANORJKADBK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/MANORJKADBK' },
-            { name: 'Beachbum X AFCB Beach Robe - Olive', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/BROBEOLIVE.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/BROBEOLIVE' },
-            { name: 'Beachbum X AFCB Beach Robe - Black', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/BROBEBLACK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/BROBEBLACK' },
-            { name: 'Adults College Baseball Jacket - Black / White', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/COLLBASEBALLADBK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/COLLBASEBALLADBK' },
-            { name: 'Adults Grange Shacket - Navy Blue', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/GRANGESHKADNV.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/GRANGESHKADNV' }
+            { name: 'Bournemouth Outerwear Product', image: 'images/products/bournemouth/imgi_15_PRMCHANORAKBK.jpg', url: 'https://superstore.afcb.co.uk/afc-bournemouth/mens-jackets-48' },
+            { name: 'Bournemouth Outerwear Product', image: 'images/products/bournemouth/imgi_16_PRMCHVARJACKBK.jpg', url: 'https://superstore.afcb.co.uk/afc-bournemouth/mens-jackets-48' },
+            { name: 'Bournemouth Outerwear Product', image: 'images/products/bournemouth/imgi_17_ALASKAJKADCH.jpg', url: 'https://superstore.afcb.co.uk/afc-bournemouth/mens-jackets-48' },
+            { name: 'Bournemouth Outerwear Product', image: 'images/products/bournemouth/imgi_18_COLUMBUSJKADKH.jpg', url: 'https://superstore.afcb.co.uk/afc-bournemouth/mens-jackets-48' },
+            { name: 'Bournemouth Outerwear Product', image: 'images/products/bournemouth/imgi_19_OAKLANDJKADBK.jpg', url: 'https://superstore.afcb.co.uk/afc-bournemouth/mens-jackets-48' },
+            { name: 'Bournemouth Outerwear Product', image: 'images/products/bournemouth/imgi_20_DAKOTAJKADBK.jpg', url: 'https://superstore.afcb.co.uk/afc-bournemouth/mens-jackets-48' },
+            { name: 'Bournemouth Outerwear Product', image: 'images/products/bournemouth/imgi_21_BERKELEYJKADBK.jpg', url: 'https://superstore.afcb.co.uk/afc-bournemouth/mens-jackets-48' },
+            { name: 'Bournemouth Outerwear Product', image: 'images/products/bournemouth/imgi_22_MANORJKADBK.jpg', url: 'https://superstore.afcb.co.uk/afc-bournemouth/mens-jackets-48' },
+            { name: 'Bournemouth Outerwear Product', image: 'images/products/bournemouth/imgi_23_BROBEOLIVE.jpg', url: 'https://superstore.afcb.co.uk/afc-bournemouth/mens-jackets-48' },
+            { name: 'Bournemouth Outerwear Product', image: 'images/products/bournemouth/imgi_24_BROBEBLACK.jpg', url: 'https://superstore.afcb.co.uk/afc-bournemouth/mens-jackets-48' },
+            { name: 'Bournemouth Outerwear Product', image: 'images/products/bournemouth/imgi_25_COLLBASEBALLADBK.jpg', url: 'https://superstore.afcb.co.uk/afc-bournemouth/mens-jackets-48' },
+            { name: 'Bournemouth Outerwear Product', image: 'images/products/bournemouth/imgi_26_GRANGESHKADNV.jpg', url: 'https://superstore.afcb.co.uk/afc-bournemouth/mens-jackets-48' }
         ]
     },
     {
@@ -281,7 +427,16 @@ const premierLeagueClubs = [
         url: 'https://shop.wolves.co.uk/collections/outerwear',
         color: 'from-yellow-600 to-black',
         popularity: 16,
-        products: []
+        products: [
+            { name: 'Wolverhampton Outerwear Product', image: 'images/products/wolves/imgi_30_6074.jpg', url: 'https://shop.wolves.co.uk/clothing/mens-clothing/jackets-coats/' },
+            { name: 'Wolverhampton Outerwear Product', image: 'images/products/wolves/imgi_31_6073.jpg', url: 'https://shop.wolves.co.uk/clothing/mens-clothing/jackets-coats/' },
+            { name: 'Wolverhampton Outerwear Product', image: 'images/products/wolves/imgi_32_5166.jpg', url: 'https://shop.wolves.co.uk/clothing/mens-clothing/jackets-coats/' },
+            { name: 'Wolverhampton Outerwear Product', image: 'images/products/wolves/imgi_33_6091.jpg', url: 'https://shop.wolves.co.uk/clothing/mens-clothing/jackets-coats/' },
+            { name: 'Wolverhampton Outerwear Product', image: 'images/products/wolves/imgi_34_5147.jpg', url: 'https://shop.wolves.co.uk/clothing/mens-clothing/jackets-coats/' },
+            { name: 'Wolverhampton Outerwear Product', image: 'images/products/wolves/imgi_35_6089.jpg', url: 'https://shop.wolves.co.uk/clothing/mens-clothing/jackets-coats/' },
+            { name: 'Wolverhampton Outerwear Product', image: 'images/products/wolves/imgi_36_6092.jpg', url: 'https://shop.wolves.co.uk/clothing/mens-clothing/jackets-coats/' },
+            { name: 'Wolverhampton Outerwear Product', image: 'images/products/wolves/imgi_37_4462.jpg', url: 'https://shop.wolves.co.uk/clothing/mens-clothing/jackets-coats/' }
+        ]
     },
     {
         name: '노팅엄 포레스트',
@@ -290,7 +445,15 @@ const premierLeagueClubs = [
         url: 'https://shop.nottinghamforest.co.uk/collections/outerwear',
         color: 'from-red-700 to-red-900',
         popularity: 17,
-        products: []
+        products: [
+            { name: 'Nottingham Forest Outerwear Product', image: 'images/products/nottingham/imgi_14_NFFCTRENTSTYLE11104011.jpg', url: 'https://shop.nottinghamforest.co.uk/collections/mens-jackets-coats' },
+            { name: 'Nottingham Forest Outerwear Product', image: 'images/products/nottingham/imgi_16_5561-Nottingham-Ecom-04.11.250719.jpg', url: 'https://shop.nottinghamforest.co.uk/collections/mens-jackets-coats' },
+            { name: 'Nottingham Forest Outerwear Product', image: 'images/products/nottingham/imgi_18_5561-Nottingham-Ecom-04.11.250783.jpg', url: 'https://shop.nottinghamforest.co.uk/collections/mens-jackets-coats' },
+            { name: 'Nottingham Forest Outerwear Product', image: 'images/products/nottingham/imgi_20_KA795515229.jpg', url: 'https://shop.nottinghamforest.co.uk/collections/mens-jackets-coats' },
+            { name: 'Nottingham Forest Outerwear Product', image: 'images/products/nottingham/imgi_22_JL791415111.jpg', url: 'https://shop.nottinghamforest.co.uk/collections/mens-jackets-coats' },
+            { name: 'Nottingham Forest Outerwear Product', image: 'images/products/nottingham/imgi_24_KB287015299.jpg', url: 'https://shop.nottinghamforest.co.uk/collections/mens-jackets-coats' },
+            { name: 'Nottingham Forest Outerwear Product', image: 'images/products/nottingham/imgi_26_nffc-navy-essential-shower-jacket-nottingham-forest-fc-873034.jpg', url: 'https://shop.nottinghamforest.co.uk/collections/mens-jackets-coats' }
+        ]
     },
     {
         name: '브렌트포드',
@@ -299,7 +462,10 @@ const premierLeagueClubs = [
         url: 'https://shop.brentfordfc.com/collections/mens-outerwear',
         color: 'from-red-600 to-yellow-500',
         popularity: 18,
-        products: []
+        products: [
+            { name: 'Brentford Outerwear Product', image: 'images/products/brentford/imgi_41_5494.jpg', url: 'https://shop.brentfordfc.com/training/2526-training/jacket/' },
+            { name: 'Brentford Outerwear Product', image: 'images/products/brentford/imgi_44_5491.jpg', url: 'https://shop.brentfordfc.com/training/2526-training/jacket/' }
+        ]
     },
     {
         name: '입스위치',

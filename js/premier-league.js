@@ -108,12 +108,12 @@ const premierLeagueClubs = [
         color: 'from-white to-gray-200',
         popularity: 6,
         products: [
-            { name: 'Tottenham Nike Tech Fleece Full-Zip Hoodie Jacket Gray', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/fb7671-021_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.tottenhamhotspur.com/nike-tech-fleece-full-zip-hoodie-jacket' },
-            { name: 'Tottenham Nike 2025/26 Home Stadium Anthem Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/fb7570-100_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.tottenhamhotspur.com/nike-2025-26-home-stadium-anthem-jacket' },
-            { name: 'Tottenham Nike Strike Drill Top Navy', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/dh9244-410_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.tottenhamhotspur.com/nike-strike-drill-top-navy' },
-            { name: 'Tottenham Nike Academy Pro Anthem Jacket Navy', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/dn5452-410_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.tottenhamhotspur.com/nike-academy-pro-anthem-jacket' },
-            { name: 'Tottenham Nike Windrunner Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/fb7619-410_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.tottenhamhotspur.com/nike-windrunner-jacket' },
-            { name: 'Tottenham Nike All Weather Jacket Black', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/fb7620-010_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.tottenhamhotspur.com/nike-all-weather-jacket' }
+            { name: 'Spurs Nike Mens Navy Home Anthem Jacket 2025/26', image: 'https://cdn11.bigcommerce.com/s-5e8c3uvulz/products/30874/images/37218/NKME0125_H_ANTHEM_JACKET_1__21945.1756974829.800.800.jpg', url: 'https://shop.tottenhamhotspur.com/nk-h-anthem-jacket-2025-26-nkme0125/nkme0125' },
+            { name: 'Spurs Nike Mens Black Away Anthem Jacket 2025/26', image: 'https://cdn11.bigcommerce.com/s-5e8c3uvulz/products/30867/images/37694/NKME0225_BLK_A_ANTHEM_JACKET_1__73169.1750927139.800.800.jpg', url: 'https://shop.tottenhamhotspur.com/nk-a-anthem-jacket-2025-26-nkme0225/nkme0225' },
+            { name: 'Spurs Nike Mens Navy T90 Track Jacket 2025/26', image: 'https://cdn11.bigcommerce.com/s-5e8c3uvulz/products/30696/images/40086/T90_Track_PDP_1600x2000__39807.1764147390.800.800.jpg', url: 'https://shop.tottenhamhotspur.com/nk-t90-track-jacket-2025-26-nkme2825/nkme2825' },
+            { name: 'Spurs Nike Mens Navy Padded Jacket 2025/26', image: 'https://cdn11.bigcommerce.com/s-5e8c3uvulz/products/30718/images/37742/NKMT1425_NVY_PADDED_JACKET_1_copy__28559.1750947887.800.800.jpg', url: 'https://shop.tottenhamhotspur.com/nk-padded-jacket-2025-26-nkmt1425/nkmt1425' },
+            { name: 'Spurs Nike Mens Tech Fleece Hoodie 2025/26', image: 'https://cdn11.bigcommerce.com/s-5e8c3uvulz/products/30872/images/39957/Tech_men__79379.1761751894.800.800.jpg', url: 'https://shop.tottenhamhotspur.com/nk-tech-fleece-hoodie-2025-26-nkme0325/nkme0325' },
+            { name: 'Spurs Nike Mens Navy Third Padded Jacket 2025/26', image: 'https://cdn11.bigcommerce.com/s-5e8c3uvulz/products/30701/images/39283/NKMT2225_3R_PADDED_JACKET_1__48292.1758556242.800.800.jpg', url: 'https://shop.tottenhamhotspur.com/nk-3r-padded-jacket-2025-26-nkmt2225/nkmt2225' }
         ]
     },
     {

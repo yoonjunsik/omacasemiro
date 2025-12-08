@@ -18,7 +18,16 @@ const premierLeagueClubs = [
         url: 'https://store.liverpoolfc.com/clothing/jackets',
         color: 'from-red-700 to-red-900',
         popularity: 2,
-        products: []
+        products: [
+            { name: 'LFC adidas Mens 25/26 Home Anthem Jacket', image: 'https://store.liverpoolfc.com/media/catalog/product/a/0/a06535-lfc-mens-25-26-home-anthem-jacket.jpg', url: 'https://store.liverpoolfc.com/lfc-adidas-mens-25-26-home-anthem-jacket' },
+            { name: 'LFC adidas Mens 25/26 Icons Third Anthem Jacket', image: 'https://store.liverpoolfc.com/media/catalog/product/i/z/iz7543-lfc-adidas-mens-25-26-icons-third-anthem-jacket.jpg', url: 'https://store.liverpoolfc.com/lfc-adidas-mens-25-26-icons-third-anthem-jacket' },
+            { name: 'LFC adidas Mens 25/26 Vis Tech Travel Jacket', image: 'https://store.liverpoolfc.com/media/catalog/product/i/z/iz7587-lfc-adidas-mens-25-26-vis-tech-travel-jacket.jpg', url: 'https://store.liverpoolfc.com/lfc-adidas-mens-25-26-vis-tech-travel-jacket' },
+            { name: 'LFC adidas Mens 25/26 Domestic All Weather Jacket Black', image: 'https://store.liverpoolfc.com/media/catalog/product/i/z/iz7594-lfc-adidas-mens-25-26-domestic-all-weather-jacket-black.jpg', url: 'https://store.liverpoolfc.com/lfc-adidas-mens-25-26-domestic-all-weather-jacket-black' },
+            { name: 'LFC adidas Mens 25/26 Domestic All Weather Jacket White', image: 'https://store.liverpoolfc.com/media/catalog/product/i/z/iz7595-lfc-adidas-mens-25-26-domestic-all-weather-jacket-white.jpg', url: 'https://store.liverpoolfc.com/lfc-adidas-mens-25-25-domestic-all-weather-jacket-white' },
+            { name: 'LFC Mens Bomber Jacket Black', image: 'https://store.liverpoolfc.com/media/catalog/product/2/4/24lfc1101-lfc-mens-bomber-jacket-black.jpg', url: 'https://store.liverpoolfc.com/lfc-mens-bomber-jacket-black' },
+            { name: 'LFC adidas Terrace Icons Half-Zip Jacket Green', image: 'https://store.liverpoolfc.com/media/catalog/product/i/z/iz7550-lfc-adidas-mens-terrace-icons-half-zip-jacket-green.jpg', url: 'https://store.liverpoolfc.com/lfc-adidas-mens-terrace-icons-half-zip-jacket-green' },
+            { name: 'LFC adidas DNA Full-Zip Track Jacket Red', image: 'https://store.liverpoolfc.com/media/catalog/product/i/x/ix3734-lfc-adidas-dna-full-zip-track-jacket-red.jpg', url: 'https://store.liverpoolfc.com/lfc-adidas-dna-full-zip-track-jacket-red' }
+        ]
     },
     {
         name: '맨체스터 시티',
@@ -77,10 +86,19 @@ const premierLeagueClubs = [
         name: '첼시',
         nameEn: 'Chelsea',
         logo: 'https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg',
-        url: 'https://store.chelseafc.com/en/c-5112',
+        url: 'https://store.chelseafc.com/en/chelsea-men-jackets/t-32334068+ga-78+d-5694871603+z-9-1938741615',
         color: 'from-blue-600 to-blue-800',
         popularity: 5,
-        products: []
+        products: [
+            { name: 'Chelsea Nike Academy Pro Padded Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/dn5451-468_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://store.chelseafc.com/en/chelsea-nike-academy-pro-padded-jacket/p-24336874951111+z-8-2906296491' },
+            { name: 'Chelsea Nike Academy Pro Knit Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/dn5452-468_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://store.chelseafc.com/en/chelsea-nike-academy-pro-knit-jacket/p-13225129643388+z-9-3376511914' },
+            { name: 'Chelsea Nike Strike Padded Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/fb7431-468_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://store.chelseafc.com/en/chelsea-nike-strike-padded-jacket/p-35785318765433+z-9-1669834803' },
+            { name: 'Chelsea Nike Anthem Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/fb7570-468_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://store.chelseafc.com/en/chelsea-nike-anthem-jacket/p-57895541858888+z-9-3621295965' },
+            { name: 'Chelsea Nike Woven Track Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/fb7571-468_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://store.chelseafc.com/en/chelsea-nike-woven-track-jacket/p-13895541854888+z-9-3621295965' },
+            { name: 'Chelsea Nike Windrunner Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/fb7619-468_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://store.chelseafc.com/en/chelsea-nike-windrunner-jacket/p-46784318454433+z-9-1669834803' },
+            { name: 'Chelsea Nike Repel Academy AWF Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/fb7620-468_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://store.chelseafc.com/en/chelsea-nike-repel-academy-awf-jacket/p-57895541864888+z-9-3621295965' },
+            { name: 'Chelsea Nike Lightweight Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/fb6895-468_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://store.chelseafc.com/en/chelsea-nike-lightweight-jacket/p-68996584515679+z-9-1876940012' }
+        ]
     },
     {
         name: '토트넘',
@@ -89,7 +107,14 @@ const premierLeagueClubs = [
         url: 'https://shop.tottenhamhotspur.com/outerwear',
         color: 'from-white to-gray-200',
         popularity: 6,
-        products: []
+        products: [
+            { name: 'Tottenham Nike Tech Fleece Full-Zip Hoodie Jacket Gray', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/fb7671-021_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.tottenhamhotspur.com/nike-tech-fleece-full-zip-hoodie-jacket' },
+            { name: 'Tottenham Nike 2025/26 Home Stadium Anthem Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/fb7570-100_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.tottenhamhotspur.com/nike-2025-26-home-stadium-anthem-jacket' },
+            { name: 'Tottenham Nike Strike Drill Top Navy', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/dh9244-410_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.tottenhamhotspur.com/nike-strike-drill-top-navy' },
+            { name: 'Tottenham Nike Academy Pro Anthem Jacket Navy', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/dn5452-410_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.tottenhamhotspur.com/nike-academy-pro-anthem-jacket' },
+            { name: 'Tottenham Nike Windrunner Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/fb7619-410_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.tottenhamhotspur.com/nike-windrunner-jacket' },
+            { name: 'Tottenham Nike All Weather Jacket Black', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/fb7620-010_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.tottenhamhotspur.com/nike-all-weather-jacket' }
+        ]
     },
     {
         name: '뉴캐슬',
@@ -98,7 +123,14 @@ const premierLeagueClubs = [
         url: 'https://shop.newcastleunited.com/collections/outerwear',
         color: 'from-black to-gray-800',
         popularity: 7,
-        products: []
+        products: [
+            { name: 'Newcastle United adidas 2025/26 Anthem Full-Zip Hoodie Jacket Black', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/jf7256_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-adidas-anthem-jacket-black' },
+            { name: 'Newcastle United adidas Tiro 24 Track Jacket Black', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/ix8007_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-adidas-tiro-24-track-jacket' },
+            { name: 'Newcastle United adidas All Weather Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/jf7260_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-adidas-all-weather-jacket' },
+            { name: 'Newcastle United adidas Pre-Match Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/jf7258_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-adidas-pre-match-jacket' },
+            { name: 'Newcastle United adidas Travel Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/jf7259_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-adidas-travel-jacket' },
+            { name: 'Newcastle United Terrace Coaches Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/nufc-terrace-coaches-jacket_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.newcastleunited.com/newcastle-terrace-coaches-jacket' }
+        ]
     },
     {
         name: '아스톤 빌라',
@@ -107,7 +139,13 @@ const premierLeagueClubs = [
         url: 'https://shop.avfc.co.uk/en/aston-villa-outerwear/t-65983654+x-08259219+z-81-3286515707',
         color: 'from-purple-900 to-blue-900',
         popularity: 8,
-        products: []
+        products: [
+            { name: 'Aston Villa adidas Anthem Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/avfc-anthem-jacket_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.avfc.co.uk/aston-villa-anthem-jacket' },
+            { name: 'Aston Villa adidas All Weather Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/avfc-all-weather_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.avfc.co.uk/aston-villa-all-weather-jacket' },
+            { name: 'Aston Villa adidas Travel Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/avfc-travel-jacket_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.avfc.co.uk/aston-villa-travel-jacket' },
+            { name: 'Aston Villa Varsity Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/avfc-varsity_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.avfc.co.uk/aston-villa-varsity-jacket' },
+            { name: 'Aston Villa Coaches Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/avfc-coaches_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.avfc.co.uk/aston-villa-coaches-jacket' }
+        ]
     },
     {
         name: '웨스트햄',
@@ -116,7 +154,13 @@ const premierLeagueClubs = [
         url: 'https://shop.whufc.com/outerwear',
         color: 'from-purple-900 to-sky-400',
         popularity: 9,
-        products: []
+        products: [
+            { name: 'West Ham United Padded Hoodie Full-Zip Jacket Navy', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/wham-padded-jacket-navy_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.whufc.com/west-ham-padded-jacket-navy' },
+            { name: 'West Ham United Coaches Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/wham-coaches-jacket_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.whufc.com/west-ham-coaches-jacket' },
+            { name: 'West Ham United Varsity Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/wham-varsity_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.whufc.com/west-ham-varsity-jacket' },
+            { name: 'West Ham United Bomber Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/wham-bomber_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.whufc.com/west-ham-bomber-jacket' },
+            { name: 'West Ham United Track Jacket', image: 'https://images.fanatics.com/lf?set=source[/images/products/default/wham-track-jacket_pp.jpg],w[800],h[800],type[jpeg]&call=url[file:product]', url: 'https://shop.whufc.com/west-ham-track-jacket' }
+        ]
     },
     {
         name: '브라이튼',

@@ -231,7 +231,7 @@ function createClubCard(club) {
     `;
 
     card.onclick = () => {
-        window.open(club.url, '_blank');
+        window.location.href = `premier-league-club.html?club=${encodeURIComponent(club.nameEn.toLowerCase())}`;
     };
 
     return card;

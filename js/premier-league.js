@@ -170,7 +170,20 @@ const premierLeagueClubs = [
         url: 'https://shop.afcb.co.uk/collections/mens-outerwear',
         color: 'from-red-600 to-black',
         popularity: 15,
-        products: []
+        products: [
+            { name: 'Premium Cherries Windbreaker Anorak', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/PRMCHANORAKBK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/PRMCHANORAKBK' },
+            { name: 'Premium Cherries Varsity Jacket - Black', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/PRMCHVARJACKBK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/PRMCHVARJACKBK' },
+            { name: 'Adults Alaska Long Coat - Charcoal', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/ALASKAJKADCH.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/ALASKAJKADCH' },
+            { name: 'Adults Columbus Coat - Khaki', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/COLUMBUSJKADKH.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/COLUMBUSJKADKH' },
+            { name: 'Adults Oakland Puffer Jacket - Black', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/OAKLANDJKADBK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/OAKLANDJKADBK' },
+            { name: 'Adults Dakota Lightweight Jacket - Black', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/DAKOTAJKADBK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/DAKOTAJKADBK' },
+            { name: 'Adults Berkeley Jacket - Black', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/BERKELEYJKADBK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/BERKELEYJKADBK' },
+            { name: 'Adults Manor Jacket - Black', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/MANORJKADBK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/MANORJKADBK' },
+            { name: 'Beachbum X AFCB Beach Robe - Olive', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/BROBEOLIVE.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/BROBEOLIVE' },
+            { name: 'Beachbum X AFCB Beach Robe - Black', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/BROBEBLACK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/BROBEBLACK' },
+            { name: 'Adults College Baseball Jacket - Black / White', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/COLLBASEBALLADBK.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/COLLBASEBALLADBK' },
+            { name: 'Adults Grange Shacket - Navy Blue', image: 'https://www.superstore.afcb.co.uk/images/web-products/department-thumbs/GRANGESHKADNV.jpg', url: 'https://www.superstore.afcb.co.uk/afc-bournemouth/GRANGESHKADNV' }
+        ]
     },
     {
         name: '울버햄튼',

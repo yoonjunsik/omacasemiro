@@ -1,21 +1,23 @@
 // 프리미어리그 아우터 컬렉션 페이지 JavaScript
 
-// 프리미어리그 구단 데이터
+// 프리미어리그 구단 데이터 (인기/강팀 순)
 const premierLeagueClubs = [
-    {
-        name: '리버풀',
-        nameEn: 'Liverpool',
-        logo: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg',
-        url: 'https://store.liverpoolfc.com/clothing/jackets',
-        color: 'from-red-700 to-red-900',
-        products: []  // 제품은 추후 추가
-    },
     {
         name: '맨체스터 유나이티드',
         nameEn: 'Manchester United',
         logo: 'https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg',
         url: 'https://store.manutd.com/en/c/clothing/outerwear',
         color: 'from-red-700 to-red-900',
+        popularity: 1,
+        products: []
+    },
+    {
+        name: '리버풀',
+        nameEn: 'Liverpool',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg',
+        url: 'https://store.liverpoolfc.com/clothing/jackets',
+        color: 'from-red-700 to-red-900',
+        popularity: 2,
         products: []
     },
     {
@@ -24,6 +26,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg',
         url: 'https://shop.mancity.com/ca/en/clothing/outerwear/',
         color: 'from-sky-400 to-sky-600',
+        popularity: 3,
         products: []
     },
     {
@@ -32,6 +35,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg',
         url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Outerwear/c/outerwear',
         color: 'from-red-600 to-red-800',
+        popularity: 4,
         products: []
     },
     {
@@ -40,6 +44,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg',
         url: 'https://store.chelseafc.com/en/c-5112',
         color: 'from-blue-600 to-blue-800',
+        popularity: 5,
         products: []
     },
     {
@@ -48,6 +53,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg',
         url: 'https://shop.tottenhamhotspur.com/outerwear',
         color: 'from-white to-gray-200',
+        popularity: 6,
         products: []
     },
     {
@@ -56,6 +62,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg',
         url: 'https://shop.newcastleunited.com/collections/outerwear',
         color: 'from-black to-gray-800',
+        popularity: 7,
         products: []
     },
     {
@@ -64,6 +71,7 @@ const premierLeagueClubs = [
         logo: 'images/logos/Aston_Villa_FC_new_crest.svg.png',
         url: 'https://shop.avfc.co.uk/en/aston-villa-outerwear/t-65983654+x-08259219+z-81-3286515707',
         color: 'from-purple-900 to-blue-900',
+        popularity: 8,
         products: []
     },
     {
@@ -72,6 +80,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg',
         url: 'https://shop.whufc.com/outerwear',
         color: 'from-purple-900 to-sky-400',
+        popularity: 9,
         products: []
     },
     {
@@ -80,6 +89,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg',
         url: 'https://shop.brightonandhovealbion.com/outerwear',
         color: 'from-blue-500 to-white',
+        popularity: 10,
         products: []
     },
     {
@@ -88,6 +98,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg',
         url: 'https://store.evertonfc.com/en/everton-clothing/t-21098998+x-64698777+z-87-4155919997',
         color: 'from-blue-700 to-blue-900',
+        popularity: 11,
         products: []
     },
     {
@@ -96,6 +107,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/a/a2/Crystal_Palace_FC_logo_%282022%29.svg',
         url: 'https://shop.cpfc.co.uk/outerwear',
         color: 'from-blue-600 to-red-600',
+        popularity: 12,
         products: []
     },
     {
@@ -104,6 +116,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/2/2d/Leicester_City_crest.svg',
         url: 'https://shop.lcfc.com/outerwear',
         color: 'from-blue-600 to-white',
+        popularity: 13,
         products: []
     },
     {
@@ -112,6 +125,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29.svg',
         url: 'https://shop.fulhamfc.com/collections/mens-outerwear',
         color: 'from-white to-black',
+        popularity: 14,
         products: []
     },
     {
@@ -120,6 +134,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/e/e5/AFC_Bournemouth_%282013%29.svg',
         url: 'https://shop.afcb.co.uk/collections/mens-outerwear',
         color: 'from-red-600 to-black',
+        popularity: 15,
         products: []
     },
     {
@@ -128,6 +143,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg',
         url: 'https://shop.wolves.co.uk/collections/outerwear',
         color: 'from-yellow-600 to-black',
+        popularity: 16,
         products: []
     },
     {
@@ -136,6 +152,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/e/e5/Nottingham_Forest_F.C._logo.svg',
         url: 'https://shop.nottinghamforest.co.uk/collections/outerwear',
         color: 'from-red-700 to-red-900',
+        popularity: 17,
         products: []
     },
     {
@@ -144,6 +161,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/2/2a/Brentford_FC_crest.svg',
         url: 'https://shop.brentfordfc.com/collections/mens-outerwear',
         color: 'from-red-600 to-yellow-500',
+        popularity: 18,
         products: []
     },
     {
@@ -152,6 +170,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/4/43/Ipswich_Town.svg',
         url: 'https://shop.itfc.co.uk/collections/mens-outerwear',
         color: 'from-blue-600 to-blue-800',
+        popularity: 19,
         products: []
     },
     {
@@ -160,6 +179,7 @@ const premierLeagueClubs = [
         logo: 'https://upload.wikimedia.org/wikipedia/en/c/c9/FC_Southampton.svg',
         url: 'https://shop.southamptonfc.com/collections/mens-outerwear',
         color: 'from-red-600 to-white',
+        popularity: 20,
         products: []
     }
 ];
@@ -176,9 +196,9 @@ function renderClubs() {
     const grid = document.getElementById('clubsGrid');
     grid.innerHTML = '';
 
-    // 구단명 가나다순 정렬
+    // 인기/강팀 순서대로 정렬 (popularity 속성 기준)
     const sortedClubs = [...premierLeagueClubs].sort((a, b) => {
-        return a.name.localeCompare(b.name, 'ko');
+        return a.popularity - b.popularity;
     });
 
     sortedClubs.forEach(club => {

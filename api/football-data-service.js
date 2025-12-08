@@ -50,19 +50,32 @@ class FootballDataService {
 
     /**
      * 모든 주요 리그의 경기 일정 조회
-     * Rate limit 방지를 위해 프리미어리그만 조회 (빅매치는 staticBigMatches에서 보완)
+     * Rate limit 준수: 10 requests/minute = 6초 간격
      */
     async getAllMatches(dateFrom, dateTo) {
         const allMatches = [];
-        // Rate limit 방지: 프리미어리그만 조회
-        const leagues = ['PL']; // PD, BL1, SA, FL1 제거
+        // 주요 유럽 리그 모두 조회
+        const leagues = ['PL', 'PD', 'BL1', 'SA', 'FL1'];
 
-        for (const league of leagues) {
-            const matches = await this.getMatches(league, dateFrom, dateTo);
-            allMatches.push(...matches);
+        for (let i = 0; i < leagues.length; i++) {
+            const league = leagues[i];
 
-            // Rate limiting: 10 requests/minute (프리미어리그만 조회하므로 delay 불필요)
-            // await this.delay(6000);
+            try {
+                const matches = await this.getMatches(league, dateFrom, dateTo);
+                allMatches.push(...matches);
+
+                // Rate limiting: 10 requests/minute = 6초 간격
+                // 마지막 리그가 아니면 대기
+                if (i < leagues.length - 1) {
+                    await this.delay(6500); // 여유있게 6.5초
+                }
+            } catch (error) {
+                console.error(`Failed to fetch ${league}:`, error.message);
+                // 에러가 나도 다음 리그 계속 조회
+                if (i < leagues.length - 1) {
+                    await this.delay(6500);
+                }
+            }
         }
 
         return allMatches;

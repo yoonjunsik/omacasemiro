@@ -15,8 +15,10 @@ let selectedRouteType = null;
 let matchesCache = {}; // 날짜별 경기 캐시
 
 // 캘린더 상태
-let currentYear = new Date().getFullYear();
-let currentMonth = new Date().getMonth(); // 0-11
+const now = new Date();
+let currentYear = now.getFullYear();
+let currentMonth = now.getMonth(); // 0-11
+console.log(`[Calendar] 초기 날짜 설정: ${currentYear}년 ${currentMonth + 1}월 (${now.toLocaleDateString('ko-KR')})`);
 let monthMatchesData = {}; // 해당 월의 모든 경기 데이터
 
 // 정적 빅매치 데이터 (Football-Data API에 없는 경기 보완)
@@ -608,15 +610,55 @@ function showError(elementId, message) {
 }
 
 /**
- * API: 경기 일정 조회
+ * API: 전체 캐시 데이터 미리 로드 (페이지 초기화 시 1회 호출)
+ */
+async function preloadAllMatches() {
+    try {
+        console.log('[PRELOAD] 전체 경기 데이터 로드 시작...');
+        const startTime = performance.now();
+
+        const response = await fetch(`${API_BASE_URL}/matches/all`);
+
+        if (!response.ok) {
+            throw new Error(`API 오류: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (data.success && data.matches) {
+            // 전체 캐시 저장
+            Object.assign(matchesCache, data.matches);
+
+            const endTime = performance.now();
+            const loadTime = ((endTime - startTime) / 1000).toFixed(2);
+            const totalMatches = Object.values(data.matches).reduce((sum, matches) => sum + matches.length, 0);
+
+            console.log(`[PRELOAD] ✅ 완료 (${loadTime}초)`);
+            console.log(`[PRELOAD] 📊 ${Object.keys(data.matches).length}일치 / ${totalMatches}경기 로드`);
+            console.log(`[PRELOAD] 🕐 최종 업데이트: ${data.lastUpdate || 'N/A'}`);
+
+            return true;
+        }
+
+        console.warn('[PRELOAD] 캐시 데이터 없음');
+        return false;
+    } catch (error) {
+        console.error('[PRELOAD] 전체 데이터 로드 실패:', error);
+        return false;
+    }
+}
+
+/**
+ * API: 경기 일정 조회 (로컬 캐시 우선, fallback으로 개별 API 호출)
  */
 async function fetchMatches(date) {
-    // 캐시 확인
+    // 1. 로컬 캐시 확인 (preload된 데이터)
     if (matchesCache[date]) {
         console.log(`[CACHE] 캐시된 경기 데이터 사용: ${date}`);
         return matchesCache[date];
     }
 
+    // 2. 캐시 없으면 개별 API 호출 (fallback)
     try {
         console.log(`[API] 경기 일정 조회: ${date}`);
         const response = await fetch(`${API_BASE_URL}/matches?date=${date}`);
@@ -633,7 +675,8 @@ async function fetchMatches(date) {
         return matches;
     } catch (error) {
         console.error('[ERROR] 경기 조회 실패:', error);
-        throw error;
+        // 빈 배열 반환 (에러 처리)
+        return [];
     }
 }
 
@@ -766,11 +809,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     console.log('[GoalRoute] API 버전 시작');
 
     // plan-route.html 페이지인 경우 캘린더 렌더링
-    const calendarDays = document.getElementById('calendarDays');
-    if (calendarDays) {
-        console.log('[Calendar] Rendering calendar...');
-        await renderCalendar();
-    }
+    // 주의: renderCalendar()는 preload 완료 후 initPageData()에서 호출됩니다
 
     // URL 쿼리 파라미터에서 경기 정보 확인
     const urlParams = new URLSearchParams(window.location.search);
@@ -1494,10 +1533,20 @@ async function renderCalendar() {
         calendarHTML += '<div class="calendar-day py-3 rounded"></div>';
     }
 
+    // 현재 날짜 (오늘)
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // 시간 부분 제거하여 날짜만 비교
+
     // 현재 달 날짜
     for (let day = 1; day <= daysInMonth; day++) {
         const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-        const hasMatch = monthMatchesData[dateStr] && monthMatchesData[dateStr].length > 0;
+        const currentDate = new Date(currentYear, currentMonth, day);
+
+        // 과거 날짜인지 확인
+        const isPastDate = currentDate < today;
+
+        // 과거 날짜가 아니고 경기가 있는 경우만 표시
+        const hasMatch = !isPastDate && monthMatchesData[dateStr] && monthMatchesData[dateStr].length > 0;
         const matchClass = hasMatch ? 'has-match' : '';
 
         calendarHTML += `
@@ -1520,41 +1569,26 @@ async function loadMonthMatches(year, month) {
     const lastDay = new Date(year, month + 1, 0);
     const daysInMonth = lastDay.getDate();
 
-    // 1순위: API 캐시 데이터 사용 (백그라운드 수집된 실제 데이터)
-    try {
-        const dateFrom = `${year}-${String(month + 1).padStart(2, '0')}-01`;
-        const dateTo = `${year}-${String(month + 1).padStart(2, '0')}-${String(daysInMonth).padStart(2, '0')}`;
+    const dateFrom = `${year}-${String(month + 1).padStart(2, '0')}-01`;
+    const dateTo = `${year}-${String(month + 1).padStart(2, '0')}-${String(daysInMonth).padStart(2, '0')}`;
 
-        console.log(`[Calendar] Loading matches from API cache: ${dateFrom} ~ ${dateTo}`);
+    console.log(`[Calendar] Loading matches from preloaded cache: ${dateFrom} ~ ${dateTo}`);
 
-        // 서버의 캐시된 데이터 조회
-        for (let day = 1; day <= daysInMonth; day++) {
-            const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-            try {
-                const matches = await fetchMatches(dateStr);
-                if (matches && matches.length > 0) {
-                    monthMatchesData[dateStr] = matches;
-                }
-            } catch (error) {
-                console.log(`[Calendar] No cache data for ${dateStr}, using static data if available`);
-                // API 캐시에 없으면 정적 데이터 사용
-                if (staticBigMatches[dateStr]) {
-                    monthMatchesData[dateStr] = staticBigMatches[dateStr];
-                }
-            }
+    // 1순위: Preload된 matchesCache에서 직접 가져오기 (API 호출 없음!)
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+
+        // Preload된 캐시에서 바로 가져오기
+        if (matchesCache[dateStr] && matchesCache[dateStr].length > 0) {
+            monthMatchesData[dateStr] = matchesCache[dateStr];
         }
-    } catch (error) {
-        console.error('[Calendar] Failed to load from API cache, using static data:', error);
-        // 2순위: 정적 데이터 사용 (fallback)
-        for (let day = 1; day <= daysInMonth; day++) {
-            const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-            if (staticBigMatches[dateStr]) {
-                monthMatchesData[dateStr] = staticBigMatches[dateStr];
-            }
+        // 캐시에 없으면 정적 데이터 사용
+        else if (staticBigMatches[dateStr]) {
+            monthMatchesData[dateStr] = staticBigMatches[dateStr];
         }
     }
 
-    console.log('[Calendar] Month matches loaded:', Object.keys(monthMatchesData).length, 'days with matches');
+    console.log('[Calendar] Month matches loaded from cache:', Object.keys(monthMatchesData).length, 'days with matches');
 }
 
 // 월 이동
@@ -1571,4 +1605,31 @@ async function changeMonth(direction) {
 
     await renderCalendar();
 }
+
+// ============================================================
+// 페이지 초기화
+// ============================================================
+
+// 페이지 로드 시 자동으로 전체 캐시 데이터를 미리 로드
+(async function initPageData() {
+    console.log('[INIT] 페이지 초기화 시작...');
+
+    // 전체 경기 데이터 preload
+    const success = await preloadAllMatches();
+
+    if (success) {
+        console.log('[INIT] ✅ 전체 데이터 로드 완료 - 이제 달력 클릭 시 즉시 표시됩니다!');
+    } else {
+        console.log('[INIT] ⚠️  캐시 데이터 없음 - 개별 API 호출로 fallback');
+    }
+
+    // Preload 완료 후 캘린더 렌더링
+    const calendarDays = document.getElementById('calendarDays');
+    if (calendarDays) {
+        console.log('[Calendar] Rendering calendar with preloaded data...');
+        await renderCalendar();
+    }
+
+    console.log('[INIT] 페이지 초기화 완료');
+})();
 

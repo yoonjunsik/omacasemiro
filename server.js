@@ -5,10 +5,80 @@
  * 접속: http://localhost:3000
  */
 
-require('dotenv').config();
+// Railway는 환경 변수를 process.env로 직접 주입
+// 먼저 Railway 환경인지 확인
+const isRailway = process.env.RAILWAY_ENVIRONMENT || process.env.RAILWAY_STATIC_URL || process.env.RAILWAY_PROJECT_ID;
+
+console.log('[DEBUG] Environment check:');
+console.log('  - RAILWAY_ENVIRONMENT:', process.env.RAILWAY_ENVIRONMENT);
+console.log('  - RAILWAY_STATIC_URL:', process.env.RAILWAY_STATIC_URL);
+console.log('  - RAILWAY_PROJECT_ID:', process.env.RAILWAY_PROJECT_ID);
+console.log('  - Is Railway:', !!isRailway);
+
+// 🔍 모든 환경 변수 출력 (디버깅용)
+console.log('\n[DEBUG] ALL Environment Variables:');
+const envKeys = Object.keys(process.env).sort();
+console.log(`Total: ${envKeys.length} variables`);
+envKeys.forEach(key => {
+    // 민감한 정보는 마스킹
+    const value = process.env[key];
+    const displayValue = (key.includes('KEY') || key.includes('SECRET')) && value
+        ? `${value.substring(0, 8)}...`
+        : value && value.length > 50
+        ? `${value.substring(0, 50)}...`
+        : value;
+    console.log(`  ${key}=${displayValue}`);
+});
+console.log('\n');
+
+if (!isRailway) {
+    // 로컬 개발 환경에서만 .env 파일 로드
+    require('dotenv').config();
+    console.log('[LOCAL] .env 파일에서 환경 변수 로드');
+} else {
+    console.log('[RAILWAY] Railway 환경에서 실행 중');
+}
+
+// API 키 상태 확인
+console.log('[DEBUG] API Keys in process.env:');
+console.log('  - FOOTBALL_DATA_API_KEY:', process.env.FOOTBALL_DATA_API_KEY ? `${process.env.FOOTBALL_DATA_API_KEY.substring(0, 8)}...` : '❌ MISSING');
+console.log('  - AMADEUS_API_KEY:', process.env.AMADEUS_API_KEY ? `${process.env.AMADEUS_API_KEY.substring(0, 8)}...` : '❌ MISSING');
+console.log('  - AMADEUS_API_SECRET:', process.env.AMADEUS_API_SECRET ? `${process.env.AMADEUS_API_SECRET.substring(0, 8)}...` : '❌ MISSING');
+console.log('  - EXCHANGE_RATE_API_KEY:', process.env.EXCHANGE_RATE_API_KEY ? `${process.env.EXCHANGE_RATE_API_KEY.substring(0, 8)}...` : '❌ MISSING');
+
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+
+// Firebase Admin SDK 초기화
+const admin = require('firebase-admin');
+let db = null;
+
+try {
+    let serviceAccount;
+
+    // Railway: Base64 인코딩된 환경 변수 사용
+    if (isRailway && process.env.FIREBASE_CREDENTIALS_BASE64) {
+        console.log('[RAILWAY] Firebase credentials from Base64 environment variable');
+        const decoded = Buffer.from(process.env.FIREBASE_CREDENTIALS_BASE64, 'base64').toString('utf-8');
+        serviceAccount = JSON.parse(decoded);
+    } else {
+        // 로컬: 파일에서 읽기
+        console.log('[LOCAL] Firebase credentials from file');
+        const serviceAccountPath = path.join(__dirname, 'omacasemiro-8fd4c-firebase-adminsdk-fbsvc-8c438c494c.json');
+        serviceAccount = require(serviceAccountPath);
+    }
+
+    admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount)
+    });
+    db = admin.firestore();
+    console.log('✅ Firebase Admin 초기화 완료 (Firestore 사용)');
+} catch (error) {
+    console.error('❌ Firebase Admin 초기화 실패:', error.message);
+    console.warn('⚠️  로컬 파일 캐시로 Fallback (Railway 재배포 시 삭제됨)');
+    db = null;
+}
 
 // API 서비스 불러오기
 const FootballDataService = require('./api/football-data-service.js');
@@ -32,7 +102,7 @@ const amadeusService = new AmadeusService(
     process.env.AMADEUS_API_SECRET
 );
 const exchangeService = new ExchangeRateService(process.env.EXCHANGE_RATE_API_KEY);
-const matchCacheService = new MatchCacheService(footballService);
+const matchCacheService = new MatchCacheService(footballService, db);
 
 // 캐시 서비스 초기화 (서버 시작 시 자동으로 데이터 수집 시작)
 matchCacheService.initialize();
@@ -50,7 +120,40 @@ const cache = {
 // ============================================================
 
 /**
- * 경기 일정 조회
+ * 전체 캐시된 경기 데이터 조회 (한 번에 모두 가져오기)
+ * GET /api/matches/all
+ */
+app.get('/api/matches/all', async (req, res) => {
+    try {
+        console.log('[API] 전체 캐시 데이터 조회');
+
+        // 파일 캐시에서 전체 데이터 가져오기
+        const allMatches = await matchCacheService.getAllCachedMatches();
+
+        if (allMatches && Object.keys(allMatches).length > 0) {
+            console.log(`[FILE CACHE] 전체 캐시 데이터 반환: ${Object.keys(allMatches).length}일치`);
+            return res.json({
+                success: true,
+                matches: allMatches,
+                lastUpdate: (await matchCacheService.loadCache())?.lastUpdate
+            });
+        }
+
+        // 캐시 없으면 빈 객체 반환
+        console.log('[FILE CACHE] 캐시 없음');
+        return res.json({
+            success: true,
+            matches: {},
+            lastUpdate: null
+        });
+    } catch (error) {
+        console.error('[ERROR] 전체 캐시 조회 실패:', error.message);
+        res.status(500).json({ error: '전체 캐시 조회 실패', message: error.message });
+    }
+});
+
+/**
+ * 경기 일정 조회 (특정 날짜)
  * GET /api/matches?date=2024-12-15
  */
 app.get('/api/matches', async (req, res) => {

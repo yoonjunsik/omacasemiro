@@ -151,6 +151,15 @@ const christmasClubs = [
         products: []  // 실제 제품 이미지 없음 - 크롤링 필요
     },
     {
+        name: '에버튼',
+        nameEn: 'Everton',
+        logo: 'https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg',
+        url: 'https://store.evertonfc.com/en/everton-the-christmas-store/t-97329032+x-64698777+z-87-4155919997',
+        color: 'from-blue-700 to-blue-900',
+        league: '프리미어리그',
+        products: []  // 실제 제품 이미지 없음 - 크롤링 필요
+    },
+    {
         name: '토트넘',
         nameEn: 'Tottenham',
         logo: 'https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg',

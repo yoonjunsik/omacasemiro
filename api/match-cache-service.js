@@ -9,10 +9,11 @@ const path = require('path');
 const cron = require('node-cron');
 
 class MatchCacheService {
-    constructor(footballDataService) {
+    constructor(footballDataService, db) {
         this.footballDataService = footballDataService;
-        this.cacheDir = path.join(__dirname, '../cache');
-        this.cacheFile = path.join(this.cacheDir, 'matches-cache.json');
+        this.db = db; // Firestore 데이터베이스
+        this.cacheCollection = 'matches-cache';
+        this.cacheDocId = 'current';
         this.isCollecting = false;
         this.lastUpdateTime = null;
 
@@ -22,6 +23,10 @@ class MatchCacheService {
 
         // 수집 기간: 현재부터 4개월 후까지
         this.COLLECTION_MONTHS = 4;
+
+        // 로컬 파일 캐시 (Fallback용)
+        this.cacheDir = path.join(__dirname, '../cache');
+        this.cacheFile = path.join(this.cacheDir, 'matches-cache.json');
     }
 
     /**
@@ -41,10 +46,19 @@ class MatchCacheService {
                 this.lastUpdateTime = new Date(cache.lastUpdate);
                 console.log(`✅ 기존 캐시 로드 완료 (마지막 업데이트: ${this.lastUpdateTime.toLocaleString('ko-KR')})`);
                 console.log(`📊 캐시된 경기 수: ${Object.keys(cache.matches || {}).length}일치`);
+
+                // 캐시가 24시간 이상 오래되었으면 백그라운드 업데이트
+                const cacheAge = Date.now() - new Date(cache.lastUpdate).getTime();
+                const oneDayMs = 24 * 60 * 60 * 1000;
+                if (cacheAge > oneDayMs) {
+                    console.log('⏰ 캐시가 24시간 이상 오래됨 - 백그라운드 업데이트 시작');
+                    // await 없이 백그라운드 실행
+                    this.collectMatchData().catch(err => console.error('백그라운드 수집 실패:', err));
+                }
             } else {
-                console.log('📭 기존 캐시 없음 - 새로 수집 시작');
-                // 즉시 첫 수집 시작
-                this.collectMatchData();
+                console.log('📭 기존 캐시 없음 - 긴급 데이터 수집 시작');
+                // 빠른 초기화를 위해 프리미어리그만 먼저 수집
+                this.quickInitialize().catch(err => console.error('긴급 수집 실패:', err));
             }
 
             // 매일 새벽 3시에 자동 업데이트
@@ -69,11 +83,31 @@ class MatchCacheService {
     }
 
     /**
-     * 캐시 로드
+     * 캐시 로드 (Firestore 우선, 실패 시 로컬 파일)
      */
     async loadCache() {
+        // Firestore에서 캐시 로드 시도
+        if (this.db) {
+            try {
+                const docRef = this.db.collection(this.cacheCollection).doc(this.cacheDocId);
+                const doc = await docRef.get();
+
+                if (doc.exists) {
+                    console.log('🔥 [FIRESTORE] 캐시 로드 성공');
+                    return doc.data();
+                } else {
+                    console.log('📭 [FIRESTORE] 캐시 문서 없음');
+                }
+            } catch (error) {
+                console.error('❌ [FIRESTORE] 캐시 로드 실패:', error.message);
+                console.log('🔄 로컬 파일로 Fallback 시도...');
+            }
+        }
+
+        // Fallback: 로컬 파일에서 캐시 로드
         try {
             const data = await fs.readFile(this.cacheFile, 'utf-8');
+            console.log('📂 [FILE] 로컬 캐시 로드 성공');
             return JSON.parse(data);
         } catch (error) {
             return null;
@@ -81,19 +115,45 @@ class MatchCacheService {
     }
 
     /**
-     * 캐시 저장
+     * 캐시 저장 (Firestore 우선, 실패 시 로컬 파일)
      */
     async saveCache(matches) {
+        const cacheData = {
+            lastUpdate: new Date().toISOString(),
+            matches: matches
+        };
+
+        // Firestore에 저장 시도
+        if (this.db) {
+            try {
+                const docRef = this.db.collection(this.cacheCollection).doc(this.cacheDocId);
+                await docRef.set(cacheData, { merge: true });
+                this.lastUpdateTime = new Date();
+                console.log('🔥 [FIRESTORE] 캐시 저장 완료');
+
+                // Firestore 저장 성공 시에도 로컬 파일 백업
+                await this.saveLocalCache(cacheData);
+                return;
+            } catch (error) {
+                console.error('❌ [FIRESTORE] 캐시 저장 실패:', error.message);
+                console.log('🔄 로컬 파일로 Fallback...');
+            }
+        }
+
+        // Fallback: 로컬 파일에 저장
+        await this.saveLocalCache(cacheData);
+    }
+
+    /**
+     * 로컬 파일에 캐시 저장 (Fallback 및 백업용)
+     */
+    async saveLocalCache(cacheData) {
         try {
-            const cacheData = {
-                lastUpdate: new Date().toISOString(),
-                matches: matches
-            };
             await fs.writeFile(this.cacheFile, JSON.stringify(cacheData, null, 2));
             this.lastUpdateTime = new Date();
-            console.log('💾 캐시 저장 완료:', this.cacheFile);
+            console.log('📂 [FILE] 로컬 캐시 저장 완료:', this.cacheFile);
         } catch (error) {
-            console.error('❌ 캐시 저장 실패:', error);
+            console.error('❌ [FILE] 캐시 저장 실패:', error);
         }
     }
 
@@ -117,6 +177,91 @@ class MatchCacheService {
     }
 
     /**
+     * 긴급 초기화: 프리미어리그만 먼저 빠르게 수집
+     * Railway 재배포 시 캐시가 비어있을 때 사용자에게 빠르게 데이터 제공
+     */
+    async quickInitialize() {
+        if (this.isCollecting) {
+            console.log('⏳ 이미 데이터 수집 중입니다...');
+            return;
+        }
+
+        this.isCollecting = true;
+        console.log('\n⚡ 긴급 초기화: 프리미어리그 우선 수집 시작...');
+
+        const matches = {};
+        const weekRanges = this.generateWeekRanges();
+
+        console.log(`📊 ${weekRanges.length}주치 프리미어리그 데이터 수집 예정`);
+        console.log(`⏰ 예상 소요 시간: 약 ${Math.ceil(weekRanges.length * 6.5 / 60)}분\n`);
+
+        let totalMatches = 0;
+        let errorCount = 0;
+
+        for (let i = 0; i < weekRanges.length; i++) {
+            const { dateFrom, dateTo } = weekRanges[i];
+
+            try {
+                // Rate Limit 준수를 위한 대기
+                if (i > 0) {
+                    await this.sleep(this.REQUEST_INTERVAL);
+                }
+
+                // 프리미어리그만 조회
+                console.log(`⚡ [${i + 1}/${weekRanges.length}] ${dateFrom} ~ ${dateTo} 조회 중...`);
+                const weekMatches = await this.footballDataService.getMatches('PL', dateFrom, dateTo);
+
+                if (weekMatches && weekMatches.length > 0) {
+                    // 날짜별로 분류
+                    weekMatches.forEach(match => {
+                        const matchDate = match.date.split('T')[0];
+                        if (!matches[matchDate]) {
+                            matches[matchDate] = [];
+                        }
+                        matches[matchDate].push(match);
+                    });
+
+                    totalMatches += weekMatches.length;
+                    console.log(`✅ [${i + 1}/${weekRanges.length}] ${weekMatches.length}경기 수집 완료`);
+                } else {
+                    console.log(`⚪ [${i + 1}/${weekRanges.length}] 경기 없음`);
+                }
+
+                // 5주마다 중간 저장
+                if ((i + 1) % 5 === 0) {
+                    await this.saveCache(matches);
+                    console.log(`💾 중간 저장 완료 (${i + 1}/${weekRanges.length}주, ${totalMatches}경기)\n`);
+                }
+
+            } catch (error) {
+                errorCount++;
+                console.error(`❌ [${i + 1}/${weekRanges.length}] ${dateFrom} ~ ${dateTo}: 수집 실패 -`, error.message);
+
+                // 429 에러면 추가 대기
+                if (error.message.includes('429')) {
+                    console.log('⏸️  Rate Limit 감지 - 60초 대기 중...');
+                    await this.sleep(60000);
+                }
+            }
+        }
+
+        // 최종 저장
+        await this.saveCache(matches);
+
+        console.log('\n✅ 프리미어리그 데이터 수집 완료!');
+        console.log(`📊 총 ${totalMatches}경기 수집 완료`);
+        console.log(`📅 ${Object.keys(matches).length}일치 데이터 캐시됨`);
+        console.log(`❌ 실패: ${errorCount}주\n`);
+
+        // isCollecting 플래그 해제하여 전체 리그 수집 가능하도록
+        this.isCollecting = false;
+
+        // 프리미어리그 수집 완료 후 나머지 리그 백그라운드 수집
+        console.log('🌍 나머지 리그(라리가, 분데스리가, 세리에A, 리그1) 백그라운드 수집 시작...\n');
+        this.collectMatchData().catch(err => console.error('전체 리그 수집 실패:', err));
+    }
+
+    /**
      * 경기 데이터 수집 (Rate Limit 고려)
      * 주 단위 범위 조회로 API 호출 최적화
      */
@@ -134,8 +279,12 @@ class MatchCacheService {
         const matches = {};
         const weekRanges = this.generateWeekRanges();
 
-        console.log(`📊 총 ${weekRanges.length}주치 데이터 수집 예정 (약 ${weekRanges.length * 7}일)`);
-        console.log(`⏰ 예상 소요 시간: 약 ${Math.ceil(weekRanges.length * this.REQUEST_INTERVAL / 60000)}분\n`);
+        // 5개 리그 × 18주 = 90개 요청, 리그당 6.5초 delay
+        const estimatedMinutes = Math.ceil((weekRanges.length * 5 * 6.5) / 60);
+
+        console.log(`📊 총 ${weekRanges.length}주치 × 5개 리그 데이터 수집 예정`);
+        console.log(`🌍 리그: PL(프리미어리그), PD(라리가), BL1(분데스리가), SA(세리에A), FL1(리그1)`);
+        console.log(`⏰ 예상 소요 시간: 약 ${estimatedMinutes}분\n`);
 
         let totalMatches = 0;
         let errorCount = 0;

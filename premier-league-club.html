@@ -112,7 +112,7 @@
             card.className = 'group cursor-pointer bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden';
 
             // 제품 이미지가 있는 경우
-            if (product.image && product.image.startsWith('http')) {
+            if (product.image) {
                 const imgContainer = document.createElement('div');
                 imgContainer.className = 'aspect-square bg-gray-50 overflow-hidden';
 

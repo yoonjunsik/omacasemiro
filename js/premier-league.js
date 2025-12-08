@@ -27,7 +27,16 @@ const premierLeagueClubs = [
         url: 'https://shop.mancity.com/ca/en/clothing/outerwear/',
         color: 'from-sky-400 to-sky-600',
         popularity: 3,
-        products: []
+        products: [
+            { name: 'Manchester City Showerproof Jacket', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dwf6d72d94/images/large/701238832001_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/manchester-city-showerproof-jacket/701238832-black.html' },
+            { name: 'Kids Manchester City Showerproof Jacket', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw856c7794/images/large/701238970001_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/kids-manchester-city-showerproof-jacket/701238970-blue.html' },
+            { name: 'Manchester City Pre-Match KING Anthem Jacket', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw7186efa6/images/large/701237124002_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/manchester-city-pre-match-king-anthem-jacket/701237124-blue.html' },
+            { name: 'Kids Manchester City Essentials Fleece Lined Hoodie Jacket', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/dw785cecac/images/large/701221095002_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/kids-manchester-city-essentials-fleece-lined-hoodie-jacket/701221095-grey.html' },
+            { name: 'Manchester City Quilted Jacket', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/images/large/701238834001_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/manchester-city-quilted-jacket/701238834-black.html' },
+            { name: 'Manchester City Training Winter Jacket 2025/26', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/images/large/701237205001_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/manchester-city-training-winter-jacket-2025-26/701237205-black.html' },
+            { name: 'Manchester City Training All Weather Jacket 2025/26', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/images/large/701237202001_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/manchester-city-training-all-weather-jacket-2025-26/701237202-black.html' },
+            { name: 'Manchester City FtblCulture Jacket 2025/26', image: 'https://shop.mancity.com/dw/image/v2/BDWJ_PRD/on/demandware.static/-/Sites-master-catalog-MAN/default/images/large/701237231001_pp_01_mcfc.png?sw=800&sh=800&sm=fit', url: 'https://shop.mancity.com/en/manchester-city-ftblculture-jacket-2025-26/701237231-grey.html' }
+        ]
     },
     {
         name: '아스널',
@@ -36,7 +45,33 @@ const premierLeagueClubs = [
         url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Outerwear/c/outerwear',
         color: 'from-red-600 to-red-800',
         popularity: 4,
-        products: []
+        products: [
+            { name: 'Arsenal N7 Barrell Hooded Puffer Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/m06796_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Mens-Jackets/Arsenal-N7-Barrell-Hooded-Puffer-Jacket/p/M06796' },
+            { name: 'Arsenal N7 Force Reversible Fleece Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/m06795_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Mens-Jackets/Arsenal-N7-Force-Reversible-Fleece-Jacket/p/M06795' },
+            { name: 'Arsenal N7 Artillery Harrington Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/m06793_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Mens-Jackets/Arsenal-N7-Artillery-Harrington-Jacket/p/M06793' },
+            { name: 'Arsenal Essentials Unisex Green Cannon Hooded Puffer Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/u06899_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Womens-Clothing/Womens-Jackets/Arsenal-Essentials-Unisex-Green-Cannon-Hooded-Puffer-Jacket/p/U06899' },
+            { name: 'Arsenal adidas 25/26 Lifestyler Track Top', image: 'https://i1.adis.ws/i/ArsenalDirect/mjz5802_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Mens-Jackets/Arsenal-adidas-25-26-Lifestyler-Track-Top/p/MJZ5802' },
+            { name: 'Arsenal Essentials Unisex Red Cannon Hooded Puffer Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/u06898_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Womens-Clothing/Womens-Jackets/Arsenal-Essentials-Unisex-Red-Cannon-Hooded-Puffer-Jacket/p/U06898' },
+            { name: 'Arsenal adidas 25/26 Rain Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/mkb1834_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Training/Mens-Training/Mens-Training-Jackets/Arsenal-adidas-25-26-Rain-Jacket/p/MKB1834' },
+            { name: 'Arsenal adidas 25/26 Stadium Parka', image: 'https://i1.adis.ws/i/ArsenalDirect/mkb1833_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Training/Mens-Training/Mens-Training-Jackets/Arsenal-adidas-25-26-Stadium-Parka/p/MKB1833' },
+            { name: 'Arsenal adidas 25/26 Presentation Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/mkb1825_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Training/Mens-Training/Mens-Training-Jackets/Arsenal-adidas-25-26-Presentation-Jacket/p/MKB1825' },
+            { name: 'Arsenal adidas 25/26 Anthem Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/mkb1800_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Training/Mens-Training/Mens-Training-Jackets/Arsenal-adidas-25-26-Anthem-Jacket/p/MKB1800' },
+            { name: 'Arsenal adidas 25/26 Terrace Icons Track Top', image: 'https://i1.adis.ws/i/ArsenalDirect/mjm9390_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Terrace-Icons/Arsenal-adidas-25-26-Terrace-Icons-Track-Top/p/MJM9390' },
+            { name: 'Arsenal adidas 25/26 Seasonal Down Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/mjm9406_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Mens-Jackets/Arsenal-adidas-25-26-Seasonal-Down-Jacket/p/MJM9406' },
+            { name: 'Arsenal adidas 25/26 Urban Purist Windbreaker', image: 'https://i1.adis.ws/i/ArsenalDirect/mjm9418_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Mens-Jackets/Arsenal-adidas-25-26-Urban-Purist-Windbreaker/p/MJM9418' },
+            { name: 'Arsenal adidas 25/26 Terrace Icons Parka', image: 'https://i1.adis.ws/i/ArsenalDirect/mjm9394_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Terrace-Icons/Arsenal-adidas-25-26-Terrace-Icons-Parka/p/MJM9394' },
+            { name: 'Arsenal adidas 25/26 Terrace Icons Half Zip Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/mjm9399_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Terrace-Icons/Arsenal-adidas-25-26-Terrace-Icons-Half-Zip-Jacket/p/MJM9399' },
+            { name: 'Arsenal adidas 25/26 Urban Purist Track Top', image: 'https://i1.adis.ws/i/ArsenalDirect/mjm9400_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Mens-Jackets/Arsenal-adidas-25-26-Urban-Purist-Track-Top/p/MJM9400' },
+            { name: 'Arsenal adidas 25/26 Home Anthem Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/mjm9409_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Training/Pre-Match/Arsenal-adidas-25-26-Home-Anthem-Jacket/p/MJM9409' },
+            { name: 'Arsenal x A-COLD-WALL* Terrace Harrington Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/m06960_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Mens-Jackets/Arsenal-x-A-COLD-WALL-Terrace-Harrington-Jacket/p/M06960' },
+            { name: 'Arsenal x A-COLD-WALL* Caledonian Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/m06968_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Mens-Jackets/Arsenal-x-A-COLD-WALL-Caledonian-Jacket/p/M06968' },
+            { name: 'Arsenal Red Printed Cannon Puffer Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/u06777_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Mens-Jackets/Arsenal-Red-Printed-Cannon-Puffer-Jacket/p/U06777' },
+            { name: 'Arsenal Off White NPC Worker Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/m06717_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Mens-Jackets/Arsenal-Off-White-NPC-Worker-Jacket/p/M06717' },
+            { name: 'Arsenal Burgundy Cannon Puffer Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/u06733_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Mens-Jackets/Arsenal-Burgundy-Cannon-Puffer-Jacket/p/U06733' },
+            { name: 'Arsenal Navy Cannon Puffer Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/u06735_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Mens-Jackets/Arsenal-Navy-Cannon-Puffer-Jacket/p/U06735' },
+            { name: 'Arsenal Navy Chapman Padded Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/u06736_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Mens-Jackets/Arsenal-Navy-Chapman-Padded-Jacket/p/U06736' },
+            { name: 'Arsenal Grey Cannon Puffer Jacket', image: 'https://i1.adis.ws/i/ArsenalDirect/u06734_f1?$plpImages$', url: 'https://arsenaldirect.arsenal.com/Clothing/Mens-Clothing/Mens-Jackets/Arsenal-Grey-Cannon-Puffer-Jacket/p/U06734' }
+        ]
     },
     {
         name: '첼시',

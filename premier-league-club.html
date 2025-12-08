@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프리미어리그 아우터 - 오마카세미루</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLKV2307KE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-LLKV2307KE');
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-purple-900 via-purple-700 to-purple-900 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <div class="flex items-center justify-between">
+                <a href="/premier-league.html" class="flex items-center hover:opacity-80 transition">
+                    <span class="text-2xl md:text-3xl font-black">⚽ 오마카세미루</span>
+                </a>
+                <div class="flex gap-2 md:gap-4">
+                    <a href="/" class="bg-white text-green-600 px-3 md:px-4 py-2 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-100 transition">
+                        🔥 블프 세일
+                    </a>
+                    <a href="/premier-league.html" class="bg-white text-purple-700 px-3 md:px-4 py-2 rounded-lg font-semibold text-sm md:text-base hover:bg-gray-100 transition">
+                        ← 구단 목록
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Loading State -->
+        <div id="loading" class="text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-purple-500 border-t-transparent"></div>
+            <p class="mt-4 text-gray-600">⚽ 아우터 상품을 불러오는 중...</p>
+        </div>
+
+        <!-- Club Header -->
+        <div id="clubHeader" class="hidden bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="flex items-center gap-6">
+                <img id="clubLogo" src="" alt="" class="w-24 h-24 object-contain">
+                <div class="flex-1">
+                    <h1 id="clubName" class="text-3xl font-black text-gray-800 mb-2"></h1>
+                    <p class="text-gray-600 mb-4">🧥 아우터 / 자켓 컬렉션</p>
+                    <a id="visitStore" href="" target="_blank" class="inline-block bg-purple-700 text-white px-6 py-3 rounded-lg font-bold hover:bg-purple-800 transition">
+                        공식 스토어 방문하기 →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="productsSection" class="hidden">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">🧥 아우터 컬렉션</h2>
+            <div id="productsGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+                <!-- 제품 카드가 여기에 렌더링됩니다 -->
+            </div>
+        </div>
+
+        <!-- Info Notice -->
+        <div id="notice" class="hidden bg-blue-50 border-l-4 border-blue-500 p-4 mt-8 rounded">
+            <div class="flex items-start">
+                <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-blue-700">
+                        <strong class="font-bold">안내:</strong> 제품을 클릭하면 구단 공식 스토어의 상품 페이지로 이동합니다.
+                        모든 상품 정보와 가격은 공식 스토어를 참고해주세요.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">© 2024 오마카세미루 - 프리미어리그 에디션</p>
+        </div>
+    </footer>
+
+    <script src="js/premier-league.js"></script>
+    <script>
+        // URL에서 club 파라미터 가져오기
+        const urlParams = new URLSearchParams(window.location.search);
+        const clubParam = urlParams.get('club');
+
+        // 제품 카드 생성 함수
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.className = 'group cursor-pointer bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden';
+
+            // 제품 이미지가 있는 경우
+            if (product.image && product.image.startsWith('http')) {
+                const imgContainer = document.createElement('div');
+                imgContainer.className = 'aspect-square bg-gray-50 overflow-hidden';
+
+                const img = document.createElement('img');
+                img.src = product.image;
+                img.alt = product.name;
+                img.className = 'w-full h-full object-cover group-hover:scale-105 transition-transform duration-300';
+                imgContainer.appendChild(img);
+                card.appendChild(imgContainer);
+
+                // 제품 정보
+                const info = document.createElement('div');
+                info.className = 'p-3';
+                info.innerHTML = `
+                    <h3 class="text-sm font-bold text-gray-800 line-clamp-2 group-hover:text-purple-700 transition-colors">
+                        ${product.name}
+                    </h3>
+                `;
+                card.appendChild(info);
+            } else {
+                // 제품 이미지가 없는 경우 - 플레이스홀더
+                card.className += ' aspect-[3/4]';
+                card.innerHTML = `
+                    <div class="w-full h-full bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
+                        <div class="text-center p-4">
+                            <div class="text-4xl mb-2">🧥</div>
+                            <p class="text-xs text-purple-700 font-semibold">제품 준비중</p>
+                        </div>
+                    </div>
+                `;
+            }
+
+            card.onclick = () => {
+                window.open(product.url, '_blank');
+            };
+
+            return card;
+        }
+
+        // 페이지 로드 시 초기화
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('⚽ Premier League club page loaded');
+            console.log('Club parameter:', clubParam);
+            console.log('Available clubs:', window.premierLeagueClubs);
+
+            const club = window.premierLeagueClubs?.find(c => c.nameEn.toLowerCase() === clubParam);
+            console.log('Found club:', club);
+
+            if (club) {
+                console.log('Club products:', club.products?.length || 0);
+                // 로딩 상태 숨기기
+                document.getElementById('loading').classList.add('hidden');
+
+                // 클럽 헤더 표시
+                const header = document.getElementById('clubHeader');
+                header.classList.remove('hidden');
+
+                document.getElementById('clubLogo').src = club.logo;
+                document.getElementById('clubLogo').alt = club.name;
+                document.getElementById('clubName').textContent = club.name + ' 아우터 컬렉션';
+                document.getElementById('visitStore').href = club.url;
+
+                // 제품 그리드 표시
+                if (club.products && club.products.length > 0) {
+                    const productsSection = document.getElementById('productsSection');
+                    const productsGrid = document.getElementById('productsGrid');
+
+                    productsSection.classList.remove('hidden');
+
+                    club.products.forEach(product => {
+                        const card = createProductCard(product);
+                        productsGrid.appendChild(card);
+                    });
+
+                    // 안내 메시지 표시
+                    document.getElementById('notice').classList.remove('hidden');
+                } else {
+                    // 제품이 없는 경우 메시지 표시
+                    const productsSection = document.getElementById('productsSection');
+                    productsSection.classList.remove('hidden');
+                    productsSection.innerHTML = `
+                        <div class="text-center py-12 bg-white rounded-lg shadow-md">
+                            <svg class="mx-auto h-16 w-16 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
+                            </svg>
+                            <h3 class="text-xl font-bold text-gray-700 mb-2">제품 정보 준비 중</h3>
+                            <p class="text-gray-600 mb-6">아직 ${club.name}의 아우터 제품 정보가 등록되지 않았습니다.</p>
+                            <a href="${club.url}" target="_blank" class="inline-block bg-gradient-to-r ${club.color} text-white px-8 py-3 rounded-lg font-bold hover:opacity-90 transition shadow-lg">
+                                🧥 공식 스토어에서 보기
+                            </a>
+                        </div>
+                    `;
+                }
+            } else {
+                // 클럽을 찾을 수 없는 경우
+                document.getElementById('loading').innerHTML = `
+                    <p class="text-gray-600 text-lg">구단을 찾을 수 없습니다.</p>
+                    <a href="/premier-league.html" class="inline-block mt-4 bg-purple-700 text-white px-6 py-3 rounded-lg font-bold hover:bg-purple-800 transition">
+                        ← 구단 목록으로 돌아가기
+                    </a>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

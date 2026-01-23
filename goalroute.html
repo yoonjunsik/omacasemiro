@@ -240,8 +240,10 @@
     </footer>
 
     <script>
-        // API 베이스 URL
-        const API_BASE_URL = 'http://localhost:3000/api';
+        // API 베이스 URL (환경에 따라 자동 설정)
+        const API_BASE_URL = window.location.hostname === 'localhost'
+            ? 'http://localhost:3000/api'
+            : 'https://omacasemiro-production.up.railway.app/api';
 
         // 페이지 로드 시 다가오는 빅매치 로드
         document.addEventListener('DOMContentLoaded', async function() {

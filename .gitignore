@@ -28,7 +28,21 @@ Thumbs.db
 # Environment files
 .env
 .env.local
+.env.production
+
+# Firebase credentials (보안 중요!)
+*firebase*.json
+omacasemiro-*.json
+
+# Cache files
+cache/
+*.cache
 
 # Image files and screenshots
 *.avif
+!images/products/**/*.avif
 screenshot.png
+
+# Crawl logs
+crawler/*-log.txt
+monitor-results/

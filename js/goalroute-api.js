@@ -1469,17 +1469,16 @@ function generateAgodaURL(cityId, checkIn, checkOut, routeType = 'budget', cityN
     // 도시 이름을 URL 인코딩
     const encodedCityName = encodeURIComponent(cityName);
 
-    // 기본 파라미터
-    let url = `https://www.agoda.com/ko-kr/search?city=${cityId}&checkIn=${checkIn}&checkOut=${checkOut}&rooms=1&adults=1&children=0&textToSearch=${encodedCityName}&cid=1844104&ds=DD9%2BvMHzfIn3MJcd`;
+    // 기본 파라미터 (단순화 - cid, ds 제거)
+    let url = `https://www.agoda.com/ko-kr/search?city=${cityId}&checkIn=${checkIn}&checkOut=${checkOut}&rooms=1&adults=1&children=0`;
 
     if (routeType === 'budget') {
         // 가성비 버전: 낮은 가격순 정렬 (호스텔, 게스트하우스 포함)
         url += `&sort=priceLowToHigh`;
     } else {
-        // 프리미엄 버전: 3-4성급 호텔, 평점 8점 이상, 도심 위치
-        url += `&hotelStarRating=4,3`;  // 3-4성급
-        url += `&hotelReviewScore=8`;   // 평점 8점 이상
-        url += `&hotelAccom=34`;        // 호텔만 (호스텔/게스트하우스 제외)
+        // 프리미엄 버전: 3-4성급 호텔, 평점 8점 이상
+        url += `&sort=reviewScore`;     // 평점 높은 순
+        url += `&star=3,4`;              // 3-4성급
     }
 
     return url;
